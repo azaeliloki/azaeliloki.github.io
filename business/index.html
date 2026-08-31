@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<script>(function () { var KEY = 'azael_lang_pref'; var FR_SLUG_FROM_EN = { 'certified-translation': 'traduction-certifiee', 'west-africa': 'afrique-de-louest', 'tutoring': 'soutien-scolaire', 'reviews': 'avis-clients', 'guides/visa-documents': 'guides/documents-visa', 'content-translation': 'contenu-web', 'law-firms': 'cabinets-juridiques', 'icao-english': 'anglais-aeronautique', 'interpretation': 'interpretation', 'terms': 'conditions', 'pricing': 'tarifs', 'sitemap': 'plan-du-site', 'contact': 'contact' }; function isFrPath(path) { return /(?:^|\/)fr(?:\/|$)/.test(path); } function isEnHome(path) { if (isFrPath(path)) return false; var p = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); if (p === '/' || p === '') return true; if (/\/(live|deploy-ready)\/?$/i.test(p)) return true; return false; } function suffix() { return location.search + location.hash; } function getPref() { try { return localStorage.getItem(KEY); } catch (e) { return null; } } function detectBrowserLang() { var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']; for (var i = 0; i < list.length; i++) { var tag = String(list[i]).toLowerCase(); if (tag.indexOf('fr') === 0) return 'fr'; if (tag.indexOf('en') === 0) return 'en'; } return 'en'; } function enSlugFromFr(frSlug) { for (var en in FR_SLUG_FROM_EN) { if (FR_SLUG_FROM_EN[en] === frSlug) return en; } return frSlug; } function translateSlug(slug, targetLang, sourceIsFr) { if (targetLang === 'fr') { if (!sourceIsFr && FR_SLUG_FROM_EN[slug]) return FR_SLUG_FROM_EN[slug]; return slug; } if (sourceIsFr) return enSlugFromFr(slug); return slug; } function parseLocalePath(path) { var normalized = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var onFr = isFrPath(normalized); var slug = normalized.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/').replace(/^\//, '').replace(/\/$/, ''); return { onFr: onFr, slug: slug }; } function liveSegments(path) { var segments = path.replace(/\\/g, '/').split('/').filter(Boolean); var liveIdx = -1; for (var i = 0; i < segments.length; i++) { var seg = segments[i].toLowerCase(); if (seg === 'live' || seg === 'deploy-ready') { liveIdx = i; break; } } if (liveIdx < 0) return null; var afterLive = segments.slice(liveIdx + 1); if (afterLive.length && /^index\.html?$/i.test(afterLive[afterLive.length - 1])) { afterLive.pop(); } return { segments: segments, liveIdx: liveIdx, afterLive: afterLive }; } function formatLocalePath(slug, lang) { if (lang === 'fr') { if (!slug) return '/fr/'; return '/fr/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } if (!slug) return '/'; return '/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } function httpLocaleHref(lang) { var path = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var info = liveSegments(path); if (info) { var after = info.afterLive.slice(); var onFr = after[0] === 'fr'; if (onFr) after.shift(); var slug = after.join('/'); var newSlug = translateSlug(slug, lang, onFr); var targetSegs = lang === 'fr' ? ['fr'].concat(newSlug ? newSlug.split('/') : []) : (newSlug ? newSlug.split('/') : []); var base = info.segments.slice(0, info.liveIdx + 1); return '/' + base.concat(targetSegs).join('/') + suffix(); } var parsed = parseLocalePath(path); if ((lang === 'fr' && parsed.onFr) || (lang === 'en' && !parsed.onFr)) { return path + suffix(); } var mappedSlug = translateSlug(parsed.slug, lang, parsed.onFr); return formatLocalePath(mappedSlug, lang) + suffix(); } function navigate(lang) { if (location.protocol === 'file:') return; location.replace(httpLocaleHref(lang)); } var path = location.pathname.replace(/\\/g, '/'); if (/404\.html$/i.test(path)) return; var onFr = isFrPath(path); var pref = getPref(); if (!pref && !onFr && isEnHome(path)) { if (detectBrowserLang() === 'fr') { navigate('fr'); } return; } if (!pref) return; if (parseLocalePath(path).slug !== '') return; if (pref === 'fr' && !onFr) { navigate('fr'); return; } if (pref === 'en' && onFr) { navigate('en'); } })();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certified Business Translation &amp; Corporate Training | Lomé</title>
+<meta name="description" content="Certified FR↔EN translation and corporate language training for businesses, NGOs, and institutions in Lomé. Accredited by the Cour d’appel de Lomé.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://azaeliloki.com/business/">
+<link rel="alternate" hreflang="en" href="https://azaeliloki.com/business/">
+<link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/business/">
+<link rel="alternate" hreflang="x-default" href="https://azaeliloki.com/business/">
+<meta property="og:title" content="Certified Business Translation &amp; Corporate Training | Lomé">
+<meta property="og:description" content="Certified FR↔EN translation and corporate language training for businesses, NGOs, and institutions in Lomé. Accredited by the Cour d’appel de Lomé.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:site_name" content="Azaël Iloki — Language Services">
+<meta property="og:url" content="https://azaeliloki.com/business/">
+<meta property="og:image" content="https://azaeliloki.com/assets/og/og-business.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Azaël Iloki — Certified Translation &amp; Corporate Training, Lomé">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://azaeliloki.com/assets/og/og-business.jpg">
+<meta name="twitter:title" content="Certified Business Translation &amp; Corporate Training | Lomé">
+<meta name="twitter:description" content="Certified FR↔EN translation and corporate language training for businesses, NGOs, and institutions in Lomé. Accredited by the Cour d’appel de Lomé.">
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="preconnect" href="https://wa.me" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="critical-css">/* critical ATB */:root{--navy:#122C4D;--navy-dark:#0E233F;--gold:#C9A658;--gold-on-dark:#F2DC8A;--white:#FFFFFF;--cream:#EDEEE8;--muted-on-dark:#CBD6E4;--font-body:'Outfit',system-ui,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}*{box-sizing:border-box}html[lang=en] [data-fr],html[lang=fr] [data-en]{display:none!important}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--navy);background:var(--cream)}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:16px;top:16px;z-index:9999;background:var(--white);padding:8px 12px}.ah{position:sticky;top:0;z-index:100;background:rgba(18,44,77,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.25)}.ah__inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);justify-content:space-between}.ah__logo{height:clamp(34px,6vw,52px);width:auto;display:block}.ah__nav{display:flex}@media(min-width:1280px){.ah__nav{display:block}}.ah__util{background:var(--navy-dark)}.ah__util-inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:34px;display:flex;align-items:center;justify-content:space-between}.ah__util-links{display:flex;align-items:center;flex:none}.ah__inner{height:74px}.ah__links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.ah__links li{display:flex}.ah__drop-wrap{position:relative}@media(min-width:1280px){.ah__drop-menu{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none}}.ah__actions{display:flex;align-items:center}@media(max-width:1279px){.ah__nav{display:none}.ah__burger{display:block}.ah__inner{height:62px}.ah__item--dropdown .ah__drop-menu{display:none}}@media(max-width:767px){.ah__util-note{display:none}.ah__util-inner{height:32px;justify-content:center}}.ah__burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer}.ah__burger span{display:block;width:22px;height:1.5px;background:var(--gold)}.hero{background:linear-gradient(160deg,var(--navy-dark),var(--navy));color:var(--white);padding:clamp(120px,15vw,160px) 20px clamp(60px,8vw,100px)}.hero-inner{max-width:1200px;margin:0 auto;width:100%}@media(min-width:1200px){.hero-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}}@media(min-width:900px){.hero-inner{grid-template-columns:1fr auto;gap:60px}}.hero-eyebrow{display:flex;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-on-dark);border:1px solid rgba(201,168,76,.35);padding:4px 10px;border-radius:999px;margin-bottom:20px}.hero-title{font-family:var(--font-serif);font-size:clamp(38px,5.5vw,72px);font-weight:700;line-height:1.1;margin:0 0 8px;color:var(--white)}.util-hero .hero-title{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 12px}.hero-lead{margin:0 0 10px;color:var(--muted-on-dark)}.hero-sub{margin:20px 0 36px;color:var(--muted-on-dark)}.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}.btn-primary{background:var(--gold);color:var(--navy)}.btn-ghost{border:1px solid rgba(255,255,255,.35);color:var(--white)}.hero-portrait-img{width:100%;max-width:420px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block}</style>
+<link rel="preload" href="/assets/css/style.css?v=cc67a03d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=cc67a03d"></noscript>
+<link rel="icon" type="image/png" href="/assets/images/logo-72.png">
+<script src="/assets/js/analytics-deferred.js?v=65330a98" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Service",
+
+ "availableLanguage": ["fr", "en"],
+ "name": "Business translation & corporate training",
+ "serviceType": "B2B translation and corporate language training",
+ "description": "General FR↔EN translation from 66 FCFA / word and corporate training circles from 100,000 FCFA / month in Lomé.",
+ "url": "https://azaeliloki.com/business/",
+ "provider": {
+  "@id": "https://azaeliloki.com/#business"
+ },
+ "areaServed": [
+  {
+   "@type": "Country",
+   "name": "Togo"
+  },
+  {
+   "@type": "Country",
+   "name": "Ghana"
+  },
+  {
+   "@type": "Country",
+   "name": "Nigeria"
+  },
+  {
+   "@type": "Country",
+   "name": "Benin"
+  },
+  {
+   "@type": "Country",
+   "name": "Côte d’Ivoire"
+  },
+  {
+   "@type": "Country",
+   "name": "Burkina Faso"
+  }
+ ],
+ "offers": [
+  {
+   "@type": "Offer",
+   "name": "General translation",
+   "price": "66",
+   "priceCurrency": "XOF",
+   "unitText": "WORD"
+  },
+  {
+   "@type": "Offer",
+   "name": "Corporate training",
+   "price": "100000",
+   "priceCurrency": "XOF",
+   "unitText": "MONTH"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://azaeliloki.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Business",
+   "item": "https://azaeliloki.com/business/"
+  }
+ ]
+}
+</script>
+</head>
+<body class="lang-en page-business page-linear">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="ah" id="navbar">
+  <div class="ah__util">
+    <div class="ah__util-inner">
+      <span class="ah__util-note">Sworn translator · Cour d’appel de Lomé</span>
+      
+      <span class="ah__util-links">
+        <a class="ah__util-a" href="tel:+22879716258"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="ah__util-a ah__util-a--mail" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@azaeliloki.com</a>
+      </span>
+      <div class="ah__lang" role="group" aria-label="Language" data-en-label="Language" data-fr-label="Langue">
+        <a href="/business/" data-lang="en" hreflang="en">EN</a>
+        <i aria-hidden="true">·</i>
+        <a href="/fr/business/" data-lang="fr" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+  <div class="ah__inner">
+    <a class="ah__brand" href="/" aria-label="Azaël Iloki — home">
+      <img src="/assets/images/logo-nav.png" srcset="/assets/images/logo-nav.png 1x, /assets/images/logo-nav@2x.png 2x" alt="Azaël Iloki" class="ah__logo" width="256" height="64" decoding="async">
+    </a>
+    
+    <nav class="ah__nav" id="primary-menu" aria-label="Main navigation" data-en-label="Main navigation" data-fr-label="Navigation principale">
+      <ul class="ah__links">
+        <li><a href="/certified-translation/" data-nav="certified">Certified Translation</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/courses/#course-pricing-hub" class="ah__drop-label" data-nav="courses">Courses</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-courses-en" id="ah-drop-btn-courses-en">
+              <span class="visually-hidden">Show courses</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-courses-en" role="menu">
+              <li role="none"><a href="/courses/#course-pricing-hub" role="menuitem">Language Courses</a></li>
+              <li role="none"><a href="/icao-english/" role="menuitem">ICAO Level 4 (Aviation)</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/tutoring/" data-nav="tutoring">Tutoring</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/business/" class="ah__drop-label active" data-nav="business" aria-current="page">For Business</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-business-en" id="ah-drop-btn-business-en">
+              <span class="visually-hidden">Show business services</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-business-en" role="menu">
+              <li role="none"><a href="/business/#svc-general" role="menuitem">General Translation (B2B)</a></li>
+              <li role="none"><a href="/business/#svc-training" role="menuitem">Corporate Training</a></li>
+              <li role="none"><a href="/business/#svc-retainer" role="menuitem">Professional Retainer</a></li>
+              <li role="none"><a href="/interpretation/" role="menuitem">Interpretation</a></li>
+              <li role="none"><a href="/content-translation/" role="menuitem">Web Content &amp; SEO</a></li>
+              <li role="none"><a href="/law-firms/" role="menuitem">Law Firms</a></li>
+              <li role="none"><a href="/transcription/" role="menuitem">Transcription &amp; Recordings</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/pricing/" data-nav="pricing">Pricing</a></li>
+        
+        <li><a href="/about/" data-nav="about">About</a></li>
+        
+        <li class="ah__m-only"><a href="/contact/">Contact</a></li>
+        
+        <li class="ah__m-only"><a href="/reviews/">Reviews</a></li>
+        
+        <li class="ah__m-only"><a href="/faq/">FAQ</a></li>
+        
+      </ul>
+    </nav>
+    <a class="ah__cta" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote.%0A%0AService%3A%0ADocument%20or%20need%3A%0ADeadline%3A" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg><span class="ah__cta-full">Request a Quote</span><span class="ah__cta-short">Quote</span></a>
+    
+    <button type="button" class="ah__burger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main"><nav class="page-breadcrumb" aria-label="Breadcrumb">
+  <ol class="page-breadcrumb__list">
+    <li><a href="/">Home</a></li>
+    <li aria-current="page">Business</li>
+  </ol>
+</nav>
+
+<!-- ── HERO (context-aware) ── -->
+<section class="hero" id="home" aria-labelledby="home-heading">
+  <div class="hero-inner">
+  <div class="hero-content">
+    <h1 class="hero-title" id="home-heading">Certified Business Translation &amp; Corporate Training in Lomé</h1>
+  <div class="hero-context" data-hero-for="hub">
+  <div class="hero-eyebrow">Corporate &amp; Institutional · Lomé &amp; Remote</div>
+    
+    <p class="hero-sub">General translation and corporate training for organisations in Lomé and abroad — choose your path below.</p>
+    
+    <div class="hero-btns">
+      <a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote%20for%20my%20organisation.%0A%0AOrganisation%3A%0ANeed%3A%0ATimeline%3A" class="btn-primary" target="_blank" rel="noopener noreferrer">Request a Free Quote</a>
+      
+      <a href="#services" class="btn-ghost">See Services &amp; Pricing →</a>
+      
+    </div>
+  </div>
+  <div class="hero-context service-context-hidden" data-hero-for="general">
+  <div class="hero-eyebrow">General Translation · FR↔EN</div>
+    
+    <h2 class="hero-context-title">Professional translation<br><em>for contracts, audits &amp; reports.</em></h2>
+    
+    <p class="hero-sub">TEP workflow for NGOs, businesses and institutions. Per-word or per-page pricing. Typically 2–5 business days; institutional invoicing.</p>
+    
+    <div class="hero-btns">
+      <a href="#quote-intake" class="btn-primary">Request a Free Quote</a>
+      
+    </div>
+  </div>
+  <div class="hero-context service-context-hidden" data-hero-for="training">
+  <div class="hero-eyebrow">Corporate Training · Lomé &amp; Remote</div>
+    
+    <h2 class="hero-context-title">Monthly language retainer<br><em>for teams of 3 to 10 people.</em></h2>
+
+    <p class="hero-sub">4 to 16 workshops/month depending on the plan, 60 min each. Business English and/or Professional French. Team placement test included.</p>
+    
+    <div class="hero-btns">
+      <a href="https://calendly.com/iloki-azael/consultation" class="btn-primary" target="_blank" rel="noopener noreferrer">Book a discovery call</a>
+      
+      <a href="#contact" class="btn-ghost" data-cf-service="Corporate Training">Send an Enquiry</a>
+      
+    </div>
+    <div class="hero-speed-badge">Circles from 100,000 FCFA / month excl. tax</div>
+
+  </div>
+</div>
+</div>
+</section>
+
+<section class="funnel-paths page-hub-funnel" id="page-hub-funnel" aria-labelledby="page-hub-funnel-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Certified &amp; Corporate Language Services</span>
+    
+    <h2 class="section-title" id="page-hub-funnel-heading">What do you need?</h2>
+    
+    <div class="fp-grid">
+      <div class="fp-card">
+        <span class="fp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="fp-title"><a class="fp-link" href="../certified-translation/">Certified translation</a></h3>
+        
+        <p class="fp-desc">Sworn, legally valid documents — personal and corporate — in the format notaries, courts and public authorities require, as well as embassies, universities and institutions.</p>
+        
+        <span class="fp-cta">Get a Quote →</span>
+      </div>
+      <div class="fp-card">
+        <span class="fp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 13h6M9 17h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="fp-title"><a class="fp-link" href="#svc-general">General translation</a></h3>
+        
+        <p class="fp-desc">Contracts, NGO reports, financial audits — B2B pricing; typically 2–5 business days.</p>
+        
+        <span class="fp-cta">Get a Quote →</span>
+      </div>
+      <div class="fp-card">
+        <span class="fp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="fp-title"><a class="fp-link" href="#svc-training">Corporate training</a></h3>
+        
+        <p class="fp-desc">Monthly retainer for teams — Business English and Professional French. From 100,000 FCFA / month excl. tax for 3 staff; 200,000 for up to 5.</p>
+        
+        <span class="fp-cta">Book a Call →</span>
+      </div>
+      <div class="fp-card">
+        <span class="fp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 2l8 5H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+
+        <h3 class="fp-title"><a class="fp-link" href="../law-firms/">Law firms</a></h3>
+
+        <p class="fp-desc">Notaries, lawyers and bailiffs — partner rates, billed to the firm or directly to the end client.</p>
+        <span class="fp-cta">See partner rates →</span>
+      </div>
+      <div class="fp-card">
+        <span class="fp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2zM18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+
+        <h3 class="fp-title"><a class="fp-link" href="../interpretation/">Interpretation</a></h3>
+
+        <p class="fp-desc">Meetings, delegations and official assignments, French ↔ English — by the half-day or the day.</p>
+        <span class="fp-cta">See rates →</span>
+      </div>
+      <div class="fp-card">
+        <span class="fp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zM5 10v1a7 7 0 0 0 14 0v-1M12 19v3M8 22h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+
+        <h3 class="fp-title"><a class="fp-link" href="../transcription/">Transcription</a></h3>
+
+        <p class="fp-desc">Recordings for the case file — French, English and national languages, priced by the minute.</p>
+        <span class="fp-cta">See rates →</span>
+      </div>
+    </div>
+    <p class="fp-note">Universities, schools and employers filing grouped student records: volume discount from 5 files, billed to the institution or directly to the student — <a href="../certified-translation/#institutions">see grouped files →</a></p>
+
+  </div>
+</section>
+
+<section class="process" id="process" aria-labelledby="process-heading">
+  <div class="section-inner">
+    <span class="eyebrow">How It Works</span>
+    
+    <h2 class="section-title" id="process-heading">4 steps — no surprises</h2>
+    
+    <div class="proc-tabs">
+      <button class="proc-tab active" data-service="general" type="button"><span class="pt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 13h6M9 17h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>General Translation</span></button>
+      <button class="proc-tab" data-service="training" type="button"><span class="pt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Corporate Training</span></button>
+      
+    </div>
+    <div class="proc-panels">
+      <div class="proc-panel active" id="proc-general">
+        <div class="process-steps">
+          <div class="process-step">
+          <div class="ps-num">01</div>
+          <div class="ps-content">
+            <h3 class="ps-title">Send your document</h3>
+            
+            <p class="ps-desc">Send your document by email with context and deadline. All formats accepted — PDF, Word, JPG, scanned documents.</p>
+            
+            <p class="ps-guarantee">✓ NDA available on request — signed before you send anything</p>
+            
+            
+            
+          </div>
+        </div><div class="process-step">
+          <div class="ps-num">02</div>
+          <div class="ps-content">
+            <h3 class="ps-title">Free quote within 2h</h3>
+            
+            <p class="ps-desc">You receive a quote with word count, price and delivery time. Billed at 66–118 FCFA per word — fully transparent.</p>
+            
+            <p class="ps-guarantee">✓ 66–118 FCFA / word</p>
+            
+          </div>
+        </div><div class="process-step">
+          <div class="ps-num">03</div>
+          <div class="ps-content">
+            <h3 class="ps-title">Confirmation + pro forma invoice</h3>
+            
+            <p class="ps-desc">You approve the quote. A pro forma invoice is sent. Payment via bank transfer, Ecobank, Moov Money or Mixx by Yas.</p>
+            
+            <p class="ps-guarantee">✓ Secure payment · Official invoice provided</p>
+            
+          </div>
+        </div><div class="process-step">
+          <div class="ps-num">04</div>
+          <div class="ps-content">
+            <h3 class="ps-title">Translation delivered as PDF</h3>
+            
+            <p class="ps-desc">Delivered on time by email. TEP process applied — Translation, Editing, Proofreading — for consistent, review-ready quality.</p>
+            
+            <p class="ps-guarantee">✓ TEP quality · Confidential · Final invoice included</p>
+            
+          </div>
+        </div>
+        </div>
+      </div><div class="proc-panel" id="proc-training">
+        <div class="process-steps">
+          <div class="process-step">
+          <div class="ps-num">01</div>
+          <div class="ps-content">
+            <h3 class="ps-title">Contact me</h3>
+            
+            <p class="ps-desc">Reach out via email or book a call on Calendly. Tell me about your organisation, team size and training objective.</p>
+            
+            
+          </div>
+        </div><div class="process-step">
+          <div class="ps-num">02</div>
+          <div class="ps-content">
+            <h3 class="ps-title">Team needs assessment</h3>
+            
+            <p class="ps-desc">We identify your team’s specific language needs — Business English, Professional French or international communication.</p>
+            
+            
+            
+          </div>
+        </div><div class="process-step">
+          <div class="ps-num">03</div>
+          <div class="ps-content">
+            <h3 class="ps-title">Custom programme + pro forma</h3>
+            
+            <p class="ps-desc">I design a tailored training programme and send a detailed quote — sessions, content, format and total investment. No commitment at this stage.</p>
+            
+            <p class="ps-guarantee">✓ Circles from 100,000 FCFA / month excl. tax (HT) · Detailed quote</p>
+            
+          </div>
+        </div><div class="process-step">
+          <div class="ps-num">04</div>
+          <div class="ps-content">
+            <h3 class="ps-title">Team placement test + training begins</h3>
+            
+            <p class="ps-desc">Team members complete a placement test to calibrate the training at exactly the right level. Training begins on the agreed date.</p>
+            
+            <p class="ps-guarantee">✓ In-person or online · Invoice provided</p>
+            
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="services" aria-labelledby="services-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Certified &amp; Corporate Language Services</span>
+    
+    <h2 class="section-title" id="services-heading">Certified, professional &amp; corporate language services</h2>
+    
+    <div class="services-grid services-grid--trio">
+      <div class="svc-card svc-card--summary" id="svc-sworn">
+      <div class="svc-head">
+        <span class="svc-num">01</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+      <h3 class="svc-title">Certified translation</h3>
+      
+      <p class="svc-desc">Sworn FR↔EN translation of statutes, contracts, judgments and procedural documents, in the format notaries, courts and public authorities require. Civil records and notarial deeds: 15,000 FCFA per page.</p>
+      
+      <div class="svc-price">
+        <span class="price-from">From</span>
+        
+        <span class="price-amount">66–118 FCFA</span>
+        
+        <span class="price-unit">/ word</span>
+        
+      </div>
+      <div class="svc-cta-row">
+        <a href="../certified-translation/" class="svc-cta svc-cta--primary">View certified translation →</a>
+        
+      </div>
+    </div>
+      <div class="svc-card" id="svc-general">
+      <div class="svc-head">
+        <span class="svc-num">02</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 13h6M9 17h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+      <h3 class="svc-title">General translation</h3>
+      
+      <p class="svc-sub">Professional FR↔EN</p>
+      
+      <p class="svc-desc">Contracts, financial audits, NGO reports, commercial documents. Accepts PDF, Word (.docx), JPG, PNG and clear scans. TEP process — Translation, Editing, Proofreading.</p>
+      
+      <div class="svc-price">
+        <span class="price-from">From</span>
+        
+        <span class="price-amount">66–118 FCFA</span>
+        
+        <span class="price-unit">/ word</span>
+        
+      </div>
+      <p class="price-note">Quote within 2h · EUR, USD or FCFA invoicing on request. Audio or video recordings: see <a href="/transcription/">transcription</a>.</p>
+      
+      <p class="price-note">Sensitive documents? An NDA can be signed before you share anything for a quote.</p>
+      
+      <p class="svc-express"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Urgent Priority Rate — +30% to +50% on base</p>
+        
+      <div class="svc-cta-row">
+        <a href="#quote-intake" class="svc-cta svc-cta--primary" data-cf-service="General Translation">Request a Free Quote</a>
+        
+        <a href="#general-estimate" class="svc-cta svc-cta--secondary">View cost estimate →</a>
+        
+      </div>
+    </div>
+      <div class="svc-card" id="svc-training">
+      <div class="svc-head">
+        <span class="svc-num">03</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+      <h3 class="svc-title">Corporate training</h3>
+      
+      <p class="svc-sub">Businesses &amp; NGOs</p>
+      
+      <p class="svc-desc">Monthly Circles for teams — Business English and/or Professional French. Onsite in Lomé or live via Zoom. Pro forma invoice · Advance payment. Rates excl. tax (HT).</p><p class="svc-desc"><strong>Commitment:</strong> three months minimum, then month to month.</p>
+      <div class="home-rates-table-wrap" tabindex="0" role="region" aria-label="Corporate Training Circles">
+        <table class="home-rates-table">
+          <tbody>
+            <tr><td><strong>Duo Circle</strong> — 4 workshops/month, max 3 staff</td><td>100,000 FCFA / month HT</td></tr>
+            <tr><td><strong>Standard Circle</strong> — 8 workshops/month, max 5 staff</td><td>200,000 FCFA / month HT</td></tr>
+            <tr><td><strong>Double Circle</strong> — 16 workshops/month, 10 staff, two trainers</td><td>360,000 FCFA / month HT</td></tr>
+            <tr><td><strong>Sector Programme</strong> — 8 weeks, 2 sessions/week, team of 5 (aviation &amp; cabin crew, logistics &amp; port, hospitality, banking &amp; institutions)</td><td>400,000 FCFA per programme HT</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="svc-note">ICAO Level 4 aviation English for airlines, ANAC and flight schools: <a href="/icao-english/">see the dedicated page →</a></p>
+      
+      
+      <div class="svc-cta-row">
+        <a href="https://calendly.com/iloki-azael/consultation" class="svc-cta svc-cta--primary" target="_blank" rel="noopener noreferrer">Book a discovery call</a>
+        
+        <a href="#contact" class="svc-cta svc-cta--secondary" data-cf-service="Corporate Training">Send an Enquiry →</a>
+        
+      </div>
+    </div>
+    </div>
+
+    <div class="coaching-duo" data-service-scope="training">
+      <h3 class="coaching-duo-title">For your team or for you</h3>
+      
+      <p class="coaching-duo-intro">Standard private courses scale up to specialised coaching — then the Professional Retainer for executives, or Corporate Training for teams.</p>
+      
+      <div class="coaching-duo-grid">
+        <div class="coaching-duo-card coaching-duo-card--solo" id="svc-retainer">
+          <span class="coaching-duo-badge">For you</span>
+          
+          <h4 class="coaching-duo-card-title">Professional retainer</h4>
+          
+          <p class="coaching-duo-tagline">One-on-one language coaching for busy professionals.</p>
+          
+          <p class="coaching-duo-price">From 135,000 FCFA / month (online) · 165,000 FCFA / month (in person, Lomé)</p>
+          
+          <ul class="coaching-duo-includes">
+            <li>8 private 1-on-1 sessions / month, fully tailored (Business English, FOS or ESP)</li>
+            
+            <li>Priority scheduling and flexible rescheduling</li>
+            
+            <li>Between-session review of your real work (emails, reports, a presentation or key document)</li>
+            
+            <li>Monthly progress report</li>
+            
+          </ul>
+          <p class="coaching-duo-footer">The solo counterpart to the Corporate Circle — same focus on your professional goals, one-on-one. Lighter 4-session tier: 75,000 FCFA / month.</p>
+          
+          <div class="svc-cta-row">
+            <a href="https://calendly.com/iloki-azael/consultation" class="svc-cta svc-cta--primary" target="_blank" rel="noopener noreferrer">Book a discovery call</a>
+            
+            <a href="#contact" class="svc-cta svc-cta--secondary" data-cf-service="Professional Retainer">Send an Enquiry →</a>
+            
+          </div>
+        </div>
+        <div class="coaching-duo-card coaching-duo-card--team">
+          <span class="coaching-duo-badge">For your team</span>
+          
+          <h4 class="coaching-duo-card-title">Corporate training</h4>
+          
+          <p class="coaching-duo-tagline">Group workshops for businesses and NGOs — up to 5 per Circle, 10 on the Double Circle.</p>
+          
+          <p class="coaching-duo-price">From 100,000 FCFA / month HT — Duo · Standard · Double Circles</p>
+          <p class="coaching-duo-footer">Duo: 4 workshops / 3 staff · Standard: 8 workshops / 5 staff (200,000 FCFA) · Double: 16 workshops / 10 staff, two trainers (360,000 FCFA). Monthly HR progress report.</p>
+          
+          <div class="svc-cta-row">
+            <a href="https://calendly.com/iloki-azael/consultation" class="svc-cta svc-cta--primary" target="_blank" rel="noopener noreferrer">Book a discovery call</a>
+            
+            <a href="#svc-training" class="svc-cta svc-cta--secondary">View Corporate Training →</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="price-surcharge-note" data-service-scope="general">Surcharges differ by service: general translation uses a variable urgent-priority rate (+30–50%) depending on length and deadline.</p>
+    <p class="faq-intro" data-service-scope="general">Need ongoing web content in both languages? See <a href="/content-translation/">website translation and articles</a>.</p>
+    <p class="faq-intro" data-service-scope="sworn">Working with a notary or law firm? See <a href="/law-firms/">legal and sworn translation</a>.</p>
+    
+  </div>
+</section>
+
+<!-- ── INTERPRETATION (summary → dedicated page) ── -->
+<section class="interpretation-section" id="interpretation" data-service-scope="shared" aria-labelledby="interpretation-heading">
+  <div class="section-inner">
+    <div class="callout-card">
+      <span class="eyebrow">Interpretation</span>
+      <h2 class="section-title" id="interpretation-heading">Interpretation (English ↔ French)</h2>
+      <p>Liaison, consecutive and conference interpretation for meetings, consular appointments and events in Lomé — half-day from 150,000 FCFA excl. tax.</p>
+      <p class="interpretation-cta-row">
+        <a href="/interpretation/" class="btn-primary">View interpretation services →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── GENERAL TRANSLATION ESTIMATE ── -->
+<section class="general-estimate" id="general-estimate" data-service-scope="general" aria-labelledby="general-estimate-heading">
+  <div class="section-inner">
+    <span class="eyebrow">General translation</span>
+    
+    <h2 class="section-title" id="general-estimate-heading">Indicative cost estimate</h2>
+    
+    <p class="general-estimate__lead">Enter your details below, then view your ballpark estimate. This is not a binding quote — request a formal quote in the contact form when you are ready.</p>
+    
+    <div class="general-estimate__panel" id="quote-estimator">
+      <fieldset class="qe-field qe-field--account">
+        <legend class="qe-legend">Account type</legend>
+        
+        <div class="qe-segment" role="radiogroup" aria-label="Account type">
+          <label class="qe-segment__opt">
+            <input type="radio" name="qe-account" value="individual" checked>
+            <span>Individual / Personal</span>
+            
+          </label>
+          <label class="qe-segment__opt">
+            <input type="radio" name="qe-account" value="corporate">
+            <span>Company / NGO / Embassy</span>
+            
+          </label>
+        </div>
+      </fieldset>
+      <fieldset class="qe-field qe-field--unit">
+
+        <legend class="qe-legend">You are counting in</legend>
+        <div class="qe-segment" role="radiogroup" aria-label="Volume unit">
+          <label class="qe-segment__opt">
+            <input type="radio" name="qe-unit" value="words" checked>
+
+            <span>Words</span>
+          </label>
+          <label class="qe-segment__opt">
+            <input type="radio" name="qe-unit" value="pages">
+
+            <span>Pages</span>
+          </label>
+        </div>
+      </fieldset>
+      <div class="qe-field">
+        <label class="qe-label" for="qe-words">Estimated volume</label>
+        
+        <input class="qe-input" id="qe-words" type="number" min="0" step="1" inputmode="numeric" placeholder="e.g. 4500" data-placeholder-en="e.g. 4500" data-placeholder-fr="ex. 4500">
+        <p class="qe-tip">A page runs to roughly 300 words. Know neither? Leave it blank or estimate — I will verify it for free within 2h.</p>
+        
+      </div>
+      <div class="qe-field">
+        <label class="qe-label" for="qe-complexity">Text complexity</label>
+        
+        <select class="qe-select" id="qe-complexity">
+          <option value="standard">Standard / Commercial — 66 FCFA / word (Reports, emails, websites, correspondence)</option>
+          
+          <option value="technical">Technical / Legal — 118 FCFA / word (Contracts, audits, bylaws, official documents)</option>
+          
+        </select>
+      </div>
+      <div class="qe-field">
+        <label class="qe-label" for="qe-currency">Display currency</label>
+        
+        <select class="qe-select" id="qe-currency">
+          <option value="FCFA">FCFA</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="USD">USD ($)</option>
+          <option value="GBP">GBP (£)</option>
+        </select>
+      </div>
+      <button type="button" class="btn-primary qe-show-btn" id="qe-show-btn">View my estimate</button>
+      
+    </div>
+  </div>
+</section>
+
+<section class="share-section" aria-label="Share this page">
+  <div class="section-inner">
+    <div class="share-bar share-bar--linkedin-first" data-url="https://azaeliloki.com/business/" data-title="Certified Business Translation &amp; Corporate Training | Lomé" data-message="I'd like to share Azaël Iloki's business language services in Lomé (certified &amp; general translation, corporate training):">
+      <span class="share-label">Share:</span>
+      <button type="button" class="share-btn share-linkedin" aria-label="Share on LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-14h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</button>
+      <button type="button" class="share-btn share-whatsapp" aria-label="Share on WhatsApp"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg> WhatsApp</button>
+      <button type="button" class="share-btn share-copy" aria-label="Copy link"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2.5-2.5a5 5 0 0 0-7-7L11 6"/><path d="M14 11a5 5 0 0 0-7.5-.5L4 13a5 5 0 0 0 7 7l2-2"/></svg> Copy link</button>
+    </div>
+  </div>
+</section>
+
+<section class="primary-cta-band" id="book-now" aria-labelledby="book-now-heading">
+  <div class="section-inner">
+    <h2 class="section-title" id="book-now-heading">Request a quote for your organisation</h2>
+    
+    <p class="primary-cta-band__sub">Free estimate within 2 working hours — translation, training or retainer. No commitment until you confirm.</p>
+    
+    <div class="primary-cta-band__actions">
+      <a href="#quote-intake" class="btn-primary">Request a Free Quote</a>
+      <a href="mailto:contact@azaeliloki.com?subject=Quote%20request%20%E2%80%94%20organisation&amp;body=Hello%2C%0D%0A%0D%0AI%20would%20like%20a%20quote%20for%20my%20organisation.%0D%0A%0D%0AOrganisation%3A%0D%0ANeed%3A%0D%0ATimeline%3A%0D%0A%0D%0ABest%20regards%2C" class="btn-secondary btn--email">Send an Email</a>
+      <a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote%20for%20my%20organisation.%0A%0AOrganisation%3A%0ANeed%3A%0ATimeline%3A" class="btn--wa" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+      <a href="https://calendly.com/iloki-azael/consultation" class="btn-ghost btn--cal" target="_blank" rel="noopener noreferrer">Book a discovery call →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST ── -->
+<section class="trust trust--minimal" id="trust" aria-labelledby="trust-heading">
+  <div class="section-inner">
+    <h2 class="section-title light" id="trust-heading">Verified authority</h2>
+    
+    <p class="trust-credential-line">8+ years teaching languages · 6+ years professional FR↔EN translation · court-sworn since 2024</p>
+    
+    <div class="trust-grid">
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">Court-accredited sworn translator</h3>
+        
+        <p class="tc-desc">Officially sworn by the Cour d’appel de Lomé since 2024. Translations are legally valid and in the format embassies, consulates, universities and administrations require.</p>
+        
+        <div class="tc-credential"><span class="tc-cred-label">Accreditation</span><span class="tc-cred-num">Cour d’appel de Lomé</span></div>
+      </div>
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">Translation &amp; terminology management</h3>
+        
+        <p class="tc-sub">6+ Years Professional Translation</p>
+        
+        <p class="tc-desc">High-accuracy French ↔ English translation for individuals, corporates and institutions — stylistically consistent, sector-specific and handled with full confidentiality at any volume.</p>
+        
+      </div>
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM9 7h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">8+ years teaching languages</h3>
+        
+        <p class="tc-desc">8+ years of language teaching. Clients include NGOs, businesses, embassies and individuals across West Africa.</p>
+        
+      </div>
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12.5V17c0 1.1 2.7 2.5 6 2.5s6-1.4 6-2.5v-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">Institut Français du Togo</h3>
+        
+        <p class="tc-desc">Language instructor at the Institut Français du Togo since 2022. Rigorous, structured methodology.</p>
+        
+      </div>
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2zM7 11V7a5 5 0 0 1 10 0v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">Full confidentiality</h3>
+        
+        <p class="tc-desc">All client information handled under strict professional confidentiality. No storage, no sharing, no third parties. Formal NDA available to any client on request.</p>
+        
+      </div>
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2h12v20l-2-1.5L14 22l-2-1.5L10 22l-2-1.5L6 22zM9 7h6M9 11h6M9 15h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">Institutional invoicing</h3>
+        
+        <p class="tc-desc">Pro forma invoice + fiscal invoice for every transaction. Bank transfer, SWIFT international transfer accepted. Full paper trail for procurement.</p>
+        
+      </div>
+    </div>
+    <div class="trust-strip">
+      <span class="ts-group"><span class="ts-item">Accredited by Cour d’appel de Lomé</span>
+      
+      <span class="ts-item">4–16 workshops / month · 3–10 employees</span>
+      <span class="ts-item">Free quote within 2h</span>
+      
+      <span class="ts-item">Pro forma &amp; fiscal invoicing</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAYMENT ── -->
+<section class="payment payment-order--institutional-first" id="payment" aria-labelledby="payment-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Payment</span>
+    
+    <h2 class="section-title light" id="payment-heading">Payment methods</h2>
+    
+    <div class="payment-blocks">
+      <div class="payment-block payment-block--individual" data-service-scope="translation">
+        <h3 class="payment-block-title">Individual clients</h3>
+        
+        <button class="pay-accordion-btn" type="button" aria-expanded="false" aria-controls="payIndividualBody">
+          <span>View payment details — Moov Money · Mixx by Yas · Ecobank · Bank Transfer</span>
+          
+          <span class="pay-acc-arrow">↓</span>
+        </button>
+        <div class="pay-accordion-body" id="payIndividualBody">
+          <div class="pay-methods-grid">
+            <div class="pm-card">
+              <img src="../assets/images/pay_flooz.svg" alt="Moov Money" class="pm-logo" width="72" height="36" loading="lazy" decoding="async">
+              <div class="pm-info"><p class="pm-name">Moov Money</p><p class="pm-num">+228 79 71 62 58</p></div>
+            </div>
+            <div class="pm-card">
+              <img src="../assets/images/pay_mixx.svg" alt="Mixx by Yas" class="pm-logo" width="72" height="36" loading="lazy" decoding="async">
+              <div class="pm-info"><p class="pm-name">Mixx by Yas</p><p class="pm-num">+228 92 44 70 14 (mobile money payments only)</p></div>
+            </div>
+            <div class="pm-card">
+              <img src="../assets/images/pay_ecobank.svg" alt="Ecobank" class="pm-logo" width="72" height="36" loading="lazy" decoding="async">
+              <div class="pm-info"><p class="pm-name">Ecobank Mobile</p><p class="pm-num">Details with invoice</p></div>
+            </div>
+            <div class="pm-card">
+              <div class="pm-info"><p class="pm-name"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M4 21V9.5L12 4l8 5.5V21M9.5 21v-6h5v6M4 9.5h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Bank Transfer</p><p class="pm-num">Details with invoice</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="payment-block payment-block--institutional" data-service-scope="shared">
+        <h3 class="payment-block-title">Institutions &amp; organisations</h3>
+        
+        <div class="biz-payment-grid">
+      <div class="biz-pay-card">
+        <h3 class="biz-pay-title">Bank transfer</h3>
+        
+        <p class="biz-pay-desc">Ecobank Togo · Orabank Togo · SWIFT international transfers accepted for clients outside Togo and international organisations.</p>
+        
+      </div>
+      <div class="biz-pay-card">
+        <h3 class="biz-pay-title">Corporate invoice workflow</h3>
+        
+        <div class="biz-pay-steps">
+          <div class="biz-pay-step"><span class="bps-num">1</span><span class="bps-text">Pro forma invoice issued upon quote approval</span></div>
+          <div class="biz-pay-step"><span class="bps-num">2</span><span class="bps-text">Full payment or authorised purchase order required</span></div>
+          <div class="biz-pay-step"><span class="bps-num">3</span><span class="bps-text">Work begins upon payment confirmation</span></div>
+          <div class="biz-pay-step"><span class="bps-num">4</span><span class="bps-text">Fiscal invoice delivered with final deliverable</span></div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+
+<section class="services" id="business-rates-table" aria-labelledby="biz-rates-heading">
+  <div class="section-inner">
+    <span class="eyebrow">At a glance</span>
+    <h2 class="section-title" id="biz-rates-heading">Business service rates</h2>
+    <p>General FR↔EN translation starts at <strong>66 FCFA per word</strong>. Corporate training circles start at <strong>100,000 FCFA per month</strong> (excl. tax).</p>
+    <div class="home-rates-table-wrap" tabindex="0" role="region" aria-label="Business rates">
+      <table class="home-rates-table">
+        <thead>
+          <tr><th>Service</th><th>Rate</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Service">General translation (B2B)</td><td data-label="Rate">66–118 FCFA / word</td><td data-label="Notes">Free quote within 2h · EUR/USD/FCFA billing on request</td></tr>
+          <tr><td data-label="Service">Corporate training — Duo</td><td data-label="Rate">100,000 FCFA / month HT</td><td data-label="Notes">4 workshops/month, max 3 staff</td></tr>
+          <tr><td data-label="Service">Corporate training — Standard</td><td data-label="Rate">200,000 FCFA / month HT</td><td data-label="Notes">8 workshops/month, max 5 staff</td></tr>
+          <tr><td data-label="Service">Corporate training — Double</td><td data-label="Rate">360,000 FCFA / month HT</td><td data-label="Notes">16 workshops/month, two trainers</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="ecowas" aria-labelledby="ecowas-heading">
+  <div class="section-inner">
+    <span class="eyebrow">West Africa</span>
+    <h2 class="section-title" id="ecowas-heading">One language corridor, one translator</h2>
+    <p>ECOWAS (Economic Community of West African States) trade runs across a language border: Ghana and Nigeria work in English, while Togo, Benin, Côte d’Ivoire and Burkina Faso work in French. Every contract, tender and compliance file that crosses that border needs professional FR↔EN translation — exactly the pair I am sworn for. I work remotely for companies and NGOs across the region, with delivery by email and invoicing in FCFA, EUR or USD.</p>
+    <p class="price-note">Areas served: Lomé, Togo (on site) · West Africa &amp; worldwide, remotely.</p>
+  </div>
+</section>
+
+<div class="section-inner">
+  <p class="price-note delivery-short">Certified work: secure PDF included · free collection in Lomé · courier anywhere in Togo, fees at cost. <a href="/certified-translation/#delivery">Delivery details →</a></p>
+</div>
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <span class="eyebrow">FAQ</span>
+    
+    <h2 class="section-title" id="faq-heading">Common questions</h2>
+    
+    <p class="faq-intro">Translation, corporate training and institutional billing. <a href="../faq/">View all FAQs</a> or jump to <a href="../faq/#faq-courses">courses &amp; tutoring</a>.</p>
+    
+    <div class="faq-list">
+      <div class="faq-item" data-service-scope="general">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">When do I need general translation instead of certified?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Choose general translation for contracts, reports, NGO documents and internal business files that don’t require an official stamp — priced at 66–118 FCFA per word. Choose certified (sworn) translation when an embassy, university, court or government body will verify the document legally — visa applications, university admissions and court submissions. When in doubt, the quote tells you which applies.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="translation">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">Can you work with clients outside Togo?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Yes. Documents are received and delivered digitally worldwide. Physical certified prints can be collected in person in Lomé or shipped internationally on request. Payment is accepted via bank transfer and international wire (SWIFT). The certified translation carries my stamp and signature as a translator sworn before the Cour d’appel de Lomé; acceptance always remains the receiving authority’s decision.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="training">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">Can you train teams outside Lomé?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Yes. Workshops are delivered at your office/premises in Lomé or live via Zoom for distributed teams across West Africa and internationally. Scheduling is coordinated with your HR or operations contact.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="translation">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">Are my documents kept confidential?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Yes. All documents are handled under strict professional confidentiality. Files are kept in a secure, encrypted folder, are never shared with any third party and are permanently deleted thirty days after delivery — immediately on request. Only the register of certified translations — number, date, document type and language pair — is kept indefinitely: it is what lets a receiving authority verify where a translation came from, and it holds no document content. A formal non-disclosure agreement is available to any client on request — it can be signed before you send any document. See Operational Policies for full terms.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="translation">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">What payment methods do you accept?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>For institutional and corporate clients: Corporate bank transfer — Ecobank Togo, Orabank Togo. SWIFT international transfer — for clients outside Togo and international organisations. Corporate Invoice Workflow: Full payment execution or an authorised purchase order is required prior to processing. A pro forma invoice is issued first, followed by a fiscal invoice upon delivery. See Operational Policies for full terms.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="translation">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">How do I send my document to you?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Send your document by email to contact@azaeliloki.com. Accepted formats: PDF, JPG, PNG, Word (.docx) or any scanned image. The resolution should be clear enough to read all text. For very large files, you can also send via WhatsApp (+228 79 71 62 58). You do not need to send the original document — a clear photo or scan is sufficient for certified translations.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="training">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">What’s included in the monthly retainer?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Corporate Training Circles are monthly programmes (excl. tax): Duo Circle — 4 workshops/month, max 3 staff, 100,000 FCFA / month; Standard Circle — 8 workshops/month, max 5 staff, 200,000 FCFA / month; Double Circle — 16 workshops/month, 10 staff with two trainers, 360,000 FCFA / month. Business English and/or Professional French, tailored to your team. A placement test is conducted before training begins. Book a free consultation via Calendly.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="training">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">How many employees can join a cohort?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>The Duo Circle covers up to 3 employees, Standard up to 5 and Double up to 10 with two trainers. This keeps workshops interactive and allows personalised feedback. Larger organisations can run multiple cohorts under separate retainers.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="training">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">Is training delivered onsite or remotely?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Workshops are delivered at your office/premises in Lomé or live via Zoom for distributed teams. The session format stays the same — 60 minutes each, 4, 8 or 16 per month depending on the Circle, scheduled with your HR team.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="training">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">What payment methods apply to corporate training?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Corporate Training Circles are billed monthly via pro forma invoice (100,000 / 200,000 / 360,000 FCFA HT depending on the Circle). Payment by bank transfer (Ecobank Togo, Orabank Togo) or SWIFT for international organisations. Advance payment or an authorised purchase order is required before the programme begins.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="translation">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">Which languages do you translate?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>French ↔ English (FR↔EN) only. This exclusive focus ensures the highest level of precision, domain expertise and legal validity in both languages. For other language pairs, I can recommend trusted colleagues in the professional translation network.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="translation">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">What file formats do you accept?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>For source documents: PDF, JPG, PNG, TIFF, Word (.docx), Excel (.xlsx), PowerPoint (.pptx) and scanned images. For delivery: certified translations are always delivered as PDF with official stamp. The original Word file can also be provided for general translations on request.</p>
+        
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+
+ "inLanguage": "en",
+ "speakable": {
+  "@type": "SpeakableSpecification",
+  "cssSelector": [
+   ".faq-a p",
+   ".hero-title"
+  ]
+ },
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "When do I need general translation instead of certified?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Choose general translation for contracts, reports, NGO documents and internal business files that don’t require an official stamp — priced at 66–118 FCFA per word. Choose certified (sworn) translation when an embassy, university, court or government body will verify the document legally — visa applications, university admissions and court submissions. When in doubt, the quote tells you which applies."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can you work with clients outside Togo?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Documents are received and delivered digitally worldwide. Physical certified prints can be collected in person in Lomé or shipped internationally on request. Payment is accepted via bank transfer and international wire (SWIFT). The certified translation carries my stamp and signature as a translator sworn before the Cour d’appel de Lomé; acceptance always remains the receiving authority’s decision."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can you train teams outside Lomé?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Workshops are delivered at your office/premises in Lomé or live via Zoom for distributed teams across West Africa and internationally. Scheduling is coordinated with your HR or operations contact."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are my documents kept confidential?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. All documents are handled under strict professional confidentiality. Files are kept in a secure, encrypted folder, are never shared with any third party and are permanently deleted thirty days after delivery — immediately on request. Only the register of certified translations — number, date, document type and language pair — is kept indefinitely: it is what lets a receiving authority verify where a translation came from, and it holds no document content. A formal non-disclosure agreement is available to any client on request — it can be signed before you send any document. See Operational Policies for full terms."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What payment methods do you accept?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "For institutional and corporate clients: Corporate bank transfer — Ecobank Togo, Orabank Togo. SWIFT international transfer — for clients outside Togo and international organisations. Corporate Invoice Workflow: Full payment execution or an authorised purchase order is required prior to processing. A pro forma invoice is issued first, followed by a fiscal invoice upon delivery. See Operational Policies for full terms."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I send my document to you?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Send your document by email to contact@azaeliloki.com. Accepted formats: PDF, JPG, PNG, Word (.docx) or any scanned image. The resolution should be clear enough to read all text. For very large files, you can also send via WhatsApp (+228 79 71 62 58). You do not need to send the original document — a clear photo or scan is sufficient for certified translations."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What’s included in the monthly retainer?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Corporate Training Circles are monthly programmes (excl. tax): Duo Circle — 4 workshops/month, max 3 staff, 100,000 FCFA / month; Standard Circle — 8 workshops/month, max 5 staff, 200,000 FCFA / month; Double Circle — 16 workshops/month, 10 staff with two trainers, 360,000 FCFA / month. Business English and/or Professional French, tailored to your team. A placement test is conducted before training begins. Book a free consultation via Calendly."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How many employees can join a cohort?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The Duo Circle covers up to 3 employees, Standard up to 5 and Double up to 10 with two trainers. This keeps workshops interactive and allows personalised feedback. Larger organisations can run multiple cohorts under separate retainers."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is training delivered onsite or remotely?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Workshops are delivered at your office/premises in Lomé or live via Zoom for distributed teams. The session format stays the same — 60 minutes each, 4, 8 or 16 per month depending on the Circle, scheduled with your HR team."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What payment methods apply to corporate training?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Corporate Training Circles are billed monthly via pro forma invoice (100,000 / 200,000 / 360,000 FCFA HT depending on the Circle). Payment by bank transfer (Ecobank Togo, Orabank Togo) or SWIFT for international organisations. Advance payment or an authorised purchase order is required before the programme begins."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which languages do you translate?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "French ↔ English (FR↔EN) only. This exclusive focus ensures the highest level of precision, domain expertise and legal validity in both languages. For other language pairs, I can recommend trusted colleagues in the professional translation network."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What file formats do you accept?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "For source documents: PDF, JPG, PNG, TIFF, Word (.docx), Excel (.xlsx), PowerPoint (.pptx) and scanned images. For delivery: certified translations are always delivered as PDF with official stamp. The original Word file can also be provided for general translations on request."
+   }
+  }
+ ]
+}
+</script>
+
+<!-- ── POLICIES ── -->
+<section class="policies-section" id="policies" aria-labelledby="policies-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Operational Policies</span>
+    
+    <h2 class="section-title light" id="policies-heading">Clear terms. No surprises.</h2>
+    
+    <p class="policies-sub">These terms apply to all transactions without exception.</p>
+    
+    <div class="policies-list">
+      <div class="policy-item" data-service-scope="training">
+        <button class="policy-btn" type="button">
+          <span class="pol-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM3 10h18M8 2v4M16 2v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="pol-title">Advance Flat-Rate Billing</span>
+          
+          <span class="pol-arrow">↓</span>
+        </button>
+        <div class="policy-body">
+          <p>All monthly subscriptions operate under an advance payment model. Invoices are strictly due and payable by the 5th calendar day of the month before sessions begin. Accepted: Bank Transfer, Ecobank Mobile, Moov Money, Mixx.</p>
+          
+        </div>
+      </div>
+      <div class="policy-item" data-service-scope="training">
+        <button class="policy-btn" type="button">
+          <span class="pol-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6.5V12l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="pol-title">Strict 24-Hour Rescheduling Rule</span>
+          
+          <span class="pol-arrow">↓</span>
+        </button>
+        <div class="policy-body">
+          <p>A minimum of 24 hours’ notice is required to reschedule any session. Sessions cancelled with less than 24 hours’ notice are permanently forfeited and billed at full cost.</p>
+          
+        </div>
+      </div>
+      <div class="policy-item" data-service-scope="training">
+        <button class="policy-btn" type="button">
+          <span class="pol-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM3 10h18M8 2v4M16 2v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="pol-title">Calendar Month Expiry</span>
+          
+          <span class="pol-arrow">↓</span>
+        </button>
+        <div class="policy-body">
+          <p>All sessions allocated within a monthly subscription must be consumed within that calendar month. Unused sessions do not roll over under any circumstances.</p>
+          
+        </div>
+      </div>
+      <div class="policy-item" data-service-scope="shared">
+        <button class="policy-btn" type="button">
+          <span class="pol-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M4 21V9.5L12 4l8 5.5V21M9.5 21v-6h5v6M4 9.5h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="pol-title">Corporate Invoice Workflow</span>
+          
+          <span class="pol-arrow">↓</span>
+        </button>
+        <div class="policy-body">
+          <p>Institutional accounts and NGOs operate via formal pro forma documentation. Full payment or an authorised purchase order is required before work begins, followed by a standard fiscal invoice upon delivery.</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ── REVIEWS ── -->
+<section class="reviews service-context-hidden" id="reviews" data-funnel-body hidden aria-labelledby="reviews-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Client Reviews</span>
+    
+    <h2 class="section-title" id="reviews-heading">What clients say</h2>
+    
+    <h3 class="reviews-subtitle">Client reviews</h3>
+    
+    <div class="reviews-grid" id="reviewsGrid"></div>
+    <div class="reviews-cta">
+      <a href="/reviews/" class="btn-secondary reviews-all-btn">See All Reviews →</a>
+      <a href="https://maps.app.goo.gl/rxfDgnqqEwygiFPv6" class="google-review-btn" target="_blank" rel="noopener noreferrer"><svg class="google-review-btn__star" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2l2.9 6.26 6.6.72-4.9 4.5 1.35 6.52L12 16.9 6.05 20l1.35-6.52-4.9-4.5 6.6-.72z"/></svg><span>Leave a Google Review</span></a>
+      
+    </div>
+    <div class="review-form-wrap" hidden>
+      <h3 class="rf-title">Share your experience</h3>
+      
+      <fieldset class="rf-fieldset">
+        <legend class="rf-label">Your rating</legend>
+        
+        <div class="rf-stars">
+          <button class="star-btn" type="button">★</button>
+          <button class="star-btn" type="button">★</button>
+          <button class="star-btn" type="button">★</button>
+          <button class="star-btn" type="button">★</button>
+          <button class="star-btn" type="button">★</button>
+        </div>
+      </fieldset>
+      <label class="rf-label" for="wr-author">Name</label>
+      
+      <input class="rf-input" id="wr-author" type="text" placeholder="Your name">
+      
+      <label class="rf-label" for="wr-service">Service used</label>
+      
+      <select class="rf-select" id="wr-service">
+        <option value="">Service used...</option>
+        <option value="Certified Translation">Certified Translation</option>
+        <option value="General Translation">General Translation</option>
+        <option value="Web Content & SEO">Web Content &amp; SEO</option>
+        <option value="Law Firms">Law Firms</option>
+            <option value="Transcription">Transcription of recordings</option>
+        <option value="Language Courses">Language Courses</option>
+        <option value="Academic Tutoring">Academic Tutoring</option>
+        <option value="Corporate Training">Corporate Training</option>
+            <option value="Aviation English (ICAO)">Aviation English (ICAO)</option>
+            <option value="Interpretation">Interpretation</option>
+      </select>
+      
+      <label class="rf-label" for="wr-text">Your review</label>
+      
+      <textarea class="rf-textarea" id="wr-text" placeholder="Your review..."></textarea>
+      
+      <button class="rf-submit wr-submit" type="button">Submit Review →</button>
+      
+      <p class="rf-success" id="wr-success" hidden>Thank you — your review has been added.</p>
+      
+    </div>
+  </div>
+</section>
+
+<div id="quote-intake" class="quote-intake-anchor" tabindex="-1"></div>
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact" data-funnel-body aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Get in Touch</span>
+    
+    <h2 class="section-title light" id="contact-heading">Get a precise quote in 2h</h2>
+    
+    <p class="contact-intro contact-intro--default">A short form is all I need to prepare your quote — submit below or reach me on WhatsApp. Translation requests include document type, deadline and volume once you select a service.</p>
+    
+    <p class="contact-intro contact-intro--estimate service-context-hidden">Use the cost estimator above for a ballpark figure, then submit your quote request here for a formal, itemised quote within 2h — or reach me on WhatsApp.</p>
+    
+    <div class="contact-grid">
+      <form class="cf-form" novalidate action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="39964717-2125-43c0-8e1c-96cb1fb0fd83">
+        <input type="hidden" name="subject" value="Business Enquiry — Azaël Iloki Website">
+        <input type="hidden" name="from_name" value="Business Contact Form">
+        <input type="hidden" name="email" value="no-reply@azaeliloki.com">
+        <div class="cf-honeypot" aria-hidden="true" hidden>
+          <label for="cf-website">Website</label>
+          <input class="cf-input" id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-name">Organisation / Name</label>
+          
+          <input class="cf-input" id="cf-name" name="name" type="text" required aria-required="true" autocomplete="name">
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-contact">Email or WhatsApp number</label>
+          
+          <input class="cf-input" id="cf-contact" name="contact" type="text" inputmode="email" required aria-required="true" autocomplete="email">
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-service">Service</label>
+          
+          <select class="cf-select" id="cf-service" name="service" required aria-required="true">
+            <option value="">Select a service</option>
+            
+            <option value="Certified Translation">Certified Translation</option>
+            
+            <option value="General Translation">General Translation</option>
+            
+            <option value="Web Content & SEO">Web Content &amp; SEO</option>
+            
+            <option value="Law Firms">Law Firms</option>
+            <option value="Transcription">Transcription of recordings</option>
+            
+            <option value="Corporate Training">Corporate Language Training</option>
+            <option value="Aviation English (ICAO)">Aviation English (ICAO)</option>
+            <option value="Interpretation">Interpretation</option>
+            
+            <option value="Professional Retainer">Professional Retainer</option>
+            
+          </select>
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-message">Message</label>
+          
+          <textarea class="cf-textarea" id="cf-message" name="message" autocomplete="off"></textarea>
+        </div>
+        <button type="submit" class="cf-submit">Send by email →</button>
+        <p class="cf-consent">By sending this form, you agree to be contacted about your request. See the <a href="/privacy.html">privacy policy</a>.</p>
+        
+        <div class="cf-error" id="cf-error" role="alert"></div>
+        <div class="cf-success" id="cf-success" role="status">Message sent. You’ll have your quote within 2 working hours.</div>
+        
+      </form>
+      <aside class="contact-trust" aria-label="Credentials">
+        <ul class="contact-trust-list">
+          <li><strong>Sworn translator</strong> — Cour d’appel de Lomé</li>
+          
+          <li>Stamp and signature on every page</li>
+          
+          <li>Strict confidentiality — your documents stay between us</li>
+          
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="af" id="site-footer">
+  <button type="button" class="af__top" id="backToTop" data-en-label="Back to top" data-fr-label="Haut de page" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <div class="af__lead">
+    <div class="af__lead-inner">
+      <div class="af__lead-copy">
+        <p class="af__lead-eyebrow">Free quote within 2 working hours</p>
+        
+        <h2 class="af__lead-title">Tell me what you need translated.</h2>
+        
+        <p class="af__lead-sub">Mon–Fri 8:00–20:00 · Sat 8:00–18:00 (GMT+0)</p>
+        
+      </div>
+      <div class="af__lead-actions">
+        <a class="af__act af__act--gold" href="/business/#quote-intake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Request a Free Quote</a>
+        <a class="af__act" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@azaeliloki.com</a>
+        <a class="af__act" href="tel:+22879716258"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="af__act" href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg>WhatsApp</a>
+        <a class="af__act" href="https://calendly.com/iloki-azael/consultation" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book a call</a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="af__inner">
+    <div class="af__grid">
+      <div class="af__brand">
+        <h2 class="af__name">
+          <span class="af__mark" aria-hidden="true"><img src="/assets/images/logo-72.png" alt="" width="36" height="36" loading="lazy"></span>
+          Azaël&nbsp;<em>Iloki</em>
+        </h2>
+        <p class="af__tag">Sworn translator · FR ↔ EN · Lomé, Togo</p>
+        
+        <span class="af__chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z"/></svg><span>Sworn · Cour d’appel de Lomé</span></span>
+        <div class="af__social">
+          <a href="https://linkedin.com/in/azaeliloki" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 11v6"/></svg>
+          </a>
+          <a href="https://www.proz.com/translator/4735520" aria-label="ProZ.com" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 8.5h7l-7 7h7"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="af__col" aria-label="Services">
+        <h3 class="af__h">Services</h3>
+        <ul class="af__links">
+          <li><a href="/certified-translation/">Certified Translation</a></li>
+          <li><a href="/business/#svc-general">General Translation</a></li>
+          <li><a href="/business/#svc-training">Corporate Training</a></li>
+          <li><a href="/content-translation/">Web Content &amp; SEO</a></li>
+          <li><a href="/law-firms/">Law Firms</a></li>
+          <li><a href="/west-africa/">West Africa</a></li>
+          <li><a href="/interpretation/">Interpretation</a></li>
+          <li><a href="/icao-english/">ICAO Level 4</a></li>
+          <li><a href="/transcription/">Transcription</a></li>
+          <li><a href="/courses/#course-pricing-hub">Courses</a></li>
+          <li><a href="/tutoring/">Tutoring</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="af__col" aria-label="Information">
+        <h3 class="af__h">Information</h3>
+        <ul class="af__links">
+          <li><a href="/about/">About Me</a></li>
+          <li><a href="/reviews/">Client Reviews</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/sitemap/">Site Map</a></li>
+          <li><a href="/#funnel-paths">All Paths</a></li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+  <div class="af__divider" role="presentation"></div>
+  <div class="af__bottom">
+    <p class="af__legal">© 2026 Azaël Iloki · Sworn translator</p>
+    
+    <span class="af__meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Lomé, Togo · West Africa</span></span>
+    <div class="af__lang" role="group" aria-label="Language">
+      <a href="/business/" data-lang="en" hreflang="en">EN</a>
+      <i aria-hidden="true">·</i>
+      <a href="/fr/business/" data-lang="fr" hreflang="fr">FR</a>
+    </div>
+    
+  </div>
+</footer>
+<div class="modal-overlay" id="estimateResultModal" hidden role="dialog" aria-modal="true" aria-labelledby="estimateModalTitle">
+  <div class="modal-box estimate-modal-box">
+    
+    <p class="estimate-modal__badge">Estimate only — not a quote</p>
+    
+    <h2 class="modal-title" id="estimateModalTitle">Your indicative estimate</h2>
+    
+    <p class="estimate-modal__sublabel">Not a binding quote. Figures may change after document review.</p>
+    
+    <dl class="estimate-modal__rows">
+      <div class="estimate-modal__row">
+        <dt>Estimated pages</dt>
+        
+        <dd id="qe-modal-pages">—</dd>
+      </div>
+      <div class="estimate-modal__row qe-modal-corporate" id="qe-modal-row-rate" hidden>
+        <dt>Rate</dt>
+        
+        <dd id="qe-modal-rate">—</dd>
+      </div>
+    </dl>
+    <p class="estimate-modal__total" id="qe-modal-total">—</p>
+    <p class="estimate-modal__floor" id="qe-modal-floor" hidden></p>
+    <p class="estimate-modal__note" id="qe-modal-note" hidden></p>
+    <p class="estimate-modal__cta"><a href="#quote-intake" class="btn-primary" id="qe-modal-cta" data-cf-service="General Translation (B2B)">Request the official quote</a></p>
+    <button type="button" class="modal-close" id="estimateModalCloseBtn">
+      <span>Close</span>
+    </button>
+  </div>
+</div>
+<script src="/assets/js/lang.js?v=8ccf1718" defer></script>
+<script src="../assets/js/header-nav.js?v=e1ba973d" defer></script>
+<script src="../assets/js/script.js?v=072d0e43" defer></script>
+</body>
+</html>

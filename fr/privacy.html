@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<script>(function () { var KEY = 'azael_lang_pref'; var FR_SLUG_FROM_EN = { 'certified-translation': 'traduction-certifiee', 'west-africa': 'afrique-de-louest', 'tutoring': 'soutien-scolaire', 'reviews': 'avis-clients', 'guides/visa-documents': 'guides/documents-visa', 'content-translation': 'contenu-web', 'law-firms': 'cabinets-juridiques', 'icao-english': 'anglais-aeronautique', 'interpretation': 'interpretation', 'terms': 'conditions', 'pricing': 'tarifs', 'sitemap': 'plan-du-site', 'contact': 'contact' }; function isFrPath(path) { return /(?:^|\/)fr(?:\/|$)/.test(path); } function isEnHome(path) { if (isFrPath(path)) return false; var p = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); if (p === '/' || p === '') return true; if (/\/(live|deploy-ready)\/?$/i.test(p)) return true; return false; } function suffix() { return location.search + location.hash; } function getPref() { try { return localStorage.getItem(KEY); } catch (e) { return null; } } function detectBrowserLang() { var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']; for (var i = 0; i < list.length; i++) { var tag = String(list[i]).toLowerCase(); if (tag.indexOf('fr') === 0) return 'fr'; if (tag.indexOf('en') === 0) return 'en'; } return 'en'; } function enSlugFromFr(frSlug) { for (var en in FR_SLUG_FROM_EN) { if (FR_SLUG_FROM_EN[en] === frSlug) return en; } return frSlug; } function translateSlug(slug, targetLang, sourceIsFr) { if (targetLang === 'fr') { if (!sourceIsFr && FR_SLUG_FROM_EN[slug]) return FR_SLUG_FROM_EN[slug]; return slug; } if (sourceIsFr) return enSlugFromFr(slug); return slug; } function parseLocalePath(path) { var normalized = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var onFr = isFrPath(normalized); var slug = normalized.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/').replace(/^\//, '').replace(/\/$/, ''); return { onFr: onFr, slug: slug }; } function liveSegments(path) { var segments = path.replace(/\\/g, '/').split('/').filter(Boolean); var liveIdx = -1; for (var i = 0; i < segments.length; i++) { var seg = segments[i].toLowerCase(); if (seg === 'live' || seg === 'deploy-ready') { liveIdx = i; break; } } if (liveIdx < 0) return null; var afterLive = segments.slice(liveIdx + 1); if (afterLive.length && /^index\.html?$/i.test(afterLive[afterLive.length - 1])) { afterLive.pop(); } return { segments: segments, liveIdx: liveIdx, afterLive: afterLive }; } function formatLocalePath(slug, lang) { if (lang === 'fr') { if (!slug) return '/fr/'; return '/fr/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } if (!slug) return '/'; return '/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } function httpLocaleHref(lang) { var path = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var info = liveSegments(path); if (info) { var after = info.afterLive.slice(); var onFr = after[0] === 'fr'; if (onFr) after.shift(); var slug = after.join('/'); var newSlug = translateSlug(slug, lang, onFr); var targetSegs = lang === 'fr' ? ['fr'].concat(newSlug ? newSlug.split('/') : []) : (newSlug ? newSlug.split('/') : []); var base = info.segments.slice(0, info.liveIdx + 1); return '/' + base.concat(targetSegs).join('/') + suffix(); } var parsed = parseLocalePath(path); if ((lang === 'fr' && parsed.onFr) || (lang === 'en' && !parsed.onFr)) { return path + suffix(); } var mappedSlug = translateSlug(parsed.slug, lang, parsed.onFr); return formatLocalePath(mappedSlug, lang) + suffix(); } function navigate(lang) { if (location.protocol === 'file:') return; location.replace(httpLocaleHref(lang)); } var path = location.pathname.replace(/\\/g, '/'); if (/404\.html$/i.test(path)) return; var onFr = isFrPath(path); var pref = getPref(); if (!pref && !onFr && isEnHome(path)) { if (detectBrowserLang() === 'fr') { navigate('fr'); } return; } if (!pref) return; if (parseLocalePath(path).slug !== '') return; if (pref === 'fr' && !onFr) { navigate('fr'); return; } if (pref === 'en' && onFr) { navigate('en'); } })();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — Azaël Iloki, Lomé</title>
+<meta name="description" content="Politique de confidentialité d’azaeliloki.com — données personnelles, devis et analytique pour les clients traduction et formation à Lomé.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://azaeliloki.com/fr/privacy.html">
+<link rel="alternate" hreflang="en" href="https://azaeliloki.com/privacy.html">
+<link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://azaeliloki.com/privacy.html">
+<meta property="og:title" content="Politique de confidentialité — Azaël Iloki">
+<meta property="og:description" content="Politique de confidentialité d’azaeliloki.com — données personnelles, devis et analytique pour les clients traduction et formation à Lomé.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Azaël Iloki — Services linguistiques">
+<meta property="og:url" content="https://azaeliloki.com/fr/privacy.html">
+<meta property="og:image" content="https://azaeliloki.com/assets/og/og-default.jpg">
+<meta property="og:image:alt" content="Azaël Iloki — Traducteur assermenté — Traduction certifiée FR↔EN · Lomé">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Politique de confidentialité — Azaël Iloki">
+<meta name="twitter:description" content="Politique de confidentialité d’azaeliloki.com — données personnelles, devis et analytique pour les clients traduction et formation à Lomé.">
+<meta name="twitter:image" content="https://azaeliloki.com/assets/og/og-default.jpg">
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="preconnect" href="https://wa.me" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="critical-css">/* critical ATB */:root{--navy:#122C4D;--navy-dark:#0E233F;--gold:#C9A658;--gold-on-dark:#F2DC8A;--white:#FFFFFF;--cream:#EDEEE8;--muted-on-dark:#CBD6E4;--font-body:'Outfit',system-ui,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}*{box-sizing:border-box}html[lang=en] [data-fr],html[lang=fr] [data-en]{display:none!important}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--navy);background:var(--cream)}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:16px;top:16px;z-index:9999;background:var(--white);padding:8px 12px}.ah{position:sticky;top:0;z-index:100;background:rgba(18,44,77,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.25)}.ah__inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);justify-content:space-between}.ah__logo{height:clamp(34px,6vw,52px);width:auto;display:block}.ah__nav{display:flex}@media(min-width:1280px){.ah__nav{display:block}}.ah__util{background:var(--navy-dark)}.ah__util-inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:34px;display:flex;align-items:center;justify-content:space-between}.ah__util-links{display:flex;align-items:center;flex:none}.ah__inner{height:74px}.ah__links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.ah__links li{display:flex}.ah__drop-wrap{position:relative}@media(min-width:1280px){.ah__drop-menu{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none}}.ah__actions{display:flex;align-items:center}@media(max-width:1279px){.ah__nav{display:none}.ah__burger{display:block}.ah__inner{height:62px}.ah__item--dropdown .ah__drop-menu{display:none}}@media(max-width:767px){.ah__util-note{display:none}.ah__util-inner{height:32px;justify-content:center}}.ah__burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer}.ah__burger span{display:block;width:22px;height:1.5px;background:var(--gold)}.hero{background:linear-gradient(160deg,var(--navy-dark),var(--navy));color:var(--white);padding:clamp(120px,15vw,160px) 20px clamp(60px,8vw,100px)}.hero-inner{max-width:1200px;margin:0 auto;width:100%}@media(min-width:1200px){.hero-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}}@media(min-width:900px){.hero-inner{grid-template-columns:1fr auto;gap:60px}}.hero-eyebrow{display:flex;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-on-dark);border:1px solid rgba(201,168,76,.35);padding:4px 10px;border-radius:999px;margin-bottom:20px}.hero-title{font-family:var(--font-serif);font-size:clamp(38px,5.5vw,72px);font-weight:700;line-height:1.1;margin:0 0 8px;color:var(--white)}.util-hero .hero-title{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 12px}.hero-lead{margin:0 0 10px;color:var(--muted-on-dark)}.hero-sub{margin:20px 0 36px;color:var(--muted-on-dark)}.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}.btn-primary{background:var(--gold);color:var(--navy)}.btn-ghost{border:1px solid rgba(255,255,255,.35);color:var(--white)}.hero-portrait-img{width:100%;max-width:420px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block}</style>
+<link rel="preload" href="/assets/css/style.css?v=cc67a03d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=cc67a03d"></noscript>
+<link rel="icon" type="image/png" href="/assets/images/logo-72.png">
+<script src="/assets/js/analytics-deferred.js?v=65330a98" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Politique de confidentialité — Azaël Iloki",
+  "url": "https://azaeliloki.com/fr/privacy.html",
+  "description": "Politique de confidentialité des services linguistiques Azaël Iloki. Comment je collecte, utilise et protège vos données.",
+  "inLanguage": "fr",
+  "isPartOf": {"@type": "WebSite", "name": "Azaël Iloki", "url": "https://azaeliloki.com"}
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--navy); line-height: 1.7; }
+.content-wrap a { color: var(--navy); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; transition: color 0.2s; }
+.content-wrap a:hover { color: var(--navy-deep); }
+
+/* ── PRIVACY PAGE ── */
+.privacy-page-hero{background:var(--navy);padding:clamp(48px,6vw,72px) 20px;text-align:center}
+.privacy-page-hero .hero-eyebrow{display:inline-block;font-size:var(--text-xs);letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.3);padding:5px 14px;margin-bottom:16px}
+.privacy-page-hero .hero-title{font-family:var(--font-serif,'Cormorant Garamond',serif);font-size:clamp(32px,4.5vw,48px);font-weight:700;color:var(--white);margin:0 0 12px;line-height:1.15}
+.privacy-page-hero .hero-sub{font-size:14px;color:var(--muted-on-dark);letter-spacing:0.04em;margin:0}
+
+/* ── CONTENT ── */
+.content-wrap { max-width: 800px; margin: 0 auto; padding: 60px clamp(16px,4vw,60px) 80px; }
+.section { margin-bottom: 48px; }
+.section-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700;
+  color: var(--navy); margin-bottom: 16px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--light);
+}
+.section-num {
+  display: inline-block; background: var(--gold); color: var(--navy);
+  font-size:var(--text-xs); font-weight: 700; letter-spacing: 0.1em; padding: 3px 8px;
+  margin-right: 10px; vertical-align: middle;
+}
+p { font-size: 15px; color: #5C6570; font-weight: 300; margin-bottom: 14px; line-height: 1.8; }
+p strong { color: var(--navy); font-weight: 600; }
+ul { padding-left: 0; list-style: none; margin-bottom: 14px; }
+ul li {
+  font-size: 15px; color: #5C6570; font-weight: 300; padding: 6px 0 6px 20px;
+  position: relative; line-height: 1.7;
+}
+ul li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); font-size:var(--text-xs); top: 8px; }
+
+.highlight-box {
+  background: var(--light); border-left: 3px solid var(--gold);
+  padding: 16px 20px; margin-bottom: 16px;
+}
+.highlight-box p { margin-bottom: 0; color: #5C6570; }
+.highlight-box a { color: var(--navy); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+.contact-block {
+  background: var(--navy); padding: 28px 32px; margin-top: 40px;
+}
+.contact-block h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700;
+  color: var(--white); margin-bottom: 12px;
+}
+.contact-block p { color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+.contact-block a { color: var(--gold); }
+.contact-block a:hover { color: var(--gold-lt); }
+</style>
+</head>
+<body class="lang-fr page-privacy">
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header class="ah" id="navbar">
+  <div class="ah__util">
+    <div class="ah__util-inner">
+      
+      <span class="ah__util-note">Traducteur assermenté · Cour d’appel de Lomé</span>
+      <span class="ah__util-links">
+        <a class="ah__util-a" href="tel:+22879716258"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="ah__util-a ah__util-a--mail" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@azaeliloki.com</a>
+      </span>
+      <div class="ah__lang" role="group" aria-label="Language" data-en-label="Language" data-fr-label="Langue">
+        <a href="/privacy.html" data-lang="en" hreflang="en">EN</a>
+        <i aria-hidden="true">·</i>
+        <a href="/fr/privacy.html" data-lang="fr" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+  <div class="ah__inner">
+    
+    <a class="ah__brand" href="/fr/" aria-label="Azaël Iloki — accueil">
+      <img src="/assets/images/logo-nav.png" srcset="/assets/images/logo-nav.png 1x, /assets/images/logo-nav@2x.png 2x" alt="Azaël Iloki" class="ah__logo" width="256" height="64" decoding="async">
+    </a>
+    <nav class="ah__nav" id="primary-menu" aria-label="Main navigation" data-en-label="Main navigation" data-fr-label="Navigation principale">
+      <ul class="ah__links">
+        
+        <li><a href="/fr/traduction-certifiee/" data-nav="certified">Traduction certifiée</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/fr/courses/#course-pricing-hub" class="ah__drop-label" data-nav="courses">Cours</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-courses-fr" id="ah-drop-btn-courses-fr">
+              <span class="visually-hidden">Afficher les cours</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-courses-fr" role="menu">
+              <li role="none"><a href="/fr/courses/#course-pricing-hub" role="menuitem">Cours de langues</a></li>
+              <li role="none"><a href="/fr/anglais-aeronautique/" role="menuitem">Anglais aéronautique (OACI)</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/fr/soutien-scolaire/" data-nav="tutoring">Soutien scolaire</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/fr/business/" class="ah__drop-label" data-nav="business">Entreprise</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-business-fr" id="ah-drop-btn-business-fr">
+              <span class="visually-hidden">Afficher les services entreprise</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-business-fr" role="menu">
+              <li role="none"><a href="/fr/business/#svc-general" role="menuitem">Traduction générale (B2B)</a></li>
+              <li role="none"><a href="/fr/business/#svc-training" role="menuitem">Formation entreprise</a></li>
+              <li role="none"><a href="/fr/business/#svc-retainer" role="menuitem">Forfait professionnel</a></li>
+              <li role="none"><a href="/fr/interpretation/" role="menuitem">Interprétation</a></li>
+              <li role="none"><a href="/fr/contenu-web/" role="menuitem">Contenu web &amp; SEO</a></li>
+              <li role="none"><a href="/fr/cabinets-juridiques/" role="menuitem">Cabinets juridiques</a></li>
+              <li role="none"><a href="/fr/transcription/" role="menuitem">Transcription d’enregistrements</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/fr/tarifs/" data-nav="pricing">Tarifs</a></li>
+        
+        <li><a href="/fr/about/" data-nav="about">À propos</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/contact/">Contact</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/avis-clients/">Avis clients</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    
+    <a class="ah__cta" href="https://wa.me/22879716258?text=Bonjour%20Aza%C3%ABl%2C%20je%20souhaite%20obtenir%20un%20devis.%0A%0AService%C2%A0%3A%0ADocument%20ou%20besoin%C2%A0%3A%0APour%20quand%C2%A0%3A" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg><span class="ah__cta-full">Demander un devis</span><span class="ah__cta-short">Devis</span></a>
+    <button type="button" class="ah__burger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main">
+<section class="privacy-page-hero" aria-labelledby="privacy-page-hero-heading">
+  <div class="section-inner">
+    <div class="hero-eyebrow">Légal</div>
+    <h1 class="hero-title" id="privacy-page-hero-heading">Politique de confidentialité</h1>
+    <p class="hero-sub">Dernière mise à jour&nbsp;: août 2026</p>
+  </div>
+</section>
+<div class="content-wrap">
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">01</span>Qui suis-je</h2>
+      <p>Je gère ce site web <strong><a href="https://azaeliloki.com/fr/">azaeliloki.com</a></strong>. Je suis <strong>Azaël Iloki</strong>, traducteur assermenté et expert linguistique, inscrit près la Cour d’appel de Lomé, Togo. Je propose des traductions certifiées et générales FR↔EN, des cours de langues, des formations en entreprise et du soutien scolaire.</p>
+      <div class="highlight-box">
+        <p><strong>Contact&nbsp;:</strong> Azaël Iloki · <a href="mailto:contact@azaeliloki.com">contact@azaeliloki.com</a> · +228 79 71 62 58 · Lomé, Togo</p>
+        <p class="privacy-email-note">Les courriels professionnels adressés à <strong>contact@azaeliloki.com</strong> sont acheminés de façon sécurisée et utilisés uniquement pour la correspondance commerciale.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">02</span>Données que je collecte</h2>
+      <p>Je collecte uniquement les données que vous me fournissez volontairement lorsque vous&nbsp;:</p>
+      <ul>
+        <li>Soumettez le formulaire de contact de ce site (nom, adresse électronique/WhatsApp, service souhaité, message)</li>
+        <li>Laissez un avis sur ce site (nom, pays, note, texte de l’avis)</li>
+        <li>Me contactez directement via WhatsApp, courriel ou Calendly</li>
+        <li>Partagez des documents pour traduction (contenu du document, informations personnelles qu’il contient)</li>
+      </ul>
+      <p>J’utilise des services tiers limités pour faire fonctionner ce site&nbsp;:</p>
+      <ul>
+        <li><strong>Google Analytics 4</strong> — statistiques d’utilisation anonymes (pages vues, type d’appareil). Google peut déposer des cookies. Voir la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité de Google</a>.</li>
+        <li><strong>Web3Forms</strong> — traite les soumissions par courriel du formulaire de contact (nom, adresse électronique, message) pour me les transmettre.</li>
+        <li><strong>WhatsApp</strong> (Meta) — si vous envoyez une demande de devis via WhatsApp, votre message est transmis directement par WhatsApp.</li>
+        <li><strong>Supabase</strong> — stocke les avis que vous soumettez sur ce site (nom, pays, note, texte de l’avis).</li>
+        <li><strong>OVHcloud</strong> — héberge la boîte aux lettres associée à contact@azaeliloki.com. Les métadonnées et le contenu des messages sont conservés sur des serveurs OVHcloud situés dans l’Union européenne.</li>
+      </ul>
+      <p>Je n’utilise pas de cookies publicitaires et ne vends pas vos données. Vous pouvez désactiver la mesure d’audience via un bloqueur de publicités ou les outils de désactivation de Google.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">03</span>Utilisation de vos données</h2>
+      <p>Vos données sont utilisées exclusivement pour&nbsp;:</p>
+      <ul>
+        <li>Répondre à votre demande et fournir le service demandé</li>
+        <li>Vous envoyer un devis, une facture ou une livraison pour votre projet</li>
+        <li>Afficher votre avis sur ce site (uniquement votre nom, pays et texte d’avis)</li>
+        <li>Assurer le suivi des projets en cours</li>
+      </ul>
+      <p>Je n’utilise pas vos données à des fins publicitaires, de marketing tiers ou à toute autre fin que la prestation directe de services.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">04</span>Tarifs et facturation</h2>
+      <p>Les régimes tarifaires applicables (net ou hors taxes) figurent à l’article&nbsp;02 des <a href="/fr/conditions/">conditions générales</a>.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">05</span>Confidentialité des documents</h2>
+      <p>Tous les documents partagés pour traduction — y compris dossiers d’immigration, actes d’état civil, pièces juridiques et contrats d’entreprise — sont traités sous une <strong>confidentialité professionnelle stricte</strong>. Cela s’applique que vos documents soient destinés au Togo, à l’UE ou ailleurs.</p>
+      <p><strong>Comment je traite vos fichiers&nbsp;:</strong></p>
+      <ul>
+        <li>Utilisés uniquement pour réaliser votre projet de traduction — je ne sous-traite pas le contenu des documents à des tiers</li>
+        <li>Conservés dans un dossier de travail sécurisé et chiffré pendant le projet, puis trente jours après la livraison</li>
+        <li>Jamais vendus, publiés ni partagés avec un tiers pour traduction ou traitement</li>
+        <li>Supprimés définitivement trente jours après confirmation de la livraison — immédiatement sur demande, ou après une période plus longue convenue par écrit pour un projet institutionnel en cours</li>
+      </ul>
+      <p>Si vous envoyez des fichiers via WhatsApp ou adresse électronique, ces services traitent votre transmission comme indiqué à la section 06 — mais le document lui-même n’est transmis à aucune autre personne ni plateforme pour le travail de traduction.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">06</span>Partage des données</h2>
+      <p>Les exceptions ci-dessous concernent les <strong>canaux de communication que vous choisissez</strong> (réservation, contact, mesure d’audience). Elles ne signifient pas que vos fichiers de traduction sont partagés avec des tiers pour traitement.</p>
+      <p>Je ne vends, ne loue et ne partage pas vos données personnelles avec des tiers. Les seules exceptions sont&nbsp;:</p>
+      <ul>
+        <li><strong>WhatsApp</strong> (Meta)&nbsp;: si vous me contactez via WhatsApp, vos données sont soumises à la politique de confidentialité de WhatsApp</li>
+        <li><strong>Calendly</strong>&nbsp;: si vous réservez un appel, vos données sont soumises à la politique de confidentialité de Calendly</li>
+        <li><strong>Web3Forms</strong>&nbsp;: si vous soumettez le formulaire de contact, vos données sont traitées par Web3Forms pour me transmettre votre message</li>
+        <li><strong>Supabase</strong>&nbsp;: si vous laissez un avis sur ce site, vos données d’avis sont stockées sur les serveurs Supabase</li>
+        <li><strong>OVHcloud</strong>&nbsp;: si vous écrivez à contact@azaeliloki.com, votre message est conservé sur des serveurs de messagerie OVHcloud situés dans l’Union européenne</li>
+        <li><strong>GitHub Pages et Cloudflare</strong> — hébergent et diffusent ce site. Les deux enregistrent des journaux serveur standards, dont votre adresse IP, à des fins de diffusion et de sécurité.</li>
+        <li><strong>Google Analytics</strong>&nbsp;: des données d’utilisation anonymes sont traitées par Google — voir la politique de confidentialité de Google</li>
+        <li><strong>Avis Google</strong>&nbsp;: si vous laissez un avis Google, vos données sont soumises à la politique de confidentialité de Google</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">07</span>Conservation des données</h2>
+      <p><strong>Documents de traduction&nbsp;:</strong> les fichiers sources et copies de travail sont supprimés définitivement trente jours après confirmation de la livraison (pratique par défaut), ou immédiatement sur demande. Une suppression anticipée est possible sur demande à tout moment. Seul le répertoire des traductions certifiées — numéro, date, nature de la pièce et combinaison de langues — est conservé sans limitation de durée&nbsp;: il permet à toute autorité destinataire de vérifier l’origine d’une traduction, et il ne contient aucun contenu de document.</p>
+      <p><strong>Autres données&nbsp;:</strong> je ne conserve que ce qui est nécessaire pour&nbsp;:</p>
+      <ul>
+        <li>Réaliser et livrer votre projet (coordonnées, devis et traces de livraison pendant la durée du projet)</li>
+        <li>Respecter les obligations légales — métadonnées de facturation et comptabilité, dont les références de paiement Moov Money, Mixx by Yas, Ecobank Mobile ou virement bancaire, généralement jusqu’à 5 ans. Cela n’inclut pas le contenu de vos documents sources après suppression.</li>
+        <li>Afficher votre avis sur ce site (jusqu’à votre demande de suppression)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">08</span>Vos droits</h2>
+      <p>En vertu des lois applicables en matière de protection des données, vous avez le droit&nbsp;:</p>
+      <ul>
+        <li><strong>D’accès</strong> — demander une copie des données que je détiens sur vous</li>
+        <li><strong>De rectification</strong> — demander la correction de données inexactes</li>
+        <li><strong>D’effacement</strong> — demander la suppression de vos données personnelles</li>
+        <li><strong>D’opposition</strong> — vous opposer au traitement de vos données</li>
+        <li><strong>De portabilité</strong> — demander vos données dans un format portable</li>
+      </ul>
+      <p>Pour exercer l’un de ces droits, contactez-moi à <a href="mailto:contact@azaeliloki.com" target="_blank" rel="noopener noreferrer">contact@azaeliloki.com</a>. Je répondrai dans les 30 jours.</p>
+      <p>Si vous êtes dans l’Union européenne ou l’Espace économique européen, vous disposez également de droits au titre du RGPD. Contactez-moi à la même adresse pour les exercer.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">09</span>Avis du site</h2>
+      <p>Les avis soumis via ce site sont stockés sur des serveurs Supabase. En soumettant un avis, vous consentez à ce que votre nom, pays et texte d’avis soient affichés publiquement sur ce site. Vous pouvez demander la suppression de votre avis à tout moment en me contactant.</p>
+      <p>Certains avis Google peuvent également être importés automatiquement depuis mon profil Google Business et affichés avec un lien d’attribution Google. Les données des avis Google sont soumises à la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité de Google</a>.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">10</span>Sécurité</h2>
+      <p>Je prends des mesures techniques et organisationnelles raisonnables pour protéger vos données. Ce site est servi via HTTPS. Les fichiers de traduction sont stockés dans un dossier de travail chiffré pendant les projets actifs, conservés trente jours après confirmation de la livraison, puis supprimés définitivement. La suppression est immédiate sur simple demande. Seul le répertoire des traductions certifiées — numéro, date, nature de la pièce et combinaison de langues — est conservé sans limitation de durée&nbsp;: il permet à toute autorité destinataire de vérifier l’origine d’une traduction, et il ne contient aucun contenu de document.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">11</span>Modifications de cette politique</h2>
+      <p>Je peux mettre à jour cette politique de temps en temps. La date en haut de cette page indique quand elle a été révisée pour la dernière fois. L’utilisation continue de mes services constitue l’acceptation de la politique mise à jour.</p>
+    </div>
+
+    <div class="contact-block">
+      <h3>Questions sur cette politique&nbsp;?</h3>
+      <p>Contactez-moi à tout moment&nbsp;:</p>
+      <p><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM22 6.5l-10 7-10-7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg> <a href="mailto:contact@azaeliloki.com" target="_blank" rel="noopener noreferrer">contact@azaeliloki.com</a></p>
+      <p><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.5 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM10.5 19h3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg> <a href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer">+228 79 71 62 58 (WhatsApp)</a></p>
+    </div>
+
+</div>
+</main>
+<footer class="af" id="site-footer">
+  <button type="button" class="af__top" id="backToTop" data-en-label="Back to top" data-fr-label="Haut de page" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <div class="af__lead">
+    <div class="af__lead-inner">
+      <div class="af__lead-copy">
+        
+        <p class="af__lead-eyebrow">Devis gratuit sous 2&nbsp;h ouvrées</p>
+        
+        <h2 class="af__lead-title">Dites-moi ce que vous avez à faire traduire.</h2>
+        
+        <p class="af__lead-sub">lun.–ven. 8&nbsp;h–20&nbsp;h · sam. 8&nbsp;h–18&nbsp;h (GMT+0)</p>
+      </div>
+      
+      <div class="af__lead-actions">
+        <a class="af__act af__act--gold" href="/fr/business/#quote-intake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Demander un devis gratuit</a>
+        <a class="af__act" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@azaeliloki.com</a>
+        <a class="af__act" href="tel:+22879716258"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="af__act" href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg>WhatsApp</a>
+        <a class="af__act" href="https://calendly.com/iloki-azael/consultation" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Réserver un appel</a>
+      </div>
+    </div>
+  </div>
+  <div class="af__inner">
+    <div class="af__grid">
+      <div class="af__brand">
+        <h2 class="af__name">
+          <span class="af__mark" aria-hidden="true"><img src="/assets/images/logo-72.png" alt="" width="36" height="36" loading="lazy"></span>
+          Azaël&nbsp;<em>Iloki</em>
+        </h2>
+        
+        <p class="af__tag">Traducteur assermenté · FR ↔ EN · Lomé, Togo</p>
+        <span class="af__chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z"/></svg><span>Assermenté · Cour d’appel de Lomé</span></span>
+        <div class="af__social">
+          <a href="https://linkedin.com/in/azaeliloki" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 11v6"/></svg>
+          </a>
+          <a href="https://www.proz.com/translator/4735520" aria-label="ProZ.com" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 8.5h7l-7 7h7"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <nav class="af__col" aria-label="Parcours">
+        <h3 class="af__h">Parcours</h3>
+        <ul class="af__links">
+          <li><a href="/fr/traduction-certifiee/">Traduction certifiée</a></li>
+          <li><a href="/fr/business/#svc-general">Traduction générale</a></li>
+          <li><a href="/fr/business/#svc-training">Formation entreprise</a></li>
+          <li><a href="/fr/contenu-web/">Contenu web &amp; SEO</a></li>
+          <li><a href="/fr/cabinets-juridiques/">Cabinets juridiques</a></li>
+          <li><a href="/fr/afrique-de-louest/">Afrique de l’Ouest</a></li>
+          <li><a href="/fr/interpretation/">Interprétation</a></li>
+          <li><a href="/fr/anglais-aeronautique/">Anglais aéronautique</a></li>
+          <li><a href="/fr/transcription/">Transcription</a></li>
+          <li><a href="/fr/courses/#course-pricing-hub">Cours</a></li>
+          <li><a href="/fr/soutien-scolaire/">Soutien scolaire</a></li>
+          <li><a href="/fr/tarifs/">Tarifs</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="af__col" aria-label="Informations">
+        <h3 class="af__h">Informations</h3>
+        <ul class="af__links">
+          <li><a href="/fr/about/">À propos</a></li>
+          <li><a href="/fr/avis-clients/">Avis clients</a></li>
+          <li><a href="/fr/faq/">FAQ</a></li>
+          <li><a href="/fr/contact/">Contact</a></li>
+          <li><a href="/fr/conditions/">Conditions générales</a></li>
+          <li><a href="/fr/privacy.html">Confidentialité</a></li>
+          <li><a href="/fr/plan-du-site/">Plan du site</a></li>
+          <li><a href="/fr/#funnel-paths">Tous les parcours</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="af__divider" role="presentation"></div>
+  <div class="af__bottom">
+    
+    <p class="af__legal">© 2026 Azaël Iloki · Traducteur assermenté</p>
+    <span class="af__meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Lomé, Togo · Afrique de l’Ouest</span></span>
+    
+    <div class="af__lang" role="group" aria-label="Langue">
+      <a href="/privacy.html" data-lang="en" hreflang="en">EN</a>
+      <i aria-hidden="true">·</i>
+      <a href="/fr/privacy.html" data-lang="fr" hreflang="fr">FR</a>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/lang.js?v=8ccf1718" defer></script>
+<script src="/assets/js/header-nav.js?v=e1ba973d" defer></script>
+<script src="/assets/js/script-lite.js?v=d6762e03" defer></script>
+</body>
+</html>

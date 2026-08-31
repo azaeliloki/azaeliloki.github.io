@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<script>(function () { var KEY = 'azael_lang_pref'; var FR_SLUG_FROM_EN = { 'certified-translation': 'traduction-certifiee', 'west-africa': 'afrique-de-louest', 'tutoring': 'soutien-scolaire', 'reviews': 'avis-clients', 'guides/visa-documents': 'guides/documents-visa', 'content-translation': 'contenu-web', 'law-firms': 'cabinets-juridiques', 'icao-english': 'anglais-aeronautique', 'interpretation': 'interpretation', 'terms': 'conditions', 'pricing': 'tarifs', 'sitemap': 'plan-du-site', 'contact': 'contact' }; function isFrPath(path) { return /(?:^|\/)fr(?:\/|$)/.test(path); } function isEnHome(path) { if (isFrPath(path)) return false; var p = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); if (p === '/' || p === '') return true; if (/\/(live|deploy-ready)\/?$/i.test(p)) return true; return false; } function suffix() { return location.search + location.hash; } function getPref() { try { return localStorage.getItem(KEY); } catch (e) { return null; } } function detectBrowserLang() { var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']; for (var i = 0; i < list.length; i++) { var tag = String(list[i]).toLowerCase(); if (tag.indexOf('fr') === 0) return 'fr'; if (tag.indexOf('en') === 0) return 'en'; } return 'en'; } function enSlugFromFr(frSlug) { for (var en in FR_SLUG_FROM_EN) { if (FR_SLUG_FROM_EN[en] === frSlug) return en; } return frSlug; } function translateSlug(slug, targetLang, sourceIsFr) { if (targetLang === 'fr') { if (!sourceIsFr && FR_SLUG_FROM_EN[slug]) return FR_SLUG_FROM_EN[slug]; return slug; } if (sourceIsFr) return enSlugFromFr(slug); return slug; } function parseLocalePath(path) { var normalized = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var onFr = isFrPath(normalized); var slug = normalized.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/').replace(/^\//, '').replace(/\/$/, ''); return { onFr: onFr, slug: slug }; } function liveSegments(path) { var segments = path.replace(/\\/g, '/').split('/').filter(Boolean); var liveIdx = -1; for (var i = 0; i < segments.length; i++) { var seg = segments[i].toLowerCase(); if (seg === 'live' || seg === 'deploy-ready') { liveIdx = i; break; } } if (liveIdx < 0) return null; var afterLive = segments.slice(liveIdx + 1); if (afterLive.length && /^index\.html?$/i.test(afterLive[afterLive.length - 1])) { afterLive.pop(); } return { segments: segments, liveIdx: liveIdx, afterLive: afterLive }; } function formatLocalePath(slug, lang) { if (lang === 'fr') { if (!slug) return '/fr/'; return '/fr/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } if (!slug) return '/'; return '/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } function httpLocaleHref(lang) { var path = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var info = liveSegments(path); if (info) { var after = info.afterLive.slice(); var onFr = after[0] === 'fr'; if (onFr) after.shift(); var slug = after.join('/'); var newSlug = translateSlug(slug, lang, onFr); var targetSegs = lang === 'fr' ? ['fr'].concat(newSlug ? newSlug.split('/') : []) : (newSlug ? newSlug.split('/') : []); var base = info.segments.slice(0, info.liveIdx + 1); return '/' + base.concat(targetSegs).join('/') + suffix(); } var parsed = parseLocalePath(path); if ((lang === 'fr' && parsed.onFr) || (lang === 'en' && !parsed.onFr)) { return path + suffix(); } var mappedSlug = translateSlug(parsed.slug, lang, parsed.onFr); return formatLocalePath(mappedSlug, lang) + suffix(); } function navigate(lang) { if (location.protocol === 'file:') return; location.replace(httpLocaleHref(lang)); } var path = location.pathname.replace(/\\/g, '/'); if (/404\.html$/i.test(path)) return; var onFr = isFrPath(path); var pref = getPref(); if (!pref && !onFr && isEnHome(path)) { if (detectBrowserLang() === 'fr') { navigate('fr'); } return; } if (!pref) return; if (parseLocalePath(path).slug !== '') return; if (pref === 'fr' && !onFr) { navigate('fr'); return; } if (pref === 'en' && onFr) { navigate('en'); } })();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traduction assermentée FR↔EN pour l’Afrique de l’Ouest</title>
+<meta name="description" content="Traduction assermentée FR↔EN des dossiers transfrontaliers entre Afrique de l’Ouest anglophone et francophone — Ghana, Nigeria, Togo, Bénin. Devis sous 2&nbsp;h.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://azaeliloki.com/fr/afrique-de-louest/">
+<link rel="alternate" hreflang="en" href="https://azaeliloki.com/west-africa/">
+<link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/afrique-de-louest/">
+<link rel="alternate" hreflang="x-default" href="https://azaeliloki.com/west-africa/">
+<meta property="og:title" content="Traduction assermentée FR↔EN pour l’Afrique de l’Ouest">
+<meta property="og:description" content="Traduction assermentée FR↔EN des dossiers transfrontaliers entre Afrique de l’Ouest anglophone et francophone — Ghana, Nigeria, Togo, Bénin. Devis sous 2&nbsp;h.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Azaël Iloki — Services linguistiques">
+<meta property="og:url" content="https://azaeliloki.com/fr/afrique-de-louest/">
+<meta property="og:image" content="https://azaeliloki.com/assets/og/og-cabinets-juridiques.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Azaël Iloki — traduction assermentée FR↔EN, Afrique de l’Ouest">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://azaeliloki.com/assets/og/og-cabinets-juridiques.jpg">
+<meta name="twitter:title" content="Traduction assermentée FR↔EN pour l’Afrique de l’Ouest">
+<meta name="twitter:description" content="Traduction assermentée FR↔EN des dossiers transfrontaliers entre Afrique de l’Ouest anglophone et francophone — Ghana, Nigeria, Togo, Bénin. Devis sous 2&nbsp;h.">
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="preconnect" href="https://wa.me" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="critical-css">/* critical ATB */:root{--navy:#122C4D;--navy-dark:#0E233F;--gold:#C9A658;--gold-on-dark:#F2DC8A;--white:#FFFFFF;--cream:#EDEEE8;--muted-on-dark:#CBD6E4;--font-body:'Outfit',system-ui,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}*{box-sizing:border-box}html[lang=en] [data-fr],html[lang=fr] [data-en]{display:none!important}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--navy);background:var(--cream)}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:16px;top:16px;z-index:9999;background:var(--white);padding:8px 12px}.ah{position:sticky;top:0;z-index:100;background:rgba(18,44,77,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.25)}.ah__inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);justify-content:space-between}.ah__logo{height:clamp(34px,6vw,52px);width:auto;display:block}.ah__nav{display:flex}@media(min-width:1280px){.ah__nav{display:block}}.ah__util{background:var(--navy-dark)}.ah__util-inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:34px;display:flex;align-items:center;justify-content:space-between}.ah__util-links{display:flex;align-items:center;flex:none}.ah__inner{height:74px}.ah__links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.ah__links li{display:flex}.ah__drop-wrap{position:relative}@media(min-width:1280px){.ah__drop-menu{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none}}.ah__actions{display:flex;align-items:center}@media(max-width:1279px){.ah__nav{display:none}.ah__burger{display:block}.ah__inner{height:62px}.ah__item--dropdown .ah__drop-menu{display:none}}@media(max-width:767px){.ah__util-note{display:none}.ah__util-inner{height:32px;justify-content:center}}.ah__burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer}.ah__burger span{display:block;width:22px;height:1.5px;background:var(--gold)}.hero{background:linear-gradient(160deg,var(--navy-dark),var(--navy));color:var(--white);padding:clamp(120px,15vw,160px) 20px clamp(60px,8vw,100px)}.hero-inner{max-width:1200px;margin:0 auto;width:100%}@media(min-width:1200px){.hero-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}}@media(min-width:900px){.hero-inner{grid-template-columns:1fr auto;gap:60px}}.hero-eyebrow{display:flex;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-on-dark);border:1px solid rgba(201,168,76,.35);padding:4px 10px;border-radius:999px;margin-bottom:20px}.hero-title{font-family:var(--font-serif);font-size:clamp(38px,5.5vw,72px);font-weight:700;line-height:1.1;margin:0 0 8px;color:var(--white)}.util-hero .hero-title{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 12px}.hero-lead{margin:0 0 10px;color:var(--muted-on-dark)}.hero-sub{margin:20px 0 36px;color:var(--muted-on-dark)}.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}.btn-primary{background:var(--gold);color:var(--navy)}.btn-ghost{border:1px solid rgba(255,255,255,.35);color:var(--white)}.hero-portrait-img{width:100%;max-width:420px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block}</style>
+<link rel="preload" href="/assets/css/style.css?v=cc67a03d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=cc67a03d"></noscript>
+<link rel="icon" type="image/png" href="/assets/images/logo-72.png">
+<script src="/assets/js/analytics-deferred.js?v=65330a98" defer></script>
+<script src="/assets/js/fx-approx.js?v=001eb97b" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Accueil",
+   "item": "https://azaeliloki.com/fr/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Afrique de l’Ouest",
+   "item": "https://azaeliloki.com/fr/afrique-de-louest/"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "name": "Traduction assermentée FR↔EN pour l’Afrique de l’Ouest",
+ "serviceType": "Traduction assermentée",
+ "availableLanguage": [
+  "fr",
+  "en"
+ ],
+ "provider": {
+  "@id": "https://azaeliloki.com/#business"
+ },
+ "areaServed": [
+  {
+   "@type": "Country",
+   "name": "Togo"
+  },
+  {
+   "@type": "Country",
+   "name": "Ghana"
+  },
+  {
+   "@type": "Country",
+   "name": "Nigeria"
+  },
+  {
+   "@type": "Country",
+   "name": "Benin"
+  },
+  {
+   "@type": "Country",
+   "name": "Côte d’Ivoire"
+  },
+  {
+   "@type": "Country",
+   "name": "Burkina Faso"
+  },
+  {
+   "@type": "Country",
+   "name": "Senegal"
+  },
+  {
+   "@type": "Country",
+   "name": "Mali"
+  },
+  {
+   "@type": "Country",
+   "name": "Niger"
+  }
+ ],
+ "url": "https://azaeliloki.com/fr/afrique-de-louest/",
+ "description": "Traduction assermentée français ↔ anglais des pièces circulant entre les juridictions anglophones et francophones d’Afrique de l’Ouest, sous cachet de la Cour d’appel de Lomé."
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "inLanguage": "fr",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Je suis au Ghana. Pouvez-vous certifier une pièce destinée au Togo ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui, et c’est le motif le plus fréquent de sollicitation depuis l’étranger. Envoyez un scan net par courriel ou WhatsApp ; la traduction certifiée revient tamponnée et signée au format PDF, la version papier suivant par coursier si le destinataire l’exige. Aucun déplacement n’est nécessaire, et l’original ne quitte pas vos mains."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Une traduction assermentée de Lomé vaut-elle au Ghana ou au Nigeria ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Cela dépend de ce qu’exige l’organisme destinataire. Les juridictions de common law demandent plus souvent un certificat d’exactitude du traducteur, voire un affidavit, qu’une inscription à un registre judiciaire. Je fournis le cachet assermenté et, si nécessaire, une déclaration d’exactitude signée dans la forme attendue. Indiquez-moi qui reçoit la pièce, je la produis dans le bon format."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Faut-il une légalisation en plus de la traduction ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Parfois. La traduction et la pièce d’origine suivent le même circuit. Le Togo n’est pas encore partie à la Convention Apostille de La Haye : le circuit passe aujourd’hui par la mairie où je suis inscrit, puis le ministère des Affaires étrangères, puis le consulat du pays de destination. Je peux m’en charger ; les frais administratifs et de déplacement restent à votre charge et figurent au devis."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quelle combinaison de langues couvrez-vous ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Français et anglais uniquement, dans les deux sens, et c’est précisément la combinaison pour laquelle je suis assermenté. La transcription d’enregistrements couvre aussi les langues nationales du Togo, livrée avec une déclaration de fidélité signée et non avec une certification assermentée — il n’existe pas de registre d’assermentation pour ces langues au Togo."
+   }
+  }
+ ]
+}
+</script>
+
+</head>
+<body class="lang-fr page-west-africa page-linear">
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header class="ah" id="navbar">
+  <div class="ah__util">
+    <div class="ah__util-inner">
+      
+      <span class="ah__util-note">Traducteur assermenté · Cour d’appel de Lomé</span>
+      <span class="ah__util-links">
+        <a class="ah__util-a" href="tel:+22879716258"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="ah__util-a ah__util-a--mail" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@azaeliloki.com</a>
+      </span>
+      <div class="ah__lang" role="group" aria-label="Language" data-en-label="Language" data-fr-label="Langue">
+        <a href="/west-africa/" data-lang="en" hreflang="en">EN</a>
+        <i aria-hidden="true">·</i>
+        <a href="/fr/afrique-de-louest/" data-lang="fr" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+  <div class="ah__inner">
+    
+    <a class="ah__brand" href="/fr/" aria-label="Azaël Iloki — accueil">
+      <img src="/assets/images/logo-nav.png" srcset="/assets/images/logo-nav.png 1x, /assets/images/logo-nav@2x.png 2x" alt="Azaël Iloki" class="ah__logo" width="256" height="64" decoding="async">
+    </a>
+    <nav class="ah__nav" id="primary-menu" aria-label="Main navigation" data-en-label="Main navigation" data-fr-label="Navigation principale">
+      <ul class="ah__links">
+        
+        <li><a href="/fr/traduction-certifiee/" data-nav="certified">Traduction certifiée</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/fr/courses/#course-pricing-hub" class="ah__drop-label" data-nav="courses">Cours</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-courses-fr" id="ah-drop-btn-courses-fr">
+              <span class="visually-hidden">Afficher les cours</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-courses-fr" role="menu">
+              <li role="none"><a href="/fr/courses/#course-pricing-hub" role="menuitem">Cours de langues</a></li>
+              <li role="none"><a href="/fr/anglais-aeronautique/" role="menuitem">Anglais aéronautique (OACI)</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/fr/soutien-scolaire/" data-nav="tutoring">Soutien scolaire</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/fr/business/" class="ah__drop-label active" data-nav="business" aria-current="true">Entreprise</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-business-fr" id="ah-drop-btn-business-fr">
+              <span class="visually-hidden">Afficher les services entreprise</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-business-fr" role="menu">
+              <li role="none"><a href="/fr/business/#svc-general" role="menuitem">Traduction générale (B2B)</a></li>
+              <li role="none"><a href="/fr/business/#svc-training" role="menuitem">Formation entreprise</a></li>
+              <li role="none"><a href="/fr/business/#svc-retainer" role="menuitem">Forfait professionnel</a></li>
+              <li role="none"><a href="/fr/interpretation/" role="menuitem">Interprétation</a></li>
+              <li role="none"><a href="/fr/contenu-web/" role="menuitem">Contenu web &amp; SEO</a></li>
+              <li role="none"><a href="/fr/cabinets-juridiques/" role="menuitem">Cabinets juridiques</a></li>
+              <li role="none"><a href="/fr/transcription/" role="menuitem">Transcription d’enregistrements</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/fr/tarifs/" data-nav="pricing">Tarifs</a></li>
+        
+        <li><a href="/fr/about/" data-nav="about">À propos</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/contact/">Contact</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/avis-clients/">Avis clients</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    
+    <a class="ah__cta" href="https://wa.me/22879716258?text=Bonjour%20Aza%C3%ABl%2C%20je%20souhaite%20obtenir%20un%20devis.%0A%0AService%C2%A0%3A%0ADocument%20ou%20besoin%C2%A0%3A%0APour%20quand%C2%A0%3A" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg><span class="ah__cta-full">Demander un devis</span><span class="ah__cta-short">Devis</span></a>
+    <button type="button" class="ah__burger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main">
+<nav class="page-breadcrumb" aria-label="Fil d’Ariane">
+  <ol class="page-breadcrumb__list">
+    <li><a href="/fr/">Accueil</a></li>
+    <li aria-current="page">Afrique de l’Ouest</li>
+  </ol>
+</nav>
+
+<section class="hero" id="home" aria-labelledby="home-heading">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Ghana · Nigeria · Togo · Bénin · Côte d’Ivoire · Burkina Faso</div>
+      <h1 class="hero-title" id="home-heading">Traduction assermentée FR↔EN pour l’Afrique de l’Ouest</h1>
+      <p class="hero-lead">L’Afrique de l’Ouest fonctionne en deux langues. Les actes, eux, doivent circuler.</p>
+      <p class="hero-sub">Un contrat rédigé à Accra se signe à Lomé. Un jugement de Lagos se produit devant un tribunal togolais. Un appel d’offres de Dakar se dépose en français. Chacun de ces passages exige une traduction assermentée — et aucune agence de Londres ou de Toronto ne peut la fournir, si bons soient ses linguistes.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/22879716258?text=Bonjour%20Aza%C3%ABl%2C%20je%20souhaite%20obtenir%20un%20devis%20pour%20une%20traduction%20certifi%C3%A9e.%0A%0ADocument%C2%A0%3A%0ADestination%20(pays%20%2F%20%C3%A9tablissement)%C2%A0%3A%0ADate%20de%20d%C3%A9p%C3%B4t%C2%A0%3A" class="btn-primary" target="_blank" rel="noopener noreferrer">Envoyer une pièce — devis sous 2&nbsp;h</a>
+        <a href="#corridors" class="btn-ghost">Voir les corridors →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="principle" aria-labelledby="principle-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Le principe</span>
+    <h2 class="section-title" id="principle-heading">Pourquoi le cachet doit être local</h2>
+    <p>Une pièce ne produit aucun effet devant une autorité togolaise, ivoirienne, béninoise ou sénégalaise sans le cachet d’un traducteur assermenté près d’une juridiction de ce système. Il ne s’agit pas d’un jugement de valeur sur les autres traducteurs&nbsp;: c’est une question de compétence territoriale. Le tribunal, le ministère ou le notaire qui reçoit l’acte reconnaît le registre qu’il peut vérifier, et ce registre est national.</p>
+    <p>Je suis assermenté près la <strong>Cour d’appel de Lomé</strong>, en français et en anglais, dans les deux sens. Pour toute pièce à produire devant une autorité togolaise — ou qui quitte le Togo vers une autorité anglophone — c’est mon cachet qui lui donne force. L’acceptation relève toujours de l’autorité destinataire&nbsp;: indiquez-moi la destination, je respecte le format exigé.</p>
+  </div>
+</section>
+
+<section class="services" id="corridors" aria-labelledby="corridors-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Corridors</span>
+    <h2 class="section-title" id="corridors-heading">Ce qui traverse la frontière linguistique</h2>
+    <p>Les contreparties et les juridictions du Ghana, du Nigeria, de la Gambie, de la Sierra Leone et du Liberia travaillent en anglais. Le Togo, le Bénin, la Côte d’Ivoire, le Burkina Faso, le Mali, le Niger et le Sénégal travaillent en français. Le commerce, le contentieux et les affaires de famille franchissent cette ligne en permanence, et chaque passage produit les mêmes pièces.</p>
+    <div class="home-rates-table-wrap" tabindex="0" role="region" aria-label="Pièces par corridor">
+      <table class="home-rates-table">
+        <thead>
+          <tr><th>D’où part le dossier</th><th>Ce qui exige une traduction assermentée</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="D’où part le dossier">Accra, Lagos, Abuja</td><td data-label="Ce qui exige une traduction assermentée">Contrats de common law, jugements à faire revêtir de l’exequatur, procurations, pièces sociales pour une filiale francophone</td></tr>
+          <tr><td data-label="D’où part le dossier">Lomé, Cotonou, Abidjan, Ouagadougou</td><td data-label="Ce qui exige une traduction assermentée">Statuts, actes notariés, pièces de procédure et actes d’état civil destinés à une autorité anglophone</td></tr>
+          <tr><td data-label="D’où part le dossier">Un particulier, dans un sens ou dans l’autre</td><td data-label="Ce qui exige une traduction assermentée">Diplômes et relevés de notes, actes de naissance et de mariage, casier judiciaire, dossiers de visa et d’admission</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">Zones desservies&nbsp;: Lomé, Togo (sur place) · Afrique de l’Ouest et monde entier, à distance. Les fichiers circulent par courriel ou WhatsApp&nbsp;; la copie tamponnée suit par coursier lorsque le destinataire l’exige encore.</p>
+  </div>
+</section>
+
+<section class="services" id="who" aria-labelledby="who-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Avec qui je travaille</span>
+    <h2 class="section-title" id="who-heading">Trois types de dossiers</h2>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <h3 class="svc-title">Cabinets et études notariales</h3>
+        <p class="svc-desc">Un jugement étranger à faire reconnaître, une succession avec testament rédigé à l’étranger, une procuration signée à Lagos et produite devant un notaire de Lomé. Tarif cabinet, capacité mensuelle réservée et délai garanti de 48&nbsp;heures ouvrées&nbsp;: voir la page <a href="/fr/cabinets-juridiques/">cabinets juridiques</a>.</p>
+      </div>
+      <div class="svc-card">
+        <h3 class="svc-title">Entreprises, ONG et institutions</h3>
+        <p class="svc-desc">Appels d’offres, dossiers de conformité, audits et contrats circulant entre un siège anglophone et une activité francophone. Facturation au mot source, en EUR, USD ou FCFA. Voir les <a href="/fr/business/">services aux organisations</a>.</p>
+      </div>
+      <div class="svc-card">
+        <h3 class="svc-title">Particuliers en mobilité</h3>
+        <p class="svc-desc">Diplômes, actes d’état civil et casier judiciaire pour un visa, une admission ou un poste de l’autre côté de la frontière. Tarif à la page — voir la <a href="/fr/traduction-certifiee/">traduction certifiée</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="rates" aria-labelledby="rates-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Tarifs</span>
+    <h2 class="section-title" id="rates-heading">Tarifs régionaux et facturation</h2>
+    <div class="home-rates-table-wrap" tabindex="0" role="region" aria-label="Tarifs">
+      <table class="home-rates-table">
+        <thead>
+          <tr><th>Prestation</th><th>À partir de</th><th>Précisions</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Prestation">Pièces personnelles et d’état civil</td><td data-fcfa="15000" data-label="À partir de">15&nbsp;000–20&nbsp;000 FCFA / page</td><td data-label="Précisions">Pièces courtes et normalisées — tarif à la page</td></tr>
+          <tr><td data-label="Prestation">Pièces d’entreprise, juridiques et institutionnelles</td><td data-fcfa="66" data-label="À partir de">66–118 FCFA / mot source</td><td data-label="Précisions">Textes rédigés et denses — tarif au mot source, jamais à la page</td></tr>
+          <tr><td data-label="Prestation">Express 24h</td><td data-label="À partir de">+50&nbsp;%</td><td data-label="Précisions">Même cachet, même signature, même valeur juridique</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">Tarifs HT pour les travaux d’entreprise et institutionnels. Les clients hors du Togo peuvent être facturés en EUR, USD ou FCFA et régler par virement bancaire ou virement international (SWIFT). Détail complet sur la <a href="/fr/tarifs/">grille tarifaire</a>.</p>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <span class="eyebrow">FAQ</span>
+    <h2 class="section-title" id="faq-heading">Questions fréquentes</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Je suis au Ghana. Pouvez-vous certifier une pièce destinée au Togo&nbsp;?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Oui, et c’est le motif le plus fréquent de sollicitation depuis l’étranger. Envoyez un scan net par courriel ou WhatsApp&nbsp;; la traduction certifiée revient tamponnée et signée au format PDF, la version papier suivant par coursier si le destinataire l’exige. Aucun déplacement n’est nécessaire, et l’original ne quitte pas vos mains.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Une traduction assermentée de Lomé vaut-elle au Ghana ou au Nigeria&nbsp;?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Cela dépend de ce qu’exige l’organisme destinataire. Les juridictions de common law demandent plus souvent un certificat d’exactitude du traducteur, voire un affidavit, qu’une inscription à un registre judiciaire. Je fournis le cachet assermenté et, si nécessaire, une déclaration d’exactitude signée dans la forme attendue. Indiquez-moi qui reçoit la pièce, je la produis dans le bon format.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Faut-il une légalisation en plus de la traduction&nbsp;?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Parfois. La traduction et la pièce d’origine suivent le même circuit. Le Togo n’est pas encore partie à la Convention Apostille de La Haye&nbsp;: le circuit passe aujourd’hui par la mairie où je suis inscrit, puis le ministère des Affaires étrangères, puis le consulat du pays de destination. Je peux m’en charger&nbsp;; les frais administratifs et de déplacement restent à votre charge et figurent au devis.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Quelle combinaison de langues couvrez-vous&nbsp;?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Français et anglais uniquement, dans les deux sens, et c’est précisément la combinaison pour laquelle je suis assermenté. La transcription d’enregistrements couvre aussi les langues nationales du Togo, livrée avec une déclaration de fidélité signée et non avec une certification assermentée — il n’existe pas de registre d’assermentation pour ces langues au Togo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="share-section" aria-label="Partager cette page">
+  <div class="section-inner">
+    <div class="share-bar share-bar--linkedin-first" data-url="https://azaeliloki.com/fr/afrique-de-louest/" data-title="Traduction assermentée FR-EN pour l’Afrique de l’Ouest" data-message="Je partage ce service de traduction assermentée FR-EN pour les dossiers transfrontaliers en Afrique de l'Ouest :">
+    </div>
+  </div>
+</section>
+
+<section class="primary-cta-band" id="quote" aria-labelledby="quote-heading">
+  <div class="section-inner">
+    <h2 class="section-title" id="quote-heading">Envoyez la pièce — devis sous 2&nbsp;heures</h2>
+    <p>Indiquez-moi d’où part la pièce, devant quelle autorité elle doit être produite et pour quelle date. Le devis gratuit suit sous 2&nbsp;heures ouvrées, avec prix et délai exacts.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/22879716258?text=Bonjour%20Aza%C3%ABl%2C%20j%E2%80%99ai%20un%20dossier%20transfrontalier%20%C3%A0%20faire%20traduire.%0A%0APays%20de%20d%C3%A9part%C2%A0%3A%0AAutorit%C3%A9%20destinataire%C2%A0%3A%0A%C3%89ch%C3%A9ance%C2%A0%3A" class="btn-primary" target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp</a>
+      <a href="mailto:contact@azaeliloki.com" class="btn-ghost">Envoyer un courriel</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="af" id="site-footer">
+  <button type="button" class="af__top" id="backToTop" data-en-label="Back to top" data-fr-label="Haut de page" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <div class="af__lead">
+    <div class="af__lead-inner">
+      <div class="af__lead-copy">
+        
+        <p class="af__lead-eyebrow">Devis gratuit sous 2&nbsp;h ouvrées</p>
+        
+        <h2 class="af__lead-title">Dites-moi ce que vous avez à faire traduire.</h2>
+        
+        <p class="af__lead-sub">lun.–ven. 8&nbsp;h–20&nbsp;h · sam. 8&nbsp;h–18&nbsp;h (GMT+0)</p>
+      </div>
+      
+      <div class="af__lead-actions">
+        <a class="af__act af__act--gold" href="/fr/business/#quote-intake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Demander un devis gratuit</a>
+        <a class="af__act" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@azaeliloki.com</a>
+        <a class="af__act" href="tel:+22879716258"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="af__act" href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg>WhatsApp</a>
+        <a class="af__act" href="https://calendly.com/iloki-azael/consultation" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Réserver un appel</a>
+      </div>
+    </div>
+  </div>
+  <div class="af__inner">
+    <div class="af__grid">
+      <div class="af__brand">
+        <h2 class="af__name">
+          <span class="af__mark" aria-hidden="true"><img src="/assets/images/logo-72.png" alt="" width="36" height="36" loading="lazy"></span>
+          Azaël&nbsp;<em>Iloki</em>
+        </h2>
+        
+        <p class="af__tag">Traducteur assermenté · FR ↔ EN · Lomé, Togo</p>
+        <span class="af__chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z"/></svg><span>Assermenté · Cour d’appel de Lomé</span></span>
+        <div class="af__social">
+          <a href="https://linkedin.com/in/azaeliloki" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 11v6"/></svg>
+          </a>
+          <a href="https://www.proz.com/translator/4735520" aria-label="ProZ.com" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 8.5h7l-7 7h7"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <nav class="af__col" aria-label="Parcours">
+        <h3 class="af__h">Parcours</h3>
+        <ul class="af__links">
+          <li><a href="/fr/traduction-certifiee/">Traduction certifiée</a></li>
+          <li><a href="/fr/business/#svc-general">Traduction générale</a></li>
+          <li><a href="/fr/business/#svc-training">Formation entreprise</a></li>
+          <li><a href="/fr/contenu-web/">Contenu web &amp; SEO</a></li>
+          <li><a href="/fr/cabinets-juridiques/">Cabinets juridiques</a></li>
+          <li><a href="/fr/afrique-de-louest/">Afrique de l’Ouest</a></li>
+          <li><a href="/fr/interpretation/">Interprétation</a></li>
+          <li><a href="/fr/anglais-aeronautique/">Anglais aéronautique</a></li>
+          <li><a href="/fr/transcription/">Transcription</a></li>
+          <li><a href="/fr/courses/#course-pricing-hub">Cours</a></li>
+          <li><a href="/fr/soutien-scolaire/">Soutien scolaire</a></li>
+          <li><a href="/fr/tarifs/">Tarifs</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="af__col" aria-label="Informations">
+        <h3 class="af__h">Informations</h3>
+        <ul class="af__links">
+          <li><a href="/fr/about/">À propos</a></li>
+          <li><a href="/fr/avis-clients/">Avis clients</a></li>
+          <li><a href="/fr/faq/">FAQ</a></li>
+          <li><a href="/fr/contact/">Contact</a></li>
+          <li><a href="/fr/conditions/">Conditions générales</a></li>
+          <li><a href="/fr/privacy.html">Confidentialité</a></li>
+          <li><a href="/fr/plan-du-site/">Plan du site</a></li>
+          <li><a href="/fr/#funnel-paths">Tous les parcours</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="af__divider" role="presentation"></div>
+  <div class="af__bottom">
+    
+    <p class="af__legal">© 2026 Azaël Iloki · Traducteur assermenté</p>
+    <span class="af__meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Lomé, Togo · Afrique de l’Ouest</span></span>
+    
+    <div class="af__lang" role="group" aria-label="Langue">
+      <a href="/west-africa/" data-lang="en" hreflang="en">EN</a>
+      <i aria-hidden="true">·</i>
+      <a href="/fr/afrique-de-louest/" data-lang="fr" hreflang="fr">FR</a>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/lang.js?v=8ccf1718" defer></script>
+<script src="../../assets/js/header-nav.js?v=e1ba973d" defer></script>
+<script src="../../assets/js/script.js?v=072d0e43" defer></script>
+</body>
+</html>

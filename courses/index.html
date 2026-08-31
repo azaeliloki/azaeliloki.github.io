@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<script>(function () { var KEY = 'azael_lang_pref'; var FR_SLUG_FROM_EN = { 'certified-translation': 'traduction-certifiee', 'west-africa': 'afrique-de-louest', 'tutoring': 'soutien-scolaire', 'reviews': 'avis-clients', 'guides/visa-documents': 'guides/documents-visa', 'content-translation': 'contenu-web', 'law-firms': 'cabinets-juridiques', 'icao-english': 'anglais-aeronautique', 'interpretation': 'interpretation', 'terms': 'conditions', 'pricing': 'tarifs', 'sitemap': 'plan-du-site', 'contact': 'contact' }; function isFrPath(path) { return /(?:^|\/)fr(?:\/|$)/.test(path); } function isEnHome(path) { if (isFrPath(path)) return false; var p = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); if (p === '/' || p === '') return true; if (/\/(live|deploy-ready)\/?$/i.test(p)) return true; return false; } function suffix() { return location.search + location.hash; } function getPref() { try { return localStorage.getItem(KEY); } catch (e) { return null; } } function detectBrowserLang() { var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']; for (var i = 0; i < list.length; i++) { var tag = String(list[i]).toLowerCase(); if (tag.indexOf('fr') === 0) return 'fr'; if (tag.indexOf('en') === 0) return 'en'; } return 'en'; } function enSlugFromFr(frSlug) { for (var en in FR_SLUG_FROM_EN) { if (FR_SLUG_FROM_EN[en] === frSlug) return en; } return frSlug; } function translateSlug(slug, targetLang, sourceIsFr) { if (targetLang === 'fr') { if (!sourceIsFr && FR_SLUG_FROM_EN[slug]) return FR_SLUG_FROM_EN[slug]; return slug; } if (sourceIsFr) return enSlugFromFr(slug); return slug; } function parseLocalePath(path) { var normalized = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var onFr = isFrPath(normalized); var slug = normalized.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/').replace(/^\//, '').replace(/\/$/, ''); return { onFr: onFr, slug: slug }; } function liveSegments(path) { var segments = path.replace(/\\/g, '/').split('/').filter(Boolean); var liveIdx = -1; for (var i = 0; i < segments.length; i++) { var seg = segments[i].toLowerCase(); if (seg === 'live' || seg === 'deploy-ready') { liveIdx = i; break; } } if (liveIdx < 0) return null; var afterLive = segments.slice(liveIdx + 1); if (afterLive.length && /^index\.html?$/i.test(afterLive[afterLive.length - 1])) { afterLive.pop(); } return { segments: segments, liveIdx: liveIdx, afterLive: afterLive }; } function formatLocalePath(slug, lang) { if (lang === 'fr') { if (!slug) return '/fr/'; return '/fr/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } if (!slug) return '/'; return '/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } function httpLocaleHref(lang) { var path = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var info = liveSegments(path); if (info) { var after = info.afterLive.slice(); var onFr = after[0] === 'fr'; if (onFr) after.shift(); var slug = after.join('/'); var newSlug = translateSlug(slug, lang, onFr); var targetSegs = lang === 'fr' ? ['fr'].concat(newSlug ? newSlug.split('/') : []) : (newSlug ? newSlug.split('/') : []); var base = info.segments.slice(0, info.liveIdx + 1); return '/' + base.concat(targetSegs).join('/') + suffix(); } var parsed = parseLocalePath(path); if ((lang === 'fr' && parsed.onFr) || (lang === 'en' && !parsed.onFr)) { return path + suffix(); } var mappedSlug = translateSlug(parsed.slug, lang, parsed.onFr); return formatLocalePath(mappedSlug, lang) + suffix(); } function navigate(lang) { if (location.protocol === 'file:') return; location.replace(httpLocaleHref(lang)); } var path = location.pathname.replace(/\\/g, '/'); if (/404\.html$/i.test(path)) return; var onFr = isFrPath(path); var pref = getPref(); if (!pref && !onFr && isEnHome(path)) { if (detectBrowserLang() === 'fr') { navigate('fr'); } return; } if (!pref) return; if (parseLocalePath(path).slug !== '') return; if (pref === 'fr' && !onFr) { navigate('fr'); return; } if (pref === 'en' && onFr) { navigate('en'); } })();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English &amp; French Courses &amp; Academic Tutoring | Lomé</title>
+<meta name="description" content="Tailored English and French for adults, expats and BAC/BEPC students (A1–C2). In-person in Lomé or online. Free placement test.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://azaeliloki.com/courses/">
+<link rel="alternate" hreflang="en" href="https://azaeliloki.com/courses/">
+<link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/courses/">
+<link rel="alternate" hreflang="x-default" href="https://azaeliloki.com/courses/">
+<meta property="og:title" content="English &amp; French Courses &amp; Academic Tutoring | Lomé">
+<meta property="og:description" content="Tailored English and French for adults, expats and BAC/BEPC students (A1–C2). In-person in Lomé or online. Free placement test.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:site_name" content="Azaël Iloki — Language Services">
+<meta property="og:url" content="https://azaeliloki.com/courses/">
+<meta property="og:image" content="https://azaeliloki.com/assets/og/og-courses.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Azaël Iloki — Language courses and tutoring, Lomé">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://azaeliloki.com/assets/og/og-courses.jpg">
+<meta name="twitter:title" content="English &amp; French Courses &amp; Academic Tutoring | Lomé">
+<meta name="twitter:description" content="Tailored English and French for adults, expats and BAC/BEPC students (A1–C2). In-person in Lomé or online. Free placement test.">
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="preconnect" href="https://wa.me" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="critical-css">/* critical ATB */:root{--navy:#122C4D;--navy-dark:#0E233F;--gold:#C9A658;--gold-on-dark:#F2DC8A;--white:#FFFFFF;--cream:#EDEEE8;--muted-on-dark:#CBD6E4;--font-body:'Outfit',system-ui,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}*{box-sizing:border-box}html[lang=en] [data-fr],html[lang=fr] [data-en]{display:none!important}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--navy);background:var(--cream)}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:16px;top:16px;z-index:9999;background:var(--white);padding:8px 12px}.ah{position:sticky;top:0;z-index:100;background:rgba(18,44,77,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.25)}.ah__inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);justify-content:space-between}.ah__logo{height:clamp(34px,6vw,52px);width:auto;display:block}.ah__nav{display:flex}@media(min-width:1280px){.ah__nav{display:block}}.ah__util{background:var(--navy-dark)}.ah__util-inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:34px;display:flex;align-items:center;justify-content:space-between}.ah__util-links{display:flex;align-items:center;flex:none}.ah__inner{height:74px}.ah__links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.ah__links li{display:flex}.ah__drop-wrap{position:relative}@media(min-width:1280px){.ah__drop-menu{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none}}.ah__actions{display:flex;align-items:center}@media(max-width:1279px){.ah__nav{display:none}.ah__burger{display:block}.ah__inner{height:62px}.ah__item--dropdown .ah__drop-menu{display:none}}@media(max-width:767px){.ah__util-note{display:none}.ah__util-inner{height:32px;justify-content:center}}.ah__burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer}.ah__burger span{display:block;width:22px;height:1.5px;background:var(--gold)}.hero{background:linear-gradient(160deg,var(--navy-dark),var(--navy));color:var(--white);padding:clamp(120px,15vw,160px) 20px clamp(60px,8vw,100px)}.hero-inner{max-width:1200px;margin:0 auto;width:100%}@media(min-width:1200px){.hero-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}}@media(min-width:900px){.hero-inner{grid-template-columns:1fr auto;gap:60px}}.hero-eyebrow{display:flex;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-on-dark);border:1px solid rgba(201,168,76,.35);padding:4px 10px;border-radius:999px;margin-bottom:20px}.hero-title{font-family:var(--font-serif);font-size:clamp(38px,5.5vw,72px);font-weight:700;line-height:1.1;margin:0 0 8px;color:var(--white)}.util-hero .hero-title{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 12px}.hero-lead{margin:0 0 10px;color:var(--muted-on-dark)}.hero-sub{margin:20px 0 36px;color:var(--muted-on-dark)}.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}.btn-primary{background:var(--gold);color:var(--navy)}.btn-ghost{border:1px solid rgba(255,255,255,.35);color:var(--white)}.hero-portrait-img{width:100%;max-width:420px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block}</style>
+<link rel="preload" href="/assets/css/style.css?v=cc67a03d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=cc67a03d"></noscript>
+<link rel="icon" type="image/png" href="/assets/images/logo-72.png">
+<script src="/assets/js/analytics-deferred.js?v=65330a98" defer></script>
+<!-- FAQPage schema lives on /business/ only -->
+<!--
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "inLanguage": "en",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How much do language courses and tutoring cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "All courses operate on a monthly subscription model, payable in advance by the 5th of each month: Standard Tutoring (BAC/BEPC): 30,000 FCFA (4 sessions/month) · 60,000 FCFA (8 sessions/month). Online Private Class (Adults): 35,000 FCFA (4 sessions) · 68,000 FCFA (8 sessions). In-Person Immersive (Lomé): 45,000 FCFA (4 sessions) · 85,000 FCFA (8 sessions). Each session is 1 hour. Unused sessions do not roll over to the following month."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can you work with clients outside Togo?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Online Private Classes are available worldwide via Zoom. Students and professionals from any country in West Africa or internationally can enrol. Sessions are scheduled flexibly Mon–Fri 8:00–20:00 and Sat 8:00–18:00 (GMT+0). Payment is accepted via bank transfer and international wire."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How does the placement test work?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Before your first session, you complete a short placement test (1h) that locates your exact level on the CEFR scale from A1 to C2. It requires no preparation — just a conversation and a few written exercises. The results allow me to design a learning plan that starts at exactly the right level, so no time is wasted on content you already know."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is included in the monthly subscription?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Each track includes specific premium assets. Standard Tutoring: strict curriculum synchronisation, targeted assignment reviews, homework tracking and a written monthly progress report to parents. Online Private Class: HD virtual portal configuration, lifetime cloud resource drive access and between-session support for corrections and practice. In-Person Immersive: printed worksheets tailored to your level, direct pronunciation and fluency feedback and all local travel costs covered."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What payment methods do you accept?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "All major mobile money services available across Togo and West Africa: Moov Money (Moov Africa) — +228 79 71 62 58. Mixx by Yas (Yas Togo) — details provided with invoice. Ecobank Mobile — details provided with invoice. Bank Transfer — details provided with invoice. Monthly subscriptions are due by the 5th of the month before sessions begin."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What happens if I miss a session?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A minimum of 24 hours’ notice is required to reschedule. Sessions rescheduled with more than 24 hours’ notice will be moved to a mutually agreed date within the same calendar month. Any session cancelled with less than 24 hours’ notice is permanently forfeited and billed at full cost. Sessions do not roll over to the following month."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I change my schedule after starting?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes — sessions are scheduled flexibly Mon–Fri 8:00–20:00 and Sat 8:00–18:00 (GMT+0). If your availability changes, simply let me know at least 24 hours in advance and we will find a time that works. The goal is a sustainable rhythm that fits your life, not a rigid timetable."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What level do I need to start a course?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No minimum level is required. Courses are available from complete beginner (A1) to advanced (C2). The placement test determines your starting point precisely. Whether you are learning English or French from scratch, preparing for a professional exam (IELTS, TOEFL) or refining your business communication, the programme is designed around where you are today."
+   }
+  }
+ ]
+}
+</script>
+-->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://azaeliloki.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Courses",
+   "item": "https://azaeliloki.com/courses/"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Course",
+
+ "inLanguage": "en",
+ "name": "English & French courses in Lomé",
+ "description": "Tailored English and French for adults A1–C2. From 35,000 FCFA / month. In person or online.",
+ "provider": {
+  "@id": "https://azaeliloki.com/#business"
+ },
+ "hasCourseInstance": {
+  "@type": "CourseInstance",
+  "courseMode": [
+   "onsite",
+   "online"
+  ],
+  "courseWorkload": "PT1H",
+  "offers": {
+   "@type": "Offer",
+   "price": "35000",
+   "priceCurrency": "XOF"
+  }
+ }
+}
+</script>
+</head>
+<body class="lang-en page-courses page-linear">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="ah" id="navbar">
+  <div class="ah__util">
+    <div class="ah__util-inner">
+      <span class="ah__util-note">Sworn translator · Cour d’appel de Lomé</span>
+      
+      <span class="ah__util-links">
+        <a class="ah__util-a" href="tel:+22879716258"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="ah__util-a ah__util-a--mail" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@azaeliloki.com</a>
+      </span>
+      <div class="ah__lang" role="group" aria-label="Language" data-en-label="Language" data-fr-label="Langue">
+        <a href="/courses/" data-lang="en" hreflang="en">EN</a>
+        <i aria-hidden="true">·</i>
+        <a href="/fr/courses/" data-lang="fr" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+  <div class="ah__inner">
+    <a class="ah__brand" href="/" aria-label="Azaël Iloki — home">
+      <img src="/assets/images/logo-nav.png" srcset="/assets/images/logo-nav.png 1x, /assets/images/logo-nav@2x.png 2x" alt="Azaël Iloki" class="ah__logo" width="256" height="64" decoding="async">
+    </a>
+    
+    <nav class="ah__nav" id="primary-menu" aria-label="Main navigation" data-en-label="Main navigation" data-fr-label="Navigation principale">
+      <ul class="ah__links">
+        <li><a href="/certified-translation/" data-nav="certified">Certified Translation</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/courses/#course-pricing-hub" class="ah__drop-label active" data-nav="courses" aria-current="page">Courses</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-courses-en" id="ah-drop-btn-courses-en">
+              <span class="visually-hidden">Show courses</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-courses-en" role="menu">
+              <li role="none"><a href="/courses/#course-pricing-hub" role="menuitem">Language Courses</a></li>
+              <li role="none"><a href="/icao-english/" role="menuitem">ICAO Level 4 (Aviation)</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/tutoring/" data-nav="tutoring">Tutoring</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/business/" class="ah__drop-label" data-nav="business">For Business</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-business-en" id="ah-drop-btn-business-en">
+              <span class="visually-hidden">Show business services</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-business-en" role="menu">
+              <li role="none"><a href="/business/#svc-general" role="menuitem">General Translation (B2B)</a></li>
+              <li role="none"><a href="/business/#svc-training" role="menuitem">Corporate Training</a></li>
+              <li role="none"><a href="/business/#svc-retainer" role="menuitem">Professional Retainer</a></li>
+              <li role="none"><a href="/interpretation/" role="menuitem">Interpretation</a></li>
+              <li role="none"><a href="/content-translation/" role="menuitem">Web Content &amp; SEO</a></li>
+              <li role="none"><a href="/law-firms/" role="menuitem">Law Firms</a></li>
+              <li role="none"><a href="/transcription/" role="menuitem">Transcription &amp; Recordings</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/pricing/" data-nav="pricing">Pricing</a></li>
+        
+        <li><a href="/about/" data-nav="about">About</a></li>
+        
+        <li class="ah__m-only"><a href="/contact/">Contact</a></li>
+        
+        <li class="ah__m-only"><a href="/reviews/">Reviews</a></li>
+        
+        <li class="ah__m-only"><a href="/faq/">FAQ</a></li>
+        
+      </ul>
+    </nav>
+    <a class="ah__cta" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote.%0A%0AService%3A%0ADocument%20or%20need%3A%0ADeadline%3A" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg><span class="ah__cta-full">Request a Quote</span><span class="ah__cta-short">Quote</span></a>
+    
+    <button type="button" class="ah__burger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main">
+<nav class="page-breadcrumb" aria-label="Breadcrumb">
+  <ol class="page-breadcrumb__list">
+    <li><a href="/">Home</a></li>
+    <li aria-current="page">Courses</li>
+  </ol>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home" aria-labelledby="home-heading">
+  <div class="hero-inner">
+  <div class="hero-content">
+    <h1 class="hero-title" id="home-heading">English &amp; French Courses in Lomé</h1>
+    
+    <div class="hero-eyebrow">Language Courses · Adults A1–C2</div>
+    
+    <p class="hero-tagline">English &amp; French courses<br><em>tailored to your level.</em></p>
+    
+    <p class="hero-sub">Online via Zoom or in-person in Lomé. Fixed monthly packages — 4 or 8 sessions. Free placement test included.</p>
+    
+    <div class="hero-btns">
+      <a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20information%20on%20language%20courses.%0A%0ALanguage%3A%0ACurrent%20level%3A%0APreferred%20format%20(online%20%2F%20in%20person)%3A" class="btn-primary" target="_blank" rel="noopener noreferrer">Ask About Courses</a>
+      <a href="https://calendly.com/iloki-azael/consultation" class="btn-ghost" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+      
+      <a href="#course-pricing-hub" class="btn-ghost">See Pricing First →</a>
+      
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="process" id="process" aria-labelledby="process-heading">
+  <div class="section-inner">
+    <span class="eyebrow">How It Works</span>
+    
+    <h2 class="section-title" id="process-heading">4 steps — no surprises</h2>
+    
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="ps-num">01</div>
+        <div class="ps-content">
+          <h3 class="ps-title">Book a free 30-minute discovery call</h3>
+          
+          <p class="ps-desc">Start with a short Calendly call or pick your package below and enrol on WhatsApp when you are ready.</p>
+          
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">02</div>
+        <div class="ps-content">
+          <h3 class="ps-title">Discussion of needs and objectives</h3>
+          
+          <p class="ps-desc">We discuss your current level, learning goals, schedule and preferred format — in-person in Lomé or online via Zoom.</p>
+          
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">03</div>
+        <div class="ps-content">
+          <h3 class="ps-title">Placement test (A1 → C2)</h3>
+          
+          <p class="ps-desc">A short placement test (1h) determines your exact CEFR level. No preparation needed.</p>
+          
+          <p class="ps-guarantee">✓ CEFR-aligned · Takes 1h · No preparation needed</p>
+          
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">04</div>
+        <div class="ps-content">
+          <h3 class="ps-title">Personalised plan + regular sessions</h3>
+          
+          <p class="ps-desc">A tailored learning plan begins on your schedule. Mon–Fri 8:00–20:00 · Sat 8:00–18:00 (GMT+0). In-person in Lomé or online via Zoom.</p>
+          
+          <p class="ps-guarantee">✓ Mon–Fri 8:00–20:00 · Sat 8:00–18:00 (GMT+0) · 4 or 8 sessions / month</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ADULT COURSE PRICING (toggle-driven) ── -->
+<section class="services course-pricing-hub" id="course-pricing-hub" aria-labelledby="course-pricing-hub-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Language Courses · Adults A1–C2</span>
+    
+    <h2 class="section-title" id="course-pricing-hub-heading">Adult language courses</h2>
+    
+    <p class="course-pricing-sub">Two languages, six focuses. Pick your format and intensity once — click a course card to select, then enrol.</p>
+    
+
+    <p class="course-teams-note">Training a team? <a href="/business/#svc-training">See Corporate Training →</a></p>
+
+    <div class="course-pricing-toggles">
+      <div class="course-toggle-row">
+        <span class="course-toggle-label">Format</span>
+        
+        <div class="course-toggle-group" id="courseFmtToggle" role="group" aria-label="Course format">
+          <button type="button" class="course-toggle-btn active" data-course-fmt="Online" aria-pressed="true"><span>Online</span></button>
+          <button type="button" class="course-toggle-btn" data-course-fmt="In-person" aria-pressed="false"><span>In person</span></button>
+        </div>
+      </div>
+      <div class="course-toggle-row">
+        <span class="course-toggle-label">Intensity</span>
+        
+        <div class="course-toggle-group" id="courseSessToggle" role="group" aria-label="Sessions per month">
+          <button type="button" class="course-toggle-btn active" data-course-sess="4" aria-pressed="true"><span>4 / month</span></button>
+          <button type="button" class="course-toggle-btn" data-course-sess="8" aria-pressed="false"><span>8 / month</span></button>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="course-track-heading">General courses</h3>
+    <p class="course-group-sub">For everyday fluency, from beginner to advanced.</p>
+    <div class="course-card-grid">
+      <article class="course-card" data-course-id="fle" data-tier="general" aria-label="French as a Foreign Language (FLE)">
+        <span class="course-card-badge">General</span>
+        
+        <h4 class="course-card-name">French as a foreign language (FLE)</h4>
+        <p class="course-card-desc">Everyday &amp; professional French, A1–C2</p>
+        
+        <p class="course-card-price"><span class="price" aria-live="polite"></span></p>
+        <p class="course-card-permo permo"></p>
+        <a class="course-card-enrol btn-secondary" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20to%20enrol%20in%20the%20course%3A%20French%20as%20a%20Foreign%20Language%20(FLE)" target="_blank" rel="noopener noreferrer" data-enrol-dynamic="course-adult" data-course-id="fle"><span>Select &amp; Enrol →</span></a>
+        
+      </article>
+      <article class="course-card" data-course-id="en-general" data-tier="general" aria-label="General English">
+        <span class="course-card-badge">General</span>
+        
+        <h4 class="course-card-name">General English</h4>
+        
+        <p class="course-card-desc">All-purpose, everyday English, A1–C2</p>
+        
+        <p class="course-card-price"><span class="price" aria-live="polite"></span></p>
+        <p class="course-card-permo permo"></p>
+        <a class="course-card-enrol btn-secondary" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20to%20enrol%20in%20the%20course%3A%20General%20English" target="_blank" rel="noopener noreferrer" data-enrol-dynamic="course-adult" data-course-id="en-general"><span>Select &amp; Enrol →</span></a>
+        
+      </article>
+    </div>
+
+    <h3 class="course-track-heading">Specialised courses</h3>
+    <p class="course-group-sub">For your job, your sector or an exam — the vocabulary you will actually use.</p>
+    <div class="course-card-grid">
+      <article class="course-card" data-course-id="fos" data-tier="specialized" aria-label="French for Specific Purposes (FOS)">
+        <span class="course-card-badge">Specialised</span>
+        
+        <h4 class="course-card-name">French for specific purposes (FOS)</h4>
+        <p class="course-card-desc">French for your job, sector or an exam</p>
+        
+        <p class="course-card-price"><span class="price" aria-live="polite"></span></p>
+        <p class="course-card-permo permo"></p>
+        <a class="course-card-enrol btn-secondary" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20to%20enrol%20in%20the%20course%3A%20French%20for%20Specific%20Purposes%20(FOS)" target="_blank" rel="noopener noreferrer" data-enrol-dynamic="course-adult" data-course-id="fos"><span>Select &amp; Enrol →</span></a>
+        
+      </article>
+      <article class="course-card" data-course-id="en-business" data-tier="specialized" aria-label="Business English">
+        <span class="course-card-badge">Specialised</span>
+        
+        <h4 class="course-card-name">Business English</h4>
+        
+        <p class="course-card-desc">Meetings, emails, negotiations</p>
+        
+        <p class="course-card-price"><span class="price" aria-live="polite"></span></p>
+        <p class="course-card-permo permo"></p>
+        <a class="course-card-enrol btn-secondary" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20to%20enrol%20in%20the%20course%3A%20Business%20English" target="_blank" rel="noopener noreferrer" data-enrol-dynamic="course-adult" data-course-id="en-business"><span>Select &amp; Enrol →</span></a>
+        
+      </article>
+      <article class="course-card" data-course-id="esp" data-tier="specialized" aria-label="English for Specific Purposes (ESP)">
+        <span class="course-card-badge">Specialised</span>
+        
+        <h4 class="course-card-name">English for specific purposes (ESP)</h4>
+        
+        <p class="course-card-desc">English for your field — legal, medical, technical.</p>
+        
+        <p class="course-card-price"><span class="price" aria-live="polite"></span></p>
+        <p class="course-card-permo permo"></p>
+        <a class="course-card-enrol btn-secondary" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20to%20enrol%20in%20the%20course%3A%20English%20for%20Specific%20Purposes%20(ESP)" target="_blank" rel="noopener noreferrer" data-enrol-dynamic="course-adult" data-course-id="esp"><span>Select &amp; Enrol →</span></a>
+        
+      </article>
+      <article class="course-card" data-course-id="eap" data-tier="specialized" aria-label="English for Academic Purposes (EAP)">
+        <span class="course-card-badge">Specialised</span>
+        
+        <h4 class="course-card-name">English for academic purposes (EAP)</h4>
+        
+        <p class="course-card-desc">Academic &amp; university English</p>
+        
+        <p class="course-card-price"><span class="price" aria-live="polite"></span></p>
+        <p class="course-card-permo permo"></p>
+        <a class="course-card-enrol btn-secondary" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20to%20enrol%20in%20the%20course%3A%20English%20for%20Academic%20Purposes%20(EAP)" target="_blank" rel="noopener noreferrer" data-enrol-dynamic="course-adult" data-course-id="eap"><span>Select &amp; Enrol →</span></a>
+        
+      </article>
+    </div>
+    <p class="course-spec-exam-note">Exam prep (specialised tier): IELTS / TOEFL / Cambridge under EAP or General English.</p>
+    <div class="pricing-callout" id="icao-pricing">
+      <h3 class="pricing-callout-title">ICAO Level 4 (aviation English)</h3>
+      <p>Individual candidate: <strong>315,000 FCFA online</strong> / <strong>345,000 FCFA in person</strong> (12 sessions of 90 minutes). Employer-funded — airline, ANAC (Togo’s civil aviation authority) or flight school: <strong>25,000 FCFA / hour</strong>. Rates excl. tax (HT).</p>
+      <p class="pricing-callout-link"><a href="/icao-english/">See the aviation English page →</a></p>
+    </div>
+    <p class="course-pricing-footnote">Flat rate, all-inclusive. Duo / small group ~−30% per person · single session from 10,000 FCFA (general) / 13,000 FCFA (specialised). Rescheduling, deposits and cancellation are covered in the <a href="/terms/">terms of service</a>.</p>
+    <h3 class="retainer-tier-label">Professional tier</h3>
+    
+    <p class="retainer-tier-descriptor">For busy professionals — beyond the monthly packages above. Not required for individual learners.</p>
+    
+    <div class="book-packages-group">
+      <div class="course-track course-track--retainer" id="svc-retainer">
+        <div class="ct-badge ct-badge--premium">Premium</div>
+        
+        <div class="ct-card-head">
+          <div class="ct-icon-wrap"><span class="ct-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l2.9 6.26 6.6.72-4.9 4.5 1.35 6.52L12 16.9 6.05 20l1.35-6.52-4.9-4.5 6.6-.72z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="ct-head-text">
+            <h3 class="ct-title">Professional retainer</h3>
+            
+            <p class="ct-sub">One-on-one language coaching for busy professionals.</p>
+            
+          </div>
+        </div>
+        <div class="retainer-pricing-controls">
+          <div class="course-toggle-row">
+            <span class="course-toggle-label">Format</span>
+            
+            <div class="course-toggle-group" id="retainerFmtToggle" role="group" aria-label="Retainer format">
+              <button type="button" class="course-toggle-btn active" data-retainer-fmt="Online" aria-pressed="true"><span>Online</span></button>
+              <button type="button" class="course-toggle-btn" data-retainer-fmt="In-person" aria-pressed="false"><span>In person</span></button>
+            </div>
+          </div>
+        </div>
+        <p class="retainer-price-line retainer-price-line--dynamic">
+          <span class="retainer-price-amount" aria-live="polite"></span>
+          <span class="retainer-price-suffix">/ month · 8 sessions</span>
+          
+        </p>
+        <ul class="ct-includes">
+          <li>8 private 1-on-1 sessions / month, fully tailored (Business English, FOS, ESP or EAP)</li>
+          
+          <li>Priority scheduling and flexible rescheduling</li>
+          
+          <li>Between-session review of your real work (emails, reports, a presentation or key document)</li>
+          
+          <li>Monthly progress report</li>
+          
+        </ul>
+        <p class="retainer-footer">The solo counterpart to the Corporate Circle — same focus on your professional goals, one-on-one.</p>
+        
+        <div class="ct-enrol-actions">
+          <a href="https://calendly.com/iloki-azael/consultation" class="ct-enrol-btn ct-enrol-btn--primary" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+          
+          <a href="#contact" class="ct-enrol-btn ct-enrol-btn--ghost" data-cf-service="Professional Retainer">Send an Enquiry →</a>
+          
+        </div>
+      </div>
+    </div>
+    <p class="package-note">After WhatsApp enrolment, pay via Moov Money, Mixx or Ecobank — details below.</p>
+    
+  </div>
+</section>
+
+<section class="primary-cta-band" id="book-now" aria-labelledby="book-now-heading">
+  <div class="section-inner">
+    <h2 class="section-title" id="book-now-heading">Ready to start?</h2>
+    
+    <p class="primary-cta-band__sub">Book a free 30-minute discovery call on Calendly — see real availability and discuss your goals before you commit.</p>
+    
+    <div class="primary-cta-band__actions">
+      <a href="https://calendly.com/iloki-azael/consultation" class="btn-primary" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+      
+      <a href="#course-pricing-hub" class="btn-ghost">See Packages &amp; Enrol →</a>
+      
+    </div>
+  </div>
+</section>
+
+<div id="course-formats" class="anchor-target" aria-hidden="true"></div>
+<div id="book-packages" class="anchor-target" aria-hidden="true"></div>
+
+<!-- ── TRUST ── -->
+<section class="trust trust--minimal" id="trust" aria-labelledby="trust-heading">
+  <div class="section-inner">
+    <div class="courses-instructor-photo" style="width:130px;margin:0 auto 20px;">
+      <picture>
+        <source srcset="/assets/images/photos/photo-a-400.webp" type="image/webp">
+        <img src="/assets/images/photos/photo-a-400.jpg" alt="Azaël Iloki, language instructor, Lomé" width="130" height="130" loading="lazy" style="width:130px;height:130px;border-radius:50%;border:2px solid #C9A84C;object-fit:cover;display:block;">
+      </picture>
+    </div>
+    <h2 class="section-title light" id="trust-heading">More than a teacher</h2>
+    
+    <p class="trust-credential-line">8+ years teaching languages · instructor at Institut Français du Togo since 2022</p>
+    
+    <div class="trust-grid">
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM9 7h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">8+ years teaching languages</h3>
+        
+        <p class="tc-desc">8+ years of language teaching. Clients include NGOs, businesses, embassies and individuals across West Africa.</p>
+        
+      </div>
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12.5V17c0 1.1 2.7 2.5 6 2.5s6-1.4 6-2.5v-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">Institut Français du Togo</h3>
+        
+        <p class="tc-desc">Language instructor at the Institut Français du Togo since 2022. Rigorous, structured methodology.</p>
+        
+      </div>
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">Personalised from day one</h3>
+        
+        <p class="tc-desc">Every learner starts with a placement test. Your programme is built around your exact level, goals and schedule — not a generic syllabus.</p>
+        
+      </div>
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">Online across West Africa</h3>
+        
+        <p class="tc-desc">Online sessions via Zoom from anywhere. In-person sessions available in Lomé. Mon–Fri 8:00–20:00 · Sat 8:00–18:00 (GMT+0).</p>
+        
+      </div>
+    </div>
+    <div class="trust-strip">
+      <span class="ts-group"><span class="ts-item">CEFR-aligned A1 → C2</span>
+      
+      <span class="ts-item">Free placement test</span>
+      
+      <span class="ts-item">Monthly progress reports</span>
+      
+      <span class="ts-item">IELTS · TOEFL</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAYMENT (mobile money) ── -->
+<section class="payment" id="payment" aria-labelledby="payment-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Payment</span>
+    
+    <h2 class="section-title light" id="payment-heading">Pay the way you know</h2>
+    
+    <button class="pay-accordion-btn" type="button">
+      <span>View Payment Details — Moov Money · Mixx by Yas · Ecobank · Bank Transfer</span>
+      
+      <span class="pay-acc-arrow">↓</span>
+    </button>
+    <div class="pay-accordion-body" id="payAccordionBody">
+      <div class="pay-methods-grid">
+        <div class="pm-card">
+          <img src="../assets/images/pay_flooz.svg" alt="Moov Money" class="pm-logo" width="72" height="36" loading="lazy" decoding="async">
+          <div class="pm-info"><p class="pm-name">Moov Money</p><p class="pm-num">+228 79 71 62 58</p></div>
+        </div>
+        <div class="pm-card">
+          <img src="../assets/images/pay_mixx.svg" alt="Mixx by Yas" class="pm-logo" width="72" height="36" loading="lazy" decoding="async">
+          <div class="pm-info"><p class="pm-name">Mixx by Yas</p><p class="pm-num">+228 92 44 70 14 (mobile money payments only)</p></div>
+        </div>
+        <div class="pm-card">
+          <img src="../assets/images/pay_ecobank.svg" alt="Ecobank" class="pm-logo" width="72" height="36" loading="lazy" decoding="async">
+          <div class="pm-info"><p class="pm-name">Ecobank Mobile</p><p class="pm-num">Details with invoice</p></div>
+        </div>
+        <div class="pm-card">
+          <div class="pm-info"><p class="pm-name"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M4 21V9.5L12 4l8 5.5V21M9.5 21v-6h5v6M4 9.5h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Bank Transfer</p><p class="pm-num">Details with invoice</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+
+<section class="services" id="in-person-vs-online" aria-labelledby="format-compare-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Formats</span>
+    <h2 class="section-title" id="format-compare-heading">In-person vs online language courses in Lomé</h2>
+    <p>Online private classes start at <strong>35,000 FCFA per month</strong> (4 × 1-hour sessions). In-person immersive classes in Lomé start at <strong>45,000 FCFA per month</strong> for the same cadence.</p>
+    <div class="home-rates-table-wrap" tabindex="0" role="region" aria-label="Course format comparison">
+      <table class="home-rates-table">
+        <thead>
+          <tr><th>Format</th><th>From</th><th>Best for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Format">Online (Zoom)</td><td data-label="From">35,000 FCFA / month</td><td data-label="Best for">Adults outside Lomé or with fixed remote schedules</td></tr>
+          <tr><td data-label="Format">In person (Lomé)</td><td data-label="From">45,000 FCFA / month</td><td data-label="Best for">Pronunciation, immersion and clients who prefer face-to-face</td></tr>
+          <tr><td data-label="Format">Academic tutoring</td><td data-label="From">30,000 FCFA / month</td><td data-label="Best for">BAC / BEPC exam prep and school subjects</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <span class="eyebrow">FAQ</span>
+    
+    <h2 class="section-title" id="faq-heading">Common questions</h2>
+    
+    <p class="faq-intro">Language courses and enrolment. <a href="../faq/">View all FAQs</a> or jump to <a href="../faq/#faq-business">business &amp; translation</a>.</p>
+    
+    <div class="faq-list">
+      <div class="faq-item" data-service-scope="academic">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">How much do language courses and tutoring cost?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>All courses operate on a monthly subscription model, payable in advance by the 5th of each month: Standard Tutoring (BAC/BEPC): 30,000 FCFA (4 sessions/month) · 60,000 FCFA (8 sessions/month). Online Private Class (Adults): 35,000 FCFA (4 sessions) · 68,000 FCFA (8 sessions). In-Person Immersive (Lomé): 45,000 FCFA (4 sessions) · 85,000 FCFA (8 sessions). Each session is 1 hour. Unused sessions do not roll over to the following month.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="academic">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">Can you work with clients outside Togo?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Yes. Online Private Classes are available worldwide via Zoom. Students and professionals from any country in West Africa or internationally can enrol. Sessions are scheduled flexibly Mon–Fri 8:00–20:00 and Sat 8:00–18:00 (GMT+0). Payment is accepted via bank transfer and international wire.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="academic">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">How does the placement test work?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Before your first session, you complete a short placement test (1h) that locates your exact level on the CEFR scale from A1 to C2. It requires no preparation — just a conversation and a few written exercises. The results allow me to design a learning plan that starts at exactly the right level, so no time is wasted on content you already know.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="academic">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">What is included in the monthly subscription?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Each track includes specific premium assets. Standard Tutoring: strict curriculum synchronisation, targeted assignment reviews, homework tracking and a written monthly progress report to parents. Online Private Class: HD virtual portal configuration, lifetime cloud resource drive access and between-session support for corrections and practice. In-Person Immersive: printed worksheets tailored to your level, direct pronunciation and fluency feedback and all local travel costs covered.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="academic">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">What payment methods do you accept?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>All major mobile money services available across Togo and West Africa: Moov Money (Moov Africa) — +228 79 71 62 58. Mixx by Yas (Yas Togo) — details provided with invoice. Ecobank Mobile — details provided with invoice. Bank Transfer — details provided with invoice. Monthly subscriptions are due by the 5th of the month before sessions begin.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="academic">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">What happens if I miss a session?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>A minimum of 24 hours’ notice is required to reschedule. Sessions rescheduled with more than 24 hours’ notice will be moved to a mutually agreed date within the same calendar month. Any session cancelled with less than 24 hours’ notice is permanently forfeited and billed at full cost. Sessions do not roll over to the following month.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="academic">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">Can I change my schedule after starting?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>Yes — sessions are scheduled flexibly Mon–Fri 8:00–20:00 and Sat 8:00–18:00 (GMT+0). If your availability changes, simply let me know at least 24 hours in advance and we will find a time that works. The goal is a sustainable rhythm that fits your life, not a rigid timetable.</p>
+        
+      </div>
+    </div><div class="faq-item" data-service-scope="academic">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span class="faq-q-text">What level do I need to start a course?</span>
+        
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        <p>No minimum level is required. Courses are available from complete beginner (A1) to advanced (C2). The placement test determines your starting point precisely. Whether you are learning English or French from scratch, preparing for a professional exam (IELTS, TOEFL) or refining your business communication, the programme is designed around where you are today.</p>
+        
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="share-section" aria-label="Share this page">
+  <div class="section-inner">
+    <div class="share-bar" data-url="https://azaeliloki.com/courses/" data-title="English &amp; French Courses &amp; Academic Tutoring | Lomé" data-message="I just found these language courses in Lomé (English, French) — thought you might be interested:">
+      <span class="share-label">Share:</span>
+  <button type="button" class="share-btn share-whatsapp" aria-label="Share on WhatsApp"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg> WhatsApp</button>
+  <button type="button" class="share-btn share-linkedin" aria-label="Share on LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-14h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</button>
+  <button type="button" class="share-btn share-copy" aria-label="Copy link"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2.5-2.5a5 5 0 0 0-7-7L11 6"/><path d="M14 11a5 5 0 0 0-7.5-.5L4 13a5 5 0 0 0 7 7l2-2"/></svg> Copy link</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section class="reviews service-context-hidden" id="reviews" data-funnel-body hidden aria-labelledby="reviews-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Client Reviews</span>
+    
+    <h2 class="section-title" id="reviews-heading">What clients say</h2>
+    
+    <h3 class="reviews-subtitle">Client reviews</h3>
+    
+    <div class="reviews-grid" id="reviewsGrid"></div>
+    <div class="reviews-cta">
+      <a href="/reviews/" class="btn-secondary reviews-all-btn">See All Reviews →</a>
+      <a href="https://maps.app.goo.gl/rxfDgnqqEwygiFPv6" class="google-review-btn" target="_blank" rel="noopener noreferrer"><svg class="google-review-btn__star" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2l2.9 6.26 6.6.72-4.9 4.5 1.35 6.52L12 16.9 6.05 20l1.35-6.52-4.9-4.5 6.6-.72z"/></svg><span>Leave a Google Review</span></a>
+      
+    </div>
+    <div class="review-form-wrap" hidden>
+      <h3 class="rf-title">Share your experience</h3>
+      
+      <fieldset class="rf-fieldset">
+        <legend class="rf-label">Your rating</legend>
+        
+        <div class="rf-stars">
+          <button class="star-btn" type="button">★</button>
+          <button class="star-btn" type="button">★</button>
+          <button class="star-btn" type="button">★</button>
+          <button class="star-btn" type="button">★</button>
+          <button class="star-btn" type="button">★</button>
+        </div>
+      </fieldset>
+      <label class="rf-label" for="wr-author">Name</label>
+      
+      <input class="rf-input" id="wr-author" type="text" placeholder="Your name">
+      
+      <label class="rf-label" for="wr-service">Service used</label>
+      
+      <select class="rf-select" id="wr-service">
+        <option value="">Service used...</option>
+        <option value="Certified Translation">Certified Translation</option>
+        <option value="General Translation">General Translation</option>
+        <option value="Web Content & SEO">Web Content &amp; SEO</option>
+        <option value="Language Courses">Language Courses</option>
+        <option value="Academic Tutoring">Academic Tutoring</option>
+        <option value="Corporate Training">Corporate Training</option>
+            <option value="Interpretation">Interpretation</option>
+      </select>
+      
+      <label class="rf-label" for="wr-text">Your review</label>
+      
+      <textarea class="rf-textarea" id="wr-text" placeholder="Your review..."></textarea>
+      
+      <button class="rf-submit wr-submit" type="button">Submit Review →</button>
+      
+      <p class="rf-success" id="wr-success" hidden>Thank you — your review has been added.</p>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Get Started</span>
+    
+    <h2 class="section-title light" id="contact-heading">Enrol or ask a question</h2>
+    
+    <p class="contact-intro">Select your course and send one message — I’ll confirm your package and next steps within 24h. Prefer a call first? Book a free 30-minute discovery call on Calendly (optional).</p>
+    
+    <div id="quote-intake" class="quote-intake-anchor" tabindex="-1"></div>
+    <div class="contact-grid">
+      <form class="cf-form" novalidate action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="39964717-2125-43c0-8e1c-96cb1fb0fd83">
+        <input type="hidden" name="subject" value="Website Enquiry — Azaël Iloki Website">
+        <input type="hidden" name="from_name" value="Website Contact Form">
+        <input type="hidden" name="email" value="no-reply@azaeliloki.com">
+        <div class="cf-honeypot" aria-hidden="true" hidden>
+          <label for="cf-website">Website</label>
+          <input class="cf-input" id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-name">Name</label>
+          
+          <input class="cf-input" id="cf-name" name="name" type="text" required aria-required="true" autocomplete="name">
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-contact">Email or WhatsApp number</label>
+          
+          <input class="cf-input" id="cf-contact" name="contact" type="text">
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-service">I Am Interested In</label>
+          
+          <select class="cf-select" id="cf-service" name="service" required aria-required="true">
+            <option value="">Select a service</option>
+            
+            <option value="Language Courses">Language Courses</option>
+            
+            <option value="Academic Tutoring">Academic Tutoring</option>
+            
+            <option value="Certified Translation">Certified Translation</option>
+            
+            <option value="Professional Retainer">Professional Retainer</option>
+            <option value="Interpretation">Interpretation</option>
+            
+          </select>
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-message">Message</label>
+          
+          <textarea class="cf-textarea" id="cf-message" name="message" autocomplete="off"></textarea>
+        </div>
+        <button type="submit" class="cf-submit">Send by email →</button>
+        <p class="cf-consent">By sending this form, you agree to be contacted about your request. See the <a href="/privacy.html">privacy policy</a>.</p>
+        
+        <div class="cf-error" id="cf-error" role="alert"></div>
+        <div class="cf-success" id="cf-success" role="status">Message sent. You’ll have your quote within 2 working hours.</div>
+        
+      </form>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer class="af" id="site-footer">
+  <button type="button" class="af__top" id="backToTop" data-en-label="Back to top" data-fr-label="Haut de page" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <div class="af__lead">
+    <div class="af__lead-inner">
+      <div class="af__lead-copy">
+        <p class="af__lead-eyebrow">Free quote within 2 working hours</p>
+        
+        <h2 class="af__lead-title">Tell me what you need translated.</h2>
+        
+        <p class="af__lead-sub">Mon–Fri 8:00–20:00 · Sat 8:00–18:00 (GMT+0)</p>
+        
+      </div>
+      <div class="af__lead-actions">
+        <a class="af__act af__act--gold" href="/business/#quote-intake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Request a Free Quote</a>
+        <a class="af__act" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@azaeliloki.com</a>
+        <a class="af__act" href="tel:+22879716258"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="af__act" href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg>WhatsApp</a>
+        <a class="af__act" href="https://calendly.com/iloki-azael/consultation" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book a call</a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="af__inner">
+    <div class="af__grid">
+      <div class="af__brand">
+        <h2 class="af__name">
+          <span class="af__mark" aria-hidden="true"><img src="/assets/images/logo-72.png" alt="" width="36" height="36" loading="lazy"></span>
+          Azaël&nbsp;<em>Iloki</em>
+        </h2>
+        <p class="af__tag">Sworn translator · FR ↔ EN · Lomé, Togo</p>
+        
+        <span class="af__chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z"/></svg><span>Sworn · Cour d’appel de Lomé</span></span>
+        <div class="af__social">
+          <a href="https://linkedin.com/in/azaeliloki" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 11v6"/></svg>
+          </a>
+          <a href="https://www.proz.com/translator/4735520" aria-label="ProZ.com" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 8.5h7l-7 7h7"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="af__col" aria-label="Services">
+        <h3 class="af__h">Services</h3>
+        <ul class="af__links">
+          <li><a href="/certified-translation/">Certified Translation</a></li>
+          <li><a href="/business/#svc-general">General Translation</a></li>
+          <li><a href="/business/#svc-training">Corporate Training</a></li>
+          <li><a href="/content-translation/">Web Content &amp; SEO</a></li>
+          <li><a href="/law-firms/">Law Firms</a></li>
+          <li><a href="/west-africa/">West Africa</a></li>
+          <li><a href="/interpretation/">Interpretation</a></li>
+          <li><a href="/icao-english/">ICAO Level 4</a></li>
+          <li><a href="/transcription/">Transcription</a></li>
+          <li><a href="/courses/#course-pricing-hub">Courses</a></li>
+          <li><a href="/tutoring/">Tutoring</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="af__col" aria-label="Information">
+        <h3 class="af__h">Information</h3>
+        <ul class="af__links">
+          <li><a href="/about/">About Me</a></li>
+          <li><a href="/reviews/">Client Reviews</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/sitemap/">Site Map</a></li>
+          <li><a href="/#funnel-paths">All Paths</a></li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+  <div class="af__divider" role="presentation"></div>
+  <div class="af__bottom">
+    <p class="af__legal">© 2026 Azaël Iloki · Sworn translator</p>
+    
+    <span class="af__meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Lomé, Togo · West Africa</span></span>
+    <div class="af__lang" role="group" aria-label="Language">
+      <a href="/courses/" data-lang="en" hreflang="en">EN</a>
+      <i aria-hidden="true">·</i>
+      <a href="/fr/courses/" data-lang="fr" hreflang="fr">FR</a>
+    </div>
+    
+  </div>
+</footer>
+
+<div class="modal-overlay" id="enrolTermsModal" role="dialog" aria-modal="true" aria-labelledby="enrolTermsTitle" hidden>
+  <div class="modal-box enrol-terms-box">
+    <button type="button" class="modal-x" id="enrolTermsClose" aria-label="Close" data-modal-initial-focus>&times;</button>
+    <h2 class="modal-title enrol-terms-title" id="enrolTermsTitle">
+      <span>Terms before enrolment</span>
+      
+    </h2>
+    <p class="enrol-terms-package" id="enrolTermsPackage" aria-live="polite"></p>
+    <div class="enrol-terms-body" id="enrolTermsBody"></div>
+    <p class="enrol-terms-faq">
+      <a href="../faq/#faq-courses" id="enrolTermsFaqLink">
+        <span>Read the full FAQ for more details →</span>
+        
+      </a>
+    </p>
+    <label class="enrol-terms-check">
+      <input type="checkbox" id="enrolTermsAccept">
+      <span>I have read and accept these terms</span>
+      
+    </label>
+    <div class="enrol-terms-actions">
+      <button type="button" class="enrol-terms-cancel" id="enrolTermsCancel">
+        <span>Cancel</span>
+        
+      </button>
+      <button type="button" class="ct-enrol-btn ct-enrol-btn--wa enrol-terms-confirm" id="enrolTermsConfirm" disabled>
+        <span>Continue to WhatsApp</span>
+        
+      </button>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/lang.js?v=8ccf1718" defer></script>
+<script src="../assets/js/header-nav.js?v=e1ba973d" defer></script>
+<script src="../assets/js/script.js?v=072d0e43" defer></script>
+</body>
+</html>

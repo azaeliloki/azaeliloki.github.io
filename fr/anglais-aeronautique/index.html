@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<script>(function () { var KEY = 'azael_lang_pref'; var FR_SLUG_FROM_EN = { 'certified-translation': 'traduction-certifiee', 'west-africa': 'afrique-de-louest', 'tutoring': 'soutien-scolaire', 'reviews': 'avis-clients', 'guides/visa-documents': 'guides/documents-visa', 'content-translation': 'contenu-web', 'law-firms': 'cabinets-juridiques', 'icao-english': 'anglais-aeronautique', 'interpretation': 'interpretation', 'terms': 'conditions', 'pricing': 'tarifs', 'sitemap': 'plan-du-site', 'contact': 'contact' }; function isFrPath(path) { return /(?:^|\/)fr(?:\/|$)/.test(path); } function isEnHome(path) { if (isFrPath(path)) return false; var p = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); if (p === '/' || p === '') return true; if (/\/(live|deploy-ready)\/?$/i.test(p)) return true; return false; } function suffix() { return location.search + location.hash; } function getPref() { try { return localStorage.getItem(KEY); } catch (e) { return null; } } function detectBrowserLang() { var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']; for (var i = 0; i < list.length; i++) { var tag = String(list[i]).toLowerCase(); if (tag.indexOf('fr') === 0) return 'fr'; if (tag.indexOf('en') === 0) return 'en'; } return 'en'; } function enSlugFromFr(frSlug) { for (var en in FR_SLUG_FROM_EN) { if (FR_SLUG_FROM_EN[en] === frSlug) return en; } return frSlug; } function translateSlug(slug, targetLang, sourceIsFr) { if (targetLang === 'fr') { if (!sourceIsFr && FR_SLUG_FROM_EN[slug]) return FR_SLUG_FROM_EN[slug]; return slug; } if (sourceIsFr) return enSlugFromFr(slug); return slug; } function parseLocalePath(path) { var normalized = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var onFr = isFrPath(normalized); var slug = normalized.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/').replace(/^\//, '').replace(/\/$/, ''); return { onFr: onFr, slug: slug }; } function liveSegments(path) { var segments = path.replace(/\\/g, '/').split('/').filter(Boolean); var liveIdx = -1; for (var i = 0; i < segments.length; i++) { var seg = segments[i].toLowerCase(); if (seg === 'live' || seg === 'deploy-ready') { liveIdx = i; break; } } if (liveIdx < 0) return null; var afterLive = segments.slice(liveIdx + 1); if (afterLive.length && /^index\.html?$/i.test(afterLive[afterLive.length - 1])) { afterLive.pop(); } return { segments: segments, liveIdx: liveIdx, afterLive: afterLive }; } function formatLocalePath(slug, lang) { if (lang === 'fr') { if (!slug) return '/fr/'; return '/fr/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } if (!slug) return '/'; return '/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } function httpLocaleHref(lang) { var path = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var info = liveSegments(path); if (info) { var after = info.afterLive.slice(); var onFr = after[0] === 'fr'; if (onFr) after.shift(); var slug = after.join('/'); var newSlug = translateSlug(slug, lang, onFr); var targetSegs = lang === 'fr' ? ['fr'].concat(newSlug ? newSlug.split('/') : []) : (newSlug ? newSlug.split('/') : []); var base = info.segments.slice(0, info.liveIdx + 1); return '/' + base.concat(targetSegs).join('/') + suffix(); } var parsed = parseLocalePath(path); if ((lang === 'fr' && parsed.onFr) || (lang === 'en' && !parsed.onFr)) { return path + suffix(); } var mappedSlug = translateSlug(parsed.slug, lang, parsed.onFr); return formatLocalePath(mappedSlug, lang) + suffix(); } function navigate(lang) { if (location.protocol === 'file:') return; location.replace(httpLocaleHref(lang)); } var path = location.pathname.replace(/\\/g, '/'); if (/404\.html$/i.test(path)) return; var onFr = isFrPath(path); var pref = getPref(); if (!pref && !onFr && isEnHome(path)) { if (detectBrowserLang() === 'fr') { navigate('fr'); } return; } if (!pref) return; if (parseLocalePath(path).slug !== '') return; if (pref === 'fr' && !onFr) { navigate('fr'); return; } if (pref === 'en' && onFr) { navigate('en'); } })();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niveau 4 OACI&nbsp;: préparation à l’anglais aéronautique, Lomé</title>
+<meta name="description" content="Niveau 4 OACI à Lomé&nbsp;: les six critères, la validité et le déroulement de l’évaluation. Pilotes, contrôleurs et opérateurs radio. 12 séances, dès 315&nbsp;000 FCFA.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://azaeliloki.com/fr/anglais-aeronautique/">
+<link rel="alternate" hreflang="en" href="https://azaeliloki.com/icao-english/">
+<link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/anglais-aeronautique/">
+<link rel="alternate" hreflang="x-default" href="https://azaeliloki.com/icao-english/">
+<meta property="og:title" content="Niveau 4 OACI&nbsp;: anglais aéronautique à Lomé">
+<meta property="og:description" content="Niveau 4 OACI à Lomé&nbsp;: les six critères, la validité et le déroulement de l’évaluation. Pilotes, contrôleurs et opérateurs radio. 12 séances, dès 315&nbsp;000 FCFA.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Azaël Iloki — Services linguistiques">
+<meta property="og:url" content="https://azaeliloki.com/fr/anglais-aeronautique/">
+<meta property="og:image" content="https://azaeliloki.com/assets/og/og-courses.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Azaël Iloki — cours d’anglais et préparation au niveau 4 OACI">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Niveau 4 OACI&nbsp;: anglais aéronautique à Lomé">
+<meta name="twitter:description" content="Niveau 4 OACI à Lomé&nbsp;: les six critères, la validité et le déroulement de l’évaluation. Pilotes, contrôleurs et opérateurs radio. 12 séances, dès 315&nbsp;000 FCFA.">
+<meta name="twitter:image" content="https://azaeliloki.com/assets/og/og-courses.jpg">
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="preconnect" href="https://wa.me" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="critical-css">/* critical ATB */:root{--navy:#122C4D;--navy-dark:#0E233F;--gold:#C9A658;--gold-on-dark:#F2DC8A;--white:#FFFFFF;--cream:#EDEEE8;--muted-on-dark:#CBD6E4;--font-body:'Outfit',system-ui,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}*{box-sizing:border-box}html[lang=en] [data-fr],html[lang=fr] [data-en]{display:none!important}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--navy);background:var(--cream)}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:16px;top:16px;z-index:9999;background:var(--white);padding:8px 12px}.ah{position:sticky;top:0;z-index:100;background:rgba(18,44,77,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.25)}.ah__inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);justify-content:space-between}.ah__logo{height:clamp(34px,6vw,52px);width:auto;display:block}.ah__nav{display:flex}@media(min-width:1280px){.ah__nav{display:block}}.ah__util{background:var(--navy-dark)}.ah__util-inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:34px;display:flex;align-items:center;justify-content:space-between}.ah__util-links{display:flex;align-items:center;flex:none}.ah__inner{height:74px}.ah__links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.ah__links li{display:flex}.ah__drop-wrap{position:relative}@media(min-width:1280px){.ah__drop-menu{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none}}.ah__actions{display:flex;align-items:center}@media(max-width:1279px){.ah__nav{display:none}.ah__burger{display:block}.ah__inner{height:62px}.ah__item--dropdown .ah__drop-menu{display:none}}@media(max-width:767px){.ah__util-note{display:none}.ah__util-inner{height:32px;justify-content:center}}.ah__burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer}.ah__burger span{display:block;width:22px;height:1.5px;background:var(--gold)}.hero{background:linear-gradient(160deg,var(--navy-dark),var(--navy));color:var(--white);padding:clamp(120px,15vw,160px) 20px clamp(60px,8vw,100px)}.hero-inner{max-width:1200px;margin:0 auto;width:100%}@media(min-width:1200px){.hero-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}}@media(min-width:900px){.hero-inner{grid-template-columns:1fr auto;gap:60px}}.hero-eyebrow{display:flex;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-on-dark);border:1px solid rgba(201,168,76,.35);padding:4px 10px;border-radius:999px;margin-bottom:20px}.hero-title{font-family:var(--font-serif);font-size:clamp(38px,5.5vw,72px);font-weight:700;line-height:1.1;margin:0 0 8px;color:var(--white)}.util-hero .hero-title{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 12px}.hero-lead{margin:0 0 10px;color:var(--muted-on-dark)}.hero-sub{margin:20px 0 36px;color:var(--muted-on-dark)}.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}.btn-primary{background:var(--gold);color:var(--navy)}.btn-ghost{border:1px solid rgba(255,255,255,.35);color:var(--white)}.hero-portrait-img{width:100%;max-width:420px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block}</style>
+<link rel="preload" href="/assets/css/style.css?v=cc67a03d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=cc67a03d"></noscript>
+<link rel="icon" type="image/png" href="/assets/images/logo-72.png">
+<script src="/assets/js/analytics-deferred.js?v=65330a98" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://azaeliloki.com/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cours",
+      "item": "https://azaeliloki.com/fr/courses/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "OACI niveau 4",
+      "item": "https://azaeliloki.com/fr/anglais-aeronautique/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://azaeliloki.com/#business",
+      "name": "Azaël Iloki",
+      "url": "https://azaeliloki.com/",
+      "telephone": "+22879716258",
+      "email": "contact@azaeliloki.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lomé",
+        "addressRegion": "Maritime",
+        "addressCountry": "TG"
+      }
+    },
+    {
+      "@type": "Service",
+      "availableLanguage": [
+        "fr",
+        "en"
+      ],
+      "name": "Anglais aéronautique OACI niveau 4 à Lomé",
+      "serviceType": "Formation en anglais aéronautique OACI niveau 4",
+      "description": "Niveau 4 OACI à Lomé : les six critères, la validité et le déroulement de l’évaluation. Pilotes, contrôleurs et opérateurs radio. 12 séances, dès 315 000 FCFA.",
+      "provider": {
+        "@id": "https://azaeliloki.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Togo"
+        },
+        "Afrique de l’Ouest francophone"
+      ],
+      "url": "https://azaeliloki.com/fr/anglais-aeronautique/",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Candidat individuel — en ligne",
+          "priceCurrency": "XOF",
+          "description": "315 000 FCFA (12 séances)",
+          "price": "315000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Candidat individuel — en présentiel, Lomé",
+          "priceCurrency": "XOF",
+          "description": "345 000 FCFA (12 séances)",
+          "price": "345000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Prise en charge employeur — compagnie, ANAC ou école de pilotage",
+          "priceCurrency": "XOF",
+          "description": "25 000 FCFA l’heure",
+          "price": "25000"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="lang-fr page-icao page-linear">
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header class="ah" id="navbar">
+  <div class="ah__util">
+    <div class="ah__util-inner">
+      
+      <span class="ah__util-note">Traducteur assermenté · Cour d’appel de Lomé</span>
+      <span class="ah__util-links">
+        <a class="ah__util-a" href="tel:+22879716258"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="ah__util-a ah__util-a--mail" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@azaeliloki.com</a>
+      </span>
+      <div class="ah__lang" role="group" aria-label="Language" data-en-label="Language" data-fr-label="Langue">
+        <a href="/icao-english/" data-lang="en" hreflang="en">EN</a>
+        <i aria-hidden="true">·</i>
+        <a href="/fr/anglais-aeronautique/" data-lang="fr" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+  <div class="ah__inner">
+    
+    <a class="ah__brand" href="/fr/" aria-label="Azaël Iloki — accueil">
+      <img src="/assets/images/logo-nav.png" srcset="/assets/images/logo-nav.png 1x, /assets/images/logo-nav@2x.png 2x" alt="Azaël Iloki" class="ah__logo" width="256" height="64" decoding="async">
+    </a>
+    <nav class="ah__nav" id="primary-menu" aria-label="Main navigation" data-en-label="Main navigation" data-fr-label="Navigation principale">
+      <ul class="ah__links">
+        
+        <li><a href="/fr/traduction-certifiee/" data-nav="certified">Traduction certifiée</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/fr/courses/#course-pricing-hub" class="ah__drop-label active" data-nav="courses" aria-current="true">Cours</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-courses-fr" id="ah-drop-btn-courses-fr">
+              <span class="visually-hidden">Afficher les cours</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-courses-fr" role="menu">
+              <li role="none"><a href="/fr/courses/#course-pricing-hub" role="menuitem">Cours de langues</a></li>
+              <li role="none"><a href="/fr/anglais-aeronautique/" role="menuitem">Anglais aéronautique (OACI)</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/fr/soutien-scolaire/" data-nav="tutoring">Soutien scolaire</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/fr/business/" class="ah__drop-label" data-nav="business">Entreprise</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-business-fr" id="ah-drop-btn-business-fr">
+              <span class="visually-hidden">Afficher les services entreprise</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-business-fr" role="menu">
+              <li role="none"><a href="/fr/business/#svc-general" role="menuitem">Traduction générale (B2B)</a></li>
+              <li role="none"><a href="/fr/business/#svc-training" role="menuitem">Formation entreprise</a></li>
+              <li role="none"><a href="/fr/business/#svc-retainer" role="menuitem">Forfait professionnel</a></li>
+              <li role="none"><a href="/fr/interpretation/" role="menuitem">Interprétation</a></li>
+              <li role="none"><a href="/fr/contenu-web/" role="menuitem">Contenu web &amp; SEO</a></li>
+              <li role="none"><a href="/fr/cabinets-juridiques/" role="menuitem">Cabinets juridiques</a></li>
+              <li role="none"><a href="/fr/transcription/" role="menuitem">Transcription d’enregistrements</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/fr/tarifs/" data-nav="pricing">Tarifs</a></li>
+        
+        <li><a href="/fr/about/" data-nav="about">À propos</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/contact/">Contact</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/avis-clients/">Avis clients</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    
+    <a class="ah__cta" href="https://wa.me/22879716258?text=Bonjour%20Aza%C3%ABl%2C%20je%20souhaite%20obtenir%20un%20devis.%0A%0AService%C2%A0%3A%0ADocument%20ou%20besoin%C2%A0%3A%0APour%20quand%C2%A0%3A" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg><span class="ah__cta-full">Demander un devis</span><span class="ah__cta-short">Devis</span></a>
+    <button type="button" class="ah__burger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main">
+  <nav class="page-breadcrumb" aria-label="Fil d’Ariane">
+    <ol class="page-breadcrumb__list">
+        <li><a href="/fr/">Accueil</a></li>
+        <li><a href="/fr/courses/">Cours</a></li>
+        <li aria-current="page">OACI niveau 4</li>
+    </ol>
+  </nav>
+
+  <section class="hero" id="home" aria-labelledby="home-heading">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Anglais aéronautique · OACI niveau 4</div>
+        <h1 class="hero-title" id="home-heading">Niveau 4 OACI&nbsp;: anglais aéronautique à Lomé</h1>
+        <p class="hero-lead">Préparation structurée pour les pilotes, les navigateurs, les contrôleurs de la circulation aérienne et les opérateurs radio.</p>
+        <p class="hero-sub">Douze séances de 1&nbsp;h&nbsp;30 réparties sur 6 à 12 semaines, en ligne ou en présentiel à Lomé. Compagnies, ANAC et écoles de pilotage peuvent être facturées directement.</p>
+        <div class="hero-btns">
+          <a href="https://wa.me/22879716258?text=Bonjour%20Aza%C3%ABl%2C%20je%20souhaite%20obtenir%20des%20informations%20sur%20l%E2%80%99anglais%20a%C3%A9ronautique%20(OACI%20niveau%204).%0A%0ANiveau%20actuel%C2%A0%3A%0A%C3%89ch%C3%A9ance%C2%A0%3A%0ANombre%20de%20participants%C2%A0%3A" class="btn-primary" data-cf-service="Anglais aéronautique (OACI)" target="_blank" rel="noopener noreferrer">Demander un devis gratuit</a>
+          <a href="#rates" class="btn-ghost">Voir les tarifs →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="level4" aria-labelledby="level4-heading">
+    <div class="section-inner">
+      <span class="eyebrow">Définition</span>
+      <h2 class="section-title" id="level4-heading">Qu’est-ce que le niveau 4 OACI&nbsp;?</h2>
+      <p class="interpretation-intro">L’Organisation de l’aviation civile internationale a établi une échelle de compétence linguistique en six échelons, du niveau 1 au niveau 6. Le <strong>niveau 4, dit opérationnel, est le minimum exigé</strong> pour les communications radiotéléphoniques internationales.</p>
+      <figure class="icao-scale">
+        <svg viewBox="0 0 480 92" role="img" aria-labelledby="icao-scale-t icao-scale-d">
+          <title id="icao-scale-t">Échelle de compétence linguistique de l’OACI</title>
+          <desc id="icao-scale-d">Six échelons, du niveau 1 au niveau 6. Le niveau 4 est le minimum exigé pour les communications radiotéléphoniques internationales.</desc>
+          <g text-anchor="middle">
+      <rect x="10" y="12" width="70" height="44" rx="6" fill="none" stroke="var(--border-md)" stroke-width="1.5"/>
+      <text x="45" y="42" font-size="21" font-weight="400" fill="var(--muted-on-light)">1</text>
+      <rect x="88" y="12" width="70" height="44" rx="6" fill="none" stroke="var(--border-md)" stroke-width="1.5"/>
+      <text x="123" y="42" font-size="21" font-weight="400" fill="var(--muted-on-light)">2</text>
+      <rect x="166" y="12" width="70" height="44" rx="6" fill="none" stroke="var(--border-md)" stroke-width="1.5"/>
+      <text x="201" y="42" font-size="21" font-weight="400" fill="var(--muted-on-light)">3</text>
+      <rect x="244" y="12" width="70" height="44" rx="6" fill="var(--gold)" stroke="var(--gold)" stroke-width="1.5"/>
+      <text x="279" y="42" font-size="21" font-weight="700" fill="var(--navy)">4</text>
+      <rect x="322" y="12" width="70" height="44" rx="6" fill="none" stroke="var(--border-md)" stroke-width="1.5"/>
+      <text x="357" y="42" font-size="21" font-weight="400" fill="var(--muted-on-light)">5</text>
+      <rect x="400" y="12" width="70" height="44" rx="6" fill="none" stroke="var(--border-md)" stroke-width="1.5"/>
+      <text x="435" y="42" font-size="21" font-weight="400" fill="var(--muted-on-light)">6</text>
+            <text x="279" y="81" font-size="18" font-weight="600" fill="var(--gold-readable)">minimum exigé</text>
+          </g>
+        </svg>
+        <figcaption>En dessous du niveau 4, la licence ne permet pas d’opérer à l’international. Au-dessus, les niveaux 5 et 6 correspondent à une maîtrise étendue puis experte.</figcaption>
+      </figure>
+      <p class="price-note">Il ne s’agit pas d’un examen d’anglais général. L’évaluation porte sur votre capacité à communiquer efficacement en situation opérationnelle — y compris lorsque la phraséologie standard ne suffit plus et qu’il faut expliquer, négocier, gérer un imprévu en langage clair.</p>
+    </div>
+  </section>
+
+  <section class="services" id="who" aria-labelledby="who-heading">
+    <div class="section-inner">
+      <span class="eyebrow">Public</span>
+      <h2 class="section-title" id="who-heading">À qui cela s’adresse</h2>
+      <p class="interpretation-intro">Au titre de l’article 3 de l’<a href="https://www.anac-togo.tg/lois-reglements/licences-du-personnel/" target="_blank" rel="noopener">arrêté n°&nbsp;013/MTPTUH/CAB/SG/ANAC-TOGO du 20 mai 2008</a>, l’exigence de compétence linguistique vise quatre catégories de personnels. Le personnel navigant commercial n’en fait pas partie&nbsp;: il est préparé sur un parcours distinct.</p>
+      <ul class="interpretation-list">
+        <li><strong>Pilotes d’avions et d’hélicoptères</strong><span>Anglais opérationnel pour la radiotéléphonie, les briefings et les vols internationaux.</span></li>
+        <li><strong>Navigateurs utilisant le radiotéléphone de bord</strong><span>Communication radio en anglais sur les liaisons internationales.</span></li>
+        <li><strong>Contrôleurs de la circulation aérienne</strong><span>Clairances, coordination et gestion de l’imprévu en langage clair.</span></li>
+        <li><strong>Opérateurs radio de station aéronautique</strong><span>Communication sol-bord en anglais avec les équipages.</span></li>
+        <li><strong>Personnel navigant commercial — parcours distinct</strong><span>Annonces de sécurité, relation passagers et communication en équipage. Non visé par l’exigence de niveau 4, préparé en anglais aéronautique général — <a href="/fr/courses/">voir les cours spécialisés</a>.</span></li>
+        <li><strong>Compagnies et écoles de pilotage</strong><span>Groupes formés sur site ou en ligne, facturés à l’organisation.</span></li>
+        <li><strong>ANAC et personnels institutionnels</strong><span>Agents de l’aviation civile préparant une évaluation en anglais.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="services" id="criteria" aria-labelledby="criteria-heading">
+    <div class="section-inner">
+      <span class="eyebrow">Évaluation</span>
+      <h2 class="section-title" id="criteria-heading">Les six critères évalués</h2>
+      <p class="interpretation-intro">Six compétences sont notées séparément, chacune sur ce que vous savez faire en communication, pas sur ce que vous savez de la langue.</p>
+      <ul class="interpretation-list">
+        <li><strong>Prononciation</strong><span>Un accent et une articulation qui ne gênent pas la compréhension.</span></li>
+        <li><strong>Structure</strong><span>La maîtrise des structures grammaticales utiles à la tâche.</span></li>
+        <li><strong>Vocabulaire</strong><span>L’étendue et la précision du lexique, y compris la paraphrase quand le mot exact manque.</span></li>
+        <li><strong>Aisance</strong><span>Un débit soutenu, sans hésitations qui entravent l’échange.</span></li>
+        <li><strong>Compréhension</strong><span>L’aptitude à suivre des interlocuteurs variés, accents non familiers compris, et à faire face à une tournure inattendue.</span></li>
+        <li><strong>Interactions</strong><span>Des réponses immédiates et appropriées — vérifier, clarifier, confirmer.</span></li>
+      </ul>
+      <p class="price-note"><strong>Le niveau global est celui du critère le plus faible.</strong> Excellent sur cinq critères et 3 sur le sixième, vous obtenez 3. Une préparation efficace commence donc par identifier le critère qui vous plafonne, pas par réviser l’ensemble.</p>
+    </div>
+  </section>
+
+  <section class="services" id="validity" aria-labelledby="validity-heading">
+    <div class="section-inner">
+      <span class="eyebrow">Validité</span>
+      <h2 class="section-title" id="validity-heading">Combien de temps le niveau reste-t-il valable&nbsp;?</h2>
+      <p class="interpretation-intro">Au Togo, les échéances de réévaluation sont fixées par l’article 4 de l’<a href="https://www.anac-togo.tg/lois-reglements/licences-du-personnel/" target="_blank" rel="noopener">arrêté n°&nbsp;013/MTPTUH/CAB/SG/ANAC-TOGO du 20 mai 2008</a>, portant spécification des compétences linguistiques en aviation civile.</p>
+      <ul class="interpretation-list">
+        <li><strong>Niveau 4 — opérationnel</strong><span>Évaluation tous les trois ans.</span></li>
+        <li><strong>Niveau 5 — avancé</strong><span>Évaluation tous les six ans.</span></li>
+        <li><strong>Niveau 6 — expert</strong><span>Compétence acquise de manière définitive. Aucune réévaluation.</span></li>
+      </ul>
+      <p class="price-note">C’est ce qui distingue cette qualification de la plupart des examens de langue&nbsp;: le besoin n’est pas ponctuel, il revient.</p>
+      <p class="price-note">Viser le niveau 5, ou le niveau 6 qui supprime toute réévaluation, se prépare également&nbsp;: le volume dépend de votre point de départ, le programme est donc établi sur devis.</p>
+    </div>
+  </section>
+
+  <section class="services" id="assessment" aria-labelledby="assessment-heading">
+    <div class="section-inner">
+      <span class="eyebrow">Épreuve</span>
+      <h2 class="section-title" id="assessment-heading">Comment se déroule l’évaluation&nbsp;?</h2>
+      <p class="interpretation-intro">Les formats varient selon l’organisme agréé, mais l’épreuve comporte généralement trois parties. Tout se joue à l’oral&nbsp;: aucune épreuve écrite n’intervient dans la notation.</p>
+      <ul class="interpretation-list">
+        <li><strong>Entretien oral</strong><span>Un échange structuré sur votre fonction et votre expérience opérationnelle.</span></li>
+        <li><strong>Écoute</strong><span>Messages et situations, y compris des accents non familiers.</span></li>
+        <li><strong>Situation inhabituelle</strong><span>Décrire ou résoudre une situation opérationnelle que la phraséologie standard ne couvre pas.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="services" id="scope" aria-labelledby="scope-heading">
+    <div class="section-inner">
+      <span class="eyebrow">Périmètre</span>
+      <h2 class="section-title" id="scope-heading">Ce que je prépare, et ce que je ne fais pas</h2>
+      <p class="interpretation-intro"><strong>Je prépare à l’évaluation. Je ne la fais pas passer.</strong> Les évaluations de compétence linguistique sont conduites par les organismes agréés par décision du directeur général de l’ANAC, au titre de l’article 5 du même arrêté. Je n’en suis pas un, et aucune préparation — la mienne comprise — ne peut garantir un résultat.</p>
+      <p class="price-note">Ce que je peux garantir, c’est un diagnostic honnête. Si la première séance montre que le temps dont vous disposez ne suffira pas, je vous le dirai avant que vous ne vous engagiez.</p>
+      <p class="price-note"><strong>Où passer l’évaluation.</strong> Les organismes agréés le sont par décision du directeur général de l’ANAC, et cette liste ne m’appartient pas&nbsp;: adressez-vous à l’<a href="https://www.anac-togo.tg/" target="_blank" rel="noopener">ANAC</a> ou à votre compagnie, qui la tiennent à jour.</p>
+      <p class="price-note"><strong>Si le niveau n’est pas obtenu.</strong> Vous ne repayez pas le programme. On reprend le critère qui a bloqué, en séances facturées à l’heure et devisées d’avance — leur nombre dépend de ce qui manque, pas d’un forfait.</p>
+    </div>
+  </section>
+
+  <section class="services" id="rates" aria-labelledby="rates-heading">
+    <div class="section-inner">
+      <span class="eyebrow">Tarifs</span>
+      <h2 class="section-title" id="rates-heading">Ce que coûte la préparation</h2>
+      <p class="price-note">Tarifs HT. Sur demande de facture (particuliers ou entreprises), la TVA est ajoutée selon le taux en vigueur. Le programme comprend douze séances de 1&nbsp;h&nbsp;30, réparties sur 6 à 12 semaines&nbsp;: deux séances par semaine lorsque l’échéance est proche, une seule pour étaler l’effort.</p>
+      <div class="home-rates-table-wrap home-rates-table-wrap--duo" tabindex="0" role="region" aria-label="Tarifs">
+        <table class="home-rates-table">
+          <tbody>
+            <tr><td>Candidat individuel — en ligne</td><td>315&nbsp;000 FCFA (12 séances)</td></tr>
+            <tr><td>Candidat individuel — en présentiel, Lomé</td><td>345&nbsp;000 FCFA (12 séances)</td></tr>
+            <tr><td>Prise en charge employeur — compagnie, ANAC ou école de pilotage</td><td>25&nbsp;000 FCFA l’heure, facturé par participant — devis selon l’effectif</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="price-note">Règlement par Moov Money, Mixx by Yas, Ecobank Mobile ou virement bancaire&nbsp;; depuis l’étranger, la facturation se fait en EUR, USD ou FCFA — <a href="/fr/courses/#payment">voir les modes de paiement</a>.</p>
+    </div>
+  </section>
+
+  <section class="services" id="organisations" aria-labelledby="organisations-heading">
+    <div class="section-inner">
+      <span class="eyebrow">Organisations</span>
+      <h2 class="section-title" id="organisations-heading">Pour les compagnies, les organismes et les autorités</h2>
+      <p class="interpretation-intro">La conformité linguistique est une obligation permanente, pas un projet ponctuel&nbsp;: les personnels arrivent, les échéances tombent, les revalidations reviennent.</p>
+      <ul class="interpretation-list">
+        <li><strong>Diagnostic d’équipe</strong><span>Où en est chacun sur les six critères, et qui approche le plus de son échéance.</span></li>
+        <li><strong>Préparation par groupe</strong><span>Construite autour des contraintes d’emploi du temps des équipages, sur site à Lomé ou en visioconférence.</span></li>
+        <li><strong>Suivi des revalidations</strong><span>Les échéances suivies pour qu’une expiration ne cloue personne au sol.</span></li>
+      </ul>
+      <p class="price-note">Des conventions annuelles plutôt que des séances isolées. Compagnies, ANAC et écoles de pilotage sont facturées directement au tarif horaire ci-dessus.</p>
+    </div>
+  </section>
+
+  <section class="primary-cta-band" id="book-now" aria-labelledby="book-now-heading">
+    <div class="section-inner">
+      <h2 class="section-title" id="book-now-heading">Par où commencer votre préparation OACI&nbsp;?</h2>
+      <p class="primary-cta-band__sub">Votre niveau actuel et votre échéance suffisent — devis gratuit sous 2&nbsp;h ouvrées.</p>
+      <div class="primary-cta-band__actions">
+      <a href="/fr/business/#quote-intake" class="btn-primary" data-cf-service="Anglais aéronautique (OACI)">Demander un devis gratuit</a>
+      <a href="mailto:contact@azaeliloki.com?subject=Devis%20%E2%80%94%20anglais%20a%C3%A9ronautique%20OACI%20niveau%204&amp;body=Bonjour%2C%0D%0A%0D%0AJe%20souhaite%20obtenir%20un%20devis%20pour%20l%E2%80%99anglais%20a%C3%A9ronautique%20OACI%20niveau%204.%0D%0A%0D%0ANombre%20de%20participants%C2%A0%3A%0D%0ANiveau%20actuel%C2%A0%3A%0D%0A%C3%89ch%C3%A9ance%C2%A0%3A%0D%0A%0D%0ACordialement%2C" class="btn-secondary btn--email">Écrire par courriel</a>
+      <a href="https://wa.me/22879716258?text=Bonjour%20Aza%C3%ABl%2C%20je%20souhaite%20obtenir%20un%20devis%20pour%20l%E2%80%99anglais%20a%C3%A9ronautique%20OACI%20niveau%204.%0A%0ANiveau%20actuel%C2%A0%3A%0A%C3%89ch%C3%A9ance%C2%A0%3A%0ANombre%20de%20participants%C2%A0(1%20si%20c%E2%80%99est%20pour%20vous)%C2%A0%3A" class="btn--wa" target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp</a>
+    </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews" aria-labelledby="reviews-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Avis clients</span>
+    <h2 class="section-title" id="reviews-heading">Ce que disent les clients</h2>
+    <div class="reviews-grid" id="reviewsGrid"><!--reviews:start--><!--reviews:end--></div>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="section-inner">
+      <h2 class="section-title" id="faq-heading">Questions fréquentes</h2>
+      <details class="faq-item">
+        <summary class="faq-q">Combien de séances comprend le programme&nbsp;?</summary>
+        <div class="faq-a"><p>Douze séances de 1&nbsp;h&nbsp;30, en ligne ou en présentiel à Lomé.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Sur combien de temps s’étalent les séances&nbsp;?</summary>
+        <div class="faq-a"><p>De 6 à 12 semaines, selon le rythme retenu&nbsp;: deux séances par semaine lorsque l’échéance est proche, une seule pour étaler l’effort. Le calendrier est arrêté avec vous à partir de votre date d’évaluation.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Quel est le tarif&nbsp;?</summary>
+        <div class="faq-a"><p>315&nbsp;000 FCFA en ligne ou 345&nbsp;000 FCFA en présentiel pour le programme individuel, HT. Lorsque la formation est prise en charge par une compagnie, l’ANAC ou une école de pilotage, elle est facturée 25&nbsp;000 FCFA l’heure.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Comment payer, et comment payer depuis l’étranger&nbsp;?</summary>
+        <div class="faq-a"><p>Moov Money, Mixx by Yas, Ecobank Mobile ou virement bancaire. Les clients hors du Togo peuvent être facturés en EUR, USD ou FCFA. Le détail figure sur la <a href="/fr/courses/#payment">page des cours</a> et à l’article 3 des <a href="/fr/conditions/">conditions générales</a>.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Mon employeur peut-il être facturé directement&nbsp;?</summary>
+        <div class="faq-a"><p>Oui. Les compagnies, l’ANAC et les écoles de pilotage sont facturées sur facture pro forma au tarif horaire, aux mêmes conditions que la formation entreprise.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Le niveau 4 est-il acquis définitivement&nbsp;?</summary>
+        <div class="faq-a"><p>Non. L’arrêté n°&nbsp;013/MTPTUH/CAB/SG/ANAC-TOGO du 20 mai 2008 impose une réévaluation tous les trois ans au niveau 4, et tous les six ans au niveau 5. Seul le niveau 6 est acquis de manière définitive.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Préparez-vous aux niveaux 5 et 6&nbsp;?</summary>
+        <div class="faq-a"><p>Oui. Le niveau 5 espace les réévaluations à six ans et le niveau 6 les supprime. Le volume dépend de votre point de départ&nbsp;: le programme est établi sur devis plutôt que sur un forfait fixe.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Faites-vous passer l’évaluation&nbsp;?</summary>
+        <div class="faq-a"><p>Non. Je prépare à l’évaluation&nbsp;; elle est conduite par les organismes agréés par décision du directeur général de l’ANAC. Aucune préparation ne peut garantir un résultat.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Où passer l’évaluation&nbsp;?</summary>
+        <div class="faq-a"><p>Auprès d’un organisme agréé par décision du directeur général de l’ANAC. Je ne publie pas cette liste&nbsp;: elle relève de l’autorité, pas de moi. L’<a href="https://www.anac-togo.tg/" target="_blank" rel="noopener">ANAC</a> ou votre compagnie vous indiquera les organismes agréés en cours de validité.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Que se passe-t-il si je n’obtiens pas le niveau&nbsp;?</summary>
+        <div class="faq-a"><p>Vous ne repayez pas le programme. On reprend le critère qui a bloqué, en séances facturées à l’heure et devisées d’avance&nbsp;; leur nombre dépend de ce qui manque. Aucune préparation ne peut garantir un résultat, la mienne comprise.</p></div>
+      </details>
+    </div>
+  </section>
+</main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "fr",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien de séances comprend le programme ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Douze séances de 1 h 30, en ligne ou en présentiel à Lomé."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sur combien de temps s’étalent les séances ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De 6 à 12 semaines, selon le rythme retenu : deux séances par semaine lorsque l’échéance est proche, une seule pour étaler l’effort. Le calendrier est arrêté avec vous à partir de votre date d’évaluation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel est le tarif ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "315 000 FCFA en ligne ou 345 000 FCFA en présentiel pour le programme individuel, HT. Lorsque la formation est prise en charge par une compagnie, l’ANAC ou une école de pilotage, elle est facturée 25 000 FCFA l’heure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment payer, et comment payer depuis l’étranger ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moov Money, Mixx by Yas, Ecobank Mobile ou virement bancaire. Les clients hors du Togo peuvent être facturés en EUR, USD ou FCFA. Le détail figure sur la page des cours et à l’article 3 des conditions générales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mon employeur peut-il être facturé directement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Les compagnies, l’ANAC et les écoles de pilotage sont facturées sur facture pro forma au tarif horaire, aux mêmes conditions que la formation entreprise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le niveau 4 est-il acquis définitivement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. L’arrêté n° 013/MTPTUH/CAB/SG/ANAC-TOGO du 20 mai 2008 impose une réévaluation tous les trois ans au niveau 4, et tous les six ans au niveau 5. Seul le niveau 6 est acquis de manière définitive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Préparez-vous aux niveaux 5 et 6 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Le niveau 5 espace les réévaluations à six ans et le niveau 6 les supprime. Le volume dépend de votre point de départ : le programme est établi sur devis plutôt que sur un forfait fixe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faites-vous passer l’évaluation ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Je prépare à l’évaluation ; elle est conduite par les organismes agréés par décision du directeur général de l’ANAC. Aucune préparation ne peut garantir un résultat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Où passer l’évaluation ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Auprès d’un organisme agréé par décision du directeur général de l’ANAC. Je ne publie pas cette liste : elle relève de l’autorité, pas de moi. L’ANAC ou votre compagnie vous indiquera les organismes agréés en cours de validité."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que se passe-t-il si je n’obtiens pas le niveau ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vous ne repayez pas le programme. On reprend le critère qui a bloqué, en séances facturées à l’heure et devisées d’avance ; leur nombre dépend de ce qui manque. Aucune préparation ne peut garantir un résultat, la mienne comprise."
+      }
+    }
+  ]
+}
+</script>
+<footer class="af" id="site-footer">
+  <button type="button" class="af__top" id="backToTop" data-en-label="Back to top" data-fr-label="Haut de page" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <div class="af__lead">
+    <div class="af__lead-inner">
+      <div class="af__lead-copy">
+        
+        <p class="af__lead-eyebrow">Devis gratuit sous 2&nbsp;h ouvrées</p>
+        
+        <h2 class="af__lead-title">Dites-moi ce que vous avez à faire traduire.</h2>
+        
+        <p class="af__lead-sub">lun.–ven. 8&nbsp;h–20&nbsp;h · sam. 8&nbsp;h–18&nbsp;h (GMT+0)</p>
+      </div>
+      
+      <div class="af__lead-actions">
+        <a class="af__act af__act--gold" href="/fr/business/#quote-intake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Demander un devis gratuit</a>
+        <a class="af__act" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@azaeliloki.com</a>
+        <a class="af__act" href="tel:+22879716258"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="af__act" href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg>WhatsApp</a>
+        <a class="af__act" href="https://calendly.com/iloki-azael/consultation" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Réserver un appel</a>
+      </div>
+    </div>
+  </div>
+  <div class="af__inner">
+    <div class="af__grid">
+      <div class="af__brand">
+        <h2 class="af__name">
+          <span class="af__mark" aria-hidden="true"><img src="/assets/images/logo-72.png" alt="" width="36" height="36" loading="lazy"></span>
+          Azaël&nbsp;<em>Iloki</em>
+        </h2>
+        
+        <p class="af__tag">Traducteur assermenté · FR ↔ EN · Lomé, Togo</p>
+        <span class="af__chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z"/></svg><span>Assermenté · Cour d’appel de Lomé</span></span>
+        <div class="af__social">
+          <a href="https://linkedin.com/in/azaeliloki" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 11v6"/></svg>
+          </a>
+          <a href="https://www.proz.com/translator/4735520" aria-label="ProZ.com" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 8.5h7l-7 7h7"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <nav class="af__col" aria-label="Parcours">
+        <h3 class="af__h">Parcours</h3>
+        <ul class="af__links">
+          <li><a href="/fr/traduction-certifiee/">Traduction certifiée</a></li>
+          <li><a href="/fr/business/#svc-general">Traduction générale</a></li>
+          <li><a href="/fr/business/#svc-training">Formation entreprise</a></li>
+          <li><a href="/fr/contenu-web/">Contenu web &amp; SEO</a></li>
+          <li><a href="/fr/cabinets-juridiques/">Cabinets juridiques</a></li>
+          <li><a href="/fr/afrique-de-louest/">Afrique de l’Ouest</a></li>
+          <li><a href="/fr/interpretation/">Interprétation</a></li>
+          <li><a href="/fr/anglais-aeronautique/">Anglais aéronautique</a></li>
+          <li><a href="/fr/transcription/">Transcription</a></li>
+          <li><a href="/fr/courses/#course-pricing-hub">Cours</a></li>
+          <li><a href="/fr/soutien-scolaire/">Soutien scolaire</a></li>
+          <li><a href="/fr/tarifs/">Tarifs</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="af__col" aria-label="Informations">
+        <h3 class="af__h">Informations</h3>
+        <ul class="af__links">
+          <li><a href="/fr/about/">À propos</a></li>
+          <li><a href="/fr/avis-clients/">Avis clients</a></li>
+          <li><a href="/fr/faq/">FAQ</a></li>
+          <li><a href="/fr/contact/">Contact</a></li>
+          <li><a href="/fr/conditions/">Conditions générales</a></li>
+          <li><a href="/fr/privacy.html">Confidentialité</a></li>
+          <li><a href="/fr/plan-du-site/">Plan du site</a></li>
+          <li><a href="/fr/#funnel-paths">Tous les parcours</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="af__divider" role="presentation"></div>
+  <div class="af__bottom">
+    
+    <p class="af__legal">© 2026 Azaël Iloki · Traducteur assermenté</p>
+    <span class="af__meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Lomé, Togo · Afrique de l’Ouest</span></span>
+    
+    <div class="af__lang" role="group" aria-label="Langue">
+      <a href="/icao-english/" data-lang="en" hreflang="en">EN</a>
+      <i aria-hidden="true">·</i>
+      <a href="/fr/anglais-aeronautique/" data-lang="fr" hreflang="fr">FR</a>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/lang.js?v=8ccf1718" defer></script>
+<script src="/assets/js/header-nav.js?v=e1ba973d" defer></script>
+<script src="/assets/js/script.js?v=072d0e43" defer></script>
+</body>
+</html>

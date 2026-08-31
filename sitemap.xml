@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Main pages -->
+  <url>
+    <loc>https://azaeliloki.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Business landing pages -->
+  <url>
+    <loc>https://azaeliloki.com/business/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/business/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/business/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/business/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/business/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/business/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Web content & law firms -->
+  <url>
+    <loc>https://azaeliloki.com/content-translation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/content-translation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/contenu-web/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/contenu-web/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/content-translation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/contenu-web/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/law-firms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/law-firms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/cabinets-juridiques/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/cabinets-juridiques/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/law-firms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/cabinets-juridiques/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Interpretation -->
+  <url>
+    <loc>https://azaeliloki.com/interpretation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/interpretation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/interpretation/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/interpretation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/interpretation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/interpretation/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Courses landing pages -->
+  <url>
+    <loc>https://azaeliloki.com/courses/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/courses/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/courses/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/courses/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/courses/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/courses/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Certified translation landing pages -->
+  <url>
+    <loc>https://azaeliloki.com/certified-translation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/certified-translation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/traduction-certifiee/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/traduction-certifiee/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/certified-translation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/traduction-certifiee/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tutoring landing pages -->
+  <url>
+    <loc>https://azaeliloki.com/tutoring/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/tutoring/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/soutien-scolaire/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/soutien-scolaire/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/tutoring/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/soutien-scolaire/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About pages -->
+  <url>
+    <loc>https://azaeliloki.com/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/about/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/about/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Customer reviews (browse) -->
+
+  <!-- Review form pages -->
+
+  <!-- FAQ pages -->
+  <url>
+    <loc>https://azaeliloki.com/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/faq/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/faq/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/faq/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/faq/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Visa document guide pages -->
+  <url>
+    <loc>https://azaeliloki.com/guides/visa-documents/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/guides/visa-documents/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/guides/documents-visa/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/guides/documents-visa/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/guides/visa-documents/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/guides/documents-visa/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Utility pages -->
+  <url>
+    <loc>https://azaeliloki.com/pricing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/tarifs/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/tarifs/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/tarifs/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/contact/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/contact/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Privacy pages -->
+  <url>
+    <loc>https://azaeliloki.com/reviews/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/reviews/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/avis-clients/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/avis-clients/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/reviews/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/avis-clients/"/>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/icao-english/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/icao-english/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/anglais-aeronautique/"/>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/anglais-aeronautique/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/icao-english/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/anglais-aeronautique/"/>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/transcription/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/transcription/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/transcription/"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/transcription/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/transcription/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/transcription/"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- West Africa corridor -->
+  <url>
+    <loc>https://azaeliloki.com/west-africa/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/west-africa/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/afrique-de-louest/"/>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://azaeliloki.com/fr/afrique-de-louest/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azaeliloki.com/west-africa/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/afrique-de-louest/"/>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>

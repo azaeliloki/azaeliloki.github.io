@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "deploy-ready",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "http-server", "../deploy-ready", "-p", "4179", "-c-1", "--silent"],
+      "port": 4179
+    },
+    {
+      "name": "deploy-ready-seo-en",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "http-server", "../deploy-ready", "-p", "4611", "-c-1", "--silent"],
+      "autoPort": false,
+      "port": 4611
+    }
+  ]
+}

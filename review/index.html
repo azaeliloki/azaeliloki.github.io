@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<script>(function () { var KEY = 'azael_lang_pref'; var FR_SLUG_FROM_EN = { 'certified-translation': 'traduction-certifiee', 'west-africa': 'afrique-de-louest', 'tutoring': 'soutien-scolaire', 'reviews': 'avis-clients', 'guides/visa-documents': 'guides/documents-visa', 'content-translation': 'contenu-web', 'law-firms': 'cabinets-juridiques', 'icao-english': 'anglais-aeronautique', 'interpretation': 'interpretation', 'terms': 'conditions', 'pricing': 'tarifs', 'sitemap': 'plan-du-site', 'contact': 'contact' }; function isFrPath(path) { return /(?:^|\/)fr(?:\/|$)/.test(path); } function isEnHome(path) { if (isFrPath(path)) return false; var p = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); if (p === '/' || p === '') return true; if (/\/(live|deploy-ready)\/?$/i.test(p)) return true; return false; } function suffix() { return location.search + location.hash; } function getPref() { try { return localStorage.getItem(KEY); } catch (e) { return null; } } function detectBrowserLang() { var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']; for (var i = 0; i < list.length; i++) { var tag = String(list[i]).toLowerCase(); if (tag.indexOf('fr') === 0) return 'fr'; if (tag.indexOf('en') === 0) return 'en'; } return 'en'; } function enSlugFromFr(frSlug) { for (var en in FR_SLUG_FROM_EN) { if (FR_SLUG_FROM_EN[en] === frSlug) return en; } return frSlug; } function translateSlug(slug, targetLang, sourceIsFr) { if (targetLang === 'fr') { if (!sourceIsFr && FR_SLUG_FROM_EN[slug]) return FR_SLUG_FROM_EN[slug]; return slug; } if (sourceIsFr) return enSlugFromFr(slug); return slug; } function parseLocalePath(path) { var normalized = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var onFr = isFrPath(normalized); var slug = normalized.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/').replace(/^\//, '').replace(/\/$/, ''); return { onFr: onFr, slug: slug }; } function liveSegments(path) { var segments = path.replace(/\\/g, '/').split('/').filter(Boolean); var liveIdx = -1; for (var i = 0; i < segments.length; i++) { var seg = segments[i].toLowerCase(); if (seg === 'live' || seg === 'deploy-ready') { liveIdx = i; break; } } if (liveIdx < 0) return null; var afterLive = segments.slice(liveIdx + 1); if (afterLive.length && /^index\.html?$/i.test(afterLive[afterLive.length - 1])) { afterLive.pop(); } return { segments: segments, liveIdx: liveIdx, afterLive: afterLive }; } function formatLocalePath(slug, lang) { if (lang === 'fr') { if (!slug) return '/fr/'; return '/fr/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } if (!slug) return '/'; return '/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } function httpLocaleHref(lang) { var path = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var info = liveSegments(path); if (info) { var after = info.afterLive.slice(); var onFr = after[0] === 'fr'; if (onFr) after.shift(); var slug = after.join('/'); var newSlug = translateSlug(slug, lang, onFr); var targetSegs = lang === 'fr' ? ['fr'].concat(newSlug ? newSlug.split('/') : []) : (newSlug ? newSlug.split('/') : []); var base = info.segments.slice(0, info.liveIdx + 1); return '/' + base.concat(targetSegs).join('/') + suffix(); } var parsed = parseLocalePath(path); if ((lang === 'fr' && parsed.onFr) || (lang === 'en' && !parsed.onFr)) { return path + suffix(); } var mappedSlug = translateSlug(parsed.slug, lang, parsed.onFr); return formatLocalePath(mappedSlug, lang) + suffix(); } function navigate(lang) { if (location.protocol === 'file:') return; location.replace(httpLocaleHref(lang)); } var path = location.pathname.replace(/\\/g, '/'); if (/404\.html$/i.test(path)) return; var onFr = isFrPath(path); var pref = getPref(); if (!pref && !onFr && isEnHome(path)) { if (detectBrowserLang() === 'fr') { navigate('fr'); } return; } if (!pref) return; if (parseLocalePath(path).slug !== '') return; if (pref === 'fr' && !onFr) { navigate('fr'); return; } if (pref === 'en' && onFr) { navigate('en'); } })();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leave a Review — Azaël Iloki</title>
+<meta name="description" content="Share your experience with Azaël Iloki, sworn translator in Lomé. Leave a Google review or feedback on translation, courses and training.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://azaeliloki.com/review/">
+<link rel="alternate" hreflang="en" href="https://azaeliloki.com/review/">
+<link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/review/">
+<link rel="alternate" hreflang="x-default" href="https://azaeliloki.com/review/">
+<meta property="og:title" content="Leave a Review — Azaël Iloki">
+<meta property="og:description" content="Share your experience with Azaël Iloki, sworn translator in Lomé. Leave a Google review or feedback on translation, courses and training.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:site_name" content="Azaël Iloki — Language Services">
+<meta property="og:url" content="https://azaeliloki.com/review/">
+<meta property="og:image" content="https://azaeliloki.com/assets/og/og-default.jpg">
+<meta property="og:image:alt" content="Azaël Iloki — Sworn Translator &amp; Language Expert, Lomé, Togo">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Leave a Review — Azaël Iloki">
+<meta name="twitter:description" content="Share your experience with Azaël Iloki, sworn translator in Lomé. Leave a Google review or feedback on translation, courses and training.">
+<meta name="twitter:image" content="https://azaeliloki.com/assets/og/og-default.jpg">
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="preconnect" href="https://wa.me" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="critical-css">/* critical ATB */:root{--navy:#122C4D;--navy-dark:#0E233F;--gold:#C9A658;--gold-on-dark:#F2DC8A;--white:#FFFFFF;--cream:#EDEEE8;--muted-on-dark:#CBD6E4;--font-body:'Outfit',system-ui,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}*{box-sizing:border-box}html[lang=en] [data-fr],html[lang=fr] [data-en]{display:none!important}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--navy);background:var(--cream)}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:16px;top:16px;z-index:9999;background:var(--white);padding:8px 12px}.ah{position:sticky;top:0;z-index:100;background:rgba(18,44,77,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.25)}.ah__inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);justify-content:space-between}.ah__logo{height:clamp(34px,6vw,52px);width:auto;display:block}.ah__nav{display:flex}@media(min-width:1280px){.ah__nav{display:block}}.ah__util{background:var(--navy-dark)}.ah__util-inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:34px;display:flex;align-items:center;justify-content:space-between}.ah__util-links{display:flex;align-items:center;flex:none}.ah__inner{height:74px}.ah__links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.ah__links li{display:flex}.ah__drop-wrap{position:relative}@media(min-width:1280px){.ah__drop-menu{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none}}.ah__actions{display:flex;align-items:center}@media(max-width:1279px){.ah__nav{display:none}.ah__burger{display:block}.ah__inner{height:62px}.ah__item--dropdown .ah__drop-menu{display:none}}@media(max-width:767px){.ah__util-note{display:none}.ah__util-inner{height:32px;justify-content:center}}.ah__burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer}.ah__burger span{display:block;width:22px;height:1.5px;background:var(--gold)}.hero{background:linear-gradient(160deg,var(--navy-dark),var(--navy));color:var(--white);padding:clamp(120px,15vw,160px) 20px clamp(60px,8vw,100px)}.hero-inner{max-width:1200px;margin:0 auto;width:100%}@media(min-width:1200px){.hero-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}}@media(min-width:900px){.hero-inner{grid-template-columns:1fr auto;gap:60px}}.hero-eyebrow{display:flex;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-on-dark);border:1px solid rgba(201,168,76,.35);padding:4px 10px;border-radius:999px;margin-bottom:20px}.hero-title{font-family:var(--font-serif);font-size:clamp(38px,5.5vw,72px);font-weight:700;line-height:1.1;margin:0 0 8px;color:var(--white)}.util-hero .hero-title{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 12px}.hero-lead{margin:0 0 10px;color:var(--muted-on-dark)}.hero-sub{margin:20px 0 36px;color:var(--muted-on-dark)}.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}.btn-primary{background:var(--gold);color:var(--navy)}.btn-ghost{border:1px solid rgba(255,255,255,.35);color:var(--white)}.hero-portrait-img{width:100%;max-width:420px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block}</style>
+<link rel="preload" href="/assets/css/style.css?v=cc67a03d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=cc67a03d"></noscript>
+<link rel="icon" type="image/png" href="/assets/images/logo-72.png">
+<script src="/assets/js/analytics-deferred.js?v=65330a98" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://azaeliloki.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Leave a Review",
+   "item": "https://azaeliloki.com/review/"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebPage",
+ "name": "Leave a Review — Azaël Iloki",
+ "url": "https://azaeliloki.com/review/",
+ "description": "Share your experience with Azaël Iloki, sworn translator in Lomé. Leave a Google review or feedback on translation, courses and training.",
+ "inLanguage": "en",
+ "isPartOf": {
+  "@type": "WebSite",
+  "name": "Azaël Iloki",
+  "url": "https://azaeliloki.com"
+ },
+ "publisher": {
+  "@id": "https://azaeliloki.com/#business"
+ }
+}
+</script>
+</head>
+<body class="lang-en page-review">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="ah" id="navbar">
+  <div class="ah__util">
+    <div class="ah__util-inner">
+      <span class="ah__util-note">Sworn translator · Cour d’appel de Lomé</span>
+      
+      <span class="ah__util-links">
+        <a class="ah__util-a" href="tel:+22879716258"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="ah__util-a ah__util-a--mail" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@azaeliloki.com</a>
+      </span>
+      <div class="ah__lang" role="group" aria-label="Language" data-en-label="Language" data-fr-label="Langue">
+        <a href="/review/" data-lang="en" hreflang="en">EN</a>
+        <i aria-hidden="true">·</i>
+        <a href="/fr/review/" data-lang="fr" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+  <div class="ah__inner">
+    <a class="ah__brand" href="/" aria-label="Azaël Iloki — home">
+      <img src="/assets/images/logo-nav.png" srcset="/assets/images/logo-nav.png 1x, /assets/images/logo-nav@2x.png 2x" alt="Azaël Iloki" class="ah__logo" width="256" height="64" decoding="async">
+    </a>
+    
+    <nav class="ah__nav" id="primary-menu" aria-label="Main navigation" data-en-label="Main navigation" data-fr-label="Navigation principale">
+      <ul class="ah__links">
+        <li><a href="/certified-translation/" data-nav="certified">Certified Translation</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/courses/#course-pricing-hub" class="ah__drop-label" data-nav="courses">Courses</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-courses-en" id="ah-drop-btn-courses-en">
+              <span class="visually-hidden">Show courses</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-courses-en" role="menu">
+              <li role="none"><a href="/courses/#course-pricing-hub" role="menuitem">Language Courses</a></li>
+              <li role="none"><a href="/icao-english/" role="menuitem">ICAO Level 4 (Aviation)</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/tutoring/" data-nav="tutoring">Tutoring</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/business/" class="ah__drop-label" data-nav="business">For Business</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-business-en" id="ah-drop-btn-business-en">
+              <span class="visually-hidden">Show business services</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-business-en" role="menu">
+              <li role="none"><a href="/business/#svc-general" role="menuitem">General Translation (B2B)</a></li>
+              <li role="none"><a href="/business/#svc-training" role="menuitem">Corporate Training</a></li>
+              <li role="none"><a href="/business/#svc-retainer" role="menuitem">Professional Retainer</a></li>
+              <li role="none"><a href="/interpretation/" role="menuitem">Interpretation</a></li>
+              <li role="none"><a href="/content-translation/" role="menuitem">Web Content &amp; SEO</a></li>
+              <li role="none"><a href="/law-firms/" role="menuitem">Law Firms</a></li>
+              <li role="none"><a href="/transcription/" role="menuitem">Transcription &amp; Recordings</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/pricing/" data-nav="pricing">Pricing</a></li>
+        
+        <li><a href="/about/" data-nav="about">About</a></li>
+        
+        <li class="ah__m-only"><a href="/contact/">Contact</a></li>
+        
+        <li class="ah__m-only"><a href="/reviews/">Reviews</a></li>
+        
+        <li class="ah__m-only"><a href="/faq/">FAQ</a></li>
+        
+      </ul>
+    </nav>
+    <a class="ah__cta" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote.%0A%0AService%3A%0ADocument%20or%20need%3A%0ADeadline%3A" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg><span class="ah__cta-full">Request a Quote</span><span class="ah__cta-short">Quote</span></a>
+    
+    <button type="button" class="ah__burger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main"><nav class="page-breadcrumb" aria-label="Breadcrumb">
+  <ol class="page-breadcrumb__list">
+    <li><a href="/">Home</a></li>
+    <li aria-current="page">Leave a Review</li>
+  </ol>
+</nav>
+
+<div class="review-page-wrap">
+  <div class="review-page-inner">
+
+    <div class="rp-brand">
+      <img src="/assets/images/logo-72.png" alt="Azaël Iloki" class="rp-logo" width="52" height="52" loading="eager">
+      <span class="rp-brand-name">Azaël <span>Iloki</span></span>
+    </div>
+
+    <div class="rp-header">
+      <span class="rp-eyebrow">Client Reviews</span>
+      
+      <h1 class="rp-title">Share Your Experience</h1>
+      <p class="rp-sub">Your review helps professionals and families across West Africa find a trusted language expert. It takes less than 2 minutes — thank you for your time.</p>
+      
+      <p class="rp-read-reviews">
+        <a href="/reviews/">Read what clients say →</a>
+        
+      </p>
+      <a href="https://maps.app.goo.gl/rxfDgnqqEwygiFPv6" class="rp-google-btn" target="_blank" rel="noopener noreferrer">
+        <span><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l2.9 6.26 6.6.72-4.9 4.5 1.35 6.52L12 16.9 6.05 20l1.35-6.52-4.9-4.5 6.6-.72z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Leave a Google Review — most visible</span>
+        
+      </a>
+      <div class="rp-divider">
+        <span class="rp-divider-text">or share your experience below</span>
+        
+      </div>
+    </div>
+
+    <form class="rp-form" id="rpForm" novalidate>
+      <h2 class="rp-form-title">Write a review</h2>
+      
+
+      <div class="rp-row">
+        <div class="rp-field">
+          <label class="rp-label" for="rev-name">Full Name</label>
+          
+          <input type="text" class="rp-input" id="rev-name" placeholder="Your name" autocomplete="name" maxlength="80" required aria-required="true">
+          
+        </div>
+        <div class="rp-field">
+          <label class="rp-label" for="rev-country">Country</label>
+          
+          <input type="text" class="rp-input" id="rev-country" placeholder="e.g. Togo, Ghana, Senegal" maxlength="56">
+          
+        </div>
+      </div>
+
+      <div class="rp-row">
+        <div class="rp-field">
+          <fieldset class="rp-stars-fieldset">
+            <legend class="rp-label">Your Rating</legend>
+            
+            <div class="rp-stars-wrap">
+              <div class="rp-stars">
+                <button class="star-btn" type="button">★</button>
+                <button class="star-btn" type="button">★</button>
+                <button class="star-btn" type="button">★</button>
+                <button class="star-btn" type="button">★</button>
+                <button class="star-btn" type="button">★</button>
+              </div>
+              <span class="rp-stars-hint">Click to rate</span>
+              
+            </div>
+          </fieldset>
+        </div>
+        <div class="rp-field">
+          <label class="rp-label" for="rev-service">Service Used</label>
+          
+          <select class="rp-select" id="rev-service">
+            <option value="">Select a service...</option>
+            <option value="Certified Translation">Certified Translation</option>
+            <option value="General Translation">General Translation</option>
+            <option value="Web Content & SEO">Web Content &amp; SEO</option>
+            <option value="Law Firms">Law Firms</option>
+            <option value="Transcription">Transcription &amp; Recordings</option>
+            <option value="Language Courses">Language Courses</option>
+            <option value="Academic Tutoring">Academic Tutoring</option>
+            <option value="Corporate Training">Corporate Training</option>
+            <option value="Aviation English (ICAO)">ICAO Level 4 (Aviation)</option>
+            <option value="Interpretation">Interpretation</option>
+          </select>
+          
+        </div>
+      </div>
+
+      <div class="rp-field">
+        <label class="rp-label" for="rev-text">Your Review</label>
+        
+        <textarea class="rp-textarea" id="rev-text" placeholder="What was your experience? How did the service help you?" maxlength="1200" required aria-required="true"></textarea>
+        
+      </div>
+
+      <div class="rp-hp" aria-hidden="true"><label>Do not fill this field<input type="text" id="rev-hp" name="rev-hp" tabindex="-1" autocomplete="off"></label></div>
+      <p class="rp-error" id="rp-error" role="alert" hidden></p>
+      <button class="rp-submit" type="submit" id="rpSubmitBtn">
+        <span>Submit Review →</span>
+        
+      </button>
+      
+      <p class="rp-consent">By submitting this review you agree to it being published on this site, with your name and country, once approved. You can ask for it to be removed at any time — see the <a href="/privacy.html">privacy policy</a>.</p>
+      
+    </form>
+
+    <a href="../" class="rp-back">← Back to homepage</a>
+    
+
+  </div>
+</div>
+
+</main>
+
+<footer class="af" id="site-footer">
+  <button type="button" class="af__top" id="backToTop" data-en-label="Back to top" data-fr-label="Haut de page" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <div class="af__lead">
+    <div class="af__lead-inner">
+      <div class="af__lead-copy">
+        <p class="af__lead-eyebrow">Free quote within 2 working hours</p>
+        
+        <h2 class="af__lead-title">Tell me what you need translated.</h2>
+        
+        <p class="af__lead-sub">Mon–Fri 8:00–20:00 · Sat 8:00–18:00 (GMT+0)</p>
+        
+      </div>
+      <div class="af__lead-actions">
+        <a class="af__act af__act--gold" href="/business/#quote-intake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Request a Free Quote</a>
+        <a class="af__act" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@azaeliloki.com</a>
+        <a class="af__act" href="tel:+22879716258"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="af__act" href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg>WhatsApp</a>
+        <a class="af__act" href="https://calendly.com/iloki-azael/consultation" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book a call</a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="af__inner">
+    <div class="af__grid">
+      <div class="af__brand">
+        <h2 class="af__name">
+          <span class="af__mark" aria-hidden="true"><img src="/assets/images/logo-72.png" alt="" width="36" height="36" loading="lazy"></span>
+          Azaël&nbsp;<em>Iloki</em>
+        </h2>
+        <p class="af__tag">Sworn translator · FR ↔ EN · Lomé, Togo</p>
+        
+        <span class="af__chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z"/></svg><span>Sworn · Cour d’appel de Lomé</span></span>
+        <div class="af__social">
+          <a href="https://linkedin.com/in/azaeliloki" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 11v6"/></svg>
+          </a>
+          <a href="https://www.proz.com/translator/4735520" aria-label="ProZ.com" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 8.5h7l-7 7h7"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="af__col" aria-label="Services">
+        <h3 class="af__h">Services</h3>
+        <ul class="af__links">
+          <li><a href="/certified-translation/">Certified Translation</a></li>
+          <li><a href="/business/#svc-general">General Translation</a></li>
+          <li><a href="/business/#svc-training">Corporate Training</a></li>
+          <li><a href="/content-translation/">Web Content &amp; SEO</a></li>
+          <li><a href="/law-firms/">Law Firms</a></li>
+          <li><a href="/west-africa/">West Africa</a></li>
+          <li><a href="/interpretation/">Interpretation</a></li>
+          <li><a href="/icao-english/">ICAO Level 4</a></li>
+          <li><a href="/transcription/">Transcription</a></li>
+          <li><a href="/courses/#course-pricing-hub">Courses</a></li>
+          <li><a href="/tutoring/">Tutoring</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="af__col" aria-label="Information">
+        <h3 class="af__h">Information</h3>
+        <ul class="af__links">
+          <li><a href="/about/">About Me</a></li>
+          <li><a href="/reviews/">Client Reviews</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/sitemap/">Site Map</a></li>
+          <li><a href="/#funnel-paths">All Paths</a></li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+  <div class="af__divider" role="presentation"></div>
+  <div class="af__bottom">
+    <p class="af__legal">© 2026 Azaël Iloki · Sworn translator</p>
+    
+    <span class="af__meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Lomé, Togo · West Africa</span></span>
+    <div class="af__lang" role="group" aria-label="Language">
+      <a href="/review/" data-lang="en" hreflang="en">EN</a>
+      <i aria-hidden="true">·</i>
+      <a href="/fr/review/" data-lang="fr" hreflang="fr">FR</a>
+    </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/js/supabase-client.js?v=e5eea7b7" defer></script>
+<script>
+var rpStars = 0;
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof preloadSupabase === 'function') preloadSupabase();
+  var fr = document.body.classList.contains('lang-fr');
+  var sfx = fr ? '-fr' : '';
+  var errEl = document.getElementById('rp-error' + sfx);
+
+  function showError(msg) {
+    if (!errEl) return;
+    errEl.textContent = msg;
+    errEl.hidden = false;
+    errEl.scrollIntoView({ block: 'nearest' });
+  }
+  function clearError() { if (errEl) { errEl.hidden = true; errEl.textContent = ''; } }
+
+  document.querySelectorAll('.rp-stars .star-btn').forEach(function (btn, i) {
+    var n = i + 1;
+    btn.setAttribute('aria-label', fr ? ('Noter ' + n + ' sur 5') : ('Rate ' + n + ' out of 5 stars'));
+    btn.setAttribute('aria-pressed', 'false');
+    if (!btn.querySelector('[aria-hidden="true"]')) {
+      var glyph = (btn.textContent || '★').trim();
+      btn.textContent = '';
+      var span = document.createElement('span');
+      span.setAttribute('aria-hidden', 'true');
+      span.textContent = glyph || '★';
+      btn.appendChild(span);
+    }
+    btn.addEventListener('click', function () {
+      rpStars = i + 1;
+      document.querySelectorAll('.rp-stars .star-btn').forEach(function (b, j) {
+        b.classList.toggle('active', j < rpStars);
+        b.setAttribute('aria-pressed', j < rpStars ? 'true' : 'false');
+      });
+      clearError();
+    });
+  });
+
+  var form = document.getElementById('rpForm');
+  var submitBtn = document.getElementById('rpSubmitBtn');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var lang = document.body.classList.contains('lang-fr') ? 'fr' : 'en';
+    var nameEl = document.getElementById('rev-name' + sfx);
+    var countryEl = document.getElementById('rev-country' + sfx);
+    var serviceEl = document.getElementById('rev-service' + sfx);
+    var textEl = document.getElementById('rev-text' + sfx);
+    var hpEl = document.getElementById('rev-hp' + sfx);
+
+    // a bot fills every field it finds; a person never sees this one
+    if (hpEl && hpEl.value) {
+      if (typeof openThankYouModal === 'function') openThankYouModal(submitBtn);
+      return;
+    }
+
+    if (!nameEl || !nameEl.value.trim() || !textEl || !textEl.value.trim() || !rpStars) {
+      showError('Please add your name, your review and a rating.');
+      if (nameEl && !nameEl.value.trim()) nameEl.focus();
+      else if (textEl && !textEl.value.trim()) textEl.focus();
+      return;
+    }
+    clearError();
+
+    var country = countryEl ? countryEl.value.trim() : '';
+    var author = nameEl.value.trim() + (country ? ' \u00b7 ' + country : '');
+    var service = serviceEl ? serviceEl.value.trim() : '';
+    var text = textEl.value.trim();
+    if (submitBtn) submitBtn.disabled = true;
+
+    (async function () {
+      try {
+        var client = typeof getSupabaseClient === 'function' ? await getSupabaseClient() : null;
+        if (!client) throw new Error('Supabase not loaded');
+        var row = { author: author, text: text, stars: rpStars, approved: false, source: 'site' };
+        if (service) row.service = service;
+        var result = await client.from('Reviews').insert([row]);
+        if (result.error) throw result.error;
+        if (typeof notifyAdminNewReview === 'function') {
+          notifyAdminNewReview({ author: author, text: text, stars: rpStars, service: service });
+        }
+      } catch (err) {
+        console.error('Supabase save error:', err);
+        showError('Saving failed. Try again in a moment, or send it to me at contact@azaeliloki.com.');
+        if (submitBtn) submitBtn.disabled = false;
+        return;
+      }
+      if (submitBtn) submitBtn.disabled = false;
+      nameEl.value = '';
+      if (countryEl) countryEl.value = '';
+      if (serviceEl) serviceEl.value = '';
+      textEl.value = '';
+      rpStars = 0;
+      document.querySelectorAll('.rp-stars .star-btn').forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      if (typeof openThankYouModal === 'function') openThankYouModal(submitBtn);
+    })();
+  });
+});
+</script>
+<script src="/assets/js/lang.js?v=8ccf1718" defer></script>
+<script src="../assets/js/header-nav.js?v=e1ba973d" defer></script>
+<script src="../assets/js/script.js?v=072d0e43" defer></script>
+</body>
+</html>

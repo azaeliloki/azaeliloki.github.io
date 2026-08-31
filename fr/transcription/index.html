@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<script>(function () { var KEY = 'azael_lang_pref'; var FR_SLUG_FROM_EN = { 'certified-translation': 'traduction-certifiee', 'west-africa': 'afrique-de-louest', 'tutoring': 'soutien-scolaire', 'reviews': 'avis-clients', 'guides/visa-documents': 'guides/documents-visa', 'content-translation': 'contenu-web', 'law-firms': 'cabinets-juridiques', 'icao-english': 'anglais-aeronautique', 'interpretation': 'interpretation', 'terms': 'conditions', 'pricing': 'tarifs', 'sitemap': 'plan-du-site', 'contact': 'contact' }; function isFrPath(path) { return /(?:^|\/)fr(?:\/|$)/.test(path); } function isEnHome(path) { if (isFrPath(path)) return false; var p = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); if (p === '/' || p === '') return true; if (/\/(live|deploy-ready)\/?$/i.test(p)) return true; return false; } function suffix() { return location.search + location.hash; } function getPref() { try { return localStorage.getItem(KEY); } catch (e) { return null; } } function detectBrowserLang() { var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']; for (var i = 0; i < list.length; i++) { var tag = String(list[i]).toLowerCase(); if (tag.indexOf('fr') === 0) return 'fr'; if (tag.indexOf('en') === 0) return 'en'; } return 'en'; } function enSlugFromFr(frSlug) { for (var en in FR_SLUG_FROM_EN) { if (FR_SLUG_FROM_EN[en] === frSlug) return en; } return frSlug; } function translateSlug(slug, targetLang, sourceIsFr) { if (targetLang === 'fr') { if (!sourceIsFr && FR_SLUG_FROM_EN[slug]) return FR_SLUG_FROM_EN[slug]; return slug; } if (sourceIsFr) return enSlugFromFr(slug); return slug; } function parseLocalePath(path) { var normalized = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var onFr = isFrPath(normalized); var slug = normalized.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/').replace(/^\//, '').replace(/\/$/, ''); return { onFr: onFr, slug: slug }; } function liveSegments(path) { var segments = path.replace(/\\/g, '/').split('/').filter(Boolean); var liveIdx = -1; for (var i = 0; i < segments.length; i++) { var seg = segments[i].toLowerCase(); if (seg === 'live' || seg === 'deploy-ready') { liveIdx = i; break; } } if (liveIdx < 0) return null; var afterLive = segments.slice(liveIdx + 1); if (afterLive.length && /^index\.html?$/i.test(afterLive[afterLive.length - 1])) { afterLive.pop(); } return { segments: segments, liveIdx: liveIdx, afterLive: afterLive }; } function formatLocalePath(slug, lang) { if (lang === 'fr') { if (!slug) return '/fr/'; return '/fr/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } if (!slug) return '/'; return '/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } function httpLocaleHref(lang) { var path = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var info = liveSegments(path); if (info) { var after = info.afterLive.slice(); var onFr = after[0] === 'fr'; if (onFr) after.shift(); var slug = after.join('/'); var newSlug = translateSlug(slug, lang, onFr); var targetSegs = lang === 'fr' ? ['fr'].concat(newSlug ? newSlug.split('/') : []) : (newSlug ? newSlug.split('/') : []); var base = info.segments.slice(0, info.liveIdx + 1); return '/' + base.concat(targetSegs).join('/') + suffix(); } var parsed = parseLocalePath(path); if ((lang === 'fr' && parsed.onFr) || (lang === 'en' && !parsed.onFr)) { return path + suffix(); } var mappedSlug = translateSlug(parsed.slug, lang, parsed.onFr); return formatLocalePath(mappedSlug, lang) + suffix(); } function navigate(lang) { if (location.protocol === 'file:') return; location.replace(httpLocaleHref(lang)); } var path = location.pathname.replace(/\\/g, '/'); if (/404\.html$/i.test(path)) return; var onFr = isFrPath(path); var pref = getPref(); if (!pref && !onFr && isEnHome(path)) { if (detectBrowserLang() === 'fr') { navigate('fr'); } return; } if (!pref) return; if (parseLocalePath(path).slug !== '') return; if (pref === 'fr' && !onFr) { navigate('fr'); return; } if (pref === 'en' && onFr) { navigate('en'); } })();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transcription et traduction d’enregistrements | Lomé</title>
+<meta name="description" content="Transcription horodatée et traduction de vos enregistrements audio et vidéo. Français ↔ anglais et langues nationales. Devis sous 2&nbsp;h après écoute.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://azaeliloki.com/fr/transcription/">
+<link rel="alternate" hreflang="en" href="https://azaeliloki.com/transcription/">
+<link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/transcription/">
+<link rel="alternate" hreflang="x-default" href="https://azaeliloki.com/transcription/">
+<meta property="og:title" content="Transcription et traduction d’enregistrements | Lomé">
+<meta property="og:description" content="Transcription horodatée et traduction de vos enregistrements audio et vidéo. Français ↔ anglais et langues nationales. Devis sous 2&nbsp;h après écoute.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Azaël Iloki — Services linguistiques">
+<meta property="og:url" content="https://azaeliloki.com/fr/transcription/">
+<meta property="og:image" content="https://azaeliloki.com/assets/og/og-transcription.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Azaël Iloki — transcription et traduction d’enregistrements, Lomé">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://azaeliloki.com/assets/og/og-transcription.jpg">
+<meta name="twitter:title" content="Transcription et traduction d’enregistrements | Lomé">
+<meta name="twitter:description" content="Transcription horodatée et traduction de vos enregistrements audio et vidéo. Français ↔ anglais et langues nationales. Devis sous 2&nbsp;h après écoute.">
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="preconnect" href="https://wa.me" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="critical-css">/* critical ATB */:root{--navy:#122C4D;--navy-dark:#0E233F;--gold:#C9A658;--gold-on-dark:#F2DC8A;--white:#FFFFFF;--cream:#EDEEE8;--muted-on-dark:#CBD6E4;--font-body:'Outfit',system-ui,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}*{box-sizing:border-box}html[lang=en] [data-fr],html[lang=fr] [data-en]{display:none!important}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--navy);background:var(--cream)}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:16px;top:16px;z-index:9999;background:var(--white);padding:8px 12px}.ah{position:sticky;top:0;z-index:100;background:rgba(18,44,77,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.25)}.ah__inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);justify-content:space-between}.ah__logo{height:clamp(34px,6vw,52px);width:auto;display:block}.ah__nav{display:flex}@media(min-width:1280px){.ah__nav{display:block}}.ah__util{background:var(--navy-dark)}.ah__util-inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:34px;display:flex;align-items:center;justify-content:space-between}.ah__util-links{display:flex;align-items:center;flex:none}.ah__inner{height:74px}.ah__links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.ah__links li{display:flex}.ah__drop-wrap{position:relative}@media(min-width:1280px){.ah__drop-menu{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none}}.ah__actions{display:flex;align-items:center}@media(max-width:1279px){.ah__nav{display:none}.ah__burger{display:block}.ah__inner{height:62px}.ah__item--dropdown .ah__drop-menu{display:none}}@media(max-width:767px){.ah__util-note{display:none}.ah__util-inner{height:32px;justify-content:center}}.ah__burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer}.ah__burger span{display:block;width:22px;height:1.5px;background:var(--gold)}.hero{background:linear-gradient(160deg,var(--navy-dark),var(--navy));color:var(--white);padding:clamp(120px,15vw,160px) 20px clamp(60px,8vw,100px)}.hero-inner{max-width:1200px;margin:0 auto;width:100%}@media(min-width:1200px){.hero-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}}@media(min-width:900px){.hero-inner{grid-template-columns:1fr auto;gap:60px}}.hero-eyebrow{display:flex;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-on-dark);border:1px solid rgba(201,168,76,.35);padding:4px 10px;border-radius:999px;margin-bottom:20px}.hero-title{font-family:var(--font-serif);font-size:clamp(38px,5.5vw,72px);font-weight:700;line-height:1.1;margin:0 0 8px;color:var(--white)}.util-hero .hero-title{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 12px}.hero-lead{margin:0 0 10px;color:var(--muted-on-dark)}.hero-sub{margin:20px 0 36px;color:var(--muted-on-dark)}.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}.btn-primary{background:var(--gold);color:var(--navy)}.btn-ghost{border:1px solid rgba(255,255,255,.35);color:var(--white)}.hero-portrait-img{width:100%;max-width:420px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block}</style>
+<link rel="preload" href="/assets/css/style.css?v=cc67a03d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=cc67a03d"></noscript>
+<link rel="icon" type="image/png" href="/assets/images/logo-72.png">
+<script src="/assets/js/analytics-deferred.js?v=65330a98" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Accueil",
+   "item": "https://azaeliloki.com/fr/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Transcription",
+   "item": "https://azaeliloki.com/fr/transcription/"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "name": "Transcription et traduction d’enregistrements",
+ "serviceType": "Transcription and translation of audio and video recordings",
+ "description": "Transcription horodatée et traduction de vos enregistrements audio et vidéo. Français ↔ anglais et langues nationales. Devis sous 2 h après écoute.",
+ "url": "https://azaeliloki.com/fr/transcription/",
+ "provider": {
+  "@id": "https://azaeliloki.com/#business"
+ },
+ "areaServed": {
+  "@type": "Country",
+  "name": "Togo"
+ },
+ "availableLanguage": [
+  "fr",
+  "en",
+  "ee",
+  "kbp"
+ ],
+ "offers": [
+  {
+   "@type": "Offer",
+   "name": "Français ↔ anglais · audio clair, 1 à 2 locuteurs",
+   "price": "4000",
+   "priceCurrency": "XOF",
+   "unitText": "MIN"
+  },
+  {
+   "@type": "Offer",
+   "name": "Langue nationale → français ou anglais · audio clair",
+   "price": "6500",
+   "priceCurrency": "XOF",
+   "unitText": "MIN"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+
+ "inLanguage": "fr",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Pouvez-vous certifier une transcription en éwé ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Pas au sens d’une traduction assermentée : il n’existe pas d’assermentation pour les langues nationales au Togo. Je remets une déclaration de fidélité signée, qui engage ma responsabilité professionnelle sur l’exactitude de la restitution. Indiquez-moi l’autorité destinataire et j’établis le document au format qu’elle attend."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Pourquoi ne pas donner un prix avant d’écouter ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Parce que dix minutes d’entretien calme et dix minutes de discussion à quatre voix dans la rue ne représentent pas le même travail — l’écart va du simple au double. Trois minutes d’écoute suffisent à établir un prix juste."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Que se passe-t-il si une partie de l’enregistrement est inaudible ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Elle est signalée et horodatée. Je ne reconstitue jamais un passage que je n’entends pas."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Traduisez-vous aussi la transcription ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui — c’est la prestation standard. La transcription en langue source seule est possible, comme la version bilingue en regard."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Travaillez-vous aussi à partir de la vidéo ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui, aux mêmes conditions. Le sous-titrage se devise séparément."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien de temps faut-il ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Une heure d’enregistrement représente entre six heures et deux jours de travail selon la langue et la qualité sonore. Le délai figure sur le devis."
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body class="lang-fr page-transcription page-linear">
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header class="ah" id="navbar">
+  <div class="ah__util">
+    <div class="ah__util-inner">
+      
+      <span class="ah__util-note">Traducteur assermenté · Cour d’appel de Lomé</span>
+      <span class="ah__util-links">
+        <a class="ah__util-a" href="tel:+22879716258"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="ah__util-a ah__util-a--mail" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@azaeliloki.com</a>
+      </span>
+      <div class="ah__lang" role="group" aria-label="Language" data-en-label="Language" data-fr-label="Langue">
+        <a href="/transcription/" data-lang="en" hreflang="en">EN</a>
+        <i aria-hidden="true">·</i>
+        <a href="/fr/transcription/" data-lang="fr" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+  <div class="ah__inner">
+    
+    <a class="ah__brand" href="/fr/" aria-label="Azaël Iloki — accueil">
+      <img src="/assets/images/logo-nav.png" srcset="/assets/images/logo-nav.png 1x, /assets/images/logo-nav@2x.png 2x" alt="Azaël Iloki" class="ah__logo" width="256" height="64" decoding="async">
+    </a>
+    <nav class="ah__nav" id="primary-menu" aria-label="Main navigation" data-en-label="Main navigation" data-fr-label="Navigation principale">
+      <ul class="ah__links">
+        
+        <li><a href="/fr/traduction-certifiee/" data-nav="certified">Traduction certifiée</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/fr/courses/#course-pricing-hub" class="ah__drop-label" data-nav="courses">Cours</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-courses-fr" id="ah-drop-btn-courses-fr">
+              <span class="visually-hidden">Afficher les cours</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-courses-fr" role="menu">
+              <li role="none"><a href="/fr/courses/#course-pricing-hub" role="menuitem">Cours de langues</a></li>
+              <li role="none"><a href="/fr/anglais-aeronautique/" role="menuitem">Anglais aéronautique (OACI)</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/fr/soutien-scolaire/" data-nav="tutoring">Soutien scolaire</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/fr/business/" class="ah__drop-label active" data-nav="business" aria-current="true">Entreprise</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-business-fr" id="ah-drop-btn-business-fr">
+              <span class="visually-hidden">Afficher les services entreprise</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-business-fr" role="menu">
+              <li role="none"><a href="/fr/business/#svc-general" role="menuitem">Traduction générale (B2B)</a></li>
+              <li role="none"><a href="/fr/business/#svc-training" role="menuitem">Formation entreprise</a></li>
+              <li role="none"><a href="/fr/business/#svc-retainer" role="menuitem">Forfait professionnel</a></li>
+              <li role="none"><a href="/fr/interpretation/" role="menuitem">Interprétation</a></li>
+              <li role="none"><a href="/fr/contenu-web/" role="menuitem">Contenu web &amp; SEO</a></li>
+              <li role="none"><a href="/fr/cabinets-juridiques/" role="menuitem">Cabinets juridiques</a></li>
+              <li role="none"><a href="/fr/transcription/" role="menuitem">Transcription d’enregistrements</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/fr/tarifs/" data-nav="pricing">Tarifs</a></li>
+        
+        <li><a href="/fr/about/" data-nav="about">À propos</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/contact/">Contact</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/avis-clients/">Avis clients</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    
+    <a class="ah__cta" href="https://wa.me/22879716258?text=Bonjour%20Aza%C3%ABl%2C%20je%20souhaite%20obtenir%20un%20devis.%0A%0AService%C2%A0%3A%0ADocument%20ou%20besoin%C2%A0%3A%0APour%20quand%C2%A0%3A" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg><span class="ah__cta-full">Demander un devis</span><span class="ah__cta-short">Devis</span></a>
+    <button type="button" class="ah__burger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main">
+<nav class="page-breadcrumb" aria-label="Fil d’Ariane">
+  <ol class="page-breadcrumb__list">
+      <li><a href="/fr/">Accueil</a></li>
+      <li aria-current="page">Transcription</li>
+  </ol>
+</nav>
+
+<section class="hero" id="home" aria-labelledby="home-heading">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Particuliers · Cabinets · Institutions</div>
+      <h1 class="hero-title" id="home-heading">Transcription et traduction d’enregistrements</h1>
+      <p class="hero-lead">Un enregistrement ne vaut rien tant qu’il n’est pas lisible.</p>
+      <p class="hero-sub">Une déposition, un entretien de terrain, une réunion, un appel, un témoignage, une preuve audio — en langues nationales, en anglais ou en français&nbsp;: tant que le contenu reste dans un fichier audio, il ne peut être ni versé à un dossier, ni cité, ni contesté. Je transcris vos enregistrements et je les restitue en français ou en anglais, avec l’horodatage, l’identification des locuteurs et la mention de tout ce qui n’est pas audible.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/22879716258?text=Bonjour%20Aza%C3%ABl%2C%20j%E2%80%99ai%20un%20enregistrement%20%C3%A0%20faire%20transcrire.%0A%0ADur%C3%A9e%20approximative%C2%A0%3A%0ALangue%20parl%C3%A9e%C2%A0%3A%0AUsage%20pr%C3%A9vu%20(dossier%2C%20administration%2C%20publication)%C2%A0%3A" class="btn-primary" target="_blank" rel="noopener noreferrer">Envoyer un enregistrement — devis sous 2&nbsp;h</a>
+        <a href="#tarifs" class="btn-ghost">Voir les tarifs →</a>
+      </div>
+    </div>
+    <div class="hero-portrait hero-portrait--rect hero-logo-right">
+    <picture class="hero-portrait-pic">
+      <source srcset="/assets/images/photos/photo-b-800.webp" type="image/webp">
+      <img src="/assets/images/photos/photo-b-800.jpg" alt="Transcription et traduction d’enregistrements audio à Lomé" class="hero-portrait-img" width="640" height="800" loading="lazy">
+    </picture>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="perimetre" aria-labelledby="perimetre-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Périmètre</span>
+    <h2 class="section-title" id="perimetre-heading">Ce que cela couvre</h2>
+    <ul class="feature-list">
+      <li>Dépositions et auditions destinées à un commissariat ou à une juridiction</li>
+      <li>Entretiens de terrain et missions d’évaluation</li>
+      <li>Réunions, assemblées, conseils d’administration</li>
+      <li>Contenus audio et vidéo destinés à la publication ou au sous-titrage</li>
+      <li>Enregistrements produits à l’appui d’un litige</li>
+      <li>Enregistrements personnels à verser à un dossier — succession, litige familial, démarche administrative</li>
+    </ul>
+  </div>
+</section>
+
+<section class="services" id="regimes" aria-labelledby="regimes-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Cadre</span>
+    <h2 class="section-title" id="regimes-heading">Deux régimes, et la différence compte</h2>
+    <p><strong>Français ↔ anglais.</strong> Je suis assermenté près la Cour d’appel de Lomé pour cette combinaison. La transcription peut porter mon cachet et ma signature, et recevoir la valeur juridique attachée à une traduction assermentée.</p>
+    <p><strong>Langues nationales — éwé, kabiyè, tem.</strong> Il n’existe pas de registre de traducteurs pour ces langues au Togo. La transcription est donc remise avec une déclaration de fidélité signée sur mon papier à en-tête&nbsp;: je certifie que la restitution est fidèle et intégrale dans la limite de ce qui est audible, et que les passages inaudibles sont signalés et horodatés. Ma qualité de traducteur assermenté y figure comme identité professionnelle, non comme fondement de la certification.</p>
+    <p class="price-note">Sur réquisition d’un officier de police judiciaire ou sur désignation d’une juridiction, la mission s’exerce dans le cadre fixé par l’autorité qui désigne.</p>
+  </div>
+</section>
+
+<section class="services" id="tarifs" aria-labelledby="tarifs-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Tarification</span>
+    <h2 class="section-title" id="tarifs-heading">Tarifs à la minute enregistrée</h2>
+    <p class="price-note">Tous tarifs HT, par minute d’enregistrement. Facturation par tranche de 10 minutes entamée. Sur demande de facture (particuliers ou entreprises), la TVA est ajoutée selon le taux en vigueur. Les clients internationaux et institutionnels peuvent être facturés en EUR, USD ou FCFA&nbsp;; règlement par virement bancaire ou virement international (SWIFT).</p>
+    <div class="home-rates-table-wrap home-rates-table-wrap--duo" tabindex="0" role="region" aria-label="Tarifs à la minute enregistrée">
+      <table class="home-rates-table">
+        <tbody>
+          <tr><td>Français ↔ anglais · audio clair, 1 à 2 locuteurs</td><td>4&nbsp;000 FCFA / minute</td></tr>
+          <tr><td>Français ↔ anglais · audio dégradé, 3 locuteurs et plus</td><td>6&nbsp;000 FCFA / minute</td></tr>
+          <tr><td>Langue nationale → français ou anglais · audio clair</td><td>6&nbsp;500 FCFA / minute</td></tr>
+          <tr><td>Langue nationale → français ou anglais · audio dégradé</td><td>9&nbsp;500 FCFA / minute</td></tr>
+          <tr><td>Version bilingue, source en regard de la traduction</td><td>+30&nbsp;% · +40&nbsp;% en langue nationale</td></tr>
+          <tr><td>Express 24h</td><td>+50&nbsp;%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">La version bilingue est recommandée pour tout usage judiciaire&nbsp;: contester une traduction suppose l’accès à la source. La certification assermentée est incluse en français ↔ anglais — le même cachet que pour une <a href="/fr/traduction-certifiee/">traduction certifiée de document</a>.</p>
+  </div>
+</section>
+
+<section class="services" id="pourquoi" aria-labelledby="pourquoi-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Transparence</span>
+    <h2 class="section-title" id="pourquoi-heading">Pourquoi les langues nationales coûtent davantage</h2>
+    <p>Pour le français et l’anglais, je travaille avec une mémoire de traduction, un glossaire terminologique et des siècles de terminologie juridique fixée. Pour l’éwé, rien de tout cela n’existe&nbsp;: pas d’outil, pas de corpus, pas de dictionnaire juridique, aucun texte de référence contre lequel vérifier.</p>
+    <p>S’y ajoutent trois difficultés propres à l’oral en langue nationale. L’orthographe n’est pas normalisée, ce qui engage un choix graphique tenu sur l’ensemble du document. Les locuteurs alternent en permanence entre la langue nationale et le français. Et la terminologie administrative n’a souvent pas d’équivalent&nbsp;: il ne s’agit plus de traduire un terme, mais de restituer un concept.</p>
+    <p>Le temps de travail par minute d’enregistrement est de l’ordre du double. Le tarif le reflète.</p>
+  </div>
+</section>
+
+<section class="services" id="methode" aria-labelledby="methode-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Méthode</span>
+    <h2 class="section-title" id="methode-heading">Ce qui rend une transcription opposable</h2>
+    <ul class="feature-list">
+      <li><strong>Horodatage</strong> régulier et à chaque changement de locuteur</li>
+      <li><strong>Locuteurs identifiés</strong> et désignés de façon constante</li>
+      <li><strong>Passages inaudibles signalés</strong> — <code>[inaudible 04:12]</code> — et jamais devinés. Sur une pièce de procédure, une supposition fausse est plus dommageable qu’un blanc</li>
+      <li><strong>Qualité sonore mentionnée</strong> dans le document lui-même</li>
+      <li><strong>Fichier source tracé</strong>&nbsp;: nom, durée, format et date de réception consignés en tête de la transcription</li>
+      <li><strong>Aucun résumé, aucune reformulation</strong>&nbsp;: ce qui est dit est restitué, y compris les hésitations et les répétitions lorsqu’elles portent un sens</li>
+    </ul>
+  </div>
+</section>
+
+<section class="services" id="process" aria-labelledby="process-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Déroulement</span>
+    <h2 class="section-title" id="process-heading">Comment ça se passe</h2>
+    <ol class="process-steps">
+      <li><strong>Vous envoyez le fichier</strong> par WhatsApp ou par courriel. Format indifférent.</li>
+      <li><strong>J’écoute</strong> deux à trois minutes pour classer l’audio et estimer la durée réelle de parole.</li>
+      <li><strong>Vous recevez le devis sous 2 heures ouvrées</strong>&nbsp;: tarif applicable, durée retenue, délai, total. Aucun devis n’est établi sans écoute préalable.</li>
+      <li><strong>Production</strong> après confirmation.</li>
+      <li><strong>Livraison</strong> en Word et PDF, version papier signée sur demande.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="reviews" id="reviews" aria-labelledby="reviews-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Avis clients</span>
+    <h2 class="section-title" id="reviews-heading">Ce que disent les clients</h2>
+    <div class="reviews-grid" id="reviewsGrid"><!--reviews:start--><!--reviews:end--></div>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <h2 class="section-title" id="faq-heading">Questions fréquentes</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <h3 class="faq-q-text">Pouvez-vous certifier une transcription en éwé&nbsp;?</h3>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Pas au sens d’une traduction assermentée&nbsp;: il n’existe pas d’assermentation pour les langues nationales au Togo. Je remets une déclaration de fidélité signée, qui engage ma responsabilité professionnelle sur l’exactitude de la restitution. Indiquez-moi l’autorité destinataire et j’établis le document au format qu’elle attend.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <h3 class="faq-q-text">Pourquoi ne pas donner un prix avant d’écouter&nbsp;?</h3>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Parce que dix minutes d’entretien calme et dix minutes de discussion à quatre voix dans la rue ne représentent pas le même travail — l’écart va du simple au double. Trois minutes d’écoute suffisent à établir un prix juste.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <h3 class="faq-q-text">Que se passe-t-il si une partie de l’enregistrement est inaudible&nbsp;?</h3>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Elle est signalée et horodatée. Je ne reconstitue jamais un passage que je n’entends pas.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <h3 class="faq-q-text">Traduisez-vous aussi la transcription&nbsp;?</h3>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Oui — c’est la prestation standard. La transcription en langue source seule est possible, comme la version bilingue en regard.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <h3 class="faq-q-text">Travaillez-vous aussi à partir de la vidéo&nbsp;?</h3>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Oui, aux mêmes conditions. Le sous-titrage se devise séparément.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <h3 class="faq-q-text">Combien de temps faut-il&nbsp;?</h3>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Une heure d’enregistrement représente entre six heures et deux jours de travail selon la langue et la qualité sonore. Le délai figure sur le devis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="seo-mesh">Un dossier de cabinet&nbsp;: <a href="/fr/cabinets-juridiques/">traduction juridique et assermentée pour cabinets</a>. Un échange à venir plutôt qu’un fichier déjà enregistré&nbsp;: <a href="/fr/interpretation/">interprétation de liaison et de conférence</a>. Le détail des prix par service&nbsp;: <a href="/fr/tarifs/">tarifs</a>.</p>
+
+<section class="share-section" aria-label="Partager cette page">
+  <div class="section-inner">
+    <div class="share-bar share-bar--linkedin-first" data-url="https://azaeliloki.com/fr/transcription/" data-title="Transcription et traduction d’enregistrements | Lomé" data-message="Je voudrais partager avec toi ce service de transcription et traduction d'enregistrements à Lomé&nbsp;:">
+      <span class="share-label">Partager&nbsp;:</span>
+      <button type="button" class="share-btn share-linkedin" aria-label="Partager sur LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-14h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</button>
+      <button type="button" class="share-btn share-whatsapp" aria-label="Partager sur WhatsApp"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg> WhatsApp</button>
+      <button type="button" class="share-btn share-copy" aria-label="Copier le lien"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2.5-2.5a5 5 0 0 0-7-7L11 6"/><path d="M14 11a5 5 0 0 0-7.5-.5L4 13a5 5 0 0 0 7 7l2-2"/></svg> Copier le lien</button>
+    </div>
+  </div>
+</section>
+
+<section class="primary-cta-band" id="book-now" aria-labelledby="book-now-heading">
+  <div class="section-inner">
+    <h2 class="section-title" id="book-now-heading">Envoyez votre enregistrement</h2>
+    <p class="primary-cta-band__sub">Devis sous 2&nbsp;h ouvrées après écoute. Formulaire, courriel ou WhatsApp — au choix.</p>
+    <div class="primary-cta-band__actions">
+      <a href="/fr/business/#quote-intake" class="btn-primary" data-cf-service="Transcription">Envoyer un enregistrement — devis sous 2&nbsp;h</a>
+      <a href="mailto:contact@azaeliloki.com?subject=Transcription%20d%E2%80%99un%20enregistrement&amp;body=Bonjour%2C%0D%0A%0D%0AJ%E2%80%99ai%20un%20enregistrement%20%C3%A0%20faire%20transcrire.%0D%0A%0D%0ADur%C3%A9e%20approximative%C2%A0%3A%0D%0ALangue%20parl%C3%A9e%C2%A0%3A%0D%0AUsage%20pr%C3%A9vu%20(dossier%2C%20administration%2C%20publication)%C2%A0%3A%0D%0A%0D%0ACordialement%2C" class="btn-secondary btn--email">Écrire par courriel</a>
+      <a href="https://wa.me/22879716258?text=Bonjour%20Aza%C3%ABl%2C%20j%E2%80%99ai%20un%20enregistrement%20%C3%A0%20faire%20transcrire.%0A%0ADur%C3%A9e%20approximative%C2%A0%3A%0ALangue%20parl%C3%A9e%C2%A0%3A%0AUsage%20pr%C3%A9vu%20(dossier%2C%20administration%2C%20publication)%C2%A0%3A" class="btn--wa" target="_blank" rel="noopener noreferrer">Envoyer sur WhatsApp</a>
+      <a href="https://calendly.com/iloki-azael/consultation?a1=Transcription" class="btn-ghost btn--cal" target="_blank" rel="noopener noreferrer">Cadrer une mission</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="af" id="site-footer">
+  <button type="button" class="af__top" id="backToTop" data-en-label="Back to top" data-fr-label="Haut de page" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <div class="af__lead">
+    <div class="af__lead-inner">
+      <div class="af__lead-copy">
+        
+        <p class="af__lead-eyebrow">Devis gratuit sous 2&nbsp;h ouvrées</p>
+        
+        <h2 class="af__lead-title">Dites-moi ce que vous avez à faire traduire.</h2>
+        
+        <p class="af__lead-sub">lun.–ven. 8&nbsp;h–20&nbsp;h · sam. 8&nbsp;h–18&nbsp;h (GMT+0)</p>
+      </div>
+      
+      <div class="af__lead-actions">
+        <a class="af__act af__act--gold" href="/fr/business/#quote-intake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Demander un devis gratuit</a>
+        <a class="af__act" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@azaeliloki.com</a>
+        <a class="af__act" href="tel:+22879716258"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="af__act" href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg>WhatsApp</a>
+        <a class="af__act" href="https://calendly.com/iloki-azael/consultation" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Réserver un appel</a>
+      </div>
+    </div>
+  </div>
+  <div class="af__inner">
+    <div class="af__grid">
+      <div class="af__brand">
+        <h2 class="af__name">
+          <span class="af__mark" aria-hidden="true"><img src="/assets/images/logo-72.png" alt="" width="36" height="36" loading="lazy"></span>
+          Azaël&nbsp;<em>Iloki</em>
+        </h2>
+        
+        <p class="af__tag">Traducteur assermenté · FR ↔ EN · Lomé, Togo</p>
+        <span class="af__chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z"/></svg><span>Assermenté · Cour d’appel de Lomé</span></span>
+        <div class="af__social">
+          <a href="https://linkedin.com/in/azaeliloki" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 11v6"/></svg>
+          </a>
+          <a href="https://www.proz.com/translator/4735520" aria-label="ProZ.com" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 8.5h7l-7 7h7"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <nav class="af__col" aria-label="Parcours">
+        <h3 class="af__h">Parcours</h3>
+        <ul class="af__links">
+          <li><a href="/fr/traduction-certifiee/">Traduction certifiée</a></li>
+          <li><a href="/fr/business/#svc-general">Traduction générale</a></li>
+          <li><a href="/fr/business/#svc-training">Formation entreprise</a></li>
+          <li><a href="/fr/contenu-web/">Contenu web &amp; SEO</a></li>
+          <li><a href="/fr/cabinets-juridiques/">Cabinets juridiques</a></li>
+          <li><a href="/fr/afrique-de-louest/">Afrique de l’Ouest</a></li>
+          <li><a href="/fr/interpretation/">Interprétation</a></li>
+          <li><a href="/fr/anglais-aeronautique/">Anglais aéronautique</a></li>
+          <li><a href="/fr/transcription/">Transcription</a></li>
+          <li><a href="/fr/courses/#course-pricing-hub">Cours</a></li>
+          <li><a href="/fr/soutien-scolaire/">Soutien scolaire</a></li>
+          <li><a href="/fr/tarifs/">Tarifs</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="af__col" aria-label="Informations">
+        <h3 class="af__h">Informations</h3>
+        <ul class="af__links">
+          <li><a href="/fr/about/">À propos</a></li>
+          <li><a href="/fr/avis-clients/">Avis clients</a></li>
+          <li><a href="/fr/faq/">FAQ</a></li>
+          <li><a href="/fr/contact/">Contact</a></li>
+          <li><a href="/fr/conditions/">Conditions générales</a></li>
+          <li><a href="/fr/privacy.html">Confidentialité</a></li>
+          <li><a href="/fr/plan-du-site/">Plan du site</a></li>
+          <li><a href="/fr/#funnel-paths">Tous les parcours</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="af__divider" role="presentation"></div>
+  <div class="af__bottom">
+    
+    <p class="af__legal">© 2026 Azaël Iloki · Traducteur assermenté</p>
+    <span class="af__meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Lomé, Togo · Afrique de l’Ouest</span></span>
+    
+    <div class="af__lang" role="group" aria-label="Langue">
+      <a href="/transcription/" data-lang="en" hreflang="en">EN</a>
+      <i aria-hidden="true">·</i>
+      <a href="/fr/transcription/" data-lang="fr" hreflang="fr">FR</a>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/lang.js?v=8ccf1718" defer></script>
+<script src="../../assets/js/header-nav.js?v=e1ba973d" defer></script>
+<script src="../../assets/js/script.js?v=072d0e43" defer></script>
+</body>
+</html>

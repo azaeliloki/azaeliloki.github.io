@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<script>(function () { var KEY = 'azael_lang_pref'; var FR_SLUG_FROM_EN = { 'certified-translation': 'traduction-certifiee', 'west-africa': 'afrique-de-louest', 'tutoring': 'soutien-scolaire', 'reviews': 'avis-clients', 'guides/visa-documents': 'guides/documents-visa', 'content-translation': 'contenu-web', 'law-firms': 'cabinets-juridiques', 'icao-english': 'anglais-aeronautique', 'interpretation': 'interpretation', 'terms': 'conditions', 'pricing': 'tarifs', 'sitemap': 'plan-du-site', 'contact': 'contact' }; function isFrPath(path) { return /(?:^|\/)fr(?:\/|$)/.test(path); } function isEnHome(path) { if (isFrPath(path)) return false; var p = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); if (p === '/' || p === '') return true; if (/\/(live|deploy-ready)\/?$/i.test(p)) return true; return false; } function suffix() { return location.search + location.hash; } function getPref() { try { return localStorage.getItem(KEY); } catch (e) { return null; } } function detectBrowserLang() { var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']; for (var i = 0; i < list.length; i++) { var tag = String(list[i]).toLowerCase(); if (tag.indexOf('fr') === 0) return 'fr'; if (tag.indexOf('en') === 0) return 'en'; } return 'en'; } function enSlugFromFr(frSlug) { for (var en in FR_SLUG_FROM_EN) { if (FR_SLUG_FROM_EN[en] === frSlug) return en; } return frSlug; } function translateSlug(slug, targetLang, sourceIsFr) { if (targetLang === 'fr') { if (!sourceIsFr && FR_SLUG_FROM_EN[slug]) return FR_SLUG_FROM_EN[slug]; return slug; } if (sourceIsFr) return enSlugFromFr(slug); return slug; } function parseLocalePath(path) { var normalized = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var onFr = isFrPath(normalized); var slug = normalized.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/').replace(/^\//, '').replace(/\/$/, ''); return { onFr: onFr, slug: slug }; } function liveSegments(path) { var segments = path.replace(/\\/g, '/').split('/').filter(Boolean); var liveIdx = -1; for (var i = 0; i < segments.length; i++) { var seg = segments[i].toLowerCase(); if (seg === 'live' || seg === 'deploy-ready') { liveIdx = i; break; } } if (liveIdx < 0) return null; var afterLive = segments.slice(liveIdx + 1); if (afterLive.length && /^index\.html?$/i.test(afterLive[afterLive.length - 1])) { afterLive.pop(); } return { segments: segments, liveIdx: liveIdx, afterLive: afterLive }; } function formatLocalePath(slug, lang) { if (lang === 'fr') { if (!slug) return '/fr/'; return '/fr/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } if (!slug) return '/'; return '/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } function httpLocaleHref(lang) { var path = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var info = liveSegments(path); if (info) { var after = info.afterLive.slice(); var onFr = after[0] === 'fr'; if (onFr) after.shift(); var slug = after.join('/'); var newSlug = translateSlug(slug, lang, onFr); var targetSegs = lang === 'fr' ? ['fr'].concat(newSlug ? newSlug.split('/') : []) : (newSlug ? newSlug.split('/') : []); var base = info.segments.slice(0, info.liveIdx + 1); return '/' + base.concat(targetSegs).join('/') + suffix(); } var parsed = parseLocalePath(path); if ((lang === 'fr' && parsed.onFr) || (lang === 'en' && !parsed.onFr)) { return path + suffix(); } var mappedSlug = translateSlug(parsed.slug, lang, parsed.onFr); return formatLocalePath(mappedSlug, lang) + suffix(); } function navigate(lang) { if (location.protocol === 'file:') return; location.replace(httpLocaleHref(lang)); } var path = location.pathname.replace(/\\/g, '/'); if (/404\.html$/i.test(path)) return; var onFr = isFrPath(path); var pref = getPref(); if (!pref && !onFr && isEnHome(path)) { if (detectBrowserLang() === 'fr') { navigate('fr'); } return; } if (!pref) return; if (parseLocalePath(path).slug !== '') return; if (pref === 'fr' && !onFr) { navigate('fr'); return; } if (pref === 'en' && onFr) { navigate('en'); } })();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sworn Translator Lomé | FR↔EN Translation &amp; Courses</title>
+<meta name="description" content="Official sworn translator in Lomé, Togo. Certified FR↔EN translation, professional language courses, and corporate training. Free quote in 2h.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://azaeliloki.com/">
+<link rel="alternate" hreflang="en" href="https://azaeliloki.com/">
+<link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/">
+<link rel="alternate" hreflang="x-default" href="https://azaeliloki.com/">
+<meta property="og:title" content="Sworn Translator Lomé | FR↔EN Translation &amp; Courses">
+<meta property="og:description" content="Official sworn translator in Lomé, Togo. Certified FR↔EN translation, professional language courses, and corporate training. Free quote in 2h.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:site_name" content="Azaël Iloki — Language Services">
+<meta property="og:url" content="https://azaeliloki.com/">
+<meta property="og:image" content="https://azaeliloki.com/assets/og/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Azaël Iloki — Sworn Translator &amp; Language Expert, Lomé, Togo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://azaeliloki.com/assets/og/og-default.jpg">
+<meta name="twitter:title" content="Sworn Translator Lomé | FR↔EN Translation &amp; Courses">
+<meta name="twitter:description" content="Official sworn translator in Lomé, Togo. Certified FR↔EN translation, professional language courses, and corporate training. Free quote in 2h.">
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="preconnect" href="https://wa.me" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="critical-css">/* critical ATB */:root{--navy:#122C4D;--navy-dark:#0E233F;--gold:#C9A658;--gold-on-dark:#F2DC8A;--white:#FFFFFF;--cream:#EDEEE8;--muted-on-dark:#CBD6E4;--font-body:'Outfit',system-ui,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}*{box-sizing:border-box}html[lang=en] [data-fr],html[lang=fr] [data-en]{display:none!important}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--navy);background:var(--cream)}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:16px;top:16px;z-index:9999;background:var(--white);padding:8px 12px}.ah{position:sticky;top:0;z-index:100;background:rgba(18,44,77,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.25)}.ah__inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);justify-content:space-between}.ah__logo{height:clamp(34px,6vw,52px);width:auto;display:block}.ah__nav{display:flex}@media(min-width:1280px){.ah__nav{display:block}}.ah__util{background:var(--navy-dark)}.ah__util-inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:34px;display:flex;align-items:center;justify-content:space-between}.ah__util-links{display:flex;align-items:center;flex:none}.ah__inner{height:74px}.ah__links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.ah__links li{display:flex}.ah__drop-wrap{position:relative}@media(min-width:1280px){.ah__drop-menu{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none}}.ah__actions{display:flex;align-items:center}@media(max-width:1279px){.ah__nav{display:none}.ah__burger{display:block}.ah__inner{height:62px}.ah__item--dropdown .ah__drop-menu{display:none}}@media(max-width:767px){.ah__util-note{display:none}.ah__util-inner{height:32px;justify-content:center}}.ah__burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer}.ah__burger span{display:block;width:22px;height:1.5px;background:var(--gold)}.hero{background:linear-gradient(160deg,var(--navy-dark),var(--navy));color:var(--white);padding:clamp(120px,15vw,160px) 20px clamp(60px,8vw,100px)}.hero-inner{max-width:1200px;margin:0 auto;width:100%}@media(min-width:1200px){.hero-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}}@media(min-width:900px){.hero-inner{grid-template-columns:1fr auto;gap:60px}}.hero-eyebrow{display:flex;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-on-dark);border:1px solid rgba(201,168,76,.35);padding:4px 10px;border-radius:999px;margin-bottom:20px}.hero-title{font-family:var(--font-serif);font-size:clamp(38px,5.5vw,72px);font-weight:700;line-height:1.1;margin:0 0 8px;color:var(--white)}.util-hero .hero-title{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 12px}.hero-lead{margin:0 0 10px;color:var(--muted-on-dark)}.hero-sub{margin:20px 0 36px;color:var(--muted-on-dark)}.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}.btn-primary{background:var(--gold);color:var(--navy)}.btn-ghost{border:1px solid rgba(255,255,255,.35);color:var(--white)}.hero-portrait-img{width:100%;max-width:420px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block}</style>
+<link rel="preload" href="/assets/css/style.css?v=cc67a03d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=cc67a03d"></noscript>
+<link rel="icon" type="image/png" href="/assets/images/logo-72.png">
+<link rel="preload" as="image" href="/assets/images/portrait-hero.avif" type="image/avif" media="(min-width:900px)">
+<script src="/assets/js/analytics-deferred.js?v=65330a98" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "ProfessionalService",
+   "availableLanguage": ["fr", "en"],
+   "@id": "https://azaeliloki.com/#business",
+   "name": "Azaël Iloki",
+   "alternateName": [
+    "Azael Iloki",
+    "Azaël Iloki Sworn Translator",
+    "Azael Iloki Traducteur Assermenté"
+   ],
+   "url": "https://azaeliloki.com/",
+   "image": "https://azaeliloki.com/assets/og/og-default.jpg",
+   "logo": "https://azaeliloki.com/assets/images/logo-220.png",
+   "description": "Sworn translator accredited by the Cour d’appel de Lomé. Certified and professional EN↔FR translation, transcription, liaison interpreting and language training. Quotations within two working hours.",
+   "serviceType": [
+    "Sworn Translation",
+    "Certified Translation",
+    "General Translation",
+    "Transcription",
+    "Liaison Interpreting",
+    "Corporate Language Training"
+   ],
+   "telephone": "+22879716258",
+   "email": "contact@azaeliloki.com",
+   "priceRange": "$",
+   "currenciesAccepted": "XOF, EUR, USD",
+   "paymentAccepted": "Bank transfer, SWIFT, Ecobank, Moov Money, Mixx by Yas",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lomé",
+    "addressRegion": "Maritime",
+    "addressCountry": "TG"
+   },
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Togo"
+    },
+    "Worldwide (remote)"
+   ],
+   "knowsLanguage": [
+    "French",
+    "English"
+   ],
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+     ],
+     "opens": "08:00",
+     "closes": "20:00"
+    },
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": "Saturday",
+     "opens": "08:00",
+     "closes": "18:00"
+    }
+   ],
+   "founder": {
+    "@id": "https://azaeliloki.com/#azael"
+   },
+   "employee": {
+    "@id": "https://azaeliloki.com/#azael"
+   },
+   "sameAs": [
+    "https://www.proz.com/translator/4735520",
+    "https://maps.app.goo.gl/rxfDgnqqEwygiFPv6",
+    "https://www.linkedin.com/in/azaeliloki/"
+   ],
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Translation & language services",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "priceCurrency": "XOF",
+      "price": "15000",
+      "description": "Certified (sworn) translation - from 15,000 FCFA per page",
+      "itemOffered": {
+       "@type": "Service",
+       "availableLanguage": ["fr", "en"],
+       "name": "Certified (sworn) translation",
+       "description": "FR↔EN sworn translation of diplomas, civil records, contracts and legal documents, accredited by the Cour d’appel de Lomé, stamped and signed on every page."
+      }
+     },
+     {
+      "@type": "Offer",
+      "priceCurrency": "XOF",
+      "price": "66",
+      "description": "General (B2B) translation - from 66 FCFA per word",
+      "itemOffered": {
+       "@type": "Service",
+       "availableLanguage": ["fr", "en"],
+       "name": "General translation (FR↔EN)",
+       "description": "Professional translation of contracts, NGO reports, financial audits and institutional documents using a Translation-Editing-Proofreading workflow."
+      }
+     },
+     {
+      "@type": "Offer",
+      "priceCurrency": "XOF",
+      "price": "35000",
+      "description": "Language courses for adults - from 35,000 FCFA per month",
+      "itemOffered": {
+       "@type": "Service",
+       "availableLanguage": ["fr", "en"],
+       "name": "Language courses (English & French, A1-C2)",
+       "description": "Personalised English and French courses for adults, online via Zoom or in person in Lomé."
+      }
+     },
+     {
+      "@type": "Offer",
+      "priceCurrency": "XOF",
+      "price": "100000",
+      "description": "Corporate language training Circles from 100,000 FCFA per month",
+      "itemOffered": {
+       "@type": "Service",
+       "availableLanguage": ["fr", "en"],
+       "name": "Corporate language training",
+       "description": "Monthly Business English and Professional French training for teams of up to five, onsite in Lomé or live via Zoom."
+      }
+     },
+     {
+      "@type": "Offer",
+      "priceCurrency": "XOF",
+      "price": "30000",
+      "description": "Academic tutoring (BAC, BEPC) - from 30,000 FCFA per month",
+      "itemOffered": {
+       "@type": "Service",
+       "availableLanguage": ["fr", "en"],
+       "name": "Academic tutoring",
+       "description": "English and French tutoring and BAC/BEPC exam preparation for primary and secondary students in Lomé."
+      }
+     }
+    ]
+   },
+   "hasMap": "https://maps.app.goo.gl/rxfDgnqqEwygiFPv6"
+  },
+  {
+   "@type": "Person",
+   "@id": "https://azaeliloki.com/#azael",
+   "name": "Azaël Iloki",
+   "url": "https://azaeliloki.com/about/",
+   "image": "https://azaeliloki.com/assets/images/portrait-hero.jpg",
+   "jobTitle": [
+    "Sworn Translator",
+    "Language Instructor"
+   ],
+   "description": "Sworn translator accredited by the Cour d’appel de Lomé, and language instructor at the Institut Français du Togo.",
+   "knowsLanguage": [
+    "French",
+    "English"
+   ],
+   "worksFor": {
+    "@id": "https://azaeliloki.com/#business"
+   },
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Institut Français du Togo"
+   },
+   "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "Sworn translator accreditation",
+    "recognizedBy": {
+     "@type": "GovernmentOrganization",
+     "name": "Cour d’appel de Lomé"
+    }
+   },
+   "sameAs": [
+    "https://www.proz.com/translator/4735520",
+    "https://maps.app.goo.gl/rxfDgnqqEwygiFPv6",
+    "https://www.linkedin.com/in/azaeliloki/"
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="lang-en page-home">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="ah" id="navbar">
+  <div class="ah__util">
+    <div class="ah__util-inner">
+      <span class="ah__util-note">Sworn translator · Cour d’appel de Lomé</span>
+      
+      <span class="ah__util-links">
+        <a class="ah__util-a" href="tel:+22879716258"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="ah__util-a ah__util-a--mail" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@azaeliloki.com</a>
+      </span>
+      <div class="ah__lang" role="group" aria-label="Language" data-en-label="Language" data-fr-label="Langue">
+        <a href="/" data-lang="en" hreflang="en">EN</a>
+        <i aria-hidden="true">·</i>
+        <a href="/fr/" data-lang="fr" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+  <div class="ah__inner">
+    <a class="ah__brand" href="/" aria-label="Azaël Iloki — home">
+      <img src="/assets/images/logo-nav.png" srcset="/assets/images/logo-nav.png 1x, /assets/images/logo-nav@2x.png 2x" alt="Azaël Iloki" class="ah__logo" width="256" height="64" decoding="async">
+    </a>
+    
+    <nav class="ah__nav" id="primary-menu" aria-label="Main navigation" data-en-label="Main navigation" data-fr-label="Navigation principale">
+      <ul class="ah__links">
+        <li><a href="/certified-translation/" data-nav="certified">Certified Translation</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/courses/#course-pricing-hub" class="ah__drop-label" data-nav="courses">Courses</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-courses-en" id="ah-drop-btn-courses-en">
+              <span class="visually-hidden">Show courses</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-courses-en" role="menu">
+              <li role="none"><a href="/courses/#course-pricing-hub" role="menuitem">Language Courses</a></li>
+              <li role="none"><a href="/icao-english/" role="menuitem">ICAO Level 4 (Aviation)</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/tutoring/" data-nav="tutoring">Tutoring</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/business/" class="ah__drop-label" data-nav="business">For Business</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-business-en" id="ah-drop-btn-business-en">
+              <span class="visually-hidden">Show business services</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-business-en" role="menu">
+              <li role="none"><a href="/business/#svc-general" role="menuitem">General Translation (B2B)</a></li>
+              <li role="none"><a href="/business/#svc-training" role="menuitem">Corporate Training</a></li>
+              <li role="none"><a href="/business/#svc-retainer" role="menuitem">Professional Retainer</a></li>
+              <li role="none"><a href="/interpretation/" role="menuitem">Interpretation</a></li>
+              <li role="none"><a href="/content-translation/" role="menuitem">Web Content &amp; SEO</a></li>
+              <li role="none"><a href="/law-firms/" role="menuitem">Law Firms</a></li>
+              <li role="none"><a href="/transcription/" role="menuitem">Transcription &amp; Recordings</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/pricing/" data-nav="pricing">Pricing</a></li>
+        
+        <li><a href="/about/" data-nav="about">About</a></li>
+        
+        <li class="ah__m-only"><a href="/contact/">Contact</a></li>
+        
+        <li class="ah__m-only"><a href="/reviews/">Reviews</a></li>
+        
+        <li class="ah__m-only"><a href="/faq/">FAQ</a></li>
+        
+      </ul>
+    </nav>
+    <a class="ah__cta" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote.%0A%0AService%3A%0ADocument%20or%20need%3A%0ADeadline%3A" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg><span class="ah__cta-full">Request a Quote</span><span class="ah__cta-short">Quote</span></a>
+    
+    <button type="button" class="ah__burger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero hero-split" id="home" aria-labelledby="home-heading">
+  <div class="hero-inner">
+  <div class="hero-content">
+    <div class="hero-logo-wrap" aria-hidden="true">
+    <img src="/assets/images/logo-144.png" alt="" class="hero-logo-img" width="72" height="72" loading="eager">
+  </div>
+  <div class="hero-eyebrow">Cour d’appel de Lomé · My name and stamp on every page I certify</div>
+
+    <h1 class="hero-title" id="home-heading">Sworn Translator in Togo — Certified FR↔EN Translation</h1>
+
+    <p class="hero-lead">Court-sworn translation for Togo and francophone West Africa.</p>
+
+    <p class="hero-sub">A document in English has no legal force before a Togolese court, ministry or notary until a translator sworn before the Cour d’appel de Lomé signs and stamps it. A document in French rarely clears an embassy abroad without the same. I am that translator, in both directions — one accountable person, no third parties, free quote within 2 working hours.</p>
+    
+    <div class="hero-speed-badge"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Express 24h available · Free quote within 2h</div>
+    
+    <div class="hero-btns">
+      <a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote.%0A%0AService%3A%0ADocument%20or%20need%3A%0ADeadline%3A" class="btn-primary" target="_blank" rel="noopener noreferrer">Request a Free Quote</a>
+      
+      <a href="#funnel-paths" class="btn-ghost">Find My Service ↓</a>
+      
+    </div>
+        <p class="hero-audience-note">Law firm, notary, school or NGO? <a href="/business/">See services for organisations →</a></p>
+  </div>
+  <div class="hero-portrait hero-logo-right">
+    <picture class="expert-headshot hero-portrait-pic">
+      <source srcset="/assets/images/portrait-hero.avif" type="image/avif">
+      <source srcset="/assets/images/portrait-hero.webp" type="image/webp">
+      <img src="/assets/images/portrait-hero.jpg" decoding="async" fetchpriority="high" alt="Azaël Iloki, sworn translator and language expert, Lomé, Togo" class="hero-portrait-img" loading="eager" width="1024" height="1024">
+    </picture>
+    
+  </div>
+</div>
+</section>
+
+<section class="home-trust-bar" aria-label="Credentials">
+  <div class="section-inner">
+    <div class="home-trust-chips">
+      <span class="home-trust-chip"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Sworn Translator</span>
+      
+      <span class="home-trust-chip"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M4 21V9.5L12 4l8 5.5V21M9.5 21v-6h5v6M4 9.5h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Cour d’appel de Lomé</span>
+      
+      <span class="home-trust-chip"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12.5V17c0 1.1 2.7 2.5 6 2.5s6-1.4 6-2.5v-4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Instructor at the Institut Français du Togo</span>
+      
+      <span class="home-trust-chip"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM9 7h7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>8+ yrs teaching · 6+ yrs translation · FR↔EN</span>
+      
+    </div>
+  </div>
+</section>
+
+<section class="home-doors" id="funnel-paths" aria-labelledby="funnel-paths-heading">
+  <div class="section-inner">
+    <h2 class="section-title" id="funnel-paths-heading">Tell me who you are, and I’ll show you what I do</h2>
+    <div class="hd-grid">
+
+      <div class="hd-card">
+        <span class="hd-kicker">You are an individual</span>
+        <h3 class="hd-title"><a class="hd-link" href="/certified-translation/">A personal document, a visa file, a study application</a></h3>
+        <ul class="hd-list">
+          <li><a href="/certified-translation/">Diplomas, civil records, criminal record</a></li>
+          <li><a href="/guides/visa-documents/">Visa and university admission files</a></li>
+          <li><a href="/transcription/">Recordings to be filed with a case</a></li>
+          <li><a href="/courses/">Language courses</a></li>
+          <li><a href="/tutoring/">Academic tutoring (BAC, BEPC)</a></li>
+        </ul>
+        <span class="hd-price">From 15,000 FCFA per page · quote in 2 working hours</span>
+        <div class="hd-actions">
+          <a class="hd-cta" href="/certified-translation/">See Rates and Process →</a>
+          <a class="hd-wa" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote%20for%20a%20certified%20translation.%0A%0ADocument%3A%0ADestination%20(country%20%2F%20institution)%3A%0AFiling%20date%3A" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hd-card">
+        <span class="hd-kicker">You represent an organisation</span>
+        <h3 class="hd-title"><a class="hd-link" href="/business/">A law firm, a notary, a school, an NGO, a company</a></h3>
+        <ul class="hd-list">
+          <li><a href="/law-firms/">Notaries, lawyers, bailiffs — firm rate</a></li>
+          <li><a href="/business/#svc-general">Contracts, articles, reports and audits</a></li>
+          <li><a href="/interpretation/">Interpreting for meetings and delegations</a></li>
+          <li><a href="/transcription/">Transcription of recordings</a></li>
+          <li><a href="/business/#svc-training">Corporate language training</a></li>
+          <li><a href="/content-translation/">Web content and SEO localisation</a></li>
+        </ul>
+        <span class="hd-price">66–118 FCFA per source word, excl. tax · quote in 2 working hours</span>
+        <div class="hd-actions">
+          <a class="hd-cta" href="/business/">See Services for Organisations →</a>
+          <a class="hd-wa" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote%20for%20my%20organisation.%0A%0AOrganisation%3A%0ANeed%3A%0ATimeline%3A" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="svc-compact">
+      <div class="sc-group">
+        <h3 class="sc-title">Translation &amp; documents</h3>
+        <ul>
+          <li class="sc-item"><a href="/certified-translation/">Certified translation</a><span class="sc-price">from 15,000 FCFA / page</span></li>
+          <li class="sc-item"><a href="/business/#svc-general">General translation (B2B)</a><span class="sc-price">66–118 FCFA / word</span></li>
+          <li class="sc-item"><a href="/law-firms/">Law firms &amp; notaries</a><span class="sc-price">from 66 FCFA / word</span></li>
+          <li class="sc-item"><a href="/transcription/">Transcription of recordings</a><span class="sc-price">from 4,000 FCFA / minute</span></li>
+          <li class="sc-item"><a href="/interpretation/">Interpreting</a><span class="sc-price">from 150,000 FCFA / half-day</span></li>
+        </ul>
+      </div>
+      <div class="sc-group">
+        <h3 class="sc-title">Training &amp; content</h3>
+        <ul>
+          <li class="sc-item"><a href="/courses/">Language courses</a><span class="sc-price">from 35,000 FCFA / month</span></li>
+          <li class="sc-item"><a href="/tutoring/">Academic tutoring</a><span class="sc-price">from 30,000 FCFA / month</span></li>
+          <li class="sc-item"><a href="/business/#svc-training">Corporate training</a><span class="sc-price">from 100,000 FCFA / month</span></li>
+          <li class="sc-item"><a href="/icao-english/">Aviation English (ICAO)</a><span class="sc-price">315,000 FCFA / 12 sessions</span></li>
+          <li class="sc-item"><a href="/content-translation/">Web content &amp; SEO</a><span class="sc-price">from 180,000 FCFA / month</span></li>
+        </ul>
+      </div>
+      <p class="sc-foot"><a href="/pricing/">See the full rate card →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="home-about" id="about-expert" aria-label="About Azaël Iloki">
+  <div class="section-inner home-about-inner">
+    <div class="home-about-media">
+      <picture class="expert-headshot">
+        <source srcset="/assets/images/photos/photo-b-800.webp" type="image/webp">
+        <img src="/assets/images/photos/photo-b-800.jpg" alt="Azaël Iloki, sworn translator, Lomé" width="640" height="800" loading="lazy" style="border-radius:2px; box-shadow:0 12px 48px rgba(15,43,74,0.18);">
+      </picture>
+      
+    </div>
+    <div class="home-about-copy">
+      <p class="home-about-text">I’m Azaël Iloki — a sworn translator accredited by the Cour d’appel de Lomé, and a language instructor at the Institut Français du Togo. Most of what reaches my desk carries real legal, academic or financial weight: immigration files, diplomas, contracts, audits. You work with one accountable person — strict confidentiality, no third parties, no files stored after delivery. I’d rather begin with a conversation; the quote comes after.</p>
+      
+      <a href="about/" class="home-about-link">Read more about me →</a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="home-region" id="why-sworn" aria-labelledby="why-sworn-heading">
+  <div class="section-inner">
+    <span class="eyebrow">The Corridor</span>
+    <h2 class="section-title" id="why-sworn-heading">West Africa runs on two languages</h2>
+    <p class="hr-line">A contract drafted in Accra is signed in Lomé. A Lagos judgment is produced before a Togolese court. A Dakar tender is filed in French. Every one of those crossings needs a sworn translation — and a document has no effect before the authority receiving it unless it carries the stamp of a translator registered with a court in that system.</p>
+    <p class="hr-line">That is what an agency in London or Toronto cannot supply, however good its linguists. I am sworn before the Cour d’appel de Lomé, and my stamp is what gives your document standing here.</p>
+    <p class="hr-line"><a class="home-about-link" href="/west-africa/">How cross-border files work across West Africa →</a></p>
+  </div>
+</section>
+
+<section class="soft-capture" id="visa-soft-capture" aria-labelledby="visa-capture-heading">
+  <div class="section-inner soft-capture__inner">
+    <span class="soft-capture__eyebrow">Not ready for a quote yet?</span>
+    
+    <h2 class="soft-capture__title" id="visa-capture-heading">Building a visa or study-abroad file?</h2>
+    
+    <p class="soft-capture__body">Get the free checklist of documents most often required — and which ones need a certified translation. No file is complete until the right documents are certified.</p>
+    
+    <div class="soft-capture__actions">
+      <a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20please%20send%20me%20the%20free%20visa-document%20checklist." class="soft-capture__wa btn--wa" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+      
+    </div>
+    <form class="soft-capture__email-form" id="visa-capture-form" novalidate data-checklist-en="/guides/visa-documents/#visa-checklist" data-checklist-fr="/fr/guides/documents-visa/#visa-checklist">
+      <div class="cf-honeypot" aria-hidden="true" hidden>
+        <label for="visa-capture-hp">Website</label>
+        <input class="cf-input" id="visa-capture-hp" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="soft-capture__email-row">
+        <label class="visually-hidden" for="visa-capture-email">Email</label>
+        
+        <input type="email" id="visa-capture-email" class="soft-capture__email-input" name="email" autocomplete="email" placeholder="Your email address" required>
+        <button type="button" class="soft-capture__email-submit visa-capture-submit">Send by email →</button>
+        
+      </div>
+      <label class="soft-capture__consent">
+        <input type="checkbox" id="visa-capture-consent" name="consent">
+        <span>I agree to be contacted about my request. See the <a href="/privacy.html">privacy policy</a>.</span>
+        
+      </label>
+      <div class="soft-capture__success" id="visa-capture-success" hidden>
+        <p>Here’s your checklist: <a href="/guides/visa-documents/#visa-checklist" class="visa-capture-checklist-link">View the full document checklist →</a></p>
+        
+      </div>
+    </form>
+  </div>
+</section>
+<section class="reviews reviews--has-reviews" id="reviews" aria-labelledby="reviews-heading">
+  <div class="section-inner">
+    <h2 class="section-title" id="reviews-heading">What clients say</h2>
+    
+    <div class="reviews-grid" id="reviewsGrid"><!--reviews:start--><div class="review-card"><div class="rv-stars">★★★★★<span class="rv-service">Certified Translation</span><a class="rv-source" href="https://maps.app.goo.gl/rxfDgnqqEwygiFPv6" target="_blank" rel="noopener noreferrer">Google</a></div><p class="rv-text">“I got my papers translated and I am very satisfied. The quality of the service is top notch. I would recommend it to anyone”</p><p class="rv-author">— Racoon Castellanos</p></div><div class="review-card"><div class="rv-stars">★★★★★<span class="rv-service">Certified Translation</span><a class="rv-source" href="https://maps.app.goo.gl/rxfDgnqqEwygiFPv6" target="_blank" rel="noopener noreferrer">Google</a></div><p class="rv-text">“Très réactif et très pro. Je recommande Azael pour toutes vos traductions officielles.”</p><p class="rv-author">— Toganim Sarl</p></div><div class="review-card"><div class="rv-stars">★★★★★<span class="rv-service">Certified Translation</span><a class="rv-source" href="https://maps.app.goo.gl/rxfDgnqqEwygiFPv6" target="_blank" rel="noopener noreferrer">Google</a></div><p class="rv-text">“Un travail plus que parfait”</p><p class="rv-author">— Richilde BASSALBIA</p></div><div class="review-card"><div class="rv-stars">★★★★★<span class="rv-service">Certified Translation</span><a class="rv-source" href="https://maps.app.goo.gl/rxfDgnqqEwygiFPv6" target="_blank" rel="noopener noreferrer">Google</a></div><p class="rv-text">“Je suis satisfait du service. Mr Azaël est sympathique et très serviable.”</p><p class="rv-author">— yves Domasseh Akuete</p></div><div class="review-card"><div class="rv-stars">★★★★☆<span class="rv-service">Certified Translation</span></div><p class="rv-text">“I had a good experience with Azael service specially for the certified translation of documents for UK visa application of a group of students traveling for an immersion program. The service was good and appreciable.”</p><p class="rv-author">— Joao Gracio  Dos reis · Togo</p></div><!--reviews:end--></div>
+    <div class="reviews-cta">
+      <a href="/reviews/" class="btn-secondary reviews-all-btn">See All Reviews →</a>
+      <a href="https://maps.app.goo.gl/rxfDgnqqEwygiFPv6" class="google-review-btn" target="_blank" rel="noopener noreferrer"><svg class="google-review-btn__star" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2l2.9 6.26 6.6.72-4.9 4.5 1.35 6.52L12 16.9 6.05 20l1.35-6.52-4.9-4.5 6.6-.72z"/></svg><span>Leave a Google Review</span></a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="home-steps" id="process" aria-labelledby="process-heading">
+  <div class="section-inner">
+    <span class="eyebrow">How It Works</span>
+    <h2 class="section-title" id="process-heading">4 steps — no surprises</h2>
+    <ol class="hs-list">
+      <li class="hs-step"><span class="hs-num">1</span><span class="hs-text"><strong>Send me the document.</strong> A clear photo is enough — WhatsApp or email. No need to part with the original.</span></li>
+      <li class="hs-step"><span class="hs-num">2</span><span class="hs-text"><strong>Get a quote within 2 working hours.</strong> Exact price, turnaround, delivery method. No obligation.</span></li>
+      <li class="hs-step"><span class="hs-num">3</span><span class="hs-text"><strong>Confirm and pay.</strong> Bank transfer or SWIFT from abroad; Ecobank, Moov Money or Mixx by Yas in Togo. Pro forma invoice on request.</span></li>
+      <li class="hs-step"><span class="hs-num">4</span><span class="hs-text"><strong>Receive the stamped document.</strong> Signed PDF, plus paper by collection in Lomé or courier anywhere in Togo.</span></li>
+    </ol>
+    <p class="hs-foot"><a href="/faq/">Read all the frequently asked questions →</a></p>
+  </div>
+</section>
+
+<section class="home-footer-cta" id="funnel-cta" aria-label="Get in touch">
+  <div class="section-inner">
+    <p class="home-footer-cta-line">Have a complex dossier or a question that doesn’t fit a box? Let’s talk it through directly.</p>
+    
+    <div class="home-footer-cta-btns">
+      <a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote.%0A%0AService%3A%0ADocument%20or%20need%3A%0ADeadline%3A" class="btn--wa" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+      
+      <a href="mailto:contact@azaeliloki.com" class="btn-ghost">Send an email</a>
+      
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="af" id="site-footer">
+  <button type="button" class="af__top" id="backToTop" data-en-label="Back to top" data-fr-label="Haut de page" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <div class="af__lead">
+    <div class="af__lead-inner">
+      <div class="af__lead-copy">
+        <p class="af__lead-eyebrow">Free quote within 2 working hours</p>
+        
+        <h2 class="af__lead-title">Tell me what you need translated.</h2>
+        
+        <p class="af__lead-sub">Mon–Fri 8:00–20:00 · Sat 8:00–18:00 (GMT+0)</p>
+        
+      </div>
+      <div class="af__lead-actions">
+        <a class="af__act af__act--gold" href="/business/#quote-intake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Request a Free Quote</a>
+        <a class="af__act" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@azaeliloki.com</a>
+        <a class="af__act" href="tel:+22879716258"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="af__act" href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg>WhatsApp</a>
+        <a class="af__act" href="https://calendly.com/iloki-azael/consultation" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book a call</a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="af__inner">
+    <div class="af__grid">
+      <div class="af__brand">
+        <h2 class="af__name">
+          <span class="af__mark" aria-hidden="true"><img src="/assets/images/logo-72.png" alt="" width="36" height="36" loading="lazy"></span>
+          Azaël&nbsp;<em>Iloki</em>
+        </h2>
+        <p class="af__tag">Sworn translator · FR ↔ EN · Lomé, Togo</p>
+        
+        <span class="af__chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z"/></svg><span>Sworn · Cour d’appel de Lomé</span></span>
+        <div class="af__social">
+          <a href="https://linkedin.com/in/azaeliloki" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 11v6"/></svg>
+          </a>
+          <a href="https://www.proz.com/translator/4735520" aria-label="ProZ.com" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 8.5h7l-7 7h7"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="af__col" aria-label="Services">
+        <h3 class="af__h">Services</h3>
+        <ul class="af__links">
+          <li><a href="/certified-translation/">Certified Translation</a></li>
+          <li><a href="/business/#svc-general">General Translation</a></li>
+          <li><a href="/business/#svc-training">Corporate Training</a></li>
+          <li><a href="/content-translation/">Web Content &amp; SEO</a></li>
+          <li><a href="/law-firms/">Law Firms</a></li>
+          <li><a href="/west-africa/">West Africa</a></li>
+          <li><a href="/interpretation/">Interpretation</a></li>
+          <li><a href="/icao-english/">ICAO Level 4</a></li>
+          <li><a href="/transcription/">Transcription</a></li>
+          <li><a href="/courses/#course-pricing-hub">Courses</a></li>
+          <li><a href="/tutoring/">Tutoring</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="af__col" aria-label="Information">
+        <h3 class="af__h">Information</h3>
+        <ul class="af__links">
+          <li><a href="/about/">About Me</a></li>
+          <li><a href="/reviews/">Client Reviews</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/sitemap/">Site Map</a></li>
+          <li><a href="/#funnel-paths">All Paths</a></li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+  <div class="af__divider" role="presentation"></div>
+  <div class="af__bottom">
+    <p class="af__legal">© 2026 Azaël Iloki · Sworn translator</p>
+    
+    <span class="af__meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Lomé, Togo · West Africa</span></span>
+    <div class="af__lang" role="group" aria-label="Language">
+      <a href="/" data-lang="en" hreflang="en">EN</a>
+      <i aria-hidden="true">·</i>
+      <a href="/fr/" data-lang="fr" hreflang="fr">FR</a>
+    </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/js/lang.js?v=8ccf1718" defer></script>
+<script src="assets/js/header-nav.js?v=e1ba973d" defer></script>
+<script src="assets/js/script.js?v=072d0e43" defer></script>
+</body>
+</html>

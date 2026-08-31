@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<script>(function () { var KEY = 'azael_lang_pref'; var FR_SLUG_FROM_EN = { 'certified-translation': 'traduction-certifiee', 'west-africa': 'afrique-de-louest', 'tutoring': 'soutien-scolaire', 'reviews': 'avis-clients', 'guides/visa-documents': 'guides/documents-visa', 'content-translation': 'contenu-web', 'law-firms': 'cabinets-juridiques', 'icao-english': 'anglais-aeronautique', 'interpretation': 'interpretation', 'terms': 'conditions', 'pricing': 'tarifs', 'sitemap': 'plan-du-site', 'contact': 'contact' }; function isFrPath(path) { return /(?:^|\/)fr(?:\/|$)/.test(path); } function isEnHome(path) { if (isFrPath(path)) return false; var p = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); if (p === '/' || p === '') return true; if (/\/(live|deploy-ready)\/?$/i.test(p)) return true; return false; } function suffix() { return location.search + location.hash; } function getPref() { try { return localStorage.getItem(KEY); } catch (e) { return null; } } function detectBrowserLang() { var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']; for (var i = 0; i < list.length; i++) { var tag = String(list[i]).toLowerCase(); if (tag.indexOf('fr') === 0) return 'fr'; if (tag.indexOf('en') === 0) return 'en'; } return 'en'; } function enSlugFromFr(frSlug) { for (var en in FR_SLUG_FROM_EN) { if (FR_SLUG_FROM_EN[en] === frSlug) return en; } return frSlug; } function translateSlug(slug, targetLang, sourceIsFr) { if (targetLang === 'fr') { if (!sourceIsFr && FR_SLUG_FROM_EN[slug]) return FR_SLUG_FROM_EN[slug]; return slug; } if (sourceIsFr) return enSlugFromFr(slug); return slug; } function parseLocalePath(path) { var normalized = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var onFr = isFrPath(normalized); var slug = normalized.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/').replace(/^\//, '').replace(/\/$/, ''); return { onFr: onFr, slug: slug }; } function liveSegments(path) { var segments = path.replace(/\\/g, '/').split('/').filter(Boolean); var liveIdx = -1; for (var i = 0; i < segments.length; i++) { var seg = segments[i].toLowerCase(); if (seg === 'live' || seg === 'deploy-ready') { liveIdx = i; break; } } if (liveIdx < 0) return null; var afterLive = segments.slice(liveIdx + 1); if (afterLive.length && /^index\.html?$/i.test(afterLive[afterLive.length - 1])) { afterLive.pop(); } return { segments: segments, liveIdx: liveIdx, afterLive: afterLive }; } function formatLocalePath(slug, lang) { if (lang === 'fr') { if (!slug) return '/fr/'; return '/fr/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } if (!slug) return '/'; return '/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } function httpLocaleHref(lang) { var path = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var info = liveSegments(path); if (info) { var after = info.afterLive.slice(); var onFr = after[0] === 'fr'; if (onFr) after.shift(); var slug = after.join('/'); var newSlug = translateSlug(slug, lang, onFr); var targetSegs = lang === 'fr' ? ['fr'].concat(newSlug ? newSlug.split('/') : []) : (newSlug ? newSlug.split('/') : []); var base = info.segments.slice(0, info.liveIdx + 1); return '/' + base.concat(targetSegs).join('/') + suffix(); } var parsed = parseLocalePath(path); if ((lang === 'fr' && parsed.onFr) || (lang === 'en' && !parsed.onFr)) { return path + suffix(); } var mappedSlug = translateSlug(parsed.slug, lang, parsed.onFr); return formatLocalePath(mappedSlug, lang) + suffix(); } function navigate(lang) { if (location.protocol === 'file:') return; location.replace(httpLocaleHref(lang)); } var path = location.pathname.replace(/\\/g, '/'); if (/404\.html$/i.test(path)) return; var onFr = isFrPath(path); var pref = getPref(); if (!pref && !onFr && isEnHome(path)) { if (detectBrowserLang() === 'fr') { navigate('fr'); } return; } if (!pref) return; if (parseLocalePath(path).slug !== '') return; if (pref === 'fr' && !onFr) { navigate('fr'); return; } if (pref === 'en' && onFr) { navigate('en'); } })();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certified Translation in Togo | Official Sworn FR↔EN</title>
+<meta name="description" content="Sworn FR↔EN translation in Togo — diplomas, civil records, visa files, stamped and signed. From 15,000 FCFA / page. Express 24h. Free quote in 2h.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://azaeliloki.com/certified-translation/">
+<link rel="alternate" hreflang="en" href="https://azaeliloki.com/certified-translation/">
+<link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/traduction-certifiee/">
+<link rel="alternate" hreflang="x-default" href="https://azaeliloki.com/certified-translation/">
+<meta property="og:title" content="Certified Translation in Togo | Official Sworn FR↔EN">
+<meta property="og:description" content="Sworn FR↔EN translation in Togo — diplomas, civil records, visa files, stamped and signed. From 15,000 FCFA / page. Express 24h. Free quote in 2h.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:site_name" content="Azaël Iloki — Language Services">
+<meta property="og:url" content="https://azaeliloki.com/certified-translation/">
+<meta property="og:image" content="https://azaeliloki.com/assets/og/og-traduction-certifiee.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Azaël Iloki — Certified translation, Lomé">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://azaeliloki.com/assets/og/og-traduction-certifiee.jpg">
+<meta name="twitter:title" content="Certified Translation in Togo | Official Sworn FR↔EN">
+<meta name="twitter:description" content="Sworn FR↔EN translation in Togo — diplomas, civil records, visa files, stamped and signed. From 15,000 FCFA / page. Express 24h. Free quote in 2h.">
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="preconnect" href="https://wa.me" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="critical-css">/* critical ATB */:root{--navy:#122C4D;--navy-dark:#0E233F;--gold:#C9A658;--gold-on-dark:#F2DC8A;--white:#FFFFFF;--cream:#EDEEE8;--muted-on-dark:#CBD6E4;--font-body:'Outfit',system-ui,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}*{box-sizing:border-box}html[lang=en] [data-fr],html[lang=fr] [data-en]{display:none!important}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--navy);background:var(--cream)}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:16px;top:16px;z-index:9999;background:var(--white);padding:8px 12px}.ah{position:sticky;top:0;z-index:100;background:rgba(18,44,77,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.25)}.ah__inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);justify-content:space-between}.ah__logo{height:clamp(34px,6vw,52px);width:auto;display:block}.ah__nav{display:flex}@media(min-width:1280px){.ah__nav{display:block}}.ah__util{background:var(--navy-dark)}.ah__util-inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:34px;display:flex;align-items:center;justify-content:space-between}.ah__util-links{display:flex;align-items:center;flex:none}.ah__inner{height:74px}.ah__links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.ah__links li{display:flex}.ah__drop-wrap{position:relative}@media(min-width:1280px){.ah__drop-menu{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none}}.ah__actions{display:flex;align-items:center}@media(max-width:1279px){.ah__nav{display:none}.ah__burger{display:block}.ah__inner{height:62px}.ah__item--dropdown .ah__drop-menu{display:none}}@media(max-width:767px){.ah__util-note{display:none}.ah__util-inner{height:32px;justify-content:center}}.ah__burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer}.ah__burger span{display:block;width:22px;height:1.5px;background:var(--gold)}.hero{background:linear-gradient(160deg,var(--navy-dark),var(--navy));color:var(--white);padding:clamp(120px,15vw,160px) 20px clamp(60px,8vw,100px)}.hero-inner{max-width:1200px;margin:0 auto;width:100%}@media(min-width:1200px){.hero-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}}@media(min-width:900px){.hero-inner{grid-template-columns:1fr auto;gap:60px}}.hero-eyebrow{display:flex;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-on-dark);border:1px solid rgba(201,168,76,.35);padding:4px 10px;border-radius:999px;margin-bottom:20px}.hero-title{font-family:var(--font-serif);font-size:clamp(38px,5.5vw,72px);font-weight:700;line-height:1.1;margin:0 0 8px;color:var(--white)}.util-hero .hero-title{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 12px}.hero-lead{margin:0 0 10px;color:var(--muted-on-dark)}.hero-sub{margin:20px 0 36px;color:var(--muted-on-dark)}.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}.btn-primary{background:var(--gold);color:var(--navy)}.btn-ghost{border:1px solid rgba(255,255,255,.35);color:var(--white)}.hero-portrait-img{width:100%;max-width:420px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block}</style>
+<link rel="preload" href="/assets/css/style.css?v=cc67a03d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=cc67a03d"></noscript>
+<link rel="icon" type="image/png" href="/assets/images/logo-72.png">
+<script src="/assets/js/analytics-deferred.js?v=65330a98" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://azaeliloki.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Certified Translation",
+   "item": "https://azaeliloki.com/certified-translation/"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Service",
+
+ "availableLanguage": ["fr", "en"],
+ "name": "Certified (sworn) translation",
+ "serviceType": "Sworn certified translation FR↔EN",
+ "description": "Sworn FR↔EN translation of diplomas, civil-status records and legal documents in Lomé, from 15,000 FCFA per page.",
+ "url": "https://azaeliloki.com/certified-translation/",
+ "provider": {
+  "@id": "https://azaeliloki.com/#business"
+ },
+ "areaServed": {
+  "@type": "Country",
+  "name": "Togo"
+ },
+ "offers": {
+  "@type": "Offer",
+  "price": "15000",
+  "priceCurrency": "XOF",
+  "unitText": "PAGE"
+ }
+}
+</script>
+</head>
+<body class="lang-en page-certified page-linear">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="ah" id="navbar">
+  <div class="ah__util">
+    <div class="ah__util-inner">
+      <span class="ah__util-note">Sworn translator · Cour d’appel de Lomé</span>
+      
+      <span class="ah__util-links">
+        <a class="ah__util-a" href="tel:+22879716258"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="ah__util-a ah__util-a--mail" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@azaeliloki.com</a>
+      </span>
+      <div class="ah__lang" role="group" aria-label="Language" data-en-label="Language" data-fr-label="Langue">
+        <a href="/certified-translation/" data-lang="en" hreflang="en">EN</a>
+        <i aria-hidden="true">·</i>
+        <a href="/fr/traduction-certifiee/" data-lang="fr" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+  <div class="ah__inner">
+    <a class="ah__brand" href="/" aria-label="Azaël Iloki — home">
+      <img src="/assets/images/logo-nav.png" srcset="/assets/images/logo-nav.png 1x, /assets/images/logo-nav@2x.png 2x" alt="Azaël Iloki" class="ah__logo" width="256" height="64" decoding="async">
+    </a>
+    
+    <nav class="ah__nav" id="primary-menu" aria-label="Main navigation" data-en-label="Main navigation" data-fr-label="Navigation principale">
+      <ul class="ah__links">
+        <li><a href="/certified-translation/" data-nav="certified" class="active" aria-current="page">Certified Translation</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/courses/#course-pricing-hub" class="ah__drop-label" data-nav="courses">Courses</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-courses-en" id="ah-drop-btn-courses-en">
+              <span class="visually-hidden">Show courses</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-courses-en" role="menu">
+              <li role="none"><a href="/courses/#course-pricing-hub" role="menuitem">Language Courses</a></li>
+              <li role="none"><a href="/icao-english/" role="menuitem">ICAO Level 4 (Aviation)</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/tutoring/" data-nav="tutoring">Tutoring</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/business/" class="ah__drop-label" data-nav="business">For Business</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-business-en" id="ah-drop-btn-business-en">
+              <span class="visually-hidden">Show business services</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-business-en" role="menu">
+              <li role="none"><a href="/business/#svc-general" role="menuitem">General Translation (B2B)</a></li>
+              <li role="none"><a href="/business/#svc-training" role="menuitem">Corporate Training</a></li>
+              <li role="none"><a href="/business/#svc-retainer" role="menuitem">Professional Retainer</a></li>
+              <li role="none"><a href="/interpretation/" role="menuitem">Interpretation</a></li>
+              <li role="none"><a href="/content-translation/" role="menuitem">Web Content &amp; SEO</a></li>
+              <li role="none"><a href="/law-firms/" role="menuitem">Law Firms</a></li>
+              <li role="none"><a href="/transcription/" role="menuitem">Transcription &amp; Recordings</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/pricing/" data-nav="pricing">Pricing</a></li>
+        
+        <li><a href="/about/" data-nav="about">About</a></li>
+        
+        <li class="ah__m-only"><a href="/contact/">Contact</a></li>
+        
+        <li class="ah__m-only"><a href="/reviews/">Reviews</a></li>
+        
+        <li class="ah__m-only"><a href="/faq/">FAQ</a></li>
+        
+      </ul>
+    </nav>
+    <a class="ah__cta" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote.%0A%0AService%3A%0ADocument%20or%20need%3A%0ADeadline%3A" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg><span class="ah__cta-full">Request a Quote</span><span class="ah__cta-short">Quote</span></a>
+    
+    <button type="button" class="ah__burger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main"><nav class="page-breadcrumb" aria-label="Breadcrumb">
+  <ol class="page-breadcrumb__list">
+    <li><a href="/">Home</a></li>
+    <li aria-current="page">Certified Translation</li>
+  </ol>
+</nav>
+
+<section class="hero" id="home" aria-labelledby="home-heading">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1 class="hero-title" id="home-heading">Certified &amp; Official Translation in Togo</h1>
+      
+      <div class="hero-eyebrow">Sworn Translator · Lomé</div>
+      
+      <p class="hero-tagline">Certified translation<br><em>that carries legal weight on both sides of the language border.</em></p>
+      
+      <p class="hero-sub">Diplomas, civil records, immigration and visa documents. Physical stamp + digital PDF. Free quote within 2h.</p>
+      
+      <div class="hero-btns">
+        <a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote%20for%20a%20certified%20translation.%0A%0ADocument%3A%0ADestination%20(country%20%2F%20institution)%3A%0AFiling%20date%3A" class="btn-primary" data-cf-service="Certified Translation" target="_blank" rel="noopener noreferrer">Send the Document — Quote in 2h</a>
+        
+        <a href="#pricing" class="btn-ghost">See Document Types &amp; Pricing →</a>
+        
+      </div>
+      <div class="hero-speed-badge"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Express 24h</div>
+      
+    </div>
+    <div class="hero-portrait hero-portrait--rect hero-logo-right">
+    <picture class="hero-portrait-pic">
+      <source srcset="/assets/images/photos/photo-b-800.webp" type="image/webp">
+      <img src="/assets/images/photos/photo-b-800.jpg" alt="Azaël Iloki, sworn translator, Lomé" class="hero-portrait-img" width="640" height="800" loading="lazy">
+    </picture>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="refused" aria-labelledby="refused-heading">
+  <div class="section-inner">
+    <div class="callout-card">
+      <span class="eyebrow">Rejected translation</span>
+      <p class="callout-title" id="refused-heading">Had a translation rejected elsewhere?</p>
+      <p>Three causes account for most of them: the translation was general or merely notarised rather than sworn; the legalisation the authority required was missing from the file; or the expected format was not followed. Send me the rejected document and, if you have it, the reason you were given — I will tell you which of the three applies before quoting.</p>
+      <p><a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20a%20translation%20of%20mine%20was%20rejected%20and%20I%20need%20it%20redone.%0A%0ADocument%3A%0AAuthority%20that%20refused%20it%3A%0AReason%20given%3A%0ADeadline%3A" class="btn--wa" target="_blank" rel="noopener noreferrer" data-cf-service="Certified translation">Send the rejected document</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process" aria-labelledby="process-heading">
+  <div class="section-inner">
+    <span class="eyebrow">How It Works</span>
+    
+    <h2 class="section-title" id="process-heading">4 steps — no surprises</h2>
+    
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="ps-num">01</div>
+        <div class="ps-content">
+          <h3 class="ps-title">Send your document</h3>
+          
+          <p class="ps-desc">Send a clear photo or PDF by email to contact@azaeliloki.com. PDF, JPG, PNG and Word accepted. No need to send the original.</p>
+          
+          <p class="ps-guarantee">✓ NDA available on request — signed before you send anything</p>
+          
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">02</div>
+        <div class="ps-content">
+          <h3 class="ps-title">Free quote within 2h</h3>
+          
+          <p class="ps-desc">You receive a clear quote with exact price, turnaround time and delivery method. No hidden fees, no commitment.</p>
+          
+          <p class="ps-guarantee">✓ From 15,000 FCFA / page</p>
+          
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">03</div>
+        <div class="ps-content">
+          <h3 class="ps-title">Confirmation + pro forma invoice</h3>
+          
+          <p class="ps-desc">You approve the quote. A pro forma invoice is issued. Payment via bank transfer, Ecobank, Moov Money or Mixx by Yas.</p>
+          
+          <p class="ps-guarantee">✓ Secure payment · Official invoice provided</p>
+          
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">04</div>
+        <div class="ps-content">
+          <h3 class="ps-title">Certified PDF delivered</h3>
+          
+          <p class="ps-desc">Your certified translation is delivered by email as a PDF with official stamp and signature — in the format embassies, consulates, universities and administrations require.</p>
+          
+          <p class="ps-guarantee">✓ Certified · Confidential · Final invoice included</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="pricing" aria-labelledby="pricing-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Certified Translation</span>
+    
+    <h2 class="section-title" id="pricing-heading">Pricing &amp; turnaround</h2>
+    
+    <div class="services-grid services-grid--solo">
+      <div class="svc-card svc-card--featured" id="svc-sworn">
+        <div class="svc-head">
+          <span class="svc-num">01</span>
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <h3 class="svc-title">Certified translation</h3>
+        
+        <p class="svc-sub">Sworn · </p>
+        
+        <p class="svc-desc">Sworn, legally valid translation of any document that requires an official stamp — accredited by the Cour d’appel de Lomé and in the format embassies, consulates, universities and administrations require. Two rates apply, because the two kinds of document are not the same job.</p>
+        
+        <div class="svc-price">
+          <span class="price-from">From</span>
+          
+          <span class="price-amount">15,000–20,000 FCFA</span>
+          
+          <span class="price-unit">/ page</span>
+          
+        </div>
+        
+        <p class="price-note"><strong>Personal &amp; civil documents</strong> — diplomas, transcripts, civil-status records, identity documents. Priced per page because they are standardised and short.</p>
+        <div class="svc-price">
+          <span class="price-from">Corporate &amp; legal — from</span>
+          <span class="price-amount">66–118 FCFA</span>
+          <span class="price-unit">/ source word</span>
+        </div>
+        <p class="price-note"><strong>Contracts, court rulings, audits and institutional files</strong> are quoted per source word, not per page, because they are drafted and dense. Quoted on request.</p>
+        <p class="price-note">Free quote within 2h during working hours (Mon–Fri 8:00–20:00, Sat 8:00–18:00) — 24h guaranteed.</p> <p class="price-note">Payment, deposits and cancellation are covered in the <a href="/terms/">terms of service</a>.</p> <p class="price-note" id="institutions"><strong>Institutions and grouped files —</strong> universities, schools and employers: volume discount from 5 files, and billing either to the institution or directly to the student, whichever you prefer. Priority quote.</p>
+        
+        <p class="price-note">Sensitive documents? An NDA can be signed before you share anything for a quote.</p>
+        
+        <p class="guide-pricing-link"><a href="/guides/visa-documents/">Not sure which documents you need? See the checklist →</a></p>
+        
+        <div class="pricing-callout" id="express-24h">
+  <h3 class="pricing-callout-title"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Express 24h — a document to file tomorrow</h3>
+  <p>Filing deadline, embassy appointment or tender close within 24 hours? Send the document today and receive the certified translation, stamped and signed, within 24 hours — carrying the same stamp, the same signature and the same legal weight as standard turnaround.</p>
+  <p>Available on standard documents, subject to confirmation when you send the file. <strong>+50% on the base rate.</strong></p>
+  <p>The 24h covers production. Courier delivery is additional, depending on destination.</p>
+</div>
+        
+        <div class="svc-cta-row">
+          <a href="#quote-intake" class="svc-cta svc-cta--primary" data-cf-service="Certified Translation">Request a Free Quote</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="document-types" aria-labelledby="document-types-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Document Types</span>
+    <h2 class="section-title" id="document-types-heading">Typical documents, turnaround &amp; pricing</h2>
+    <p>Most personal files fall into a handful of categories. Standard turnaround is 2–3 business days once I have a clear scan; express 24h is available when a deadline is tight (+50% on the base rate).</p>
+    <p><strong>Counting pages.</strong> A birth certificate, a police clearance or a degree almost always fits on a single page, so the per-page rate is in practice a per-document rate. A common visa file — birth certificate, degree and police clearance — therefore comes to about 45,000 FCFA. A transcript or a court ruling can run to several pages; the quote counts them for you, free of charge.</p>
+    <div class="home-rates-table-wrap" tabindex="0" role="region" aria-label="Document types, turnaround and pricing">
+      <table class="home-rates-table">
+        <thead>
+          <tr><th scope="col">Document</th><th scope="col">From</th><th scope="col">Typical Turnaround</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Document">Birth certificate (acte de naissance)</td><td data-label="From">15,000 FCFA / page</td><td data-label="Typical Turnaround">2–3 business days</td></tr>
+          <tr><td data-label="Document">Diploma or academic transcript</td><td data-label="From">15,000 FCFA / page</td><td data-label="Typical Turnaround">2–3 business days</td></tr>
+          <tr><td data-label="Document">Police clearance (casier judiciaire)</td><td data-label="From">15,000 FCFA / page</td><td data-label="Typical Turnaround">2–3 business days</td></tr>
+          <tr><td data-label="Document">Marriage certificate / divorce judgment</td><td data-label="From">15,000 FCFA / page</td><td data-label="Typical Turnaround">2–3 business days</td></tr>
+          <tr><td data-label="Document">Contract / court ruling</td><td data-label="From">66–118 FCFA / source word</td><td data-label="Typical Turnaround">2–5 business days (quoted per file)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Each certified copy carries my wet-ink signature and the official stamp of a translator accredited by the Cour d’appel de Lomé — usually on every page, with a short attestation that the translation is true to the original. That is what “sworn” means legally in Togo: the translator is personally liable for the accuracy of the rendering, and receiving authorities (embassies, universities, courts) rely on that stamp rather than on a private agency letterhead.</p>
+    <p>If an embassy or consulate rejects a document because of a stamp, layout or certification-format issue on my side, I rework it at no charge. I cannot control a change in their checklist mid-process, but formatting problems that are mine get fixed without asking you to pay twice.</p>
+  </div>
+</section>
+
+<section class="general-estimate" id="certified-estimate" aria-labelledby="certified-estimate-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Estimate</span>
+    <h2 class="section-title" id="certified-estimate-heading">What will your file cost?</h2>
+    <p class="general-estimate__lead">Personal and civil-status documents are priced per page, from 15,000 FCFA. Count your pages and the total appears. This is not a firm quote: I confirm the exact price within 2 working hours, once I have seen the documents.</p>
+    <div class="general-estimate__panel">
+      <div class="qe-field">
+        <label class="qe-label" for="ce-pages">Number of pages to translate</label>
+        <input class="qe-input" id="ce-pages" type="number" min="1" max="200" step="1" inputmode="numeric" placeholder="e.g. 3">
+        <p class="qe-tip"><strong>Most civil-status documents fit on a single page.</strong> A birth certificate, a police clearance or a diploma usually counts as one page each; a full academic transcript often counts as two. When in doubt, count the sheets — I correct it in the quote.</p>
+      </div>
+      <div class="qe-field">
+        <label class="qe-label" for="ce-currency">Display currency</label>
+        <select class="qe-select" id="ce-currency">
+          <option value="FCFA">FCFA</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="USD">USD ($)</option>
+          <option value="GBP">GBP (£)</option>
+        </select>
+      </div>
+      <button type="button" class="btn-primary qe-show-btn" id="ce-show-btn">See the estimate</button>
+      <p class="ce-result" id="ce-result" role="status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="delivery" aria-labelledby="delivery-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Delivery</span>
+    <h2 class="section-title" id="delivery-heading">Receiving your translation</h2>
+    <ul class="delivery-list">
+      <li><strong>Secure PDF — included.</strong> Your certified translation, stamped and signed, delivered by WhatsApp or email on completion. Most embassies, universities and online filing portals now accept the certified PDF.</li>
+      <li><strong>Collection in Lomé — free.</strong> Stamped paper copy, by appointment.</li>
+      <li><strong>Courier delivery — anywhere in Togo.</strong> Stamped paper copy delivered to the address of your choice. Courier fees at cost, stated in your quote and settled with the translation. Allow 24 to 72 hours in transit depending on destination.</li>
+    </ul>
+    <p class="price-note">Check whether the receiving authority requires the paper original — many now accept a certified PDF.</p>
+    <p class="price-note"><strong>Abroad, with nobody in Lomé to act for you?</strong> Tell me the destination country and the authority involved and I will confirm within 2 working hours whether the original has to reach Lomé.</p>
+  </div>
+</section>
+
+<section class="services" id="legalisation" aria-labelledby="legalisation-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Legalisation</span>
+    <h2 class="section-title" id="legalisation-heading">Who walks the file through, and what happens to your original</h2>
+    <p>Togo is not a party to the Hague Apostille Convention: legalisation runs through the town hall (mairie) where I am registered, then the Ministry of Foreign Affairs, then the consulate of the destination country. <strong>I walk the file through myself, counter by counter.</strong> You do not need anyone in Lomé.</p>
+    <ul class="delivery-list">
+      <li><strong>Where to send the original.</strong> Legalisation applies to the original document, not a copy: it has to reach Lomé physically, addressed to me. The receiving address and the carrier are given with your quote — do not ship anything before you have them.</li>
+      <li><strong>What happens to it in transit.</strong> The original stays in my possession from lodging to collection. It is never handed to an intermediary, and I confirm each stage as it clears.</li>
+      <li><strong>A full scan is taken before anything is lodged.</strong> That scan is what allows the file to be reconstituted if the document goes astray.</li>
+      <li><strong>If the document is lost or damaged.</strong> A Togolese civil-status record can be re-issued by the town hall that issued it: I file the re-issue application and follow it through. The extent of my liability is the one set out in the <a href="/terms/">terms of service</a>.</li>
+      <li><strong>What comes back to you.</strong> The legalised original and its sworn translation, stamped and bound together, shipped to the address of your choice — plus the secure PDF on completion.</li>
+    </ul>
+    <p class="price-note"><strong>Fees.</strong> Stamps, official charges and carriage are re-invoiced at cost and stated in your quote. If you would rather settle with the administrations directly, you can: I carry the file, you keep the fees in your own hands.</p>
+    <p class="price-note"><strong>Turnaround depends on the destination consulate</strong>, and I will not quote it from guesswork: tell me the country and the authority involved, I check with the legalisation service and confirm it with your quote — together with the answer on whether the original is required.</p>
+  </div>
+</section>
+
+<section class="primary-cta-band" id="book-now" aria-labelledby="book-now-heading">
+  <div class="section-inner">
+    <h2 class="section-title" id="book-now-heading">Send your document for a free quote</h2>
+    
+    <p class="primary-cta-band__sub">No commitment until you confirm the quote. Free estimate within 2 working hours.</p>
+    
+    <div class="primary-cta-band__actions">
+      <a href="#quote-intake" class="btn-primary" data-cf-service="Certified Translation">Send the Document — Quote in 2h</a>
+      
+      <a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote%20for%20a%20certified%20translation.%0A%0ADocument%3A%0ADestination%20(country%20%2F%20institution)%3A%0AFiling%20date%3A" class="btn--wa" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="soft-capture" id="visa-soft-capture" aria-labelledby="visa-capture-heading">
+  <div class="section-inner soft-capture__inner">
+    <span class="soft-capture__eyebrow">Not ready for a quote yet?</span>
+    
+    <h2 class="soft-capture__title" id="visa-capture-heading">Building a visa or study-abroad file?</h2>
+    
+    <p class="soft-capture__body">Get the free checklist of documents most often required — and which ones need a certified translation. No file is complete until the right documents are certified.</p>
+    
+    <div class="soft-capture__actions">
+      <a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20please%20send%20me%20the%20free%20visa-document%20checklist." class="soft-capture__wa btn--wa" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+      
+    </div>
+    <form class="soft-capture__email-form" id="visa-capture-form" novalidate data-checklist-en="/guides/visa-documents/#visa-checklist" data-checklist-fr="/fr/guides/documents-visa/#visa-checklist">
+      <div class="cf-honeypot" aria-hidden="true" hidden>
+        <label for="visa-capture-hp">Website</label>
+        <input class="cf-input" id="visa-capture-hp" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="soft-capture__email-row">
+        <label class="visually-hidden" for="visa-capture-email">Email</label>
+        
+        <input type="email" id="visa-capture-email" class="soft-capture__email-input" name="email" autocomplete="email" placeholder="Your email address" required>
+        <button type="button" class="soft-capture__email-submit visa-capture-submit">Send by email →</button>
+        
+      </div>
+      <label class="soft-capture__consent">
+        <input type="checkbox" id="visa-capture-consent" name="consent">
+        <span>I agree to be contacted about my request. See the <a href="/privacy.html">privacy policy</a>.</span>
+        
+      </label>
+      <div class="soft-capture__success" id="visa-capture-success" hidden>
+        <p>Here’s your checklist: <a href="/guides/visa-documents/#visa-checklist" class="visa-capture-checklist-link">View the full document checklist →</a></p>
+        
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="trust trust--minimal" id="trust" aria-labelledby="trust-heading">
+  <div class="section-inner">
+    <h2 class="section-title light" id="trust-heading">Verified authority</h2>
+    
+    <p class="trust-credential-line">6+ years professional FR↔EN translation · court-sworn since 2024</p>
+    
+    <div class="trust-grid trust-grid--duo">
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">Court-accredited sworn translator</h3>
+        
+        <p class="tc-desc">Official sworn translations, stamped and signed on every page, in the format embassies, consulates and universities require.</p>
+        
+        <div class="tc-credential"><span class="tc-cred-label">Accreditation</span><span class="tc-cred-num">Cour d’appel de Lomé</span></div>
+      </div>
+      <div class="tc">
+        <span class="tc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2zM7 11V7a5 5 0 0 1 10 0v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="tc-title">Document confidentiality</h3>
+        
+        <p class="tc-desc">Visa and university files handled under strict professional confidentiality. Secure delivery by email or WhatsApp.</p>
+        
+      </div>
+    </div>
+    <div class="trust-strip">
+      <span class="ts-group"><span class="ts-item">Accredited by Cour d’appel de Lomé</span>
+      
+      <span class="ts-item">Official Stamp and Ink Signature on Every Page</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="payment" id="payment" aria-labelledby="payment-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Payment</span>
+    
+    <h2 class="section-title light" id="payment-heading">Payment methods</h2>
+    
+    <div class="payment-blocks">
+      <div class="payment-block payment-block--individual">
+        <h3 class="payment-block-title">Individual clients</h3>
+        
+        <button class="pay-accordion-btn" type="button" aria-expanded="false" aria-controls="payIndividualBody">
+          <span>View payment details — Moov Money · Mixx by Yas · Ecobank · Bank Transfer · From Abroad</span>
+          
+          <span class="pay-acc-arrow">↓</span>
+        </button>
+        <div class="pay-accordion-body" id="payIndividualBody">
+          <div class="pay-methods-grid">
+            <div class="pm-card">
+              <img src="../assets/images/pay_flooz.svg" alt="Moov Money" class="pm-logo" width="72" height="36" loading="lazy" decoding="async">
+              <div class="pm-info"><p class="pm-name">Moov Money</p><p class="pm-num">+228 79 71 62 58</p></div>
+            </div>
+            <div class="pm-card">
+              <img src="../assets/images/pay_mixx.svg" alt="Mixx by Yas" class="pm-logo" width="72" height="36" loading="lazy" decoding="async">
+              <div class="pm-info"><p class="pm-name">Mixx by Yas</p><p class="pm-num">+228 92 44 70 14 (mobile money payments only)</p></div>
+            </div>
+            <div class="pm-card">
+              <img src="../assets/images/pay_ecobank.svg" alt="Ecobank" class="pm-logo" width="72" height="36" loading="lazy" decoding="async">
+              <div class="pm-info"><p class="pm-name">Ecobank Mobile</p><p class="pm-num">Details with invoice</p></div>
+            </div>
+            <div class="pm-card">
+              <div class="pm-info"><p class="pm-name"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M4 21V9.5L12 4l8 5.5V21M9.5 21v-6h5v6M4 9.5h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Bank Transfer</p><p class="pm-num">Details with invoice</p></div>
+            </div>
+            <div class="pm-card">
+              <div class="pm-info"><p class="pm-name"><svg class="inline-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c2.4 2.6 3.7 5.6 3.7 9s-1.3 6.4-3.7 9c-2.4-2.6-3.7-5.6-3.7-9s1.3-6.4 3.7-9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>From Abroad</p><p class="pm-num">International transfer (SWIFT) — invoiced in EUR, USD or FCFA</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="sworn-vs-certified" aria-labelledby="compare-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Comparison</span>
+    <h2 class="section-title" id="compare-heading">Certified, sworn, notarised or legalised — what’s the difference?</h2>
+    <p>English-speaking buyers are asked for four different things and the words are used loosely. In Togo, a <strong>sworn (assermentée) translation</strong> is signed and stamped by a translator accredited by the Cour d’appel de Lomé — and that is what embassies, universities and courts mean when they ask for a “certified” or an “official” translation. A notarised copy is a separate act and does not replace the sworn stamp. Legalisation is a further step again, applied to the file as a whole — the translation and the original travel together.</p>
+    <div class="home-rates-table-wrap" tabindex="0" role="region" aria-label="Translation types compared">
+      <table class="home-rates-table">
+        <thead>
+          <tr><th>Type</th><th>What it is</th><th>When you need it</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Type">Sworn / certified / official</td><td data-label="What it is">Official stamp + signature of a court-accredited translator</td><td data-label="When you need it">Visas, university files, court filings, civil-status records</td></tr>
+          <tr><td data-label="Type">General (B2B)</td><td data-label="What it is">Professional FR↔EN without a legal stamp</td><td data-label="When you need it">Contracts, reports, NGO files for internal or commercial use</td></tr>
+          <tr><td data-label="Type">Notarised copy</td><td data-label="What it is">A notary authenticates a signature or copy — not the translation quality</td><td data-label="When you need it">Only when the receiving body specifically asks for a notarial act</td></tr>
+          <tr><td data-label="Type">Legalisation</td><td data-label="What it is">A chain of official confirmations on the file — the translation and the original travel together. Togo is not yet a party to the Hague Apostille Convention, so the route runs through the town hall (mairie) where I am registered, then Foreign Affairs, then the destination consulate</td><td data-label="When you need it">When the receiving authority asks for a legalised or apostilled document, not just a translation</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="reviews reviews--has-reviews" id="reviews" aria-labelledby="reviews-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Client Reviews</span>
+    
+    <h2 class="section-title" id="reviews-heading">What clients say</h2>
+    
+    <div class="reviews-grid" id="reviewsGrid"><!--reviews:start--><div class="review-card"><div class="rv-stars">★★★★★<a class="rv-source" href="https://maps.app.goo.gl/rxfDgnqqEwygiFPv6" target="_blank" rel="noopener noreferrer">Google</a></div><p class="rv-text">“I got my papers translated and I am very satisfied. The quality of the service is top notch. I would recommend it to anyone”</p><p class="rv-author">— Racoon Castellanos</p></div><div class="review-card"><div class="rv-stars">★★★★★<a class="rv-source" href="https://maps.app.goo.gl/rxfDgnqqEwygiFPv6" target="_blank" rel="noopener noreferrer">Google</a></div><p class="rv-text">“Très réactif et très pro. Je recommande Azael pour toutes vos traductions officielles.”</p><p class="rv-author">— Toganim Sarl</p></div><div class="review-card"><div class="rv-stars">★★★★★<a class="rv-source" href="https://maps.app.goo.gl/rxfDgnqqEwygiFPv6" target="_blank" rel="noopener noreferrer">Google</a></div><p class="rv-text">“Un travail plus que parfait”</p><p class="rv-author">— Richilde BASSALBIA</p></div><!--reviews:end--></div>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <span class="eyebrow">FAQ</span>
+    
+    <h2 class="section-title" id="faq-heading">Common questions</h2>
+    
+    <p class="faq-intro">Certified translation. <a href="../faq/">View all FAQs</a>.</p>
+    <p class="faq-intro">Working with a notary or law firm? See <a href="/law-firms/">legal and sworn translation for law firms</a>.</p>
+    
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Will my sworn translation be accepted abroad? Do I need an apostille?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>A sworn translation carries my signature and the stamp of a translator accredited by the Cour d’appel de Lomé, which is what most embassies, universities and public authorities ask for. Some authorities also require legalisation on top of the sworn stamp. Togo is not yet a party to the Hague Apostille Convention: today the route runs through the town hall (mairie) where I am registered, then the Ministry of Foreign Affairs, then the consulate of the destination country. The Council of Ministers adopted an accession bill on 4 August 2026; parliamentary approval, deposit of the instrument and a six-month objection period still lie ahead, with entry into force expected in 2027. If your file needs that legalisation, I can handle it for you. The administrative and travel costs remain yours and are stated in the quote. Ask the receiving authority exactly what it requires and tell me — I will adapt the form of the translation accordingly.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">What is the difference between a certified and a sworn translator?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>In Togo they are the same thing — a translator sworn before a Cour d’appel and authorised to apply an official stamp to a translation. English-speaking buyers usually call the result an official translation; in Togo that is precisely what a sworn translation is. In French, buyers say both “traducteur agréé” (the everyday phrasing) and “traducteur assermenté” (the legal term used by courts and administrations). I am sworn before the Cour d’appel de Lomé, and my translations are in the format embassies, consulates, universities and administrations require.</p>
+          <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">How will I receive my translation?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Three options. <strong>Secure PDF — included</strong>: your certified translation, stamped and signed, delivered by WhatsApp or email on completion. Most embassies, universities and online filing portals now accept the certified PDF. <strong>Collection in Lomé — free</strong>: stamped paper copy, by appointment. <strong>Courier — anywhere in Togo</strong>: stamped paper copy to the address of your choice, fees at cost stated in your quote, 24 to 72 hours in transit depending on destination. Check whether the receiving authority requires the paper original — many now accept a certified PDF.</p>
+        </div>
+      </div>
+    </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">How long does a certified translation take?</span>
+          
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Standard delivery is 24–72 hours for most documents (1–5 pages). Express 24h is available for an additional +50% surcharge. Longer or more complex documents (contracts, audits, NGO reports) may require 3–5 business days. You will receive an exact delivery time in your quote.</p>
+          
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">What weight does the Cour d’appel stamp carry with embassies?</span>
+          
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>My accreditation with the Cour d’appel de Lomé is recognised by embassies, consulates, universities and administrations in Togo and internationally, and every translation carries the official stamp and my signature. The decision on any given file always rests with the receiving authority — but if a document comes back over a stamp, layout or certification fault that is mine, I redo it at no charge.</p>
+          
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">How much does a certified translation cost?</span>
+          
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Certified translation is priced per source page: 15,000–20,000 FCFA per page for standard documents such as diplomas, transcripts and civil-status records. Express 24h delivery adds 50%. Procedural documents, judgments, contracts and statutes are billed per source word: 66–118 FCFA. Every quote is free and sent within 2 working hours.</p>
+          
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Can you work with clients outside Togo?</span>
+          
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Yes. Documents are received and delivered digitally worldwide. Physical certified prints can be collected in person in Lomé or shipped internationally on request. Payment is accepted via bank transfer and international wire (SWIFT). The certified translation bears the legal stamp of the Cour d’appel de Lomé which is internationally recognised.</p>
+          
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Are my documents kept confidential?</span>
+          
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Yes. All documents are handled under strict professional confidentiality. Files are kept in a secure, encrypted folder, are never shared with any third party and are permanently deleted thirty days after delivery — immediately on request. Only the register of certified translations — number, date, document type and language pair — is kept indefinitely: it is what lets a receiving authority verify where a translation came from, and it holds no document content. A formal non-disclosure agreement is available to any client on request — it can be signed before you send any document.</p>
+          
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">How do I send my document to you?</span>
+          
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Send your document by email to contact@azaeliloki.com. Accepted formats: PDF, JPG, PNG, Word (.docx) or any scanned image. The resolution should be clear enough to read all text. For very large files, you can also send via WhatsApp (+228 79 71 62 58). You do not need to send the original document — a clear photo or scan is sufficient for certified translations.</p>
+          
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">What file formats do you accept?</span>
+          
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>For source documents: PDF, JPG, PNG, TIFF, Word (.docx), Excel (.xlsx), PowerPoint (.pptx) and scanned images. For delivery: certified translations are always delivered as PDF with official stamp.</p>
+          
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Do you provide a physical certified copy?</span>
+          
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Yes — every certified translation includes both a secure digital PDF with official stamp and a physical certified print. The physical copy can be collected in person in Lomé or sent by courier on request. For clients outside Lomé or Togo, digital delivery is standard with physical copies available on request.</p>
+          
+        </div>
+      </div>
+      </div>
+    </div>
+    <p class="faq-intro interpretation-crosslink">Need an interpreter for your interview (consulate, embassy) as well? <a href="/interpretation/">See interpretation services</a>.</p>
+
+</section>
+
+<section class="funnel-paths page-cross-sell" id="cross-sell" aria-labelledby="cross-sell-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Other services</span>
+    
+    <h2 class="section-title" id="cross-sell-heading">Looking for something else?</h2>
+    
+    <div class="fp-grid courses-audience-grid">
+      <div class="fp-card">
+        <span class="fp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12.5V17c0 1.1 2.7 2.5 6 2.5s6-1.4 6-2.5v-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="fp-title"><a class="fp-link" href="../courses/">Language courses</a></h3>
+        
+        <p class="fp-desc">English or French for adults</p>
+        
+        <span class="fp-cta">View courses →</span>
+      </div>
+      <div class="fp-card">
+        <span class="fp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM9 7h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="fp-title"><a class="fp-link" href="../tutoring/">Academic tutoring</a></h3>
+        
+        <p class="fp-desc">BAC &amp; BEPC exam prep</p>
+        
+        <span class="fp-cta">View packages →</span>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+
+ "inLanguage": "en",
+ "speakable": {
+  "@type": "SpeakableSpecification",
+  "cssSelector": [
+   ".hero-title",
+   ".hero-sub",
+   ".faq-a p"
+  ]
+ },
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Will my sworn translation be accepted abroad? Do I need an apostille?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A sworn translation carries my signature and the stamp of a translator accredited by the Cour d’appel de Lomé, which is what most embassies, universities and public authorities ask for. Some authorities also require legalisation on top of the sworn stamp. Togo is not yet a party to the Hague Apostille Convention: today the route runs through the town hall (mairie) where I am registered, then the Ministry of Foreign Affairs, then the consulate of the destination country. The Council of Ministers adopted an accession bill on 4 August 2026; parliamentary approval, deposit of the instrument and a six-month objection period still lie ahead, with entry into force expected in 2027. If your file needs that legalisation, I can handle it for you. The administrative and travel costs remain yours and are stated in the quote. Ask the receiving authority exactly what it requires and tell me — I will adapt the form of the translation accordingly."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the difference between a certified and a sworn translator?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "In Togo they are the same thing — a translator sworn before a Cour d’appel and authorised to apply an official stamp to a translation. English-speaking buyers usually call the result an official translation; in Togo that is precisely what a sworn translation is. In French, buyers say both \"traducteur agréé\" (the everyday phrasing) and \"traducteur assermenté\" (the legal term used by courts and administrations). I am sworn before the Cour d’appel de Lomé, and my translations are in the format embassies, consulates, universities and administrations require."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How long does a certified translation take?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Standard delivery is 24–72 hours for most documents (1–5 pages). Express 24h is available for an additional +50% surcharge. Longer or more complex documents (contracts, audits, NGO reports) may require 3–5 business days. You will receive an exact delivery time in your quote."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What weight does the Cour d’appel stamp carry with embassies?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "My accreditation with the Cour d’appel de Lomé is recognised by embassies, consulates, universities and administrations in Togo and internationally, and every translation carries the official stamp and my signature. The decision on any given file always rests with the receiving authority — but if a document comes back over a stamp, layout or certification fault that is mine, I redo it at no charge."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does a certified translation cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Certified translation is priced per source page: 15,000–20,000 FCFA per page for standard documents such as diplomas, transcripts and civil-status records. Express 24h delivery adds 50%. Procedural documents, judgments, contracts and statutes are billed per source word: 66–118 FCFA. Every quote is free and sent within 2 working hours."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can you work with clients outside Togo?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Documents are received and delivered digitally worldwide. Physical certified prints can be collected in person in Lomé or shipped internationally on request. Payment is accepted via bank transfer and international wire (SWIFT). The certified translation bears the legal stamp of the Cour d’appel de Lomé which is internationally recognised."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are my documents kept confidential?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. All documents are handled under strict professional confidentiality. Files are kept in a secure, encrypted folder, are never shared with any third party and are permanently deleted thirty days after delivery — immediately on request. Only the register of certified translations — number, date, document type and language pair — is kept indefinitely: it is what lets a receiving authority verify where a translation came from, and it holds no document content. A formal non-disclosure agreement is available to any client on request — it can be signed before you send any document."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I send my document to you?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Send your document by email to contact@azaeliloki.com. Accepted formats: PDF, JPG, PNG, Word (.docx) or any scanned image. The resolution should be clear enough to read all text. For very large files, you can also send via WhatsApp (+228 79 71 62 58). You do not need to send the original document — a clear photo or scan is sufficient for certified translations."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What file formats do you accept?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "For source documents: PDF, JPG, PNG, TIFF, Word (.docx), Excel (.xlsx), PowerPoint (.pptx) and scanned images. For delivery: certified translations are always delivered as PDF with official stamp."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do you provide a physical certified copy?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes — every certified translation includes both a secure digital PDF with official stamp and a physical certified print. The physical copy can be collected in person in Lomé or sent by courier on request. For clients outside Lomé or Togo, digital delivery is standard with physical copies available on request."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How will I receive my translation?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Three options. Secure PDF — included: your certified translation, stamped and signed, delivered by WhatsApp or email on completion. Most embassies, universities and online filing portals now accept the certified PDF. Collection in Lomé — free: stamped paper copy, by appointment. Courier — anywhere in Togo: stamped paper copy to the address of your choice, fees at cost stated in your quote, 24 to 72 hours in transit depending on destination. Check whether the receiving authority requires the paper original — many now accept a certified PDF."
+   }
+  }
+ ]
+}
+</script>
+
+<section class="share-section" aria-label="Share this page">
+  <div class="section-inner">
+    <div class="share-bar" data-url="https://azaeliloki.com/certified-translation/" data-title="Certified Translation in Togo | Official Sworn FR↔EN" data-message="I just found this certified translation service in Lomé, sworn with the Cour d’appel de Lomé — thought you might find it useful:">
+      <span class="share-label">Share:</span>
+  <button type="button" class="share-btn share-whatsapp" aria-label="Share on WhatsApp"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg> WhatsApp</button>
+  <button type="button" class="share-btn share-linkedin" aria-label="Share on LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-14h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</button>
+  <button type="button" class="share-btn share-copy" aria-label="Copy link"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2.5-2.5a5 5 0 0 0-7-7L11 6"/><path d="M14 11a5 5 0 0 0-7.5-.5L4 13a5 5 0 0 0 7 7l2-2"/></svg> Copy link</button>
+    </div>
+  </div>
+</section>
+
+<div id="quote-intake" class="quote-intake-anchor" tabindex="-1"></div>
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Get in Touch</span>
+    
+    <h2 class="section-title light" id="contact-heading">Get a precise quote in 2h</h2>
+    
+    <p class="contact-intro">Send your document details below or reach me on WhatsApp — I reply within 2 working hours with an exact price and turnaround.</p>
+    
+    <div class="contact-grid">
+      <form class="cf-form" novalidate action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="39964717-2125-43c0-8e1c-96cb1fb0fd83">
+        <input type="hidden" name="subject" value="Website Enquiry — Azaël Iloki Website">
+        <input type="hidden" name="from_name" value="Website Contact Form">
+        <input type="hidden" name="email" value="no-reply@azaeliloki.com">
+        <div class="cf-honeypot" aria-hidden="true" hidden>
+          <label for="cf-website">Website</label>
+          <input class="cf-input" id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-name">Name</label>
+          
+          <input class="cf-input" id="cf-name" name="name" type="text" required aria-required="true" autocomplete="name">
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-contact">Email or WhatsApp number</label>
+          
+          <input class="cf-input" id="cf-contact" name="contact" type="text" inputmode="email" required aria-required="true" autocomplete="email">
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-service">Service</label>
+          
+          <select class="cf-select" id="cf-service" name="service" required aria-required="true">
+            <option value="Certified Translation" selected>Certified Translation</option>
+            
+          </select>
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-message">Message</label>
+          
+          <textarea class="cf-textarea" id="cf-message" name="message" autocomplete="off"></textarea>
+        </div>
+        <button type="submit" class="cf-submit">Send by email →</button>
+        <p class="cf-consent">By sending this form, you agree to be contacted about your request. See the <a href="/privacy.html">privacy policy</a>.</p>
+        
+        <div class="cf-error" id="cf-error" role="alert"></div>
+        <div class="cf-success" id="cf-success" role="status">Message sent. You’ll have your quote within 2 working hours.</div>
+        
+      </form>
+      <aside class="contact-trust" aria-label="Credentials">
+        <ul class="contact-trust-list">
+          <li><strong>Sworn translator</strong> — Cour d’appel de Lomé</li>
+          
+          <li>Stamp and signature on every page</li>
+          
+          <li>Strict confidentiality — your documents stay between us</li>
+          
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="af" id="site-footer">
+  <button type="button" class="af__top" id="backToTop" data-en-label="Back to top" data-fr-label="Haut de page" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <div class="af__lead">
+    <div class="af__lead-inner">
+      <div class="af__lead-copy">
+        <p class="af__lead-eyebrow">Free quote within 2 working hours</p>
+        
+        <h2 class="af__lead-title">Tell me what you need translated.</h2>
+        
+        <p class="af__lead-sub">Mon–Fri 8:00–20:00 · Sat 8:00–18:00 (GMT+0)</p>
+        
+      </div>
+      <div class="af__lead-actions">
+        <a class="af__act af__act--gold" href="/business/#quote-intake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Request a Free Quote</a>
+        <a class="af__act" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@azaeliloki.com</a>
+        <a class="af__act" href="tel:+22879716258"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="af__act" href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg>WhatsApp</a>
+        <a class="af__act" href="https://calendly.com/iloki-azael/consultation" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book a call</a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="af__inner">
+    <div class="af__grid">
+      <div class="af__brand">
+        <h2 class="af__name">
+          <span class="af__mark" aria-hidden="true"><img src="/assets/images/logo-72.png" alt="" width="36" height="36" loading="lazy"></span>
+          Azaël&nbsp;<em>Iloki</em>
+        </h2>
+        <p class="af__tag">Sworn translator · FR ↔ EN · Lomé, Togo</p>
+        
+        <span class="af__chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z"/></svg><span>Sworn · Cour d’appel de Lomé</span></span>
+        <div class="af__social">
+          <a href="https://linkedin.com/in/azaeliloki" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 11v6"/></svg>
+          </a>
+          <a href="https://www.proz.com/translator/4735520" aria-label="ProZ.com" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 8.5h7l-7 7h7"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="af__col" aria-label="Services">
+        <h3 class="af__h">Services</h3>
+        <ul class="af__links">
+          <li><a href="/certified-translation/">Certified Translation</a></li>
+          <li><a href="/business/#svc-general">General Translation</a></li>
+          <li><a href="/business/#svc-training">Corporate Training</a></li>
+          <li><a href="/content-translation/">Web Content &amp; SEO</a></li>
+          <li><a href="/law-firms/">Law Firms</a></li>
+          <li><a href="/west-africa/">West Africa</a></li>
+          <li><a href="/interpretation/">Interpretation</a></li>
+          <li><a href="/icao-english/">ICAO Level 4</a></li>
+          <li><a href="/transcription/">Transcription</a></li>
+          <li><a href="/courses/#course-pricing-hub">Courses</a></li>
+          <li><a href="/tutoring/">Tutoring</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="af__col" aria-label="Information">
+        <h3 class="af__h">Information</h3>
+        <ul class="af__links">
+          <li><a href="/about/">About Me</a></li>
+          <li><a href="/reviews/">Client Reviews</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/sitemap/">Site Map</a></li>
+          <li><a href="/#funnel-paths">All Paths</a></li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+  <div class="af__divider" role="presentation"></div>
+  <div class="af__bottom">
+    <p class="af__legal">© 2026 Azaël Iloki · Sworn translator</p>
+    
+    <span class="af__meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Lomé, Togo · West Africa</span></span>
+    <div class="af__lang" role="group" aria-label="Language">
+      <a href="/certified-translation/" data-lang="en" hreflang="en">EN</a>
+      <i aria-hidden="true">·</i>
+      <a href="/fr/traduction-certifiee/" data-lang="fr" hreflang="fr">FR</a>
+    </div>
+    
+  </div>
+</footer>
+<script src="/assets/js/lang.js?v=8ccf1718" defer></script>
+<script src="../assets/js/header-nav.js?v=e1ba973d" defer></script>
+<script src="../assets/js/script.js?v=072d0e43" defer></script>
+</body>
+</html>

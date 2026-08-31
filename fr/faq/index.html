@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<script>(function () { var KEY = 'azael_lang_pref'; var FR_SLUG_FROM_EN = { 'certified-translation': 'traduction-certifiee', 'west-africa': 'afrique-de-louest', 'tutoring': 'soutien-scolaire', 'reviews': 'avis-clients', 'guides/visa-documents': 'guides/documents-visa', 'content-translation': 'contenu-web', 'law-firms': 'cabinets-juridiques', 'icao-english': 'anglais-aeronautique', 'interpretation': 'interpretation', 'terms': 'conditions', 'pricing': 'tarifs', 'sitemap': 'plan-du-site', 'contact': 'contact' }; function isFrPath(path) { return /(?:^|\/)fr(?:\/|$)/.test(path); } function isEnHome(path) { if (isFrPath(path)) return false; var p = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); if (p === '/' || p === '') return true; if (/\/(live|deploy-ready)\/?$/i.test(p)) return true; return false; } function suffix() { return location.search + location.hash; } function getPref() { try { return localStorage.getItem(KEY); } catch (e) { return null; } } function detectBrowserLang() { var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']; for (var i = 0; i < list.length; i++) { var tag = String(list[i]).toLowerCase(); if (tag.indexOf('fr') === 0) return 'fr'; if (tag.indexOf('en') === 0) return 'en'; } return 'en'; } function enSlugFromFr(frSlug) { for (var en in FR_SLUG_FROM_EN) { if (FR_SLUG_FROM_EN[en] === frSlug) return en; } return frSlug; } function translateSlug(slug, targetLang, sourceIsFr) { if (targetLang === 'fr') { if (!sourceIsFr && FR_SLUG_FROM_EN[slug]) return FR_SLUG_FROM_EN[slug]; return slug; } if (sourceIsFr) return enSlugFromFr(slug); return slug; } function parseLocalePath(path) { var normalized = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var onFr = isFrPath(normalized); var slug = normalized.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/').replace(/^\//, '').replace(/\/$/, ''); return { onFr: onFr, slug: slug }; } function liveSegments(path) { var segments = path.replace(/\\/g, '/').split('/').filter(Boolean); var liveIdx = -1; for (var i = 0; i < segments.length; i++) { var seg = segments[i].toLowerCase(); if (seg === 'live' || seg === 'deploy-ready') { liveIdx = i; break; } } if (liveIdx < 0) return null; var afterLive = segments.slice(liveIdx + 1); if (afterLive.length && /^index\.html?$/i.test(afterLive[afterLive.length - 1])) { afterLive.pop(); } return { segments: segments, liveIdx: liveIdx, afterLive: afterLive }; } function formatLocalePath(slug, lang) { if (lang === 'fr') { if (!slug) return '/fr/'; return '/fr/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } if (!slug) return '/'; return '/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } function httpLocaleHref(lang) { var path = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var info = liveSegments(path); if (info) { var after = info.afterLive.slice(); var onFr = after[0] === 'fr'; if (onFr) after.shift(); var slug = after.join('/'); var newSlug = translateSlug(slug, lang, onFr); var targetSegs = lang === 'fr' ? ['fr'].concat(newSlug ? newSlug.split('/') : []) : (newSlug ? newSlug.split('/') : []); var base = info.segments.slice(0, info.liveIdx + 1); return '/' + base.concat(targetSegs).join('/') + suffix(); } var parsed = parseLocalePath(path); if ((lang === 'fr' && parsed.onFr) || (lang === 'en' && !parsed.onFr)) { return path + suffix(); } var mappedSlug = translateSlug(parsed.slug, lang, parsed.onFr); return formatLocalePath(mappedSlug, lang) + suffix(); } function navigate(lang) { if (location.protocol === 'file:') return; location.replace(httpLocaleHref(lang)); } var path = location.pathname.replace(/\\/g, '/'); if (/404\.html$/i.test(path)) return; var onFr = isFrPath(path); var pref = getPref(); if (!pref && !onFr && isEnHome(path)) { if (detectBrowserLang() === 'fr') { navigate('fr'); } return; } if (!pref) return; if (parseLocalePath(path).slug !== '') return; if (pref === 'fr' && !onFr) { navigate('fr'); return; } if (pref === 'en' && onFr) { navigate('en'); } })();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Traduction, cours &amp; formation entreprise | Lomé</title>
+<meta name="description" content="Réponses sur la traduction assermentée FR↔EN, la formation en entreprise, les cours de langues et le soutien scolaire à Lomé.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://azaeliloki.com/fr/faq/">
+<link rel="alternate" hreflang="en" href="https://azaeliloki.com/faq/">
+<link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/faq/">
+<link rel="alternate" hreflang="x-default" href="https://azaeliloki.com/faq/">
+<meta property="og:title" content="FAQ — Azaël Iloki, Lomé">
+<meta property="og:description" content="Réponses sur la traduction assermentée FR↔EN, la formation en entreprise, les cours de langues et le soutien scolaire à Lomé.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Azaël Iloki — Services linguistiques">
+<meta property="og:url" content="https://azaeliloki.com/fr/faq/">
+<meta property="og:image" content="https://azaeliloki.com/assets/og/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Azaël Iloki — Traducteur assermenté &amp; services linguistiques · Lomé">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ — Azaël Iloki, Lomé">
+<meta name="twitter:description" content="Réponses sur la traduction assermentée FR↔EN, la formation en entreprise, les cours de langues et le soutien scolaire à Lomé.">
+<meta name="twitter:image" content="https://azaeliloki.com/assets/og/og-default.jpg">
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="preconnect" href="https://wa.me" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="critical-css">/* critical ATB */:root{--navy:#122C4D;--navy-dark:#0E233F;--gold:#C9A658;--gold-on-dark:#F2DC8A;--white:#FFFFFF;--cream:#EDEEE8;--muted-on-dark:#CBD6E4;--font-body:'Outfit',system-ui,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}*{box-sizing:border-box}html[lang=en] [data-fr],html[lang=fr] [data-en]{display:none!important}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--navy);background:var(--cream)}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:16px;top:16px;z-index:9999;background:var(--white);padding:8px 12px}.ah{position:sticky;top:0;z-index:100;background:rgba(18,44,77,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.25)}.ah__inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);justify-content:space-between}.ah__logo{height:clamp(34px,6vw,52px);width:auto;display:block}.ah__nav{display:flex}@media(min-width:1280px){.ah__nav{display:block}}.ah__util{background:var(--navy-dark)}.ah__util-inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:34px;display:flex;align-items:center;justify-content:space-between}.ah__util-links{display:flex;align-items:center;flex:none}.ah__inner{height:74px}.ah__links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.ah__links li{display:flex}.ah__drop-wrap{position:relative}@media(min-width:1280px){.ah__drop-menu{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none}}.ah__actions{display:flex;align-items:center}@media(max-width:1279px){.ah__nav{display:none}.ah__burger{display:block}.ah__inner{height:62px}.ah__item--dropdown .ah__drop-menu{display:none}}@media(max-width:767px){.ah__util-note{display:none}.ah__util-inner{height:32px;justify-content:center}}.ah__burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer}.ah__burger span{display:block;width:22px;height:1.5px;background:var(--gold)}.hero{background:linear-gradient(160deg,var(--navy-dark),var(--navy));color:var(--white);padding:clamp(120px,15vw,160px) 20px clamp(60px,8vw,100px)}.hero-inner{max-width:1200px;margin:0 auto;width:100%}@media(min-width:1200px){.hero-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}}@media(min-width:900px){.hero-inner{grid-template-columns:1fr auto;gap:60px}}.hero-eyebrow{display:flex;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-on-dark);border:1px solid rgba(201,168,76,.35);padding:4px 10px;border-radius:999px;margin-bottom:20px}.hero-title{font-family:var(--font-serif);font-size:clamp(38px,5.5vw,72px);font-weight:700;line-height:1.1;margin:0 0 8px;color:var(--white)}.util-hero .hero-title{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 12px}.hero-lead{margin:0 0 10px;color:var(--muted-on-dark)}.hero-sub{margin:20px 0 36px;color:var(--muted-on-dark)}.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}.btn-primary{background:var(--gold);color:var(--navy)}.btn-ghost{border:1px solid rgba(255,255,255,.35);color:var(--white)}.hero-portrait-img{width:100%;max-width:420px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block}</style>
+<link rel="preload" href="/assets/css/style.css?v=cc67a03d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=cc67a03d"></noscript>
+<link rel="icon" type="image/png" href="/assets/images/logo-72.png">
+<script src="/assets/js/analytics-deferred.js?v=65330a98" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "speakable": {
+  "@type": "SpeakableSpecification",
+  "cssSelector": [
+   ".faq-a p",
+   ".hero-title"
+  ]
+ },
+ "@id": "https://azaeliloki.com/fr/faq/",
+ "inLanguage": "fr",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Ma traduction assermentée sera-t-elle acceptée à l’étranger ? Faut-il une apostille ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Une traduction assermentée porte ma signature et mon cachet de traducteur assermenté près la Cour d’appel de Lomé : c’est ce que demandent la plupart des ambassades, universités et administrations. Certaines autorités exigent une légalisation en plus du cachet. Le Togo n’est pas encore partie à la Convention Apostille de La Haye : le circuit passe aujourd’hui par la mairie où je suis inscrit, puis le ministère des Affaires étrangères, puis le consulat du pays de destination. Le Conseil des ministres a adopté un projet de loi d’adhésion le 4 août 2026 ; le vote parlementaire, le dépôt de l’instrument et un délai d’objection de six mois restent à venir, pour une entrée en vigueur attendue en 2027. Si votre dossier exige cette légalisation, je peux m’en charger pour vous. Les frais administratifs et de déplacement restent à votre charge et sont annoncés dans le devis. Demandez à l’autorité destinataire ce qu’elle exige exactement et indiquez-le-moi : j’adapte la forme de la traduction en conséquence."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien de temps prend une traduction certifiée ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "La livraison standard est de 24–72 heures pour la plupart des documents (1–5 pages). Express 24h disponible avec +50% de majoration. Les documents plus longs ou complexes (contrats, audits, rapports ONG) peuvent nécessiter 3–5 jours ouvrés. Vous recevrez un délai exact dans votre devis."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien coûte la transcription d’un enregistrement ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "De 4 000 FCFA la minute enregistrée en français ↔ anglais, et de 6 500 FCFA la minute depuis une langue nationale. Le devis est établi après écoute de deux à trois minutes, jamais avant. Voir la page transcription ."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Pouvez-vous certifier une transcription en éwé ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Pas au sens d’une traduction assermentée : il n’existe pas d’assermentation pour les langues nationales au Togo. Je remets une déclaration de fidélité signée, qui engage ma responsabilité professionnelle sur l’exactitude de la restitution."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Travaillez-vous aussi à partir de la vidéo ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui, aux mêmes conditions que l’audio. Le sous-titrage se devise séparément."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quelle valeur a le cachet de la Cour d’appel auprès des ambassades ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Je suis assermenté près la Cour d’appel de Lomé, et chaque traduction porte le cachet officiel et ma signature, au format attendu par les ambassades, consulats, universités et administrations. La décision sur un dossier appartient toujours à l’autorité destinataire — mais si une pièce m’est renvoyée pour un défaut de cachet, de mise en page ou de format qui m’incombe, je la reprends sans frais."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien coûte une traduction certifiée ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "La traduction certifiée est facturée à la page source : 15 000–20 000 FCFA par page pour les documents standards tels que diplômes, relevés de notes et actes d’état civil. La livraison Express 24h ajoute 50 %. Les pièces de procédure, jugements, contrats et statuts sont facturés au mot source : 66–118 FCFA. Tout devis est gratuit et envoyé sous 2 heures."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quand faut-il une traduction générale plutôt qu’assermentée ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Choisissez la traduction générale pour les contrats, rapports, documents ONG et fichiers internes qui ne nécessitent pas de cachet officiel — facturée 66–118 FCFA par mot. Choisissez la traduction certifiée (assermentée) lorsqu’une ambassade, une université, un tribunal ou une administration vérifiera officiellement le document — demandes de visa, admissions universitaires et productions en justice. En cas de doute, le devis vous indique l’option applicable."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Pouvez-vous travailler avec des clients hors du Togo ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. Les documents sont reçus et livrés numériquement dans le monde entier. Les copies certifiées physiques peuvent être retirées en personne à Lomé ou expédiées à l’international sur demande. Le paiement est accepté par virement bancaire et virement international (SWIFT)."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Pouvez-vous former des équipes hors de Lomé ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. Les ateliers sont dispensés dans vos locaux à Lomé ou en direct via Zoom pour les équipes réparties en Afrique de l’Ouest et à l’international. La planification est coordonnée avec votre contact RH ou opérations."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Mes documents sont-ils traités de manière confidentielle ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. Tous les documents sont traités sous stricte confidentialité professionnelle. Les fichiers restent dans un dossier sécurisé et chiffré, ne sont jamais partagés avec un tiers, et sont supprimés définitivement trente jours après la livraison — immédiatement sur demande. Seul le répertoire des traductions certifiées — numéro, date, nature de la pièce et combinaison de langues — est conservé sans limitation de durée : il permet à toute autorité destinataire de vérifier l’origine d’une traduction, et il ne contient aucun contenu de document. Un accord de confidentialité formel est disponible pour tout client sur demande — il peut être signé avant tout envoi de document. Voir les conditions générales pour les modalités complètes."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quels modes de paiement acceptez-vous ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Pour les clients institutionnels et entreprises : Virement bancaire entreprise — Ecobank Togo, Orabank Togo. Virement SWIFT international — pour les clients hors Togo et organisations internationales. Processus de facturation institutionnelle : Le paiement intégral ou un bon de commande signé est requis avant tout traitement. Une facture pro forma est émise en premier, suivie d’une facture fiscale à la livraison. Voir les conditions générales pour les modalités complètes."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Comment vous envoyer mon document ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Envoyez votre document par courriel à contact@azaeliloki.com. Formats acceptés : PDF, JPG, PNG, Word (.docx) ou toute image scannée. La résolution doit être suffisamment claire pour lire tout le texte. Pour les fichiers très volumineux, vous pouvez également envoyer via WhatsApp (+228 79 71 62 58)."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Que comprend le contrat mensuel ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Les Cercles de formation entreprise sont des programmes mensuels (HT) : Cercle Duo — 4 ateliers/mois, 3 collaborateurs max, 100 000 FCFA / mois ; Cercle Standard — 8 ateliers/mois, 5 collaborateurs max, 200 000 FCFA / mois ; Cercle Double — 16 ateliers/mois, 10 collaborateurs, deux formateurs, 360 000 FCFA / mois. Chaque atelier dure 60 minutes. Le programme couvre l’anglais des affaires et/ou le français professionnel, adapté aux besoins spécifiques de votre équipe."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien de collaborateurs par cohorte ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Chaque contrat de Formation entreprise couvre un maximum de 5 collaborateurs par cohorte. Cela maintient des ateliers interactifs et un suivi personnalisé. Les grandes organisations peuvent organiser plusieurs cohortes sous contrats séparés."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "La formation est-elle en présentiel ou à distance ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Les ateliers sont dispensés dans vos locaux à Lomé ou en direct via Zoom pour les équipes réparties. La structure reste la même — 8 séances de 60 minutes par mois, planifiées avec votre équipe RH."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quels modes de paiement pour la formation entreprise ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "La formation entreprise est facturée mensuellement via facture pro forma (100 000 / 200 000 / 360 000 FCFA HT selon le Cercle). Paiement par virement bancaire (Ecobank Togo, Orabank Togo) ou SWIFT pour les organisations internationales. Paiement anticipé ou bon de commande autorisé requis avant le début du programme."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quelles langues traduisez-vous ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Français ↔ anglais (FR↔EN) uniquement. Cette spécialisation exclusive garantit le plus haut niveau de précision et d’expertise dans les deux langues. Pour d’autres paires de langues, je peux recommander des collègues de confiance dans le réseau professionnel de traduction."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quels formats de fichiers acceptez-vous ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Pour les documents sources : PDF, JPG, PNG, TIFF, Word (.docx), Excel (.xlsx), PowerPoint (.pptx) et images scannées. Pour la livraison : les traductions certifiées sont toujours livrées en PDF avec cachet officiel. Le fichier Word original peut également être fourni pour les traductions générales sur demande."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Fournissez-vous une copie certifiée physique ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui — chaque traduction certifiée comprend un PDF numérique sécurisé avec cachet officiel, et le tirage papier certifié est gratuit au retrait à Lomé. L’envoi par coursier partout au Togo reste possible : les frais sont au réel et annoncés dans le devis."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Comment se prépare le niveau 4 de l’OACI ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Douze séances de 1 h 30, en ligne ou en présentiel à Lomé, centrées sur la phraséologie et l’anglais général que l’échelle OACI évalue. C’est une préparation : le test lui-même est passé auprès de l’organisme habilité. Voir la page anglais aéronautique (OACI) ."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien coûte la préparation à l’anglais aéronautique ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "315 000 FCFA en ligne ou 345 000 FCFA en présentiel pour le programme individuel, HT. Sur demande de facture (particuliers ou entreprises), la TVA est ajoutée selon le taux en vigueur. Lorsqu’une compagnie, l’ANAC ou une école de pilotage prend la formation en charge, elle est facturée 25 000 FCFA l’heure."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Une compagnie ou l’ANAC peut-elle être facturée directement ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui, sur facture pro forma au tarif horaire, aux mêmes conditions de paiement que la formation entreprise."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien coûte une traduction de document personnel ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Le tarif dépend du type de document : actes d’état civil (naissance/mariage, diplômes) : 15 000–20 000 FCFA par page. Express 24h : +50 %. Tous les devis sont gratuits sous 2 h."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien coûtent les cours de langues et le soutien scolaire ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Tous les cours fonctionnent sur un abonnement mensuel, payable à l’avance avant le 5 de chaque mois : Soutien scolaire standard (BAC/BEPC) : 30 000 FCFA (4 séances/mois) · 60 000 FCFA (8 séances/mois). Cours particuliers en ligne (adultes) : 35 000 FCFA (4 séances) · 68 000 FCFA (8 séances). Cours présentiel immersif (Lomé) : 45 000 FCFA (4 séances) · 85 000 FCFA (8 séances). Chaque séance est de 1 heure."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Comment fonctionne le test de positionnement ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Avant votre première séance, vous passez un court test de positionnement (1 h) qui détermine votre niveau exact sur l’échelle CECRL (Cadre européen commun de référence pour les langues) de A1 à C2. Aucune préparation n’est nécessaire — juste une conversation et quelques exercices écrits. Les résultats permettent de concevoir un plan qui commence exactement au bon niveau."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Qu’est-ce qui est inclus dans l’abonnement mensuel ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Chaque formule comprend des prestations spécifiques. Soutien scolaire standard : synchronisation avec le programme, révisions ciblées, suivi des devoirs et rapport mensuel aux parents. Cours particuliers en ligne : configuration du portail virtuel HD, accès à l’espace de ressources et accompagnement entre séances. Cours présentiel immersif : fiches imprimées adaptées à votre niveau, retour direct sur la prononciation et l’expression orale, et frais de déplacement couverts."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Que se passe-t-il si je manque une séance ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Un préavis minimum de 24 heures est requis pour reporter une séance. Les séances reportées avec plus de 24 heures de préavis seront déplacées à une date convenue dans le même mois calendaire. Toute séance annulée avec moins de 24 heures de préavis est définitivement perdue et facturée au coût plein."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Puis-je changer mon emploi du temps après avoir commencé ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui — les séances sont planifiées de manière flexible lun.–ven. 8 h–20 h · sam. 8 h–18 h (GMT+0). Si vos disponibilités changent, prévenez-moi au moins 24 heures à l’avance et nous trouverons un créneau adapté. L’objectif est un rythme durable qui s’adapte à votre vie."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quel niveau faut-il pour commencer un cours ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Aucun niveau minimum n’est requis. Les cours sont disponibles du grand débutant (A1) au niveau avancé (C2). Le test de positionnement détermine précisément votre point de départ. Que vous appreniez l’anglais ou le français à partir de zéro, prépariez un examen professionnel ou perfectionniez votre communication professionnelle, le programme est conçu autour de votre niveau actuel."
+   }
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://azaeliloki.com/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "FAQ",
+      "item": "https://azaeliloki.com/fr/faq/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="lang-fr page-faq">
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header class="ah" id="navbar">
+  <div class="ah__util">
+    <div class="ah__util-inner">
+      
+      <span class="ah__util-note">Traducteur assermenté · Cour d’appel de Lomé</span>
+      <span class="ah__util-links">
+        <a class="ah__util-a" href="tel:+22879716258"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="ah__util-a ah__util-a--mail" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@azaeliloki.com</a>
+      </span>
+      <div class="ah__lang" role="group" aria-label="Language" data-en-label="Language" data-fr-label="Langue">
+        <a href="/faq/" data-lang="en" hreflang="en">EN</a>
+        <i aria-hidden="true">·</i>
+        <a href="/fr/faq/" data-lang="fr" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+  <div class="ah__inner">
+    
+    <a class="ah__brand" href="/fr/" aria-label="Azaël Iloki — accueil">
+      <img src="/assets/images/logo-nav.png" srcset="/assets/images/logo-nav.png 1x, /assets/images/logo-nav@2x.png 2x" alt="Azaël Iloki" class="ah__logo" width="256" height="64" decoding="async">
+    </a>
+    <nav class="ah__nav" id="primary-menu" aria-label="Main navigation" data-en-label="Main navigation" data-fr-label="Navigation principale">
+      <ul class="ah__links">
+        
+        <li><a href="/fr/traduction-certifiee/" data-nav="certified">Traduction certifiée</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/fr/courses/#course-pricing-hub" class="ah__drop-label" data-nav="courses">Cours</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-courses-fr" id="ah-drop-btn-courses-fr">
+              <span class="visually-hidden">Afficher les cours</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-courses-fr" role="menu">
+              <li role="none"><a href="/fr/courses/#course-pricing-hub" role="menuitem">Cours de langues</a></li>
+              <li role="none"><a href="/fr/anglais-aeronautique/" role="menuitem">Anglais aéronautique (OACI)</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/fr/soutien-scolaire/" data-nav="tutoring">Soutien scolaire</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/fr/business/" class="ah__drop-label" data-nav="business">Entreprise</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-business-fr" id="ah-drop-btn-business-fr">
+              <span class="visually-hidden">Afficher les services entreprise</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-business-fr" role="menu">
+              <li role="none"><a href="/fr/business/#svc-general" role="menuitem">Traduction générale (B2B)</a></li>
+              <li role="none"><a href="/fr/business/#svc-training" role="menuitem">Formation entreprise</a></li>
+              <li role="none"><a href="/fr/business/#svc-retainer" role="menuitem">Forfait professionnel</a></li>
+              <li role="none"><a href="/fr/interpretation/" role="menuitem">Interprétation</a></li>
+              <li role="none"><a href="/fr/contenu-web/" role="menuitem">Contenu web &amp; SEO</a></li>
+              <li role="none"><a href="/fr/cabinets-juridiques/" role="menuitem">Cabinets juridiques</a></li>
+              <li role="none"><a href="/fr/transcription/" role="menuitem">Transcription d’enregistrements</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/fr/tarifs/" data-nav="pricing">Tarifs</a></li>
+        
+        <li><a href="/fr/about/" data-nav="about">À propos</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/contact/">Contact</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/avis-clients/">Avis clients</a></li>
+        
+        <li class="ah__m-only"><a href="/fr/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    
+    <a class="ah__cta" href="https://wa.me/22879716258?text=Bonjour%20Aza%C3%ABl%2C%20je%20souhaite%20obtenir%20un%20devis.%0A%0AService%C2%A0%3A%0ADocument%20ou%20besoin%C2%A0%3A%0APour%20quand%C2%A0%3A" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg><span class="ah__cta-full">Demander un devis</span><span class="ah__cta-short">Devis</span></a>
+    <button type="button" class="ah__burger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main">
+<nav class="page-breadcrumb" aria-label="Fil d’Ariane">
+  <ol class="page-breadcrumb__list">
+    <li><a href="/fr/">Accueil</a></li>
+    <li aria-current="page">FAQ</li>
+  </ol>
+</nav>
+<section class="hero faq-page-hero" aria-labelledby="hero-heading">
+  <div class="section-inner">
+    
+    <span class="hero-eyebrow">Centre d’aide</span>
+    <h1 class="hero-title" id="hero-heading">Questions fréquentes</h1>
+    
+    
+    <p class="hero-sub">Traduction, formation entreprise, cours et soutien — toutes les questions courantes au même endroit.</p>
+    
+  </div>
+</section>
+
+<section class="faq faq-page-section" id="faq-certification" aria-labelledby="faq-certification-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Certification</span>
+
+    <h2 class="section-title" id="faq-certification-heading">Certification, légalisation et acceptation</h2>
+
+    <p class="faq-intro">Ce qu’est le cachet de la Cour d’appel, quand une légalisation s’y ajoute, et quelles langues peuvent être assermentées.</p>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Ma traduction assermentée sera-t-elle acceptée à l’étranger&nbsp;? Faut-il une apostille&nbsp;?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Une traduction assermentée porte ma signature et mon cachet de traducteur assermenté près la Cour d’appel de Lomé&nbsp;: c’est ce que demandent la plupart des ambassades, universités et administrations. Certaines autorités exigent une légalisation en plus du cachet. Le Togo n’est pas encore partie à la Convention Apostille de La Haye&nbsp;: le circuit passe aujourd’hui par la mairie où je suis inscrit, puis le ministère des Affaires étrangères, puis le consulat du pays de destination. Le Conseil des ministres a adopté un projet de loi d’adhésion le 4 août 2026&nbsp;; le vote parlementaire, le dépôt de l’instrument et un délai d’objection de six mois restent à venir, pour une entrée en vigueur attendue en 2027. Si votre dossier exige cette légalisation, je peux m’en charger pour vous. Les frais administratifs et de déplacement restent à votre charge et sont annoncés dans le devis. Demandez à l’autorité destinataire ce qu’elle exige exactement et indiquez-le-moi&nbsp;: j’adapte la forme de la traduction en conséquence.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Quelle valeur a le cachet de la Cour d’appel auprès des ambassades&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Je suis assermenté près la Cour d’appel de Lomé, et chaque traduction porte le cachet officiel et ma signature, au format attendu par les ambassades, consulats, universités et administrations. La décision sur un dossier appartient toujours à l’autorité destinataire — mais si une pièce m’est renvoyée pour un défaut de cachet, de mise en page ou de format qui m’incombe, je la reprends sans frais.</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Fournissez-vous une copie certifiée physique&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Oui — chaque traduction certifiée comprend un PDF numérique sécurisé avec cachet officiel, et le tirage papier certifié est gratuit au retrait à Lomé. L’envoi par coursier partout au Togo reste possible&nbsp;: les frais sont au réel et annoncés dans le devis.</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Pouvez-vous certifier une transcription en éwé&nbsp;?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Pas au sens d’une traduction assermentée&nbsp;: il n’existe pas d’assermentation pour les langues nationales au Togo. Je remets une déclaration de fidélité signée, qui engage ma responsabilité professionnelle sur l’exactitude de la restitution.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Quelles langues traduisez-vous&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Français ↔ anglais (FR↔EN) uniquement. Cette spécialisation exclusive garantit le plus haut niveau de précision et d’expertise dans les deux langues. Pour d’autres paires de langues, je peux recommander des collègues de confiance dans le réseau professionnel de traduction.</p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="faq faq-page-section" id="faq-pricing" aria-labelledby="faq-pricing-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Tarifs</span>
+
+    <h2 class="section-title" id="faq-pricing-heading">Tarifs et délais</h2>
+
+    <p class="faq-intro">Ce que coûte chaque type de pièce, comment il se mesure et en combien de temps. <a href="../tarifs/">Voir la grille tarifaire complète →</a></p>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Combien coûte une traduction certifiée&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>La traduction certifiée est facturée à la page source&nbsp;: 15&nbsp;000–20&nbsp;000 FCFA par page pour les documents standards tels que diplômes, relevés de notes et actes d’état civil. La livraison Express 24h ajoute 50&nbsp;%. Les pièces de procédure, jugements, contrats et statuts sont facturés au mot source&nbsp;: 66–118 FCFA. Tout devis est gratuit et envoyé sous 2 heures.</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Combien de temps prend une traduction certifiée&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>La livraison standard est de 24–72 heures pour la plupart des documents (1–5 pages). Express 24h disponible avec +50&nbsp;% de majoration. Les documents plus longs ou complexes (contrats, audits, rapports ONG) peuvent nécessiter 3–5 jours ouvrés. Vous recevrez un délai exact dans votre devis.</p>
+      </div>
+      </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Quand faut-il une traduction générale plutôt qu’assermentée&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Choisissez la traduction générale pour les contrats, rapports, documents ONG et fichiers internes qui ne nécessitent pas de cachet officiel — facturée 66–118 FCFA par mot. Choisissez la traduction certifiée (assermentée) lorsqu’une ambassade, une université, un tribunal ou une administration vérifiera officiellement le document — demandes de visa, admissions universitaires et productions en justice. En cas de doute, le devis vous indique l’option applicable.</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Combien coûte la transcription d’un enregistrement&nbsp;?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>De 4&nbsp;000 FCFA la minute enregistrée en français ↔ anglais, et de 6&nbsp;500 FCFA la minute depuis une langue nationale. Le devis est établi après écoute de deux à trois minutes, jamais avant. Voir la <a href="/fr/transcription/">page transcription</a>.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Combien coûte la préparation à l’anglais aéronautique&nbsp;?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>315&nbsp;000 FCFA en ligne ou 345&nbsp;000 FCFA en présentiel pour le programme individuel, HT. Sur demande de facture (particuliers ou entreprises), la TVA est ajoutée selon le taux en vigueur. Lorsqu’une compagnie, l’ANAC ou une école de pilotage prend la formation en charge, elle est facturée 25&nbsp;000 FCFA l’heure.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="faq faq-page-section" id="faq-working" aria-labelledby="faq-working-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Modalités</span>
+
+    <h2 class="section-title" id="faq-working-heading">Envoi des fichiers, formats et confidentialité</h2>
+
+    <p class="faq-intro">Comment me transmettre une pièce, quels formats sont acceptés et comment vos fichiers sont traités.</p>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Comment vous envoyer mon document&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Envoyez votre document par courriel à contact@azaeliloki.com. Formats acceptés&nbsp;: PDF, JPG, PNG, Word (.docx) ou toute image scannée. La résolution doit être suffisamment claire pour lire tout le texte. Pour les fichiers très volumineux, vous pouvez également envoyer via WhatsApp (+228 79 71 62 58).</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Quels formats de fichiers acceptez-vous&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Pour les documents sources&nbsp;: PDF, JPG, PNG, TIFF, Word (.docx), Excel (.xlsx), PowerPoint (.pptx) et images scannées. Pour la livraison&nbsp;: les traductions certifiées sont toujours livrées en PDF avec cachet officiel. Le fichier Word original peut également être fourni pour les traductions générales sur demande.</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Mes documents sont-ils traités de manière confidentielle&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Oui. Tous les documents sont traités sous stricte confidentialité professionnelle. Les fichiers restent dans un dossier sécurisé et chiffré, ne sont jamais partagés avec un tiers, et sont supprimés définitivement trente jours après la livraison — immédiatement sur demande. Seul le répertoire des traductions certifiées — numéro, date, nature de la pièce et combinaison de langues — est conservé sans limitation de durée&nbsp;: il permet à toute autorité destinataire de vérifier l’origine d’une traduction, et il ne contient aucun contenu de document. Un accord de confidentialité formel est disponible pour tout client sur demande — il peut être signé avant tout envoi de document. Voir les conditions générales pour les modalités complètes.</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Pouvez-vous travailler avec des clients hors du Togo&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Oui. Les documents sont reçus et livrés numériquement dans le monde entier. Les copies certifiées physiques peuvent être retirées en personne à Lomé ou expédiées à l’international sur demande. Le paiement est accepté par virement bancaire et virement international (SWIFT).</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Travaillez-vous aussi à partir de la vidéo&nbsp;?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Oui, aux mêmes conditions que l’audio. Le sous-titrage se devise séparément.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="faq faq-page-section" id="faq-business" aria-labelledby="faq-business-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Pôle entreprise</span>
+
+    <h2 class="section-title" id="faq-business-heading">Formation entreprise, forfaits et facturation</h2>
+
+    <p class="faq-intro">Formation des équipes, forfaits mensuels, facturation institutionnelle et paiement. <a href="../business/">Voir le pôle entreprise →</a></p>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Que comprend le contrat mensuel&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Les Cercles de formation entreprise sont des programmes mensuels (HT)&nbsp;: Cercle Duo — 4 ateliers/mois, 3 collaborateurs max, 100&nbsp;000 FCFA / mois&nbsp;; Cercle Standard — 8 ateliers/mois, 5 collaborateurs max, 200&nbsp;000 FCFA / mois&nbsp;; Cercle Double — 16 ateliers/mois, 10 collaborateurs, deux formateurs, 360&nbsp;000 FCFA / mois. Chaque atelier dure 60 minutes. Le programme couvre l’anglais des affaires et/ou le français professionnel, adapté aux besoins spécifiques de votre équipe.</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Combien de collaborateurs par cohorte&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Chaque contrat de Formation entreprise couvre un maximum de 5 collaborateurs par cohorte. Cela maintient des ateliers interactifs et un suivi personnalisé. Les grandes organisations peuvent organiser plusieurs cohortes sous contrats séparés.</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">La formation est-elle en présentiel ou à distance&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Les ateliers sont dispensés dans vos locaux à Lomé ou en direct via Zoom pour les équipes réparties. La structure reste la même — 8 séances de 60 minutes par mois, planifiées avec votre équipe RH.</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Pouvez-vous former des équipes hors de Lomé&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Oui. Les ateliers sont dispensés dans vos locaux à Lomé ou en direct via Zoom pour les équipes réparties en Afrique de l’Ouest et à l’international. La planification est coordonnée avec votre contact RH ou opérations.</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Comment se prépare le niveau&nbsp;4 OACI&nbsp;?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Douze séances de 1&nbsp;h&nbsp;30, en ligne ou en présentiel à Lomé, centrées sur la phraséologie et l’anglais général que l’échelle OACI évalue. C’est une préparation&nbsp;: l’évaluation elle-même est passée auprès d’un organisme agréé. Voir la page <a href="/fr/anglais-aeronautique/">anglais aéronautique (OACI)</a>.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Une compagnie ou l’ANAC peut-elle être facturée directement&nbsp;?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Oui, sur facture pro forma au tarif horaire, aux mêmes conditions de paiement que la formation entreprise.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Quels modes de paiement acceptez-vous&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Pour les clients institutionnels et entreprises&nbsp;: Virement bancaire entreprise — Ecobank Togo, Orabank Togo. Virement SWIFT international — pour les clients hors Togo et organisations internationales. Processus de facturation institutionnelle&nbsp;: Le paiement intégral ou un bon de commande signé est requis avant tout traitement. Une facture pro forma est émise en premier, suivie d’une facture fiscale à la livraison. Voir les conditions générales pour les modalités complètes.</p>
+      </div>
+    </div>
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Quels modes de paiement pour la formation entreprise&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>La formation entreprise est facturée mensuellement via facture pro forma (100&nbsp;000 / 200&nbsp;000 / 360&nbsp;000 FCFA HT selon le Cercle). Paiement par virement bancaire (Ecobank Togo, Orabank Togo) ou SWIFT pour les organisations internationales. Paiement anticipé ou bon de commande autorisé requis avant le début du programme.</p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="faq faq-page-section" id="faq-courses" aria-labelledby="faq-courses-heading">
+  <div class="section-inner">
+    
+    <span class="eyebrow">Cours &amp; soutien</span>
+    
+    <h2 class="section-title" id="faq-courses-heading">Cours de langues, soutien scolaire &amp; documents personnels</h2>
+    
+    <p class="faq-intro">Cours pour adultes, soutien BAC/BEPC, tests de positionnement et documents personnels certifiés. <a href="../courses/">Voir cours &amp; soutien →</a></p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Combien coûte une traduction de document personnel&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Le tarif dépend du type de document&nbsp;: actes d’état civil (naissance/mariage, diplômes)&nbsp;: 15&nbsp;000–20&nbsp;000 FCFA par page. Express 24h&nbsp;: +50&nbsp;%. Tous les devis sont gratuits sous 2&nbsp;h.</p>
+      </div>
+    </div><div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Combien coûtent les cours de langues et le soutien scolaire&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Tous les cours fonctionnent sur un abonnement mensuel, payable à l’avance avant le 5 de chaque mois&nbsp;: Soutien scolaire standard (BAC/BEPC)&nbsp;: 30&nbsp;000 FCFA (4 séances/mois) · 60&nbsp;000 FCFA (8 séances/mois). Cours particuliers en ligne (adultes)&nbsp;: 35&nbsp;000 FCFA (4 séances) · 68&nbsp;000 FCFA (8 séances). Cours présentiel immersif (Lomé)&nbsp;: 45&nbsp;000 FCFA (4 séances) · 85&nbsp;000 FCFA (8 séances). Chaque séance est de 1 heure.</p>
+      </div>
+    </div><div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Comment fonctionne le test de positionnement&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Avant votre première séance, vous passez un court test de positionnement (1&nbsp;h) qui détermine votre niveau exact sur l’échelle CECRL (Cadre européen commun de référence pour les langues) de A1 à C2. Aucune préparation n’est nécessaire — juste une conversation et quelques exercices écrits. Les résultats permettent de concevoir un plan qui commence exactement au bon niveau.</p>
+      </div>
+    </div><div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Qu’est-ce qui est inclus dans l’abonnement mensuel&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Chaque formule comprend des prestations spécifiques. Soutien scolaire standard&nbsp;: synchronisation avec le programme, révisions ciblées, suivi des devoirs et rapport mensuel aux parents. Cours particuliers en ligne&nbsp;: configuration du portail virtuel HD, accès à l’espace de ressources et accompagnement entre séances. Cours présentiel immersif&nbsp;: fiches imprimées adaptées à votre niveau, retour direct sur la prononciation et l’expression orale, et frais de déplacement couverts.</p>
+      </div>
+    </div><div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Que se passe-t-il si je manque une séance&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Un préavis minimum de 24 heures est requis pour reporter une séance. Les séances reportées avec plus de 24 heures de préavis seront déplacées à une date convenue dans le même mois calendaire. Toute séance annulée avec moins de 24 heures de préavis est définitivement perdue et facturée au coût plein.</p>
+      </div>
+    </div><div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Puis-je changer mon emploi du temps après avoir commencé&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Oui — les séances sont planifiées de manière flexible lun.–ven. 8&nbsp;h–20&nbsp;h · sam. 8&nbsp;h–18&nbsp;h (GMT+0). Si vos disponibilités changent, prévenez-moi au moins 24 heures à l’avance et nous trouverons un créneau adapté. L’objectif est un rythme durable qui s’adapte à votre vie.</p>
+      </div>
+    </div><div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">
+        
+        <span class="faq-q-text">Quel niveau faut-il pour commencer un cours&nbsp;?</span>
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a" role="region">
+        
+        <p>Aucun niveau minimum n’est requis. Les cours sont disponibles du grand débutant (A1) au niveau avancé (C2). Le test de positionnement détermine précisément votre point de départ. Que vous appreniez l’anglais ou le français à partir de zéro, prépariez un examen professionnel ou perfectionniez votre communication professionnelle, le programme est conçu autour de votre niveau actuel.</p>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+</section>
+
+<section class="faq-page-cta" aria-label="Options de contact">
+  <div class="section-inner">
+    
+    <p>Une question en suspens&nbsp;? Demandez un devis gratuit ou réservez un appel.</p>
+    <div class="faq-page-cta-btns">
+      
+      <a href="../business/#quote-intake" class="btn-primary">Demander un devis gratuit</a>
+      
+      <a href="https://calendly.com/iloki-azael/consultation" class="btn-ghost" target="_blank" rel="noopener noreferrer">Réserver un appel découverte</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="af" id="site-footer">
+  <button type="button" class="af__top" id="backToTop" data-en-label="Back to top" data-fr-label="Haut de page" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <div class="af__lead">
+    <div class="af__lead-inner">
+      <div class="af__lead-copy">
+        
+        <p class="af__lead-eyebrow">Devis gratuit sous 2&nbsp;h ouvrées</p>
+        
+        <h2 class="af__lead-title">Dites-moi ce que vous avez à faire traduire.</h2>
+        
+        <p class="af__lead-sub">lun.–ven. 8&nbsp;h–20&nbsp;h · sam. 8&nbsp;h–18&nbsp;h (GMT+0)</p>
+      </div>
+      
+      <div class="af__lead-actions">
+        <a class="af__act af__act--gold" href="/fr/business/#quote-intake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Demander un devis gratuit</a>
+        <a class="af__act" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@azaeliloki.com</a>
+        <a class="af__act" href="tel:+22879716258"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="af__act" href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg>WhatsApp</a>
+        <a class="af__act" href="https://calendly.com/iloki-azael/consultation" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Réserver un appel</a>
+      </div>
+    </div>
+  </div>
+  <div class="af__inner">
+    <div class="af__grid">
+      <div class="af__brand">
+        <h2 class="af__name">
+          <span class="af__mark" aria-hidden="true"><img src="/assets/images/logo-72.png" alt="" width="36" height="36" loading="lazy"></span>
+          Azaël&nbsp;<em>Iloki</em>
+        </h2>
+        
+        <p class="af__tag">Traducteur assermenté · FR ↔ EN · Lomé, Togo</p>
+        <span class="af__chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z"/></svg><span>Assermenté · Cour d’appel de Lomé</span></span>
+        <div class="af__social">
+          <a href="https://linkedin.com/in/azaeliloki" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 11v6"/></svg>
+          </a>
+          <a href="https://www.proz.com/translator/4735520" aria-label="ProZ.com" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 8.5h7l-7 7h7"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <nav class="af__col" aria-label="Parcours">
+        <h3 class="af__h">Parcours</h3>
+        <ul class="af__links">
+          <li><a href="/fr/traduction-certifiee/">Traduction certifiée</a></li>
+          <li><a href="/fr/business/#svc-general">Traduction générale</a></li>
+          <li><a href="/fr/business/#svc-training">Formation entreprise</a></li>
+          <li><a href="/fr/contenu-web/">Contenu web &amp; SEO</a></li>
+          <li><a href="/fr/cabinets-juridiques/">Cabinets juridiques</a></li>
+          <li><a href="/fr/afrique-de-louest/">Afrique de l’Ouest</a></li>
+          <li><a href="/fr/interpretation/">Interprétation</a></li>
+          <li><a href="/fr/anglais-aeronautique/">Anglais aéronautique</a></li>
+          <li><a href="/fr/transcription/">Transcription</a></li>
+          <li><a href="/fr/courses/#course-pricing-hub">Cours</a></li>
+          <li><a href="/fr/soutien-scolaire/">Soutien scolaire</a></li>
+          <li><a href="/fr/tarifs/">Tarifs</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="af__col" aria-label="Informations">
+        <h3 class="af__h">Informations</h3>
+        <ul class="af__links">
+          <li><a href="/fr/about/">À propos</a></li>
+          <li><a href="/fr/avis-clients/">Avis clients</a></li>
+          <li><a href="/fr/faq/">FAQ</a></li>
+          <li><a href="/fr/contact/">Contact</a></li>
+          <li><a href="/fr/conditions/">Conditions générales</a></li>
+          <li><a href="/fr/privacy.html">Confidentialité</a></li>
+          <li><a href="/fr/plan-du-site/">Plan du site</a></li>
+          <li><a href="/fr/#funnel-paths">Tous les parcours</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="af__divider" role="presentation"></div>
+  <div class="af__bottom">
+    
+    <p class="af__legal">© 2026 Azaël Iloki · Traducteur assermenté</p>
+    <span class="af__meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Lomé, Togo · Afrique de l’Ouest</span></span>
+    
+    <div class="af__lang" role="group" aria-label="Langue">
+      <a href="/faq/" data-lang="en" hreflang="en">EN</a>
+      <i aria-hidden="true">·</i>
+      <a href="/fr/faq/" data-lang="fr" hreflang="fr">FR</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/lang.js?v=8ccf1718" defer></script>
+<script src="/assets/js/header-nav.js?v=e1ba973d" defer></script>
+<script src="/assets/js/script.js?v=072d0e43" defer></script>
+</body>
+</html>

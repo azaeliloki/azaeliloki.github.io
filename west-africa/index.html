@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<script>(function () { var KEY = 'azael_lang_pref'; var FR_SLUG_FROM_EN = { 'certified-translation': 'traduction-certifiee', 'west-africa': 'afrique-de-louest', 'tutoring': 'soutien-scolaire', 'reviews': 'avis-clients', 'guides/visa-documents': 'guides/documents-visa', 'content-translation': 'contenu-web', 'law-firms': 'cabinets-juridiques', 'icao-english': 'anglais-aeronautique', 'interpretation': 'interpretation', 'terms': 'conditions', 'pricing': 'tarifs', 'sitemap': 'plan-du-site', 'contact': 'contact' }; function isFrPath(path) { return /(?:^|\/)fr(?:\/|$)/.test(path); } function isEnHome(path) { if (isFrPath(path)) return false; var p = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); if (p === '/' || p === '') return true; if (/\/(live|deploy-ready)\/?$/i.test(p)) return true; return false; } function suffix() { return location.search + location.hash; } function getPref() { try { return localStorage.getItem(KEY); } catch (e) { return null; } } function detectBrowserLang() { var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']; for (var i = 0; i < list.length; i++) { var tag = String(list[i]).toLowerCase(); if (tag.indexOf('fr') === 0) return 'fr'; if (tag.indexOf('en') === 0) return 'en'; } return 'en'; } function enSlugFromFr(frSlug) { for (var en in FR_SLUG_FROM_EN) { if (FR_SLUG_FROM_EN[en] === frSlug) return en; } return frSlug; } function translateSlug(slug, targetLang, sourceIsFr) { if (targetLang === 'fr') { if (!sourceIsFr && FR_SLUG_FROM_EN[slug]) return FR_SLUG_FROM_EN[slug]; return slug; } if (sourceIsFr) return enSlugFromFr(slug); return slug; } function parseLocalePath(path) { var normalized = path.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var onFr = isFrPath(normalized); var slug = normalized.replace(/^\/fr\//, '/').replace(/^\/fr$/, '/').replace(/^\//, '').replace(/\/$/, ''); return { onFr: onFr, slug: slug }; } function liveSegments(path) { var segments = path.replace(/\\/g, '/').split('/').filter(Boolean); var liveIdx = -1; for (var i = 0; i < segments.length; i++) { var seg = segments[i].toLowerCase(); if (seg === 'live' || seg === 'deploy-ready') { liveIdx = i; break; } } if (liveIdx < 0) return null; var afterLive = segments.slice(liveIdx + 1); if (afterLive.length && /^index\.html?$/i.test(afterLive[afterLive.length - 1])) { afterLive.pop(); } return { segments: segments, liveIdx: liveIdx, afterLive: afterLive }; } function formatLocalePath(slug, lang) { if (lang === 'fr') { if (!slug) return '/fr/'; return '/fr/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } if (!slug) return '/'; return '/' + slug + (slug.indexOf('.html') >= 0 ? '' : '/'); } function httpLocaleHref(lang) { var path = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/'); var info = liveSegments(path); if (info) { var after = info.afterLive.slice(); var onFr = after[0] === 'fr'; if (onFr) after.shift(); var slug = after.join('/'); var newSlug = translateSlug(slug, lang, onFr); var targetSegs = lang === 'fr' ? ['fr'].concat(newSlug ? newSlug.split('/') : []) : (newSlug ? newSlug.split('/') : []); var base = info.segments.slice(0, info.liveIdx + 1); return '/' + base.concat(targetSegs).join('/') + suffix(); } var parsed = parseLocalePath(path); if ((lang === 'fr' && parsed.onFr) || (lang === 'en' && !parsed.onFr)) { return path + suffix(); } var mappedSlug = translateSlug(parsed.slug, lang, parsed.onFr); return formatLocalePath(mappedSlug, lang) + suffix(); } function navigate(lang) { if (location.protocol === 'file:') return; location.replace(httpLocaleHref(lang)); } var path = location.pathname.replace(/\\/g, '/'); if (/404\.html$/i.test(path)) return; var onFr = isFrPath(path); var pref = getPref(); if (!pref && !onFr && isEnHome(path)) { if (detectBrowserLang() === 'fr') { navigate('fr'); } return; } if (!pref) return; if (parseLocalePath(path).slug !== '') return; if (pref === 'fr' && !onFr) { navigate('fr'); return; } if (pref === 'en' && onFr) { navigate('en'); } })();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certified FR↔EN Translation for West Africa | Sworn in Togo</title>
+<meta name="description" content="Sworn FR↔EN translation for cross-border files across anglophone and francophone West Africa — Ghana, Nigeria, Togo, Benin, Côte d’Ivoire. Quote in 2h.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://azaeliloki.com/west-africa/">
+<link rel="alternate" hreflang="en" href="https://azaeliloki.com/west-africa/">
+<link rel="alternate" hreflang="fr" href="https://azaeliloki.com/fr/afrique-de-louest/">
+<link rel="alternate" hreflang="x-default" href="https://azaeliloki.com/west-africa/">
+<meta property="og:title" content="Certified FR↔EN Translation for West Africa | Sworn in Togo">
+<meta property="og:description" content="Sworn FR↔EN translation for cross-border files across anglophone and francophone West Africa — Ghana, Nigeria, Togo, Benin, Côte d’Ivoire. Quote in 2h.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:site_name" content="Azaël Iloki — Language Services">
+<meta property="og:url" content="https://azaeliloki.com/west-africa/">
+<meta property="og:image" content="https://azaeliloki.com/assets/og/og-cabinets-juridiques.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Azaël Iloki — Sworn legal translation, Lomé">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://azaeliloki.com/assets/og/og-cabinets-juridiques.jpg">
+<meta name="twitter:title" content="Certified FR↔EN Translation for West Africa | Sworn in Togo">
+<meta name="twitter:description" content="Sworn FR↔EN translation for cross-border files across anglophone and francophone West Africa — Ghana, Nigeria, Togo, Benin, Côte d’Ivoire. Quote in 2h.">
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="preconnect" href="https://wa.me" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="critical-css">/* critical ATB */:root{--navy:#122C4D;--navy-dark:#0E233F;--gold:#C9A658;--gold-on-dark:#F2DC8A;--white:#FFFFFF;--cream:#EDEEE8;--muted-on-dark:#CBD6E4;--font-body:'Outfit',system-ui,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}*{box-sizing:border-box}html[lang=en] [data-fr],html[lang=fr] [data-en]{display:none!important}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--navy);background:var(--cream)}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:16px;top:16px;z-index:9999;background:var(--white);padding:8px 12px}.ah{position:sticky;top:0;z-index:100;background:rgba(18,44,77,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.25)}.ah__inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);justify-content:space-between}.ah__logo{height:clamp(34px,6vw,52px);width:auto;display:block}.ah__nav{display:flex}@media(min-width:1280px){.ah__nav{display:block}}.ah__util{background:var(--navy-dark)}.ah__util-inner{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:34px;display:flex;align-items:center;justify-content:space-between}.ah__util-links{display:flex;align-items:center;flex:none}.ah__inner{height:74px}.ah__links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}.ah__links li{display:flex}.ah__drop-wrap{position:relative}@media(min-width:1280px){.ah__drop-menu{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none}}.ah__actions{display:flex;align-items:center}@media(max-width:1279px){.ah__nav{display:none}.ah__burger{display:block}.ah__inner{height:62px}.ah__item--dropdown .ah__drop-menu{display:none}}@media(max-width:767px){.ah__util-note{display:none}.ah__util-inner{height:32px;justify-content:center}}.ah__burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer}.ah__burger span{display:block;width:22px;height:1.5px;background:var(--gold)}.hero{background:linear-gradient(160deg,var(--navy-dark),var(--navy));color:var(--white);padding:clamp(120px,15vw,160px) 20px clamp(60px,8vw,100px)}.hero-inner{max-width:1200px;margin:0 auto;width:100%}@media(min-width:1200px){.hero-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}}@media(min-width:900px){.hero-inner{grid-template-columns:1fr auto;gap:60px}}.hero-eyebrow{display:flex;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-on-dark);border:1px solid rgba(201,168,76,.35);padding:4px 10px;border-radius:999px;margin-bottom:20px}.hero-title{font-family:var(--font-serif);font-size:clamp(38px,5.5vw,72px);font-weight:700;line-height:1.1;margin:0 0 8px;color:var(--white)}.util-hero .hero-title{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 12px}.hero-lead{margin:0 0 10px;color:var(--muted-on-dark)}.hero-sub{margin:20px 0 36px;color:var(--muted-on-dark)}.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600}.btn-primary{background:var(--gold);color:var(--navy)}.btn-ghost{border:1px solid rgba(255,255,255,.35);color:var(--white)}.hero-portrait-img{width:100%;max-width:420px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block}</style>
+<link rel="preload" href="/assets/css/style.css?v=cc67a03d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css?v=cc67a03d"></noscript>
+<link rel="icon" type="image/png" href="/assets/images/logo-72.png">
+<script src="/assets/js/analytics-deferred.js?v=65330a98" defer></script>
+<script src="/assets/js/fx-approx.js?v=001eb97b" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://azaeliloki.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "West Africa",
+   "item": "https://azaeliloki.com/west-africa/"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "name": "Certified FR↔EN translation for West Africa",
+ "serviceType": "Certified (sworn) translation",
+ "availableLanguage": [
+  "fr",
+  "en"
+ ],
+ "provider": {
+  "@id": "https://azaeliloki.com/#business"
+ },
+ "areaServed": [
+  {
+   "@type": "Country",
+   "name": "Togo"
+  },
+  {
+   "@type": "Country",
+   "name": "Ghana"
+  },
+  {
+   "@type": "Country",
+   "name": "Nigeria"
+  },
+  {
+   "@type": "Country",
+   "name": "Benin"
+  },
+  {
+   "@type": "Country",
+   "name": "Côte d’Ivoire"
+  },
+  {
+   "@type": "Country",
+   "name": "Burkina Faso"
+  },
+  {
+   "@type": "Country",
+   "name": "Senegal"
+  },
+  {
+   "@type": "Country",
+   "name": "Mali"
+  },
+  {
+   "@type": "Country",
+   "name": "Niger"
+  }
+ ],
+ "url": "https://azaeliloki.com/west-africa/",
+ "description": "Sworn French ↔ English translation of documents crossing between the anglophone and francophone jurisdictions of West Africa, under the stamp of a translator sworn before the Cour d’appel de Lomé."
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "inLanguage": "en",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "I am in Ghana. Can you certify a document for use in Togo?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, and this is the most common reason firms outside Togo contact me. Send a clear scan by email or WhatsApp; the certified translation comes back stamped and signed as a PDF, with paper by courier if the receiving body requires it. You never need to travel, and you do not need to send the original."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does a Lomé sworn translation work in Ghana or Nigeria?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It depends on what the receiving body asks for. Common-law jurisdictions more often want a translator’s certificate of accuracy or an affidavit than an entry in a court register. I supply the sworn stamp and, where it is wanted, a signed statement of accuracy in the form the destination expects. Tell me who is receiving the document and I will produce it in the right form."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do I need legalisation as well as translation?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Sometimes. The translation and the original travel together through the same chain. Togo is not yet a party to the Hague Apostille Convention, so the route runs through the town hall (mairie) where I am registered, then Foreign Affairs, then the destination consulate. I can handle that for you; the administrative and travel costs remain yours and are stated in the quote."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which language pair do you cover?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "French and English only, in both directions, and I am sworn for exactly that pair. Transcription of recordings also covers Togolese national languages, delivered with a signed certificate of accuracy rather than a sworn certification — there is no sworn register for those languages in Togo."
+   }
+  }
+ ]
+}
+</script>
+
+</head>
+<body class="lang-en page-west-africa page-linear">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="ah" id="navbar">
+  <div class="ah__util">
+    <div class="ah__util-inner">
+      <span class="ah__util-note">Sworn translator · Cour d’appel de Lomé</span>
+      
+      <span class="ah__util-links">
+        <a class="ah__util-a" href="tel:+22879716258"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="ah__util-a ah__util-a--mail" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@azaeliloki.com</a>
+      </span>
+      <div class="ah__lang" role="group" aria-label="Language" data-en-label="Language" data-fr-label="Langue">
+        <a href="/west-africa/" data-lang="en" hreflang="en">EN</a>
+        <i aria-hidden="true">·</i>
+        <a href="/fr/afrique-de-louest/" data-lang="fr" hreflang="fr">FR</a>
+      </div>
+    </div>
+  </div>
+  <div class="ah__inner">
+    <a class="ah__brand" href="/" aria-label="Azaël Iloki — home">
+      <img src="/assets/images/logo-nav.png" srcset="/assets/images/logo-nav.png 1x, /assets/images/logo-nav@2x.png 2x" alt="Azaël Iloki" class="ah__logo" width="256" height="64" decoding="async">
+    </a>
+    
+    <nav class="ah__nav" id="primary-menu" aria-label="Main navigation" data-en-label="Main navigation" data-fr-label="Navigation principale">
+      <ul class="ah__links">
+        <li><a href="/certified-translation/" data-nav="certified">Certified Translation</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/courses/#course-pricing-hub" class="ah__drop-label" data-nav="courses">Courses</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-courses-en" id="ah-drop-btn-courses-en">
+              <span class="visually-hidden">Show courses</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-courses-en" role="menu">
+              <li role="none"><a href="/courses/#course-pricing-hub" role="menuitem">Language Courses</a></li>
+              <li role="none"><a href="/icao-english/" role="menuitem">ICAO Level 4 (Aviation)</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/tutoring/" data-nav="tutoring">Tutoring</a></li>
+        
+        <li class="ah__item ah__item--dropdown">
+          <div class="ah__drop-wrap">
+            <a href="/business/" class="ah__drop-label active" data-nav="business" aria-current="true">For Business</a>
+            <button type="button" class="ah__drop-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="ah-drop-business-en" id="ah-drop-btn-business-en">
+              <span class="visually-hidden">Show business services</span>
+              <svg class="ah__drop-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="ah__drop-menu" id="ah-drop-business-en" role="menu">
+              <li role="none"><a href="/business/#svc-general" role="menuitem">General Translation (B2B)</a></li>
+              <li role="none"><a href="/business/#svc-training" role="menuitem">Corporate Training</a></li>
+              <li role="none"><a href="/business/#svc-retainer" role="menuitem">Professional Retainer</a></li>
+              <li role="none"><a href="/interpretation/" role="menuitem">Interpretation</a></li>
+              <li role="none"><a href="/content-translation/" role="menuitem">Web Content &amp; SEO</a></li>
+              <li role="none"><a href="/law-firms/" role="menuitem">Law Firms</a></li>
+              <li role="none"><a href="/transcription/" role="menuitem">Transcription &amp; Recordings</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="/pricing/" data-nav="pricing">Pricing</a></li>
+        
+        <li><a href="/about/" data-nav="about">About</a></li>
+        
+        <li class="ah__m-only"><a href="/contact/">Contact</a></li>
+        
+        <li class="ah__m-only"><a href="/reviews/">Reviews</a></li>
+        
+        <li class="ah__m-only"><a href="/faq/">FAQ</a></li>
+        
+      </ul>
+    </nav>
+    <a class="ah__cta" href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote.%0A%0AService%3A%0ADocument%20or%20need%3A%0ADeadline%3A" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg><span class="ah__cta-full">Request a Quote</span><span class="ah__cta-short">Quote</span></a>
+    
+    <button type="button" class="ah__burger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main">
+<nav class="page-breadcrumb" aria-label="Breadcrumb">
+  <ol class="page-breadcrumb__list">
+    <li><a href="/">Home</a></li>
+    <li aria-current="page">West Africa</li>
+  </ol>
+</nav>
+
+<section class="hero" id="home" aria-labelledby="home-heading">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Ghana · Nigeria · Togo · Benin · Côte d’Ivoire · Burkina Faso</div>
+      <h1 class="hero-title" id="home-heading">Certified FR↔EN Translation for Anglophone West Africa</h1>
+      <p class="hero-lead">West Africa runs on two languages. Documents have to cross.</p>
+      <p class="hero-sub">A contract drafted in Accra is signed in Lomé. A Lagos judgment is produced before a Togolese court. A Dakar tender is filed in French. Every one of those crossings needs a sworn translation — and no agency in London or Toronto can supply one, however good its linguists.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20would%20like%20a%20quote%20for%20a%20certified%20translation.%0A%0ADocument%3A%0ADestination%20(country%20%2F%20institution)%3A%0AFiling%20date%3A" class="btn-primary" target="_blank" rel="noopener noreferrer">Send the Document — Quote in 2h</a>
+        <a href="#corridors" class="btn-ghost">See the corridors →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="principle" aria-labelledby="principle-heading">
+  <div class="section-inner">
+    <span class="eyebrow">The Principle</span>
+    <h2 class="section-title" id="principle-heading">Why the seal has to be local</h2>
+    <p>A document has no legal effect before a Togolese, Ivorian, Beninese or Senegalese authority unless it carries the stamp of a translator sworn before a court inside that system. This is not a quality judgement about other translators. It is a jurisdictional fact: the receiving court, ministry or notary recognises the register it can check, and that register is national.</p>
+    <p>I am sworn before the <strong>Cour d’appel de Lomé</strong>, in French and English, in both directions. For any file that has to be produced before an authority in Togo — or that leaves Togo for an English-speaking one — my stamp is what gives it standing. Acceptance always remains the receiving authority’s decision; tell me the destination and I will match the format it requires.</p>
+  </div>
+</section>
+
+<section class="services" id="corridors" aria-labelledby="corridors-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Corridors</span>
+    <h2 class="section-title" id="corridors-heading">What crosses the language border</h2>
+    <p>Counterparties and courts in Ghana, Nigeria, The Gambia, Sierra Leone and Liberia work in English. Togo, Benin, Côte d’Ivoire, Burkina Faso, Mali, Niger and Senegal work in French. Trade, litigation and family matters cross that line constantly, and each crossing produces the same handful of documents.</p>
+    <div class="home-rates-table-wrap" tabindex="0" role="region" aria-label="Documents by corridor">
+      <table class="home-rates-table">
+        <thead>
+          <tr><th>Where the file starts</th><th>What usually needs sworn translation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Where the file starts">Accra, Lagos, Abuja</td><td data-label="What usually needs sworn translation">Contracts governed by common law, judgments for exequatur (recognition of a foreign judgment), powers of attorney, company records for a francophone subsidiary</td></tr>
+          <tr><td data-label="Where the file starts">Lomé, Cotonou, Abidjan, Ouagadougou</td><td data-label="What usually needs sworn translation">Statutes, notarial deeds, procedural filings and civil-status records bound for an English-speaking authority</td></tr>
+          <tr><td data-label="Where the file starts">An individual moving either way</td><td data-label="What usually needs sworn translation">Diplomas and transcripts, birth and marriage certificates, police clearance, visa and university files</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">Areas served: Lomé, Togo (on site) · West Africa and worldwide, remotely. Files arrive and leave by email or WhatsApp; stamped paper follows by courier when the receiving body still requires it.</p>
+  </div>
+</section>
+
+<section class="services" id="who" aria-labelledby="who-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Who I Work With</span>
+    <h2 class="section-title" id="who-heading">Three kinds of file</h2>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <h3 class="svc-title">Law firms and notaries</h3>
+        <p class="svc-desc">A foreign judgment to be recognised, an estate with a will drafted abroad, a power of attorney signed in Lagos and used before a Lomé notary. Firm rates, reserved monthly capacity and a 48-hour guarantee are set out on the <a href="/law-firms/">law firms page</a>.</p>
+      </div>
+      <div class="svc-card">
+        <h3 class="svc-title">Companies, NGOs and institutions</h3>
+        <p class="svc-desc">Tenders, compliance files, audits and contracts moving between an anglophone head office and a francophone operation. Billed per source word and invoiced in EUR, USD or FCFA. See <a href="/business/">services for organisations</a>.</p>
+      </div>
+      <div class="svc-card">
+        <h3 class="svc-title">Individuals relocating or applying</h3>
+        <p class="svc-desc">Diplomas, civil-status records and police clearance for a visa, a university place or a job across the border. Priced per page — see <a href="/certified-translation/">certified translation</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="rates" aria-labelledby="rates-heading">
+  <div class="section-inner">
+    <span class="eyebrow">Rates</span>
+    <h2 class="section-title" id="rates-heading">Regional rates and invoicing</h2>
+    <div class="home-rates-table-wrap" tabindex="0" role="region" aria-label="Rates">
+      <table class="home-rates-table">
+        <thead>
+          <tr><th>Work</th><th>From</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Work">Personal and civil documents</td><td data-fcfa="15000" data-label="From">15,000–20,000 FCFA / page</td><td data-label="Notes">Standardised and short — priced per page</td></tr>
+          <tr><td data-label="Work">Corporate, legal and institutional</td><td data-fcfa="66" data-label="From">66–118 FCFA / source word</td><td data-label="Notes">Drafted and dense — priced per source word, never per page</td></tr>
+          <tr><td data-label="Work">Express 24h</td><td data-label="From">+50%</td><td data-label="Notes">Same stamp, same signature, same legal weight</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">Rates excl. tax for corporate and institutional work. Clients outside Togo can be invoiced in EUR, USD or FCFA and settle by bank transfer or international wire (SWIFT). Full detail on the <a href="/pricing/">rate card</a>.</p>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <span class="eyebrow">FAQ</span>
+    <h2 class="section-title" id="faq-heading">Frequently asked questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">I am in Ghana. Can you certify a document for use in Togo?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Yes, and this is the most common reason firms outside Togo contact me. Send a clear scan by email or WhatsApp; the certified translation comes back stamped and signed as a PDF, with paper by courier if the receiving body requires it. You never need to travel, and you do not need to send the original.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Does a Lomé sworn translation work in Ghana or Nigeria?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>It depends on what the receiving body asks for. Common-law jurisdictions more often want a translator’s certificate of accuracy or an affidavit than an entry in a court register. I supply the sworn stamp and, where it is wanted, a signed statement of accuracy in the form the destination expects. Tell me who is receiving the document and I will produce it in the right form.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Do I need legalisation as well as translation?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Sometimes. The translation and the original travel together through the same chain. Togo is not yet a party to the Hague Apostille Convention, so the route runs through the town hall (mairie) where I am registered, then Foreign Affairs, then the destination consulate. I can handle that for you; the administrative and travel costs remain yours and are stated in the quote.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-q-text">Which language pair do you cover?</span>
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>French and English only, in both directions, and I am sworn for exactly that pair. Transcription of recordings also covers Togolese national languages, delivered with a signed certificate of accuracy rather than a sworn certification — there is no sworn register for those languages in Togo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="share-section" aria-label="Share this page">
+  <div class="section-inner">
+    <div class="share-bar share-bar--linkedin-first" data-url="https://azaeliloki.com/west-africa/" data-title="Certified FR↔EN Translation for West Africa" data-message="I'd like to share this sworn FR-EN translation service for cross-border files in West Africa:">
+    </div>
+  </div>
+</section>
+
+<section class="primary-cta-band" id="quote" aria-labelledby="quote-heading">
+  <div class="section-inner">
+    <h2 class="section-title" id="quote-heading">Send the file — quote in 2h</h2>
+    <p>Tell me where the document starts, where it has to be produced and by when. A free quote follows within 2 working hours with an exact price and turnaround.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/22879716258?text=Hello%20Aza%C3%ABl%2C%20I%20have%20a%20cross-border%20file%20for%20translation.%0A%0AStarting%20country%3A%0ADestination%20authority%3A%0ADeadline%3A" class="btn-primary" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+      <a href="mailto:contact@azaeliloki.com?subject=Quote%20%E2%80%94%20cross-border%20file&amp;body=Hello%2C%0D%0A%0D%0AI%20have%20a%20cross-border%20file%20for%20translation.%0D%0A%0D%0AStarting%20country%3A%0D%0ADestination%20authority%3A%0D%0ADeadline%3A%0D%0A%0D%0ABest%20regards%2C" class="btn-ghost">Send an Email</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="af" id="site-footer">
+  <button type="button" class="af__top" id="backToTop" data-en-label="Back to top" data-fr-label="Haut de page" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <div class="af__lead">
+    <div class="af__lead-inner">
+      <div class="af__lead-copy">
+        <p class="af__lead-eyebrow">Free quote within 2 working hours</p>
+        
+        <h2 class="af__lead-title">Tell me what you need translated.</h2>
+        
+        <p class="af__lead-sub">Mon–Fri 8:00–20:00 · Sat 8:00–18:00 (GMT+0)</p>
+        
+      </div>
+      <div class="af__lead-actions">
+        <a class="af__act af__act--gold" href="/business/#quote-intake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Request a Free Quote</a>
+        <a class="af__act" href="mailto:contact@azaeliloki.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@azaeliloki.com</a>
+        <a class="af__act" href="tel:+22879716258"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>+228 79 71 62 58</a>
+        <a class="af__act" href="https://wa.me/22879716258" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5A9 9 0 1 1 21 12z"/></svg>WhatsApp</a>
+        <a class="af__act" href="https://calendly.com/iloki-azael/consultation" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book a call</a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="af__inner">
+    <div class="af__grid">
+      <div class="af__brand">
+        <h2 class="af__name">
+          <span class="af__mark" aria-hidden="true"><img src="/assets/images/logo-72.png" alt="" width="36" height="36" loading="lazy"></span>
+          Azaël&nbsp;<em>Iloki</em>
+        </h2>
+        <p class="af__tag">Sworn translator · FR ↔ EN · Lomé, Togo</p>
+        
+        <span class="af__chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7zm10 0l-3 6a3 3 0 0 0 6 0l-3-6z"/></svg><span>Sworn · Cour d’appel de Lomé</span></span>
+        <div class="af__social">
+          <a href="https://linkedin.com/in/azaeliloki" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 11v6"/></svg>
+          </a>
+          <a href="https://www.proz.com/translator/4735520" aria-label="ProZ.com" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8.5 8.5h7l-7 7h7"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="af__col" aria-label="Services">
+        <h3 class="af__h">Services</h3>
+        <ul class="af__links">
+          <li><a href="/certified-translation/">Certified Translation</a></li>
+          <li><a href="/business/#svc-general">General Translation</a></li>
+          <li><a href="/business/#svc-training">Corporate Training</a></li>
+          <li><a href="/content-translation/">Web Content &amp; SEO</a></li>
+          <li><a href="/law-firms/">Law Firms</a></li>
+          <li><a href="/west-africa/">West Africa</a></li>
+          <li><a href="/interpretation/">Interpretation</a></li>
+          <li><a href="/icao-english/">ICAO Level 4</a></li>
+          <li><a href="/transcription/">Transcription</a></li>
+          <li><a href="/courses/#course-pricing-hub">Courses</a></li>
+          <li><a href="/tutoring/">Tutoring</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="af__col" aria-label="Information">
+        <h3 class="af__h">Information</h3>
+        <ul class="af__links">
+          <li><a href="/about/">About Me</a></li>
+          <li><a href="/reviews/">Client Reviews</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/sitemap/">Site Map</a></li>
+          <li><a href="/#funnel-paths">All Paths</a></li>
+        </ul>
+      </nav>
+      
+    </div>
+  </div>
+  <div class="af__divider" role="presentation"></div>
+  <div class="af__bottom">
+    <p class="af__legal">© 2026 Azaël Iloki · Sworn translator</p>
+    
+    <span class="af__meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Lomé, Togo · West Africa</span></span>
+    <div class="af__lang" role="group" aria-label="Language">
+      <a href="/west-africa/" data-lang="en" hreflang="en">EN</a>
+      <i aria-hidden="true">·</i>
+      <a href="/fr/afrique-de-louest/" data-lang="fr" hreflang="fr">FR</a>
+    </div>
+    
+  </div>
+</footer>
+<script src="/assets/js/lang.js?v=8ccf1718" defer></script>
+<script src="../assets/js/header-nav.js?v=e1ba973d" defer></script>
+<script src="../assets/js/script.js?v=072d0e43" defer></script>
+</body>
+</html>
